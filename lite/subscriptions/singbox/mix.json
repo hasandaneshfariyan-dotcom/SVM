@@ -83,8 +83,7 @@
                 "@SiNAVM-18",
                 "@SiNAVM-19",
                 "@SiNAVM-20",
-                "@SiNAVM-21",
-                "@SiNAVM-22"
+                "@SiNAVM-21"
             ]
         },
         {
@@ -111,8 +110,7 @@
                 "@SiNAVM-18",
                 "@SiNAVM-19",
                 "@SiNAVM-20",
-                "@SiNAVM-21",
-                "@SiNAVM-22"
+                "@SiNAVM-21"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -295,53 +293,21 @@
         },
         {
             "type": "vless",
-            "server": "162.159.248.20",
-            "server_port": 8880,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "server": "151.101.66.228",
+            "server_port": 80,
+            "uuid": "2404f667-5969-4883-a71a-ea2e0db2d25b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "162.159.248.20"
+                    "Host": "151.101.66.228"
                 },
-                "max_early_data": 2560,
+                "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "vless",
-            "server": "190.93.247.172",
-            "server_port": 443,
-            "uuid": "f055d270-0e76-4a41-a53f-871bbb51b003",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "what.zhonghuoxing.top",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "what.zhonghuoxing.top"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
@@ -359,7 +325,7 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-13"
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
@@ -393,6 +359,16 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
+            "tag": "@SiNAVM-13"
+        },
+        {
+            "type": "vmess",
+            "server": "157.180.89.239",
+            "server_port": 29301,
+            "uuid": "45a92d77-d948-4df2-b55f-1b05c9d94f7f",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-14"
         },
         {
@@ -412,24 +388,6 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-15"
-        },
-        {
-            "type": "vless",
-            "server": "Join.VPNCUSTOMIZE.cloud1.hosting-ip.com",
-            "server_port": 8880,
-            "uuid": "e6829971-e95c-4858-9f83-3a06466541cb",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/Telegram—VPNCUSTOMIZE",
-                "headers": {
-                    "Host": "Join.VPNCUSTOMIZE.cloud1.hosting-ip.com"
-                },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
@@ -464,7 +422,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
@@ -482,43 +440,57 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "tag": "@SiNAVM-17"
+        },
+        {
+            "type": "vless",
+            "server": "hajlab.ucdavis.edu",
+            "server_port": 80,
+            "uuid": "2404f667-5969-4883-a71a-ea2e0db2d25b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "hajlab.ucdavis.edu"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-18"
         },
         {
             "type": "vless",
-            "server": "hajlab.ucdavis.edu",
-            "server_port": 80,
+            "server": "whatismyipaddress.com",
+            "server_port": 2096,
             "uuid": "2404f667-5969-4883-a71a-ea2e0db2d25b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "wwwspeedtestnetwhiteberinsistomd6625996s15.rtyadserver.ir",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": ""
+                }
+            },
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "hajlab.ucdavis.edu"
+                    "Host": "wwwspeedtestnetwhiteberinsistomd6625996s15.rtyadserver.ir"
                 },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-19"
-        },
-        {
-            "type": "vless",
-            "server": "hajlab.ucdavis.edu",
-            "server_port": 80,
-            "uuid": "2404f667-5969-4883-a71a-ea2e0db2d25b",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "hajlab.ucdavis.edu"
-                },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-20"
         },
         {
             "type": "vless",
@@ -551,7 +523,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-20"
         },
         {
             "type": "vless",
@@ -584,7 +556,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-22"
+            "tag": "@SiNAVM-21"
         },
         {
             "type": "direct",
