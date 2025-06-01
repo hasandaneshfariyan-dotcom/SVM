@@ -70,7 +70,8 @@
                 "@SiNAVM-5",
                 "@SiNAVM-6",
                 "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-8",
+                "@SiNAVM-9"
             ]
         },
         {
@@ -84,12 +85,31 @@
                 "@SiNAVM-5",
                 "@SiNAVM-6",
                 "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-8",
+                "@SiNAVM-9"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
+        },
+        {
+            "type": "vless",
+            "server": "Join.VPNCUSTOMIZE.cloud1.hosting-ip.com",
+            "server_port": 8880,
+            "uuid": "e2a825ec-c679-44c8-885e-8ee6d01ee2e9",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram—VPNCUSTOMIZE",
+                "headers": {
+                    "Host": "Join.VPNCUSTOMIZE.cloud1.hosting-ip.com"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
@@ -107,15 +127,6 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 8080,
-            "uuid": "afb042e7-452f-4912-8db1-26d7759aa150",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-2"
         },
         {
@@ -162,9 +173,9 @@
         },
         {
             "type": "vless",
-            "server": "148.135.195.96",
-            "server_port": 443,
-            "uuid": "f9bc4b4f-6cc4-41ee-bcfe-1fe6e3376dcd",
+            "server": "www.speedtest.net",
+            "server_port": 8080,
+            "uuid": "afb042e7-452f-4912-8db1-26d7759aa150",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-5"
@@ -193,6 +204,15 @@
         },
         {
             "type": "vless",
+            "server": "148.135.195.96",
+            "server_port": 443,
+            "uuid": "f9bc4b4f-6cc4-41ee-bcfe-1fe6e3376dcd",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-7"
+        },
+        {
+            "type": "vless",
             "server": "151.101.64.155",
             "server_port": 80,
             "uuid": "telegram-id-ArV2ray10",
@@ -207,17 +227,25 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-8"
         },
         {
-            "type": "shadowsocks",
-            "server": "45.87.175.199",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "80.211.194.250",
+            "server_port": 80,
+            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram🇨🇳 @ShadowProxy66 \/",
+                "headers": {
+                    "Host": "80.211.194.250"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-9"
         },
         {
             "type": "direct",
