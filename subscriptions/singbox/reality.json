@@ -62,48 +62,17 @@
             "type": "selector",
             "tag": "Internet",
             "outbounds": [
-                "Best Latency",
-                "@SiNAVM-1"
+                "Best Latency"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
-            "outbounds": [
-                "@SiNAVM-1"
-            ],
+            "outbounds": [],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
-        },
-        {
-            "type": "vless",
-            "server": "150.241.89.219",
-            "server_port": 35352,
-            "uuid": "23f9220d-6990-47d3-97ff-e8579e6c7334",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.microsoft.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "GRvQgvgbqLP6iEOSPK7RWw4vVhJA4wxo6oO8qgt28jo",
-                    "short_id": "2587dec2"
-                }
-            },
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
