@@ -62,17 +62,48 @@
             "type": "selector",
             "tag": "Internet",
             "outbounds": [
-                "Best Latency"
+                "Best Latency",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
+        },
+        {
+            "type": "vless",
+            "server": "100.27.16.249",
+            "server_port": 1991,
+            "uuid": "5fa74a60-cee7-460f-a4d2-7f215daaceba",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "weather.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "UhpQj3OeupoXGFfgck61Cm-2a9Xof70QGCQ5RPzziGk",
+                    "short_id": "9055ba97"
+                }
+            },
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
