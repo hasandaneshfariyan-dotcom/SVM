@@ -66,8 +66,7 @@
                 "@SiNAVM-1",
                 "@SiNAVM-2",
                 "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-4"
             ]
         },
         {
@@ -77,8 +76,7 @@
                 "@SiNAVM-1",
                 "@SiNAVM-2",
                 "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -87,16 +85,30 @@
         },
         {
             "type": "vless",
-            "server": "www.zula.ir",
-            "server_port": 8080,
-            "uuid": "d41d2d38-8d13-4458-b9cf-1dfc8b0fe2b7",
+            "server": "188.114.97.6",
+            "server_port": 443,
+            "uuid": "81191cda-0982-4cbd-8d60-2ef076e08d17",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "quiet-bread-928e.wadas15468.workers.dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/Channel-ELiV2RAY---ELiV2RAY---ELiV2RAY---ELiV2RAY----Channel-ELiV2RAY---ELiV2RAY",
+                "path": "\/",
                 "headers": {
-                    "Host": "www.zula.ir"
+                    "Host": "quiet-bread-928e.wadas15468.workers.dev"
                 },
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -123,18 +135,18 @@
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+            "server": "www.zula.ir",
+            "server_port": 8080,
+            "uuid": "d41d2d38-8d13-4458-b9cf-1dfc8b0fe2b7",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/Vb2kRpQSrEqsUKCX",
+                "path": "\/Channel-ELiV2RAY---ELiV2RAY---ELiV2RAY---ELiV2RAY----Channel-ELiV2RAY---ELiV2RAY",
                 "headers": {
-                    "Host": "www.speedtest.net"
+                    "Host": "www.zula.ir"
                 },
-                "max_early_data": 2560,
+                "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-3"
@@ -156,24 +168,6 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vless",
-            "server": "80.211.194.250",
-            "server_port": 80,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/Telegram🇨🇳 @ShadowProxy66 \/",
-                "headers": {
-                    "Host": "80.211.194.250"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-5"
         },
         {
             "type": "direct",
