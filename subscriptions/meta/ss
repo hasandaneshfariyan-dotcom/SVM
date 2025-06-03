@@ -121,7 +121,6 @@ dns:
 
 proxies:
   - {"name":"🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 7","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇦🇹AT | 🟢 | ss | @OpenSSTPVpn | 0","type":"ss","server":"212.113.106.76","port":29149,"password":"cbaSjL86JEYhhdyhzBt6VX","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 11","type":"ss","server":"185.126.239.250","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -130,7 +129,6 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 7'
-      - '🇦🇹AT | 🟢 | ss | @OpenSSTPVpn | 0'
       - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 11'
   - name: URL-TEST
     type: url-test
@@ -139,7 +137,6 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 7'
-      - '🇦🇹AT | 🟢 | ss | @OpenSSTPVpn | 0'
       - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 11'
   - name: FALLBACK
     type: fallback
@@ -147,7 +144,6 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 7'
-      - '🇦🇹AT | 🟢 | ss | @OpenSSTPVpn | 0'
       - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 11'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
