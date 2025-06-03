@@ -274,19 +274,29 @@
         },
         {
             "type": "vless",
-            "server": "62.60.193.221",
-            "server_port": 32774,
-            "uuid": "6603a779-07c9-4bc9-8f61-4a09c238653a",
+            "server": "45.87.102.244",
+            "server_port": 21851,
+            "uuid": "ee317e25-4c44-4b3f-81fd-93420678bd34",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/6603a779",
-                "headers": {
-                    "Host": "62.60.193.221"
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "one-piece.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "reality": {
+                    "enabled": true,
+                    "public_key": "EcToF-48rTWeedF6qD5yUrJ3AC_Y3FrzGUE5UP5bg2A",
+                    "short_id": "6ba85179e30d4fc2"
+                }
             },
             "tag": "@SiNAVM-9"
         },
