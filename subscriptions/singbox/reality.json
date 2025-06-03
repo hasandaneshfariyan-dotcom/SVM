@@ -62,17 +62,48 @@
             "type": "selector",
             "tag": "Internet",
             "outbounds": [
-                "Best Latency"
+                "Best Latency",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
+        },
+        {
+            "type": "vless",
+            "server": "84.235.237.246",
+            "server_port": 33001,
+            "uuid": "bfab9a68-5545-5270-bfdd-c9a5476ca066",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "fr.zran.top",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "lCw-J-VD2RWK0khO3ySjqdsfSV2qnVx8y91WV8AKMkw",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
