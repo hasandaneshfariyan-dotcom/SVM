@@ -119,10 +119,12 @@ dns:
 
 proxies:
   - {"name":"🇨🇦CA | 🔴 | trojan | @SiNAVM | 0","type":"trojan","server":"japan.com","port":443,"udp":false,"password":"bpb-trojan","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"zamim340.ggff.net"}
-  - {"name":"🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 10","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"63.178.205.172","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 8","type":"ss","server":"45.158.171.151","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 14","type":"ss","server":"185.126.239.250","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 12","type":"ss","server":"45.158.171.151","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇺🇸US | 🟢 | ss | @meli_proxyy | 2","type":"ss","server":"45.87.175.178","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"63.177.148.25","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 2","type":"ss","server":"23.154.136.132","port":9102,"password":"e4FCWrgpkji3QY","cipher":"aes-256-gcm"}
+  - {"name":"🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 18","type":"ss","server":"185.126.239.250","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇨🇾CY | 🟢 | ss | @DeamNet_Proxy | 3","type":"ss","server":"134.255.210.49","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,10 +132,12 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇨🇦CA | 🔴 | trojan | @SiNAVM | 0'
-      - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 10'
+      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 12'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 8'
-      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 14'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 2'
+      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 18'
+      - '🇨🇾CY | 🟢 | ss | @DeamNet_Proxy | 3'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -141,20 +145,24 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇨🇦CA | 🔴 | trojan | @SiNAVM | 0'
-      - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 10'
+      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 12'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 8'
-      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 14'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 2'
+      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 18'
+      - '🇨🇾CY | 🟢 | ss | @DeamNet_Proxy | 3'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '🇨🇦CA | 🔴 | trojan | @SiNAVM | 0'
-      - '🇨🇦CA | 🟢 | ss | @DeamNet_Proxy | 10'
+      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 12'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 8'
-      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 14'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 2'
+      - '🇷🇺RU | 🟢 | ss | @DeamNet_Proxy | 18'
+      - '🇨🇾CY | 🟢 | ss | @DeamNet_Proxy | 3'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
