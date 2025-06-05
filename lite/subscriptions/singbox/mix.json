@@ -192,7 +192,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.178.60.16",
+            "server": "35.159.102.83",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -214,7 +214,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.213.121",
+            "server": "63.178.60.16",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -380,19 +380,33 @@
         },
         {
             "type": "vless",
-            "server": "151.101.66.228",
-            "server_port": 80,
-            "uuid": "2404f667-5969-4883-a71a-ea2e0db2d25b",
+            "server": "190.93.247.172",
+            "server_port": 443,
+            "uuid": "f055d270-0e76-4a41-a53f-871bbb51b003",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "what.zhonghuoxing.top",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "151.101.66.228"
+                    "Host": "what.zhonghuoxing.top"
                 },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-14"
         },
