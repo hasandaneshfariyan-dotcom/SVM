@@ -64,7 +64,8 @@
             "outbounds": [
                 "Best Latency",
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
@@ -72,7 +73,8 @@
             "tag": "Best Latency",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -141,6 +143,34 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
+            "server": "finland.my-iranparspack.ir",
+            "server_port": 443,
+            "uuid": "98a6bc60-f1e3-44c9-8cb6-c238b9e4dc02",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "tgju.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
+                    "short_id": "e54b5ad736ae4c38"
+                }
+            },
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
