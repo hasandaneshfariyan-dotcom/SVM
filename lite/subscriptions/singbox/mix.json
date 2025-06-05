@@ -85,7 +85,8 @@
                 "@SiNAVM-20",
                 "@SiNAVM-21",
                 "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-23",
+                "@SiNAVM-24"
             ]
         },
         {
@@ -114,7 +115,8 @@
                 "@SiNAVM-20",
                 "@SiNAVM-21",
                 "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-23",
+                "@SiNAVM-24"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -404,6 +406,38 @@
         },
         {
             "type": "vless",
+            "server": "190.93.247.172",
+            "server_port": 443,
+            "uuid": "f055d270-0e76-4a41-a53f-871bbb51b003",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "what.zhonghuoxing.top",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "what.zhonghuoxing.top"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-14"
+        },
+        {
+            "type": "vless",
             "server": "client.bluwave.ir",
             "server_port": 80,
             "uuid": "e3eec9d9-ab70-4617-9e19-60860112c634",
@@ -418,7 +452,7 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-14"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "vless",
@@ -446,7 +480,7 @@
                     "short_id": "f203719d3ff9a5f5"
                 }
             },
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
@@ -474,7 +508,7 @@
                     "short_id": "e54b5ad736ae4c38"
                 }
             },
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "vless",
@@ -507,29 +541,11 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-17"
-        },
-        {
-            "type": "vless",
-            "server": "151.101.64.155",
-            "server_port": 80,
-            "uuid": "telegram-id-ArV2ray9",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/-ArV2ry@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry",
-                "headers": {
-                    "Host": "151.101.64.155"
-                },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-18"
         },
         {
             "type": "vless",
-            "server": "193.46.81.67",
+            "server": "193.46.81.83",
             "server_port": 3567,
             "uuid": "telegram-id-ArV2ray3",
             "packet_encoding": "xudp",
@@ -564,6 +580,24 @@
         },
         {
             "type": "vless",
+            "server": "151.101.64.155",
+            "server_port": 80,
+            "uuid": "telegram-id-ArV2ray9",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/-ArV2ry@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry",
+                "headers": {
+                    "Host": "151.101.64.155"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "vless",
             "server": "v01.vxlimir.com",
             "server_port": 1370,
             "uuid": "92fc3c1b-c409-4610-b1a6-9a8ef4287891",
@@ -588,7 +622,7 @@
                     "short_id": "e1afb93bfe75a34b"
                 }
             },
-            "tag": "@SiNAVM-20"
+            "tag": "@SiNAVM-21"
         },
         {
             "type": "vless",
@@ -616,7 +650,7 @@
                     "short_id": "e1afb93bfe75a34b"
                 }
             },
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "vless",
@@ -649,7 +683,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-22"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "vless",
@@ -682,7 +716,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-23"
+            "tag": "@SiNAVM-24"
         },
         {
             "type": "direct",
