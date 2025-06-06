@@ -73,11 +73,7 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-11"
             ]
         },
         {
@@ -94,11 +90,7 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-11"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -129,16 +121,6 @@
             "tag": "@SiNAVM-1"
         },
         {
-            "type": "shadowsocks",
-            "server": "23.154.136.132",
-            "server_port": 5499,
-            "method": "aes-256-gcm",
-            "password": "lGqs95QkFHo2NV",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-2"
-        },
-        {
             "type": "trojan",
             "server": "japan.com",
             "server_port": 443,
@@ -167,6 +149,16 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "23.154.136.132",
+            "server_port": 5499,
+            "method": "aes-256-gcm",
+            "password": "lGqs95QkFHo2NV",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-3"
         },
         {
@@ -199,91 +191,19 @@
         },
         {
             "type": "vless",
-            "server": "84.201.20.248",
-            "server_port": 45868,
-            "uuid": "4d705f5a-6db6-4528-85cf-f7e0da6ccb16",
+            "server": "n1.cafedorehami.shop",
+            "server_port": 80,
+            "uuid": "chanel",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "google.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "Xf_flAxrxjR_kM0e6StsmGy3h5a-PDoYvYJrfP4KUTQ",
-                    "short_id": "7f"
-                }
-            },
+            "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "grpc",
-                "service_name": "@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod",
+                "service_name": "n1.cafedorehami.shop",
                 "idle_timeout": "15s",
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "89.23.103.21",
-            "server_port": 51584,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oYQ8JwEldYn4KT2gfZ6eNl",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 443,
-            "uuid": "0d0782a3-2c62-4936-b893-5790188778ea",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "XbU10cS9vT.gIgA1.oRg",
-                "insecure": false,
-                "alpn": [
-                    "h3",
-                    "h2"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "XbU10cS9vT.gIgA1.oRg"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "51.195.119.47",
-            "server_port": 1080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "qXvO7zYU7KeaB0Md7DQLow",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -301,33 +221,17 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-9"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "shadowsocks",
-            "server": "68.183.213.232",
-            "server_port": 8443,
-            "method": "aes-256-gcm",
-            "password": "735fd4f4-bc55-400a-9f1c-2b91089c9200",
+            "server": "51.195.119.47",
+            "server_port": 1080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "qXvO7zYU7KeaB0Md7DQLow",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "vless",
-            "server": "n1.cafedorehami.shop",
-            "server_port": 80,
-            "uuid": "chanel",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "grpc",
-                "service_name": "n1.cafedorehami.shop",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
-            },
-            "tag": "@SiNAVM-11"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
@@ -345,7 +249,35 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "89.23.103.21",
+            "server_port": 51584,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oYQ8JwEldYn4KT2gfZ6eNl",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
+            "server": "NUFiLTER.fastly80-2.hosting-ip.com",
+            "server_port": 80,
+            "uuid": "41ec8f30-6cd7-4703-94e1-95913c1626fa",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+                "headers": {
+                    "Host": "NUFiLTER.fastly80-2.hosting-ip.com"
+                },
+                "max_early_data": 80,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
@@ -380,35 +312,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "181.119.30.20",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "vless",
-            "server": "NUFiLTER.fastly80-2.hosting-ip.com",
-            "server_port": 80,
-            "uuid": "41ec8f30-6cd7-4703-94e1-95913c1626fa",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
-                "headers": {
-                    "Host": "NUFiLTER.fastly80-2.hosting-ip.com"
-                },
-                "max_early_data": 80,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "direct",
