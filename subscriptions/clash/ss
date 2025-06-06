@@ -118,31 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11","type":"ss","server":"51.195.119.47","port":1080,"password":"qXvO7zYU7KeaB0Md7DQLow","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4","type":"ss","server":"23.154.136.132","port":5499,"password":"lGqs95QkFHo2NV","cipher":"aes-256-gcm"}
+  - {"name":"🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11","type":"ss","server":"51.195.119.47","port":1080,"password":"qXvO7zYU7KeaB0Md7DQLow","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
