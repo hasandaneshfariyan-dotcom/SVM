@@ -102,6 +102,29 @@
             "idle_timeout": "9m0s"
         },
         {
+            "type": "vless",
+            "server": "15.204.151.4",
+            "server_port": 443,
+            "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "147135004002.sec20org.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "tag": "@SiNAVM-1"
+        },
+        {
             "type": "trojan",
             "server": "japan.com",
             "server_port": 443,
@@ -130,30 +153,17 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-1"
+            "tag": "@SiNAVM-2"
         },
         {
-            "type": "vless",
-            "server": "15.204.151.4",
-            "server_port": 443,
-            "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
-            "packet_encoding": "xudp",
+            "type": "shadowsocks",
+            "server": "23.154.136.132",
+            "server_port": 5499,
+            "method": "aes-256-gcm",
+            "password": "lGqs95QkFHo2NV",
+            "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "147135004002.sec20org.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "shadowsocks",
@@ -161,16 +171,6 @@
             "server_port": 51584,
             "method": "chacha20-ietf-poly1305",
             "password": "oYQ8JwEldYn4KT2gfZ6eNl",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.178",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-4"
@@ -267,14 +267,64 @@
             "tag": "@SiNAVM-8"
         },
         {
-            "type": "shadowsocks",
-            "server": "23.154.136.132",
-            "server_port": 5499,
-            "method": "aes-256-gcm",
-            "password": "lGqs95QkFHo2NV",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
+            "type": "vless",
+            "server": "v07.vxlimir.com",
+            "server_port": 1370,
+            "uuid": "00f8d77b-ba64-4807-8fc0-bb3cbe89b6e6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "refersion.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw",
+                    "short_id": "e1afb93bfe75a34b"
+                }
+            },
             "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
+            "server": "185.143.233.120",
+            "server_port": 443,
+            "uuid": "64b48f35-d81e-4227-8075-6337e6ef0b85",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "jmu.ac.ir",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/telegram-mitivpn-telegram-mitivpn-telegram-mitivpn",
+                "headers": {
+                    "Host": "jmu.ac.ir"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
@@ -291,41 +341,6 @@
                 },
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "vless",
-            "server": "Netherland.mehrdadsadaf.com",
-            "server_port": 7594,
-            "uuid": "5dbd17f8-30af-4bcf-8469-3cc6184b0057",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "dash.cloudflare.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "AZSptdvlWvvmKWEDTY56UsIcnTP8nGCafvPEQOozrxw",
-                    "short_id": "765e8e700426816c"
-                }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "7594vless",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
             },
             "tag": "@SiNAVM-11"
         },
@@ -349,10 +364,10 @@
         },
         {
             "type": "shadowsocks",
-            "server": "185.47.255.22",
-            "server_port": 990,
+            "server": "45.87.175.178",
+            "server_port": 8080,
             "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
+            "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-13"
