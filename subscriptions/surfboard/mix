@@ -12,14 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇨🇦CA | 🔴 | trojan | @SiNAVM | 0 = trojan, japan.com, 443, password = bpb-trojan, udp-delay = true, skip-cert-verify = false, sni = zamim340.ggff.net, ws = false
-🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4 = ss, 23.154.136.132, 5499, encrypt-method = aes-256-gcm, password = lGqs95QkFHo2NV
-🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 10 = ss, 89.23.103.21, 51584, encrypt-method = chacha20-ietf-poly1305, password = oYQ8JwEldYn4KT2gfZ6eNl
 🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11 = ss, 51.195.119.47, 1080, encrypt-method = chacha20-ietf-poly1305, password = qXvO7zYU7KeaB0Md7DQLow
-🇺🇸US | 🟢 | ss | @meli_proxyy | 3 = ss, 45.87.175.178, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4 = ss, 23.154.136.132, 5499, encrypt-method = aes-256-gcm, password = lGqs95QkFHo2NV
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @meli_proxyy | 3
-URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @meli_proxyy | 3
-FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @meli_proxyy | 3
+MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
+URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
+FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 11,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
