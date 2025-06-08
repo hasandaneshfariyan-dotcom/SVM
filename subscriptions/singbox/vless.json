@@ -70,9 +70,7 @@
                 "@SiNAVM-5",
                 "@SiNAVM-6",
                 "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10"
+                "@SiNAVM-8"
             ]
         },
         {
@@ -86,9 +84,7 @@
                 "@SiNAVM-5",
                 "@SiNAVM-6",
                 "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10"
+                "@SiNAVM-8"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -97,19 +93,19 @@
         },
         {
             "type": "vless",
-            "server": "194.76.18.40",
+            "server": "speedtest.net",
             "server_port": 80,
-            "uuid": "f2a72ad0-d23f-4eed-96cb-7d970b1e784d",
+            "uuid": "7cccefc2-6e9b-47bb-f30c-ea2d3cdc8593",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/vless\/",
+                "path": "\/olem\/ws",
                 "headers": {
-                    "Host": "194.76.18.40"
+                    "Host": "speedtest.net"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 1024,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-1"
         },
@@ -130,90 +126,6 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "vless",
-            "server": "arvancloud.nl.ir.systemgamingirani.ir",
-            "server_port": 443,
-            "uuid": "412edced-249e-4f49-a2f5-aa9546f0a6ba",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "tgju.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
-                    "short_id": "e54b5ad736ae4c38"
-                }
-            },
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "vless",
-            "server": "asanaf.ir",
-            "server_port": 42088,
-            "uuid": "a0722e9f-afa2-44e0-890d-f6b33dd28be2",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "refersion.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY",
-                    "short_id": ""
-                }
-            },
-            "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vless",
-            "server": "zx.lifered.ir",
-            "server_port": 8295,
-            "uuid": "69357052-338e-4d82-b8dd-a6d352a5200b",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "refersion.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "jAMPNXKmyWrMP8Q5U3x1an17VmL3bwhWtcWgTZsPc1s",
-                    "short_id": ""
-                }
-            },
-            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -241,52 +153,70 @@
                     "short_id": "e54b5ad736ae4c38"
                 }
             },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
-            "server": "84.234.31.224",
-            "server_port": 55,
-            "uuid": "5f64020c-87d6-4784-bc48-63a55499d173",
+            "server": "84.201.20.248",
+            "server_port": 45868,
+            "uuid": "baf307cd-8a04-4189-9878-3a750ab8195b",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "speedtest.net",
-            "server_port": 80,
-            "uuid": "7cccefc2-6e9b-47bb-f30c-ea2d3cdc8593",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/olem\/ws",
-                "headers": {
-                    "Host": "speedtest.net"
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
                 },
-                "max_early_data": 1024,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Xf_flAxrxjR_kM0e6StsmGy3h5a-PDoYvYJrfP4KUTQ",
+                    "short_id": "7f"
+                }
             },
-            "tag": "@SiNAVM-8"
+            "transport": {
+                "type": "grpc",
+                "service_name": "@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod-@FergalVpnMod",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "vless",
-            "server": "NUFiLTER.fastly80-2.hosting-ip.com",
-            "server_port": 80,
-            "uuid": "41ec8f30-6cd7-4703-94e1-95913c1626fa",
+            "server": "arvancloud.nl.ir.systemgamingirani.ir",
+            "server_port": 443,
+            "uuid": "412edced-249e-4f49-a2f5-aa9546f0a6ba",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
-                "headers": {
-                    "Host": "NUFiLTER.fastly80-2.hosting-ip.com"
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "tgju.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
                 },
-                "max_early_data": 80,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "reality": {
+                    "enabled": true,
+                    "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
+                    "short_id": "e54b5ad736ae4c38"
+                }
             },
-            "tag": "@SiNAVM-9"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -295,7 +225,34 @@
             "uuid": "2558c819-1363-4859-8fb9-f8cb104d49d2",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-10"
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 80,
+            "uuid": "269c963f-6021-4547-8303-cc764085603b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram-ipV2Ry-Telegram-ipV2Ry-Telegram-ipV2Ry",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-7"
+        },
+        {
+            "type": "vless",
+            "server": "84.234.31.224",
+            "server_port": 55,
+            "uuid": "5f64020c-87d6-4784-bc48-63a55499d173",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "direct",
