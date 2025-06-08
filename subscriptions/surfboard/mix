@@ -12,14 +12,13 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇨🇦CA | 🔴 | trojan | @SiNAVM | 2 = trojan, japan.com, 443, password = bpb-trojan, udp-delay = true, skip-cert-verify = false, sni = zamim340.ggff.net, ws = false
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 2 = trojan, 35.180.102.117, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 16 = ss, 89.23.103.21, 51584, encrypt-method = chacha20-ietf-poly1305, password = oYQ8JwEldYn4KT2gfZ6eNl
+🇬🇧GB | 🟢 | ss | @meli_proxyy | 0 = ss, api.namasha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 52.47.60.114, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17 = ss, 51.195.119.47, 1080, encrypt-method = chacha20-ietf-poly1305, password = qXvO7zYU7KeaB0Md7DQLow
-🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10 = ss, 23.154.136.132, 5499, encrypt-method = aes-256-gcm, password = lGqs95QkFHo2NV
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 16,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10
-URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 16,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10
-FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 16,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10
+MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17
+URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17
+FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 2,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | ss | @DeamNet_Proxy | 17
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
