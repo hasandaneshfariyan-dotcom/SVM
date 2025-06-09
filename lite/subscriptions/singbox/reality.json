@@ -68,8 +68,7 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7"
+                "@SiNAVM-6"
             ]
         },
         {
@@ -81,8 +80,7 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7"
+                "@SiNAVM-6"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -154,9 +152,44 @@
         },
         {
             "type": "vless",
-            "server": "51.89.224.214",
-            "server_port": 1370,
-            "uuid": "92fc3c1b-c409-4610-b1a6-9a8ef4287891",
+            "server": "Netherland.mehrdadsadaf.com",
+            "server_port": 7594,
+            "uuid": "5dbd17f8-30af-4bcf-8469-3cc6184b0057",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "dash.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "AZSptdvlWvvmKWEDTY56UsIcnTP8nGCafvPEQOozrxw",
+                    "short_id": "765e8e700426816c"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "7594vless",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "asanaf.ir",
+            "server_port": 42088,
+            "uuid": "a0722e9f-afa2-44e0-890d-f6b33dd28be2",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
@@ -174,67 +207,11 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw",
-                    "short_id": "e1afb93bfe75a34b"
-                }
-            },
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "vless",
-            "server": "arvancloud.fn.ir.systemgamingirani.ir",
-            "server_port": 443,
-            "uuid": "412edced-249e-4f49-a2f5-aa9546f0a6ba",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "tgju.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
-                    "short_id": "e54b5ad736ae4c38"
+                    "public_key": "qhTzYYIgBzDLNYR79oxftqdo1kzL-1_hGJKfqrOliCY",
+                    "short_id": ""
                 }
             },
             "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vless",
-            "server": "arvancloud.de.ir.systemgamingirani.ir",
-            "server_port": 443,
-            "uuid": "412edced-249e-4f49-a2f5-aa9546f0a6ba",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "tgju.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8",
-                    "short_id": "e54b5ad736ae4c38"
-                }
-            },
-            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -262,7 +239,7 @@
                     "short_id": "e1afb93bfe75a34b"
                 }
             },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -290,7 +267,7 @@
                     "short_id": "e1afb93bfe75a34b"
                 }
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "direct",
