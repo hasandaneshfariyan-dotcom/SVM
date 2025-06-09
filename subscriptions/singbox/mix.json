@@ -73,7 +73,9 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11"
+                "@SiNAVM-11",
+                "@SiNAVM-12",
+                "@SiNAVM-13"
             ]
         },
         {
@@ -90,7 +92,9 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11"
+                "@SiNAVM-11",
+                "@SiNAVM-12",
+                "@SiNAVM-13"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -98,13 +102,21 @@
             "idle_timeout": "9m0s"
         },
         {
-            "type": "shadowsocks",
-            "server": "23.154.136.132",
-            "server_port": 7002,
-            "method": "aes-256-gcm",
-            "password": "RexnBgU7EV5ADxG",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "199.232.13.32",
+            "server_port": 80,
+            "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/netherlands\/amsterdam\/vl\/ws\/tls",
+                "headers": {
+                    "Host": "199.232.13.32"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-1"
         },
         {
@@ -157,21 +169,13 @@
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "vless",
-            "server": "199.232.13.32",
-            "server_port": 80,
-            "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
-            "packet_encoding": "xudp",
+            "type": "shadowsocks",
+            "server": "23.154.136.132",
+            "server_port": 7002,
+            "method": "aes-256-gcm",
+            "password": "RexnBgU7EV5ADxG",
+            "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/netherlands\/amsterdam\/vl\/ws\/tls",
-                "headers": {
-                    "Host": "199.232.13.32"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
             "tag": "@SiNAVM-4"
         },
         {
@@ -241,6 +245,16 @@
             "tag": "@SiNAVM-8"
         },
         {
+            "type": "shadowsocks",
+            "server": "89.23.103.125",
+            "server_port": 42090,
+            "method": "chacha20-ietf-poly1305",
+            "password": "uQS5ntVqC00sSKkeNzUiD3",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-9"
+        },
+        {
             "type": "vless",
             "server": "www.speedtest.net",
             "server_port": 80,
@@ -256,16 +270,6 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "160.19.78.75",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Nk9asglDzHzjktVzTkvhaA",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-10"
         },
         {
@@ -277,6 +281,25 @@
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "160.19.78.75",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Nk9asglDzHzjktVzTkvhaA",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-12"
+        },
+        {
+            "type": "vless",
+            "server": "62.60.229.38",
+            "server_port": 21089,
+            "uuid": "92fcd086-4416-4ac1-baea-a574fb41bf82",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "direct",
