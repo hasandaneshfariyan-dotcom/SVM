@@ -170,7 +170,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.237.225.174",
+            "server": "13.36.59.49",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -192,7 +192,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.178.113.241",
+            "server": "15.237.225.174",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -214,22 +214,30 @@
         },
         {
             "type": "shadowsocks",
-            "server": "23.154.136.132",
-            "server_port": 8080,
-            "method": "aes-256-gcm",
-            "password": "KixLvKzwjekG00rm",
+            "server": "admin.c3.webramz.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "AlCsBGpsejHdVCME",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-5"
         },
         {
-            "type": "shadowsocks",
-            "server": "103.104.247.47",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "104.18.15.19",
+            "server_port": 8880,
+            "uuid": "46b7dfdb-fc88-4dbc-819e-db3ab8093c90",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "104.18.15.19"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-6"
         },
         {
