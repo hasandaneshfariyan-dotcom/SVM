@@ -143,24 +143,6 @@
             "tag": "@SiNAVM-2"
         },
         {
-            "type": "vless",
-            "server": "speedtest.net",
-            "server_port": 80,
-            "uuid": "ed87c882-17f3-491a-810c-c0000e4b279e",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/olem\/ws",
-                "headers": {
-                    "Host": "speedtest.net"
-                },
-                "max_early_data": 1024,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-3"
-        },
-        {
             "type": "shadowsocks",
             "server": "series-a2.varzesh360.co",
             "server_port": 443,
@@ -168,6 +150,34 @@
             "password": "mps3FwmDjLrWaOVg",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "vpntv29293.erfantop.ir",
+            "server_port": 443,
+            "uuid": "ea7eb6ce-404b-4200-aa71-c537fa913df6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "check-host.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "VhLTH3VbBCBpeTJr_wZZwZ4zckHZuC1tR1WFlRyO4ys",
+                    "short_id": "0186f1b99ac86077"
+                }
+            },
             "tag": "@SiNAVM-4"
         },
         {
@@ -190,29 +200,19 @@
         },
         {
             "type": "vless",
-            "server": "5.75.198.111",
-            "server_port": 443,
-            "uuid": "40d2439f-30c4-41c1-86b0-98f9ca0f0172",
+            "server": "hajlab.ucdavis.edu",
+            "server_port": 80,
+            "uuid": "a5c6d1da-cac5-4f56-acfa-dd7b5a8925fa",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "tgju.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram-ipV2Ry-Telegram-ipV2Ry-Telegram-ipV2Ry",
+                "headers": {
+                    "Host": "hajlab.ucdavis.edu"
                 },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "-q2RkU3tmpGWRiyUPu4D1BI8IbVvNrVQzOry5Urpak4",
-                    "short_id": "8394ceee"
-                }
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-6"
         },
@@ -262,13 +262,26 @@
             "tag": "@SiNAVM-8"
         },
         {
-            "type": "shadowsocks",
-            "server": "45.87.175.154",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "15.204.151.74",
+            "server_port": 443,
+            "uuid": "c4fa89d4-fcb9-48ba-adbc-665181cc817f",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "147135010072.sec21org.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "tag": "@SiNAVM-9"
         },
         {
