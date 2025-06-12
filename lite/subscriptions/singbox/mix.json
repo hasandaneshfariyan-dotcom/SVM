@@ -489,6 +489,24 @@
         },
         {
             "type": "vless",
+            "server": "speedtest.net",
+            "server_port": 80,
+            "uuid": "ed87c882-17f3-491a-810c-c0000e4b279e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/olem\/ws",
+                "headers": {
+                    "Host": "speedtest.net"
+                },
+                "max_early_data": 1024,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "vless",
             "server": "FASTSHOVPNTELEGRAM.vinamarketcenter.ir",
             "server_port": 2053,
             "uuid": "a48d508e-1659-4ca0-a29a-5d931b053bf1",
@@ -513,16 +531,6 @@
                     "short_id": "b5"
                 }
             },
-            "tag": "@SiNAVM-18"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.154",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-19"
         },
         {
