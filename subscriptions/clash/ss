@@ -118,7 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 3","type":"ss","server":"9.163.232.180","port":1490,"password":"ojcP36n1SouDcnBg9EOZP8","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0","type":"ss","server":"67.220.95.102","port":8000,"password":"KixLvKzwjekG00rm","cipher":"aes-256-gcm"}
+  - {"name":"🇺🇸US | 🟢 | ss | @meli_proxyy | 3","type":"ss","server":"45.87.175.154","port":8080,"password":"4a2rfixophdjffa8KVA4Aa","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3","type":"ss","server":"45.158.171.141","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -126,7 +127,8 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 3'
       - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
   - name: URL-TEST
     type: url-test
@@ -134,14 +136,16 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 3'
       - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
+      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 3'
       - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
