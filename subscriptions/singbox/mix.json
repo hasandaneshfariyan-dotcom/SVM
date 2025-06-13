@@ -115,14 +115,14 @@
         },
         {
             "type": "vless",
-            "server": "135.148.74.155",
+            "server": "51.81.37.5",
             "server_port": 443,
-            "uuid": "54694a33-a8dc-47dd-bc38-acd3971e0055",
+            "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "147135004002.sec20org.com",
+                "server_name": "147135001195.sec22org.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -135,6 +135,24 @@
                 }
             },
             "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 80,
+            "uuid": "58e596b3-e7e6-43c5-9c03-b1e90db428a9",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
@@ -167,25 +185,38 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-4"
         },
         {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "58e596b3-e7e6-43c5-9c03-b1e90db428a9",
-            "packet_encoding": "xudp",
+            "type": "trojan",
+            "server": "japan.com",
+            "server_port": 443,
+            "password": "bpb-trojan",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "zamim340.ggff.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2",
+                "path": "\/tr",
                 "headers": {
-                    "Host": "www.speedtest.net"
+                    "Host": "zamim340.ggff.net"
                 },
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-4"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "trojan",
@@ -217,48 +248,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "trojan",
-            "server": "japan.com",
-            "server_port": 443,
-            "password": "bpb-trojan",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "zamim340.ggff.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/tr",
-                "headers": {
-                    "Host": "zamim340.ggff.net"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "9.163.232.180",
-            "server_port": 1490,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ojcP36n1SouDcnBg9EOZP8",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-7"
         },
         {
             "type": "shadowsocks",
@@ -268,35 +258,17 @@
             "password": "u17T3BvpYaaiuW2c",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
+            "tag": "@SiNAVM-7"
         },
         {
-            "type": "vless",
-            "server": "de.spirako.com",
-            "server_port": 443,
-            "uuid": "371bba8c-1e17-4a67-aec8-80f594cb565e",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "website.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "0hH6R90pSxwm7nZPGtJJcJFhwCXU3Rvf-wcEHE7hczo",
-                    "short_id": ""
-                }
-            },
-            "tag": "@SiNAVM-9"
+            "type": "shadowsocks",
+            "server": "9.163.232.180",
+            "server_port": 1490,
+            "method": "chacha20-ietf-poly1305",
+            "password": "ojcP36n1SouDcnBg9EOZP8",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -310,6 +282,24 @@
                 "path": "\/-ArV2ry@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL-@ArV2ry-TEL--@ArV2ry-JOIN-@ArV2ry-TEL--@ArV2ry",
                 "headers": {
                     "Host": "www.speedtest.net"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
+            "server": "194.76.18.50",
+            "server_port": 80,
+            "uuid": "f2a72ad0-d23f-4eed-96cb-7d970b1e784d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/vless\/",
+                "headers": {
+                    "Host": "194.76.18.50"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
