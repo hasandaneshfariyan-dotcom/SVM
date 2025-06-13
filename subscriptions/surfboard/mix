@@ -12,15 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇨🇦CA | 🔴 | trojan | @SiNAVM | 0 = trojan, japan.com, 443, password = bpb-trojan, udp-delay = true, skip-cert-verify = false, sni = zamim340.ggff.net, ws = false
-🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0 = ss, 45.87.175.22, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5 = ss, 85.210.120.237, 443, encrypt-method = chacha20-ietf-poly1305, password = Bog0ELmMM9DSxDdQ
-🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3 = ss, 45.158.171.60, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+🇬🇧GB | 🟢 | ss | @meli_proxyy | 0 = ss, api.namasha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
 🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5 = ss, 9.163.232.180, 1490, encrypt-method = chacha20-ietf-poly1305, password = ojcP36n1SouDcnBg9EOZP8
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 15.237.165.62, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
-URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
-FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
+MANUAL = select,URL-TEST,FALLBACK,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5
+URL-TEST = url-test,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5
+FALLBACK = fallback,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL

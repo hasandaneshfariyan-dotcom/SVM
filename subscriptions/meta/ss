@@ -120,9 +120,7 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0","type":"ss","server":"45.87.175.22","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5","type":"ss","server":"85.210.120.237","port":443,"password":"Bog0ELmMM9DSxDdQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3","type":"ss","server":"45.158.171.60","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 0","type":"ss","server":"api.namasha.co","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5","type":"ss","server":"9.163.232.180","port":1490,"password":"ojcP36n1SouDcnBg9EOZP8","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -130,9 +128,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 0'
       - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5'
   - name: URL-TEST
     type: url-test
@@ -140,18 +136,14 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 0'
       - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 5'
-      - '🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 3'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 0'
       - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 5'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
