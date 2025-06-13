@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇯🇵JP | 🔴 | vmess | @meli_proxyy | 16","type":"vmess","server":"45.89.109.43","port":"51039","cipher":"auto","uuid":"12947e56-ab80-43bf-9145-72fa50e41c9a","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"🇦🇪AE | 🔴 | vmess | @meli_proxyy | 0","type":"vmess","server":"93.127.180.122","port":"8880","cipher":"auto","uuid":"5100863d-019f-4846-9419-ec2020d626da","alterId":"0","tls":true,"skip-cert-verify":true,"network":"grpc","grpc-opts":{"grpc-service-name":"","grpc-mode":"gun"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇯🇵JP | 🔴 | vmess | @meli_proxyy | 16'
+      - '🇦🇪AE | 🔴 | vmess | @meli_proxyy | 0'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇯🇵JP | 🔴 | vmess | @meli_proxyy | 16'
+      - '🇦🇪AE | 🔴 | vmess | @meli_proxyy | 0'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇯🇵JP | 🔴 | vmess | @meli_proxyy | 16'
+      - '🇦🇪AE | 🔴 | vmess | @meli_proxyy | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
