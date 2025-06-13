@@ -11,11 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇺🇸US | 🔴 | trojan | @SiNAVM | 0 = trojan, japan.com, 443, password = bpb-trojan, udp-delay = true, skip-cert-verify = false, sni = zamim340.ggff.net, ws = false
+🇺🇸US | 🔴 | trojan | @redfree8 | 0 = trojan, www.speedtest.net, 443, password = redfree8, udp-delay = true, skip-cert-verify = false, sni = ipsychO.SUEx12.Ir, ws = false
+🇨🇦CA | 🔴 | trojan | @SiNAVM | 0 = trojan, japan.com, 443, password = bpb-trojan, udp-delay = true, skip-cert-verify = false, sni = zamim340.ggff.net, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @SiNAVM | 0
-URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @SiNAVM | 0
-FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @SiNAVM | 0
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @redfree8 | 0,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0
+URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @redfree8 | 0,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0
+FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @redfree8 | 0,🇨🇦CA | 🔴 | trojan | @SiNAVM | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
