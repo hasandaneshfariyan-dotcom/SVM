@@ -223,19 +223,19 @@
         },
         {
             "type": "vless",
-            "server": "194.76.18.50",
-            "server_port": 80,
-            "uuid": "f2a72ad0-d23f-4eed-96cb-7d970b1e784d",
+            "server": "tgju.org",
+            "server_port": 8080,
+            "uuid": "56652249-2e67-4429-b86c-3df8b838ad85",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/vless\/",
+                "path": "\/",
                 "headers": {
-                    "Host": "194.76.18.50"
+                    "Host": "tgju.org"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-5"
         },
@@ -309,6 +309,24 @@
         },
         {
             "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 8880,
+            "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/7LId6HV91dWJljog",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-10"
+        },
+        {
+            "type": "vless",
             "server": "domain2025.dpdns.org",
             "server_port": 2052,
             "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
@@ -319,24 +337,6 @@
                 "path": "\/Lx85HksDCHd0r7iR",
                 "headers": {
                     "Host": "domain2025.dpdns.org"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "vless",
-            "server": "104.21.75.66",
-            "server_port": 2095,
-            "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/RtYBGEwkOwlzf3oV",
-                "headers": {
-                    "Host": "104.21.75.66"
                 },
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
