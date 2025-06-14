@@ -63,16 +63,14 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -81,14 +79,14 @@
         },
         {
             "type": "vless",
-            "server": "91.107.133.65",
-            "server_port": 5335,
-            "uuid": "Hopev2ray",
+            "server": "afranlo.alcatelindan.com",
+            "server_port": 45980,
+            "uuid": "c259672d-68a3-4cde-9cc2-87ae10f3b7bf",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "fauxid.com",
+                "server_name": "tgju.org",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -101,46 +99,11 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "l3_nIH8yUkIGBXk9LH8pj33OY4mGSDIGzQ-PAzEJjWs",
-                    "short_id": "7833d8"
+                    "public_key": "Z31NocO-K1znGhLSPi0B91MbEG2e-CY-rMReYWkX4nM",
+                    "short_id": "0d250d4fbce004"
                 }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram---hopev2ray---telegram",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "customers.tele-shop-too.studio",
-            "server_port": 44,
-            "uuid": "95635fc6-3fe8-40f5-bb7b-a5ed8e83efb2",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "refersion.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "R43U2y9vbOzBleKGsApbGCufsiRTTeVIKA7LRpGMrVA",
-                    "short_id": "f289871208"
-                }
-            },
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
