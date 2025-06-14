@@ -80,8 +80,7 @@
                 "@SiNAVM-15",
                 "@SiNAVM-16",
                 "@SiNAVM-17",
-                "@SiNAVM-18",
-                "@SiNAVM-19"
+                "@SiNAVM-18"
             ]
         },
         {
@@ -105,8 +104,7 @@
                 "@SiNAVM-15",
                 "@SiNAVM-16",
                 "@SiNAVM-17",
-                "@SiNAVM-18",
-                "@SiNAVM-19"
+                "@SiNAVM-18"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -181,7 +179,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.157.79.233",
+            "server": "52.59.136.1",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -203,7 +201,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.184.30.145",
+            "server": "3.126.104.194",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -225,39 +223,21 @@
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net",
+            "server": "194.76.18.50",
             "server_port": 80,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "uuid": "f2a72ad0-d23f-4eed-96cb-7d970b1e784d",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/JOKERRVPNJoin_Bade_Channel@JOKERRVPN",
+                "path": "\/vless\/",
                 "headers": {
-                    "Host": "www.speedtest.net"
+                    "Host": "194.76.18.50"
                 },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TELEGRAM-MARAMBASHI_MARAMBASHI",
-                "headers": {
-                    "Host": "www.speedtest.net"
-                },
-                "max_early_data": 512,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-6"
         },
         {
             "type": "vless",
@@ -275,7 +255,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "vless",
@@ -284,7 +264,7 @@
             "uuid": "Parsashonam-253",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
@@ -293,7 +273,7 @@
             "uuid": "3c2e5f39-d738-40d4-929c-249ea568cb4a",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-9"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -325,7 +305,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-10"
+            "tag": "@SiNAVM-9"
         },
         {
             "type": "vless",
@@ -343,7 +323,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-11"
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
@@ -361,7 +341,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "vless",
@@ -379,6 +359,16 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "tag": "@SiNAVM-12"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "series-a2-mec.varzesh360.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-13"
         },
         {
@@ -401,34 +391,6 @@
         },
         {
             "type": "vless",
-            "server": "tr.k6n.ir",
-            "server_port": 5468,
-            "uuid": "eb899be2-f306-468e-bb4d-1c43f7d49c00",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "loo.python.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "275Tq0hSlelzXW7yV25Y8mEBq51zXsi1IcT2SiTgmFE",
-                    "short_id": ""
-                }
-            },
-            "tag": "@SiNAVM-15"
-        },
-        {
-            "type": "vless",
             "server": "151.101.64.155",
             "server_port": 80,
             "uuid": "telegram-id-ArV2ray11",
@@ -443,7 +405,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "vless",
@@ -461,7 +423,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
@@ -494,7 +456,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-18"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "vless",
@@ -527,7 +489,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-19"
+            "tag": "@SiNAVM-18"
         },
         {
             "type": "direct",

@@ -63,16 +63,14 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -113,34 +111,6 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "tr.k6n.ir",
-            "server_port": 5468,
-            "uuid": "eb899be2-f306-468e-bb4d-1c43f7d49c00",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "loo.python.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "275Tq0hSlelzXW7yV25Y8mEBq51zXsi1IcT2SiTgmFE",
-                    "short_id": ""
-                }
-            },
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
