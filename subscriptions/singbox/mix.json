@@ -67,7 +67,8 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ]
         },
         {
@@ -78,7 +79,8 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -137,13 +139,23 @@
         },
         {
             "type": "shadowsocks",
+            "server": "series-a2-mec.varzesh360.co",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "u17T3BvpYaaiuW2c",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "shadowsocks",
             "server": "45.87.175.92",
             "server_port": 8080,
             "method": "chacha20-ietf-poly1305",
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "shadowsocks",
@@ -153,7 +165,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-4"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -171,7 +183,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-5"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "direct",
