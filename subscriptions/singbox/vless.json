@@ -65,7 +65,8 @@
                 "Best Latency",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ]
         },
         {
@@ -74,7 +75,8 @@
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -101,6 +103,24 @@
         },
         {
             "type": "vless",
+            "server": "172.67.11.138",
+            "server_port": 80,
+            "uuid": "b55ec078-3b17-4ed1-a697-71f464cdcaaa",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "172.67.11.138"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
             "server": "ZuLa.ir",
             "server_port": 80,
             "uuid": "72ad4918-47cb-4ccc-ab21-e52b869547a0",
@@ -115,7 +135,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
@@ -133,7 +153,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "direct",
