@@ -63,16 +63,14 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -106,34 +104,6 @@
                 }
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "57.130.19.124",
-            "server_port": 2055,
-            "uuid": "5e236508-63e4-45b3-a7d7-f9cd81af89df",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "kifpool.me",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "HdhATsM5cYDWfhAt0LyrttGBoscuoT4M3fOSvYN8sEQ",
-                    "short_id": "54994c92a0"
-                }
-            },
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
