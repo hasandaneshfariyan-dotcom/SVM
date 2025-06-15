@@ -107,56 +107,43 @@
         },
         {
             "type": "vless",
-            "server": "40.233.70.163",
-            "server_port": 26113,
-            "uuid": "cfe032e4-1bc3-454f-9d09-301b0aea08ff",
+            "server": "tgju.org",
+            "server_port": 8080,
+            "uuid": "56652249-2e67-4429-b86c-3df8b838ad85",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.yahoo.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "tgju.org"
                 },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "GUcD8LK1DFNuVun5yhsqeEego_p3PF2yIdvE2KY2Nng",
-                    "short_id": "1fbd20fd"
-                }
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
-            "server": "157.173.127.224",
+            "server": "o2.sigmamessenger.com",
             "server_port": 443,
-            "uuid": "bec44ac3-a662-4179-a9dd-2aa881706dde",
+            "uuid": "c3e86d0c-bfe5-4bb5-a051-5e143df2024d",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
+            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "analytics.google.com",
+                "server_name": "o2.sigmamessenger.com",
                 "insecure": false,
                 "alpn": [
-                    "h3"
+                    "h3",
+                    "h2",
+                    "http\/1.1"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "Ajk0QudeMVQocN88OG14PpsxparFuRJlvqzXDlW-gyQ",
-                    "short_id": "aba7bc9a"
                 }
             },
             "tag": "@SiNAVM-2"
