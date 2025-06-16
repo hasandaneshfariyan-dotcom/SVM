@@ -88,6 +88,16 @@
             "idle_timeout": "9m0s"
         },
         {
+            "type": "shadowsocks",
+            "server": "23.154.136.51",
+            "server_port": 8888,
+            "method": "aes-256-gcm",
+            "password": "Y6R9pAtvxxzmGC",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-1"
+        },
+        {
             "type": "vless",
             "server": "ZuLa.ir",
             "server_port": 80,
@@ -99,24 +109,6 @@
                 "path": "\/Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2--Mosiv2---Mosiv2",
                 "headers": {
                     "Host": "ZuLa.ir"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "172.67.11.138",
-            "server_port": 80,
-            "uuid": "b55ec078-3b17-4ed1-a697-71f464cdcaaa",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "172.67.11.138"
                 },
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -147,13 +139,21 @@
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "shadowsocks",
-            "server": "23.154.136.51",
-            "server_port": 8888,
-            "method": "aes-256-gcm",
-            "password": "Y6R9pAtvxxzmGC",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "172.67.11.138",
+            "server_port": 80,
+            "uuid": "b55ec078-3b17-4ed1-a697-71f464cdcaaa",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "172.67.11.138"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-4"
         },
         {
