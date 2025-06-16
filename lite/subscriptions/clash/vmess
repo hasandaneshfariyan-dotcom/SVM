@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇨🇳CN | 🔴 | vmess | @DeamNet_Proxy | 18","type":"vmess","server":"47.116.166.178","port":"50002","cipher":"auto","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":"0","tls":false,"skip-cert-verify":true,"network":"raw"}
+  - {"name":"🇫🇷FR | 🔴 | vmess | @DeamNet_Proxy | 18","type":"vmess","server":"beyonddsz.cfd","port":"443","cipher":"auto","uuid":"9b456c2a-f2c1-45e1-87a9-b7628b04bb24","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkws","headers":{"host":"beyonddsz.cfd"}}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇨🇳CN | 🔴 | vmess | @DeamNet_Proxy | 18'
+      - '🇫🇷FR | 🔴 | vmess | @DeamNet_Proxy | 18'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇨🇳CN | 🔴 | vmess | @DeamNet_Proxy | 18'
+      - '🇫🇷FR | 🔴 | vmess | @DeamNet_Proxy | 18'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇨🇳CN | 🔴 | vmess | @DeamNet_Proxy | 18'
+      - '🇫🇷FR | 🔴 | vmess | @DeamNet_Proxy | 18'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
