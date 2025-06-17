@@ -63,14 +63,16 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -104,6 +106,34 @@
                 }
             },
             "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
+            "server": "tunelvs9.myprofilegodbot.site",
+            "server_port": 42960,
+            "uuid": "465148df-c1c8-4a86-a623-39c1645dba54",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.speedtest.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "hSBSMUSr8C0IPnjB8r-aP_hBD45iOEYaP5cL3Ot0Ggo",
+                    "short_id": "be206114"
+                }
+            },
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
