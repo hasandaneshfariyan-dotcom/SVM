@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0","type":"vless","server":"5.181.171.10","port":443,"udp":true,"uuid":"49ed01ad-3bb4-204f-b0ff-a58f658fd618","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"speed.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 1","type":"vless","server":"isv.dl4movis.ir","port":2096,"udp":true,"uuid":"d075d88d-da04-413b-b972-c764d49d0ffc","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"refersion.com","reality-opts":{"public-key":"F657cDZHxwh73uDq0WtfPqk9HeARY6Q_zoQsKFwQNSY","short-id":"fe44303ae92cb3ef"}}
   - {"name":"🇮🇱IL | 🔴 | vless | @ShadowProxy66 | 3","type":"vless","server":"77.91.74.189","port":28495,"udp":true,"uuid":"7e296434-2d17-48d3-928d-19eaa34aecb1","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"dl.google.com","reality-opts":{"public-key":"KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ","short-id":"0ecc2c1392"}}
 proxy-groups:
   - name: MANUAL
@@ -129,6 +130,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 1'
       - '🇮🇱IL | 🔴 | vless | @ShadowProxy66 | 3'
   - name: URL-TEST
     type: url-test
@@ -137,6 +139,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 1'
       - '🇮🇱IL | 🔴 | vless | @ShadowProxy66 | 3'
   - name: FALLBACK
     type: fallback
@@ -144,6 +147,7 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 1'
       - '🇮🇱IL | 🔴 | vless | @ShadowProxy66 | 3'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
