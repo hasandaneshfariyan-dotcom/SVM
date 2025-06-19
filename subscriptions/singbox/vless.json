@@ -69,7 +69,8 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7"
+                "@SiNAVM-7",
+                "@SiNAVM-8"
             ]
         },
         {
@@ -82,12 +83,31 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7"
+                "@SiNAVM-7",
+                "@SiNAVM-8"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
+        },
+        {
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 80,
+            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
@@ -115,43 +135,7 @@
                     "short_id": ""
                 }
             },
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "www.speedtest.net"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "vless",
-            "server": "104.17.209.145",
-            "server_port": 80,
-            "uuid": "92f481b6-ad92-43e4-a683-2bb0aeaa9846",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "dw.alibichareh.dpdns.org"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
@@ -174,7 +158,61 @@
                     "fingerprint": "chrome"
                 }
             },
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "104.17.209.145",
+            "server_port": 80,
+            "uuid": "92f481b6-ad92-43e4-a683-2bb0aeaa9846",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "dw.alibichareh.dpdns.org"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-4"
+        },
+        {
+            "type": "vless",
+            "server": "57.129.41.217",
+            "server_port": 80,
+            "uuid": "4004b4f2-d973-432f-8376-043a52cec187",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/vless\/",
+                "headers": {
+                    "Host": "57.129.41.217"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 80,
+            "uuid": "telegram-id-ArV2ray",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/-Arfilter@Arfilter-TEL--@Arfilter-TEL--@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL-@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL--@Arfilter",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "vless",
@@ -209,25 +247,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "telegram-id-ArV2ray",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/-Arfilter@Arfilter-TEL--@Arfilter-TEL--@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL-@Arfilter-TEL--@Arfilter-JOIN-@Arfilter-TEL--@Arfilter",
-                "headers": {
-                    "Host": "www.speedtest.net"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
@@ -245,7 +265,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "direct",
