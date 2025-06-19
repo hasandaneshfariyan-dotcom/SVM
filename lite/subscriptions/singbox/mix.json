@@ -407,7 +407,7 @@
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/ahiWVFUV6Bj3gGKk",
+                "path": "\/laBjKYcEVdNBNCu9",
                 "headers": {
                     "Host": "172.67.215.253"
                 },
@@ -418,16 +418,16 @@
         },
         {
             "type": "vless",
-            "server": "domain2025.dpdns.org",
+            "server": "172.67.215.253",
             "server_port": 2052,
             "uuid": "7fed5bf9-a1de-41a0-ab89-694265c4895f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
-                "path": "\/Lx85HksDCHd0r7iR",
+                "path": "\/ahiWVFUV6Bj3gGKk",
                 "headers": {
-                    "Host": "domain2025.dpdns.org"
+                    "Host": "172.67.215.253"
                 },
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
@@ -472,6 +472,41 @@
         },
         {
             "type": "vless",
+            "server": "91.99.144.165",
+            "server_port": 3184,
+            "uuid": "2e655095-7f4e-428d-9c7e-eb2278e153a8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.chess.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "hLNxB1vjLv1XhgKvh99s9_0f6qHw50Mrf8B109Hd21I",
+                    "short_id": ""
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "chessgame",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "vless",
             "server": "ssl2.komanserver.ir",
             "server_port": 443,
             "uuid": "7b6503eb-a641-4eb4-9620-9b219a51e3ab",
@@ -493,15 +528,6 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-18"
-        },
-        {
-            "type": "vless",
-            "server": "irNt.Nisvn.ir",
-            "server_port": 500,
-            "uuid": "26f59655-5ac1-4bc0-bb2d-a042ab8e6388",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-19"
         },
         {
