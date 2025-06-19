@@ -125,6 +125,7 @@ proxies:
   - {"name":"🇺🇸US | 🔴 | vless | @TEHRANARGO | 0","type":"vless","server":"104.17.209.145","port":80,"udp":false,"uuid":"92f481b6-ad92-43e4-a683-2bb0aeaa9846","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"dw.alibichareh.dpdns.org","ws-opts":{"path":"/?ed=2560","headers":{"host":"dw.alibichareh.dpdns.org"}}}
   - {"name":"🇺🇸US | 🟢 | vless | @customv2ray | 1","type":"vless","server":"147.135.4.2","port":443,"udp":false,"uuid":"54694a33-a8dc-47dd-bc38-acd3971e0055","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"147135004002.sec20org.com"}
   - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 0","type":"vless","server":"91.99.144.165","port":3184,"udp":true,"uuid":"2e655095-7f4e-428d-9c7e-eb2278e153a8","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"www.chess.com","grpc-opts":{"grpc-service-name":"chessgame"},"reality-opts":{"public-key":"hLNxB1vjLv1XhgKvh99s9_0f6qHw50Mrf8B109Hd21I"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1","type":"vless","server":"57.129.41.217","port":80,"udp":false,"uuid":"4004b4f2-d973-432f-8376-043a52cec187","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -136,6 +137,7 @@ proxy-groups:
       - '🇺🇸US | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -147,6 +149,7 @@ proxy-groups:
       - '🇺🇸US | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -157,6 +160,7 @@ proxy-groups:
       - '🇺🇸US | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
