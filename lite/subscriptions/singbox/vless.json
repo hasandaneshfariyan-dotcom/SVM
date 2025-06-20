@@ -78,8 +78,7 @@
                 "@SiNAVM-13",
                 "@SiNAVM-14",
                 "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17"
+                "@SiNAVM-16"
             ]
         },
         {
@@ -101,8 +100,7 @@
                 "@SiNAVM-13",
                 "@SiNAVM-14",
                 "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17"
+                "@SiNAVM-16"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -325,19 +323,24 @@
         },
         {
             "type": "vless",
-            "server": "104.17.209.145",
-            "server_port": 80,
-            "uuid": "92f481b6-ad92-43e4-a683-2bb0aeaa9846",
+            "server": "xen1.web.net-pardaze-iranian.ir",
+            "server_port": 2095,
+            "uuid": "cf8b42e6-d9dd-4599-9cb7-a6d27e1ea03b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "dw.alibichareh.dpdns.org"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+            "tls": {
+                "enabled": true,
+                "server_name": "xen1.web.net-pardaze-iranian.ir",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                }
             },
             "tag": "@SiNAVM-11"
         },
@@ -349,15 +352,6 @@
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-12"
-        },
-        {
-            "type": "vless",
-            "server": "102.215.228.122",
-            "server_port": 24161,
-            "uuid": "c1201f65-7290-4857-b552-08d5add4b362",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-13"
         },
         {
             "type": "vless",
@@ -375,7 +369,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-14"
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "vless",
@@ -393,7 +387,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-14"
         },
         {
             "type": "vless",
@@ -426,7 +420,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "vless",
@@ -459,7 +453,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "direct",
