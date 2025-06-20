@@ -121,9 +121,9 @@ dns:
 
 proxies:
   - {"name":"🇺🇸US | 🟢 | vless | @customv2ray | 1","type":"vless","server":"147.135.4.2","port":443,"udp":false,"uuid":"54694a33-a8dc-47dd-bc38-acd3971e0055","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"147135004002.sec20org.com"}
+  - {"name":"🇬🇧GB | 🔴 | vless | @TEHRANARGO | 0","type":"vless","server":"102.177.189.29","port":8880,"udp":false,"uuid":"fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/TelegramU0001F1E8U0001F1F3","headers":{"host":"hk.laoyoutiao.link"}}}
   - {"name":"🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0","type":"vless","server":"5.181.171.10","port":443,"udp":true,"uuid":"49ed01ad-3bb4-204f-b0ff-a58f658fd618","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"speed.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y"}}
   - {"name":"🇺🇸US | 🔴 | vless | @Outline_Vpn | 0","type":"vless","server":"www.speedtest.net","port":80,"udp":false,"uuid":"53fa8faf-ba4b-4322-9c69-a3e5b1555049","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/?ed=2560","headers":{"host":"redfree8mahsang6.redfree8.ir"}}}
-  - {"name":"🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1","type":"vless","server":"57.129.41.217","port":80,"udp":false,"uuid":"4004b4f2-d973-432f-8376-043a52cec187","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,9 +131,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
+      - '🇬🇧GB | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
       - '🇺🇸US | 🔴 | vless | @Outline_Vpn | 0'
-      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -141,18 +141,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
+      - '🇬🇧GB | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
       - '🇺🇸US | 🔴 | vless | @Outline_Vpn | 0'
-      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '🇺🇸US | 🟢 | vless | @customv2ray | 1'
+      - '🇬🇧GB | 🔴 | vless | @TEHRANARGO | 0'
       - '🇺🇸US | 🔴 | vless | @DeamNet_Proxy | 0'
       - '🇺🇸US | 🔴 | vless | @Outline_Vpn | 0'
-      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 1'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
