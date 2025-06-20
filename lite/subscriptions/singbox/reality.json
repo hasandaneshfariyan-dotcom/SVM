@@ -62,17 +62,48 @@
             "type": "selector",
             "tag": "Internet",
             "outbounds": [
-                "Best Latency"
+                "Best Latency",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
+        },
+        {
+            "type": "vless",
+            "server": "142.93.168.151",
+            "server_port": 8443,
+            "uuid": "0636501b-7caa-4e85-92d6-d69f00184b3b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "journalofbigdata.springeropen.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "jmJIrcH1e8ZRuWLVxngatpieUfew6vs_UrBl5gKkOxA",
+                    "short_id": "9e0ef855491cb004"
+                }
+            },
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
