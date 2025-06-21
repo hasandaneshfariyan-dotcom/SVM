@@ -63,49 +63,19 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
-        },
-        {
-            "type": "vless",
-            "server": "Blue9.webjob7.eu",
-            "server_port": 48486,
-            "uuid": "b11c33a0-2f8b-41c9-a833-ffc6c49bd788",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "dash.cloudflare.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "I2bozyAqYo5CxnJZ_WtX5uP_BcaujVBfXnYu85sU2FM",
-                    "short_id": "a629f128"
-                }
-            },
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
@@ -133,7 +103,7 @@
                     "short_id": ""
                 }
             },
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
