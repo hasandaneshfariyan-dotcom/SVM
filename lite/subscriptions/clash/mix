@@ -118,10 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 18","type":"trojan","server":"35.157.112.83","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 19","type":"trojan","server":"35.181.235.158","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18","type":"vmess","server":"172.67.170.103","port":"443","cipher":"auto","uuid":"76221bfb-e92f-4e80-81c5-6fe48f50ac0b","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkws","headers":{"host":"glweidf.sbs"}}}
-  - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 19","type":"ss","server":"admin.c2.webramz.co","port":443,"password":"WstuSnlu4ieA9M0L","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 18","type":"trojan","server":"3.123.63.21","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 19","type":"trojan","server":"35.157.112.83","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇬🇧GB | 🟢 | ss | @OpenSSTPVpn | 0","type":"ss","server":"4.158.118.226","port":443,"password":"1xO2cqPazqjGfCfd","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -130,9 +128,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 18'
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 19'
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 19'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 19'
       - '🇬🇧GB | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: URL-TEST
     type: url-test
@@ -141,9 +137,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 18'
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 19'
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 19'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 19'
       - '🇬🇧GB | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: FALLBACK
     type: fallback
@@ -151,9 +145,7 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 18'
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 19'
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 19'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 19'
       - '🇬🇧GB | 🟢 | ss | @OpenSSTPVpn | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
