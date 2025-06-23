@@ -12,13 +12,13 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0 = ss, 198.211.104.229, 60573, encrypt-method = chacha20-ietf-poly1305, password = akcHVt9bPh8DCk6jMKz62j
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 35.180.241.27, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1 = ss, 45.87.175.178, 8080, encrypt-method = chacha20-ietf-poly1305, password = 4a2rfixophdjffa8KVA4Aa
 🇩🇪DE | 🟢 | trojan | @DirectVPN | 2 = trojan, 18.194.77.188, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1 = ss, 45.87.175.178, 8080, encrypt-method = chacha20-ietf-poly1305, password = 4a2rfixophdjffa8KVA4Aa
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 35.180.241.27, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
-URL-TEST = url-test,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
-FALLBACK = fallback,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
+URL-TEST = url-test,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
+FALLBACK = fallback,🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
