@@ -67,7 +67,8 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ]
         },
         {
@@ -78,7 +79,8 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -180,6 +182,24 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "vless",
+            "server": "151.101.242.172",
+            "server_port": 80,
+            "uuid": "45f98d84-f1ab-4783-989e-e3b930913665",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/WEDBAZ",
+                "headers": {
+                    "Host": "151.101.242.172"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "direct",
