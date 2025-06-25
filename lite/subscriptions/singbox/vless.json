@@ -338,18 +338,27 @@
         },
         {
             "type": "vless",
-            "server": "151.101.3.8",
+            "server": "svnteam.aeza.nisvn.ir",
             "server_port": 80,
-            "uuid": "bd8fad9b-9817-428a-9307-d0594f199fa6",
+            "uuid": "60fd9505-cbf1-403e-9053-02c556b13f6d",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/@SvnProBot",
+                "headers": {
+                    "Host": "svnteam.aeza.nisvn.ir"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
             "server": "151.101.3.8",
             "server_port": 80,
-            "uuid": "ef3a3138-2ff7-40c0-82fc-aa78ac1f4434",
+            "uuid": "bd8fad9b-9817-428a-9307-d0594f199fa6",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-13"
