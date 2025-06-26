@@ -362,29 +362,39 @@
         },
         {
             "type": "vless",
+            "server": "turboo-server.aftabz.com",
+            "server_port": 65000,
+            "uuid": "turboo-server",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "tgju.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "paXwzQ6qDGHFfMlpY1vX6-lZrkI2gUzP3nXg91ZrBQw",
+                    "short_id": "0efa0583a943"
+                }
+            },
+            "tag": "@SiNAVM-13"
+        },
+        {
+            "type": "vless",
             "server": "izafree.lalash.ir",
             "server_port": 36509,
             "uuid": "ae0cc111-7d64-4ceb-bdfe-050f4c4823ce",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "vless",
-            "server": "fast.endless1service.top",
-            "server_port": 8880,
-            "uuid": "be296aaa-7a1e-4da9-9cfe-a9d9ce6b4198",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "fast.endless1service.top"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
             "tag": "@SiNAVM-14"
         },
         {
