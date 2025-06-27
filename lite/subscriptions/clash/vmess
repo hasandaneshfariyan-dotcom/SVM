@@ -118,7 +118,6 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18","type":"vmess","server":"172.67.207.26","port":"443","cipher":"auto","uuid":"76221bfb-e92f-4e80-81c5-6fe48f50ac0b","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/linkws","headers":{"host":"glweidf.sbs"}}}
   - {"name":"🇺🇸US | 🔴 | vmess | @ShadowProxy66 | 4","type":"vmess","server":"npmjs.com","port":"8080","cipher":"auto","uuid":"6cbc9c78-1cb1-57d4-a999-e2f4e34c1e03","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/nasnet/cdn","headers":{"host":"ke7hz36ewz-4515017473.mashallahbet.com"}}}
 proxy-groups:
   - name: MANUAL
@@ -126,7 +125,6 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
       - '🇺🇸US | 🔴 | vmess | @ShadowProxy66 | 4'
   - name: URL-TEST
     type: url-test
@@ -134,14 +132,12 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
       - '🇺🇸US | 🔴 | vmess | @ShadowProxy66 | 4'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 18'
       - '🇺🇸US | 🔴 | vmess | @ShadowProxy66 | 4'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
