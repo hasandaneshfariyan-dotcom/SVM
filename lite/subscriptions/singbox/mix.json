@@ -284,6 +284,15 @@
         },
         {
             "type": "vless",
+            "server": "91.99.80.183",
+            "server_port": 51615,
+            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "vless",
             "server": "104.24.56.187",
             "server_port": 80,
             "uuid": "e6236ebc-7334-4bed-977f-0c20bcdfcc00",
@@ -298,43 +307,34 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vless",
-            "server": "91.99.192.155",
-            "server_port": 443,
-            "uuid": "153ee04c-dcc1-4ef8-a146-8fb31cec1f48",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-9"
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net",
+            "server": "104.21.36.57",
             "server_port": 443,
-            "uuid": "4d91916f-a7fd-419b-8b90-640bb8d1b9f4",
+            "uuid": "0cc731b9-0375-4590-aeaa-7e2611a149fe",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "titantablomanahamrah.ir",
+                "server_name": "black.fullmargintraders.com",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "randomized"
+                    "fingerprint": "firefox"
                 }
             },
             "transport": {
                 "type": "ws",
-                "path": "\/jpePYzwY4AyV9UQ8\/MTQwLjIzOC4yMTIuOTU?ed",
+                "path": "\/wsv\/0cc731b9-0375-4590-aeaa-7e2611a149fe",
                 "headers": {
-                    "Host": "titantablomanahamrah.ir"
+                    "Host": "black.fullmargintraders.com"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -342,13 +342,35 @@
             "tag": "@SiNAVM-10"
         },
         {
-            "type": "shadowsocks",
-            "server": "4.223.100.248",
-            "server_port": 48172,
-            "method": "chacha20-ietf-poly1305",
-            "password": "51yloQC8D9w1Wae7FHtI65",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "104.21.36.57",
+            "server_port": 443,
+            "uuid": "59171a5a-c42c-47be-aaf1-cbaefcc5a07d",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "sample.fullmargintraders.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/wsv\/59171a5a-c42c-47be-aaf1-cbaefcc5a07d",
+                "headers": {
+                    "Host": "sample.fullmargintraders.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-11"
         },
         {
@@ -412,44 +434,49 @@
         },
         {
             "type": "vless",
-            "server": "gb.france-learns.ir",
-            "server_port": 42536,
-            "uuid": "57d127e9-38da-494b-afeb-494de5ff1a91",
+            "server": "5.75.197.204",
+            "server_port": 35487,
+            "uuid": "4def9b45-592c-43e5-a62b-987beffa5d33",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-15"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 2053,
-            "uuid": "704198c4-37b9-473d-a5de-0333276f2f6c",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
+            "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "maHsA2.cFFoRM.sIte",
+                "server_name": "tgju.org",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "randomized"
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "GGsieU5yiXWsMeO0StA4mTO2s8OLLvt0hUivZJkJG2k",
+                    "short_id": "0b886008af8942c3"
                 }
             },
-            "transport": {
-                "type": "ws",
-                "path": "\/dG8nlHvMhylFIEQ3\/c2hpcmVuLnlhZW1pa28uZ2dmZi5uZXQ=",
-                "headers": {
-                    "Host": "maHsA2.cFFoRM.sIte"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
+            "tag": "@SiNAVM-15"
+        },
+        {
+            "type": "vless",
+            "server": "gb.france-learns.ir",
+            "server_port": 42536,
+            "uuid": "57d127e9-38da-494b-afeb-494de5ff1a91",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-16"
+        },
+        {
+            "type": "vless",
+            "server": "91.99.159.125",
+            "server_port": 443,
+            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "vless",
@@ -481,16 +508,6 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-17"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "4.250.141.14",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "69MUii7VDwMqh7Hz",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-18"
         },
         {
