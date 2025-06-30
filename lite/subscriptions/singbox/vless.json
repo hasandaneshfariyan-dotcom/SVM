@@ -213,18 +213,27 @@
         },
         {
             "type": "vless",
-            "server": "94.182.136.46",
-            "server_port": 6565,
-            "uuid": "1b1b3941-df06-4495-91cf-acb61818ee36",
+            "server": "151.101.3.8",
+            "server_port": 80,
+            "uuid": "5586c2a9-c92c-4974-9b70-ca44622c6c8c",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/containers\/fi",
+                "headers": {
+                    "Host": "151.101.3.8"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
-            "server": "188.227.84.128",
-            "server_port": 8443,
-            "uuid": "12c67119-d240-4c0b-9704-33db37020455",
+            "server": "91.99.195.240",
+            "server_port": 443,
+            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-6"
@@ -313,21 +322,53 @@
         },
         {
             "type": "vless",
-            "server": "mci.dl101movis.ir",
-            "server_port": 80,
-            "uuid": "f6232313-e4bc-4861-834d-85fd98ba642a",
+            "server": "91.99.145.219",
+            "server_port": 443,
+            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-11"
         },
         {
             "type": "vless",
-            "server": "speedtest.net",
-            "server_port": 80,
-            "uuid": "01f5c08b-941e-4eee-ee7d-03ab2403799e",
+            "server": "104.18.26.90",
+            "server_port": 443,
+            "uuid": "3824fba1-352a-44f6-89c3-66bacce658eb",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "S4.MaiN-2.WORkErS.Dev",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/kBoXBiT5qlTK5H01?ed",
+                "headers": {
+                    "Host": "S4.MaiN-2.WORkErS.Dev"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-12"
+        },
+        {
+            "type": "vless",
+            "server": "81.12.32.135",
+            "server_port": 32990,
+            "uuid": "a804bb53-7504-4f06-96d8-ff56fb71539d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "vless",
@@ -349,31 +390,6 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "firefox"
-                }
-            },
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "vless",
-            "server": "wWw.SpeedTesT.Net",
-            "server_port": 443,
-            "uuid": "34c8b6c9-7a1d-445a-92fb-2f10215d8c94",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "new2.hosting-mmd.ir.",
-                "insecure": false,
-                "alpn": [
-                    "h3",
-                    "h2",
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
                 }
             },
             "tag": "@SiNAVM-14"
