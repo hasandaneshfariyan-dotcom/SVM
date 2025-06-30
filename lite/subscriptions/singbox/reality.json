@@ -63,16 +63,14 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -106,34 +104,6 @@
                 }
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "5.75.197.204",
-            "server_port": 35487,
-            "uuid": "4def9b45-592c-43e5-a62b-987beffa5d33",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "tgju.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "GGsieU5yiXWsMeO0StA4mTO2s8OLLvt0hUivZJkJG2k",
-                    "short_id": "0b886008af8942c3"
-                }
-            },
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
