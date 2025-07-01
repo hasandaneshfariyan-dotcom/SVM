@@ -304,34 +304,20 @@
         },
         {
             "type": "vless",
-            "server": "91.99.171.12",
+            "server": "91.99.198.191",
             "server_port": 443,
-            "uuid": "36ee3f5a-3816-4c03-a324-47531167e53b",
+            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net",
+            "server": "91.99.171.12",
             "server_port": 443,
-            "uuid": "4e0a435a-65d6-4e4e-a4ed-dfa8bdd732f5",
+            "uuid": "36ee3f5a-3816-4c03-a324-47531167e53b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "auto.tas-bazi.com",
-                "insecure": false,
-                "alpn": [
-                    "h2"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "firefox"
-                }
-            },
             "tag": "@SiNAVM-11"
         },
         {
@@ -404,6 +390,38 @@
         },
         {
             "type": "vless",
+            "server": "185.143.233.200",
+            "server_port": 443,
+            "uuid": "46aea670-5e6c-40af-9b99-95585dd71cc3",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "mehrnews.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "mehrnews.com"
+                },
+                "max_early_data": 443,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-16"
+        },
+        {
+            "type": "vless",
             "server": "104.24.56.187",
             "server_port": 80,
             "uuid": "e6236ebc-7334-4bed-977f-0c20bcdfcc00",
@@ -418,16 +436,6 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-16"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "series-a2.varzesh360.co",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "mps3FwmDjLrWaOVg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-17"
         },
         {
