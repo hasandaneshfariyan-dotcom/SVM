@@ -277,18 +277,27 @@
         },
         {
             "type": "vless",
-            "server": "91.99.160.210",
-            "server_port": 443,
-            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
+            "server": "45.12.30.101",
+            "server_port": 80,
+            "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram:@ShadowProxy66\/",
+                "headers": {
+                    "Host": "45.12.30.101"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
-            "server": "188.121.106.189",
-            "server_port": 2000,
-            "uuid": "9e7c46c9-8f9b-4114-8360-20edde6c0abb",
+            "server": "91.99.139.18",
+            "server_port": 443,
+            "uuid": "36ee3f5a-3816-4c03-a324-47531167e53b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-9"
@@ -394,21 +403,29 @@
             "tag": "@SiNAVM-15"
         },
         {
-            "type": "shadowsocks",
-            "server": "api.namasha.co",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "u17T3BvpYaaiuW2c",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "104.24.56.187",
+            "server_port": 80,
+            "uuid": "e6236ebc-7334-4bed-977f-0c20bcdfcc00",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "104.24.56.187"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-16"
         },
         {
             "type": "shadowsocks",
-            "server": "4.250.57.235",
+            "server": "series-a2.varzesh360.co",
             "server_port": 443,
             "method": "chacha20-ietf-poly1305",
-            "password": "WstuSnlu4ieA9M0L",
+            "password": "mps3FwmDjLrWaOVg",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-17"
