@@ -194,23 +194,39 @@
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "vmess",
-            "server": "5.253.41.147",
-            "server_port": 27750,
-            "uuid": "4b1992cc-8e7c-4003-a45f-a28c3e6f6fa8",
-            "security": "auto",
-            "alter_id": 0,
+            "type": "vless",
+            "server": "tgju.org",
+            "server_port": 8080,
+            "uuid": "690ab90e-3f21-422b-8cb1-bc9845c7af1e",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "tgju.org"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-4"
         },
         {
-            "type": "shadowsocks",
-            "server": "94.131.21.174",
-            "server_port": 54075,
-            "method": "chacha20-ietf-poly1305",
-            "password": "o38yuvzSe3m5aDNpHtUPH1zGwbGEXXMDsGwVaub2SYEmHUa2WGZUjiezX3Vvva9CCzpjxYtuJLgKsSnsyKBf9ciPVba3y4o3",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 80,
+            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/join---MTMVPN---join",
+                "headers": {
+                    "Host": "www.speedtest.net"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-5"
         },
         {
