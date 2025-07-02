@@ -194,53 +194,23 @@
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "vless",
-            "server": "104.16.122.82",
-            "server_port": 80,
-            "uuid": "48eb8684-aa12-4b6d-b0ef-765193e6fb49",
-            "packet_encoding": "xudp",
+            "type": "vmess",
+            "server": "5.253.41.147",
+            "server_port": 27750,
+            "uuid": "4b1992cc-8e7c-4003-a45f-a28c3e6f6fa8",
+            "security": "auto",
+            "alter_id": 0,
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "104.16.122.82"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-4"
         },
         {
-            "type": "vless",
-            "server": "188.114.97.6",
-            "server_port": 443,
-            "uuid": "81191cda-0982-4cbd-8d60-2ef076e08d17",
-            "packet_encoding": "xudp",
+            "type": "shadowsocks",
+            "server": "94.131.21.174",
+            "server_port": 54075,
+            "method": "chacha20-ietf-poly1305",
+            "password": "o38yuvzSe3m5aDNpHtUPH1zGwbGEXXMDsGwVaub2SYEmHUa2WGZUjiezX3Vvva9CCzpjxYtuJLgKsSnsyKBf9ciPVba3y4o3",
+            "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "quiet-bread-928e.wadas15468.workers.dev",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "quiet-bread-928e.wadas15468.workers.dev"
-                },
-                "max_early_data": 2048,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-5"
         },
         {
@@ -386,12 +356,40 @@
         },
         {
             "type": "vless",
-            "server": "91.99.170.56",
-            "server_port": 51615,
-            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
+            "server": "91.99.195.73",
+            "server_port": 443,
+            "uuid": "36ee3f5a-3816-4c03-a324-47531167e53b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-15"
+        },
+        {
+            "type": "vless",
+            "server": "91.107.144.71",
+            "server_port": 54250,
+            "uuid": "22facc17-dda1-4000-9b45-b56fee01ae6d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "refersion.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "hqFjJmgoV9E8zs3YIpiOFOljQjYuskuJuWF3mzkBzh0",
+                    "short_id": "ce8a4a0afd73a293"
+                }
+            },
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
@@ -419,15 +417,6 @@
                     "short_id": "5426024033df45"
                 }
             },
-            "tag": "@SiNAVM-16"
-        },
-        {
-            "type": "vless",
-            "server": "panel-feri2.todecentral.info",
-            "server_port": 38495,
-            "uuid": "df73212d-0481-4528-89eb-6aa322d05e50",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-17"
         },
         {
