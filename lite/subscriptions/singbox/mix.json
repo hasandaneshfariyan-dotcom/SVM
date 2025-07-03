@@ -184,7 +184,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.237.102.198",
+            "server": "35.180.235.166",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -206,7 +206,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.177.25.243",
+            "server": "15.237.102.198",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -456,20 +456,10 @@
             "tag": "@SiNAVM-16"
         },
         {
-            "type": "shadowsocks",
-            "server": "103.106.1.92",
-            "server_port": 23492,
-            "method": "chacha20-ietf-poly1305",
-            "password": "yMX9WGPgUEcRZmlaa0YHHC",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-17"
-        },
-        {
             "type": "vless",
-            "server": "5.255.120.217",
-            "server_port": 80,
-            "uuid": "a24481eb-0496-4ab9-9bd0-af1d530df91d",
+            "server": "lovefishingfishes.kuckenpq.ir",
+            "server_port": 32135,
+            "uuid": "c8b6a94f-eb38-4b68-9ae7-fadc7d690e16",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
@@ -483,14 +473,31 @@
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "chrome"
+                    "fingerprint": "randomized"
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "C4LNbOB3Ar0cntu528Jtn5ivsMZhyk9tkuAlU-jeCio",
-                    "short_id": "8c"
+                    "public_key": "0nV4IrMDDWiuFhntmuTBnQT3Q2uPagsRV1p4KXRnzCk",
+                    "short_id": "085753500f657097"
                 }
             },
+            "transport": {
+                "type": "grpc",
+                "service_name": "32135vless",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-17"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "103.106.1.92",
+            "server_port": 23492,
+            "method": "chacha20-ietf-poly1305",
+            "password": "yMX9WGPgUEcRZmlaa0YHHC",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-18"
         },
         {
