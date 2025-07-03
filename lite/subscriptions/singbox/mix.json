@@ -151,7 +151,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.193.10.252",
+            "server": "3.125.247.80",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -173,7 +173,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.236.147.255",
+            "server": "18.193.10.252",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -195,16 +195,30 @@
         },
         {
             "type": "vless",
-            "server": "tgju.org",
-            "server_port": 8080,
-            "uuid": "690ab90e-3f21-422b-8cb1-bc9845c7af1e",
+            "server": "172.67.185.15",
+            "server_port": 443,
+            "uuid": "5a5d9654-2f1e-4537-b3ca-e76168b2e03f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "wlma.jeremaih-talik.workers.dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "tgju.org"
+                    "Host": "wlma.jeremaih-talik.workers.dev"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -212,21 +226,13 @@
             "tag": "@SiNAVM-4"
         },
         {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 80,
-            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
-            "packet_encoding": "xudp",
+            "type": "vmess",
+            "server": "154.26.131.39",
+            "server_port": 42654,
+            "uuid": "e17f46b5-e224-48c9-965f-e24f1dfc2418",
+            "security": "auto",
+            "alter_id": 0,
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/join---MTMVPN---join",
-                "headers": {
-                    "Host": "www.speedtest.net"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-5"
         },
         {
@@ -381,18 +387,37 @@
         },
         {
             "type": "vless",
-            "server": "185.215.228.90",
-            "server_port": 20118,
-            "uuid": "142dd8b5-0b9e-4018-a961-2370d50cc435",
+            "server": "150.241.99.63",
+            "server_port": 80,
+            "uuid": "84bdd0fc-5a87-496c-b891-0e1e54555e7b",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "journalofbigdata.springeropen.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "XvE4spgyHFlKdak6PAN23URn4I-vfIBtuylpc1U5pWM",
+                    "short_id": "5426024033df45"
+                }
+            },
             "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
-            "server": "91.99.54.106",
-            "server_port": 443,
-            "uuid": "15398933-070d-4ea2-9697-5fcd79793c97",
+            "server": "185.215.228.90",
+            "server_port": 20118,
+            "uuid": "142dd8b5-0b9e-4018-a961-2370d50cc435",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-17"
