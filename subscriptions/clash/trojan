@@ -118,6 +118,7 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
+  - {"name":"🇺🇸US | 🔴 | trojan | @meli_proxyy | 1","type":"trojan","server":"pranab.ns.cloudflare.com","port":443,"udp":false,"password":"Aimer","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"epml.ambercc.filegear-sg.me"}
   - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"52.47.92.41","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
 proxy-groups:
   - name: MANUAL
@@ -125,6 +126,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 1'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 2'
   - name: URL-TEST
     type: url-test
@@ -132,12 +134,14 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 1'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 1'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
