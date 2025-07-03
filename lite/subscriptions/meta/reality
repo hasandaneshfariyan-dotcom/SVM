@@ -121,10 +121,8 @@ dns:
 
 proxies:
   - {"name":"🇫🇮FI | 🟢 | vless | @ShadowProxy66 | 0","type":"vless","server":"94.156.116.5","port":443,"udp":true,"uuid":"7f97131b-0d9d-4be9-b7b4-3fa21403cffa","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"b2wRFAmT2Mm6a_EXPfWBu4BYw-wNGlXHWoO3lPqGoXw","short-id":"86"}}
-  - {"name":"🇳🇱NL | 🔴 | vless | @meli_proxyy | 18","type":"vless","server":"5.255.120.217","port":80,"udp":true,"uuid":"a24481eb-0496-4ab9-9bd0-af1d530df91d","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"C4LNbOB3Ar0cntu528Jtn5ivsMZhyk9tkuAlU-jeCio","short-id":"8c"}}
-  - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 19","type":"vless","server":"150.241.99.63","port":80,"udp":true,"uuid":"84bdd0fc-5a87-496c-b891-0e1e54555e7b","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"XvE4spgyHFlKdak6PAN23URn4I-vfIBtuylpc1U5pWM","short-id":"5426024033df45"}}
-  - {"name":"🇬🇧GB | 🟢 | vless | @DailyV2RY | 62","type":"vless","server":"v02.vxlimir.com","port":1370,"udp":true,"uuid":"e71f9e93-064e-4847-b628-f41c6e74e6cb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"refersion.com","reality-opts":{"public-key":"_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw","short-id":"e1afb93bfe75a34b"}}
-  - {"name":"🇬🇧GB | 🟢 | vless | @DailyV2RY | 63","type":"vless","server":"v01.vxlimir.com","port":1370,"udp":true,"uuid":"e71f9e93-064e-4847-b628-f41c6e74e6cb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"refersion.com","reality-opts":{"public-key":"_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw","short-id":"e1afb93bfe75a34b"}}
+  - {"name":"🇳🇱NL | 🔴 | vless | @meli_proxyy | 19","type":"vless","server":"5.255.120.217","port":80,"udp":true,"uuid":"a24481eb-0496-4ab9-9bd0-af1d530df91d","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"C4LNbOB3Ar0cntu528Jtn5ivsMZhyk9tkuAlU-jeCio","short-id":"8c"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 20","type":"vless","server":"150.241.99.63","port":80,"udp":true,"uuid":"84bdd0fc-5a87-496c-b891-0e1e54555e7b","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"XvE4spgyHFlKdak6PAN23URn4I-vfIBtuylpc1U5pWM","short-id":"5426024033df45"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -132,10 +130,8 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇫🇮FI | 🟢 | vless | @ShadowProxy66 | 0'
-      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 18'
-      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 19'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 62'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 63'
+      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 19'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 20'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -143,20 +139,16 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇫🇮FI | 🟢 | vless | @ShadowProxy66 | 0'
-      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 18'
-      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 19'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 62'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 63'
+      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 19'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 20'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇫🇮FI | 🟢 | vless | @ShadowProxy66 | 0'
-      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 18'
-      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 19'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 62'
-      - '🇬🇧GB | 🟢 | vless | @DailyV2RY | 63'
+      - '🇳🇱NL | 🔴 | vless | @meli_proxyy | 19'
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 20'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
