@@ -12,11 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇺🇸US | 🔴 | trojan | @meli_proxyy | 8 = trojan, pranab.ns.cloudflare.com, 443, password = Aimer, udp-delay = true, skip-cert-verify = false, sni = epml.ambercc.filegear-sg.me, ws = false
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 1 = trojan, 35.156.9.88, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 2 = trojan, 35.156.9.88, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7 = trojan, 85.255.9.247, 1935, password = mZMgM1vKw5, udp-delay = true, skip-cert-verify = false, sni = x1-czech-aruba-v2.devefun.org, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
-URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
-FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7
+URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7
+FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 8,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
