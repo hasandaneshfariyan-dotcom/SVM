@@ -118,7 +118,7 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 6","type":"ss","server":"outoutline1.drinfoo.com","port":1443,"password":"amtb+Cm3DefJ/zdLtavyB97HXFDli/6i8rQUktRZdEs=","cipher":"aes-256-gcm"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 7","type":"ss","server":"outoutline1.drinfoo.com","port":1443,"password":"amtb+Cm3DefJ/zdLtavyB97HXFDli/6i8rQUktRZdEs=","cipher":"aes-256-gcm"}
   - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 13","type":"ss","server":"45.87.175.178","port":8080,"password":"1RWwXhwfAB5gAEozU4G2Pg","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -126,7 +126,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 6'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 7'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 13'
   - name: URL-TEST
     type: url-test
@@ -134,14 +134,14 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 6'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 7'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 13'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 6'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 7'
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 13'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
