@@ -122,6 +122,7 @@ dns:
 proxies:
   - {"name":"🇺🇸US | 🔴 | trojan | @meli_proxyy | 8","type":"trojan","server":"pranab.ns.cloudflare.com","port":443,"udp":false,"password":"Aimer","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"epml.ambercc.filegear-sg.me"}
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"35.156.9.88","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"51.44.137.45","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7","type":"trojan","server":"85.255.9.247","port":1935,"udp":false,"password":"mZMgM1vKw5","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"x1-czech-aruba-v2.devefun.org"}
 proxy-groups:
   - name: MANUAL
@@ -131,6 +132,7 @@ proxy-groups:
       - FALLBACK
       - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 8'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7'
   - name: URL-TEST
     type: url-test
@@ -140,6 +142,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 8'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7'
   - name: FALLBACK
     type: fallback
@@ -148,6 +151,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 8'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 7'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
