@@ -11,13 +11,13 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 2 = trojan, 13.37.76.128, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 35.156.9.88, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 🇺🇸US | 🔴 | trojan | @meli_proxyy | 6 = trojan, pranab.ns.cloudflare.com, 443, password = Aimer, udp-delay = true, skip-cert-verify = false, sni = epml.ambercc.filegear-sg.me, ws = false
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 15.237.70.229, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 1 = trojan, 35.156.9.88, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6
-URL-TEST = url-test,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6
-FALLBACK = fallback,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
+URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
+FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 6,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
