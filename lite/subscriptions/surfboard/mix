@@ -11,13 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 12 = trojan, 3.73.30.42, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 13 = trojan, 3.77.65.88, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16 = vmess, cf.fovi.tk, 443, username = bf67437e-6c90-45ca-abc2-c7240a5ce2aa, ws = true, tls = 1, vmess-aead = true, ws-path = /eisasqa, ws-headers = Host:"foxpol.fovi.tk", skip-cert-verify = true, tfo = false
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 16 = trojan, 35.181.64.222, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 17 = trojan, 3.120.23.217, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇩🇪DE | 🟢 | trojan | @DirectVPN | 13,🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16
-URL-TEST = url-test,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇩🇪DE | 🟢 | trojan | @DirectVPN | 13,🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16
-FALLBACK = fallback,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇩🇪DE | 🟢 | trojan | @DirectVPN | 13,🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16
+MANUAL = select,URL-TEST,FALLBACK,🇫🇷FR | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17
+URL-TEST = url-test,🇫🇷FR | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17
+FALLBACK = fallback,🇫🇷FR | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
