@@ -118,27 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇸🇬SG | 🔴 | vmess | @DeamNet_Proxy | 19","type":"vmess","server":"154.26.131.39","port":"42654","cipher":"auto","uuid":"e17f46b5-e224-48c9-965f-e24f1dfc2418","alterId":"0","tls":false,"skip-cert-verify":true,"network":"raw"}
+  - {"name":"🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16","type":"vmess","server":"cf.fovi.tk","port":"443","cipher":"auto","uuid":"bf67437e-6c90-45ca-abc2-c7240a5ce2aa","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/eisasqa","headers":{"host":"foxpol.fovi.tk"}}}
+  - {"name":"🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18","type":"vmess","server":"62.146.233.115","port":"38324","cipher":"auto","uuid":"f863ef99-5ef0-4321-aaac-a476a5e8c3fb","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇸🇬SG | 🔴 | vmess | @DeamNet_Proxy | 19'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇸🇬SG | 🔴 | vmess | @DeamNet_Proxy | 19'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇸🇬SG | 🔴 | vmess | @DeamNet_Proxy | 19'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve

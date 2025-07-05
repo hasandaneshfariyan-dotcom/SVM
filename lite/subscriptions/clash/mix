@@ -120,8 +120,8 @@ dns:
 proxies:
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 12","type":"trojan","server":"3.73.30.42","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 13","type":"trojan","server":"3.77.65.88","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 18","type":"ss","server":"admin.c2.webramz.co","port":443,"password":"WstuSnlu4ieA9M0L","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 18","type":"trojan","server":"85.255.9.247","port":1935,"udp":false,"password":"mZMgM1vKw5","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"x1-czech-aruba-v2.devefun.org"}
+  - {"name":"🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16","type":"vmess","server":"cf.fovi.tk","port":"443","cipher":"auto","uuid":"bf67437e-6c90-45ca-abc2-c7240a5ce2aa","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/eisasqa","headers":{"host":"foxpol.fovi.tk"}}}
+  - {"name":"🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18","type":"vmess","server":"62.146.233.115","port":"38324","cipher":"auto","uuid":"f863ef99-5ef0-4321-aaac-a476a5e8c3fb","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +130,8 @@ proxy-groups:
       - FALLBACK
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 18'
-      - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 18'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -140,8 +140,8 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 18'
-      - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 18'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -149,8 +149,8 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
-      - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 18'
-      - '🇨🇿CZ | 🟢 | trojan | @meli_proxyy | 18'
+      - '🇺🇸US | 🔴 | vmess | @DeamNet_Proxy | 16'
+      - '🇸🇬SG | 🔴 | vmess | @meli_proxyy | 18'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
