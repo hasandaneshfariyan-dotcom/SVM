@@ -118,35 +118,39 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 17","type":"ss","server":"series-a2-mec.samanehha.co","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 18","type":"ss","server":"series-a2-mec.samanehha.co","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16","type":"ss","server":"admin.c4.webramz.co","port":443,"password":"69MUii7VDwMqh7Hz","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 0","type":"ss","server":"62.210.88.22","port":443,"password":"XdoH6QPQskHli1adJIKeKv","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 1","type":"ss","server":"62.210.88.22","port":443,"password":"XdoH6QPQskHli1adJIKeKv","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"3.68.63.67","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 18'
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 0'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 1'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 18'
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 0'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 1'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 18'
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 0'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 1'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
