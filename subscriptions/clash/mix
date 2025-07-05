@@ -119,8 +119,8 @@ dns:
 
 proxies:
   - {"name":"🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"series-a2-mec.samanehha.co","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"3.121.254.201","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 8","type":"ss","server":"62.210.88.22","port":443,"password":"XdoH6QPQskHli1adJIKeKv","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 1","type":"ss","server":"103.111.114.29","port":57456,"password":"360e21d21977dc11","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 11","type":"ss","server":"62.210.88.22","port":443,"password":"XdoH6QPQskHli1adJIKeKv","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,8 +128,8 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 8'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 1'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 11'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -137,16 +137,16 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 8'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 1'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 11'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 8'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 1'
+      - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 11'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
