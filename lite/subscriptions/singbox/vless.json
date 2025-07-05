@@ -259,30 +259,35 @@
         },
         {
             "type": "vless",
-            "server": "add.ski1plag.ir",
-            "server_port": 80,
-            "uuid": "7c9e3c1d-a360-4429-9189-e45a98de7fde",
+            "server": "104.22.16.91",
+            "server_port": 443,
+            "uuid": "9dd24d01-2b7a-4bd8-8c76-129d6ca89b8c",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "kawaiifreevpn-7ds.pages.dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/upload",
+                "path": "\/",
                 "headers": {
-                    "Host": "add.ski1plag.ir"
+                    "Host": "kawaiifreevpn-7ds.pages.dev"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "91.99.190.38",
-            "server_port": 51615,
-            "uuid": "2eaef053-5fd6-4def-b234-d760690355ff",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -291,7 +296,7 @@
             "uuid": "7b6eca4c-44ae-40c6-973a-4e3b29d30803",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-9"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -300,7 +305,7 @@
             "uuid": "3c2e5f39-d738-40d4-929c-249ea568cb4a",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-10"
+            "tag": "@SiNAVM-9"
         },
         {
             "type": "vless",
@@ -332,7 +337,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-11"
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
@@ -350,6 +355,38 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "vless",
+            "server": "www.venzo.com.tr",
+            "server_port": 443,
+            "uuid": "bf4d1d83-91eb-4f7e-990f-3ca764eac4bd",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "nitter.ir",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/hajmi",
+                "headers": {
+                    "Host": "nitter.ir"
+                },
+                "max_early_data": 2050,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-12"
         },
         {
@@ -363,52 +400,20 @@
         },
         {
             "type": "vless",
-            "server": "104.18.26.90",
-            "server_port": 8443,
-            "uuid": "c3c19bdf-2eff-49e0-9746-4c98206a67b0",
+            "server": "de1.nds.jnvs.space",
+            "server_port": 2086,
+            "uuid": "f1a70733-dd8d-4d47-b446-7be660497e5c",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "s1.MitIvpN.wOrkeRs.dEv",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "randomized"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/nQrQ1eTYHqjVOYx6",
-                "headers": {
-                    "Host": "s1.MitIvpN.wOrkeRs.dEv"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-14"
         },
         {
             "type": "vless",
-            "server": "Pishgam.sdcards.ir",
-            "server_port": 80,
-            "uuid": "telegram--id--v2rayNGcloud---",
+            "server": "holkanas.atroart.ir",
+            "server_port": 52928,
+            "uuid": "dc58f214-4227-4f58-8090-cbcedf1adeba",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/@V2rayNGcloud---Telegram---v2rayNGcloud---@V2rayNGcloud---Telegram---@V2rayNGcloud---Telegram---@V2rayNGcloud---@V2rayNGcloud---Telegram---v2rayNGcloud---@V2rayNGcloud---Telegram---@V2rayNGcloud---Telegram---@V2rayNGcloud",
-                "headers": {
-                    "Host": "Pishgam.sdcards.ir"
-                },
-                "max_early_data": 2087,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-15"
         },
         {
