@@ -120,8 +120,7 @@ dns:
 proxies:
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 14","type":"trojan","server":"35.156.9.88","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 15","type":"trojan","server":"35.157.171.73","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇬🇧GB | 🔴 | vmess | @vmessorg | 16","type":"vmess","server":"62.60.155.64","port":"443","cipher":"auto","uuid":"5e6e263e-6bc4-457d-8429-774533ce7467","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 3","type":"ss","server":"103.111.114.29","port":57456,"password":"360e21d21977dc11","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 5","type":"ss","server":"103.111.114.29","port":57456,"password":"360e21d21977dc11","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +129,7 @@ proxy-groups:
       - FALLBACK
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇬🇧GB | 🔴 | vmess | @vmessorg | 16'
-      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 5'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -140,8 +138,7 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇬🇧GB | 🔴 | vmess | @vmessorg | 16'
-      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 5'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -149,8 +146,7 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇬🇧GB | 🔴 | vmess | @vmessorg | 16'
-      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 3'
+      - '🇮🇳IN | 🟢 | ss | @ShadowProxy66 | 5'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
