@@ -118,8 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 14","type":"trojan","server":"15.237.70.229","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 15","type":"trojan","server":"35.156.9.88","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 12","type":"trojan","server":"18.199.109.12","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 13","type":"trojan","server":"63.177.35.173","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 5","type":"ss","server":"series-a2-mec.samanehha.co","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -127,8 +127,8 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 5'
   - name: URL-TEST
     type: url-test
@@ -136,16 +136,16 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 5'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 12'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 13'
       - '🇬🇧GB | 🟢 | ss | @ShadowProxy66 | 5'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
