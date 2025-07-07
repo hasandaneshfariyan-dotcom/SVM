@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇺🇸US | 🔴 | vless | @meli_proxyy | 0","type":"vless","server":"44.201.168.201","port":443,"udp":true,"uuid":"a7e04b44-855e-4fe7-8fa0-31894e928bce","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.chatgpt.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"RYsjWbL0kjpi144PPllR_2C_KK3a071iGBPUUCsHH1A","short-id":"a4844ba7"}}
+  - {"name":"🇩🇪DE | 🟢 | vless | @ShadowProxy66 | 0","type":"vless","server":"209.38.202.192","port":42030,"udp":true,"uuid":"f6bd0b57-1e1c-4dd1-8f1c-939cb96bdb0a","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"ZyEwIOp_n6SemqIK57145NS5UWz3-BrL_fRob9qx4Tk","short-id":"15"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇺🇸US | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🟢 | vless | @ShadowProxy66 | 0'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -135,12 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇺🇸US | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🟢 | vless | @ShadowProxy66 | 0'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '🇺🇸US | 🔴 | vless | @meli_proxyy | 0'
+      - '🇩🇪DE | 🟢 | vless | @ShadowProxy66 | 0'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
