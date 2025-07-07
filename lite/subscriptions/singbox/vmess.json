@@ -79,12 +79,21 @@
         },
         {
             "type": "vmess",
-            "server": "138.199.146.181",
-            "server_port": 13411,
-            "uuid": "ee3f37b1-e805-4bdc-9d46-80df181899df",
+            "server": "npmjs.com",
+            "server_port": 8080,
+            "uuid": "dnlqfaqqrn",
             "security": "auto",
             "alter_id": 0,
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/hetzner\/cdn",
+                "headers": {
+                    "Host": "npmjs.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-1"
         },
         {
