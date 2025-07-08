@@ -490,30 +490,29 @@
         },
         {
             "type": "vless",
-            "server": "172.67.128.105",
+            "server": "nl01.v2red.net",
+            "server_port": 51155,
+            "uuid": "445ac3ee-328b-4095-b447-97f5b4af29a6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "vless",
+            "server": "104.18.26.90",
             "server_port": 80,
-            "uuid": "4179c595-08ca-45cd-b555-91b6f1faeadc",
+            "uuid": "92f481b6-ad92-43e4-a683-2bb0aeaa9846",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "172.67.128.105"
+                    "Host": "104.18.26.90"
                 },
-                "max_early_data": 2560,
+                "max_early_data": 2590,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-18"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "4.158.64.226",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "69MUii7VDwMqh7Hz",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-19"
         },
         {
