@@ -11,13 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇬🇧GB | 🟢 | ss | @meli_proxyy | 13 = ss, 4.250.60.151, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
-🇳🇱NL | 🟢 | ss | @meli_proxyy | 15 = ss, 103.104.247.45, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+🇬🇧GB | 🟢 | ss | @meli_proxyy | 14 = ss, 4.250.60.151, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @meli_proxyy | 13,🇳🇱NL | 🟢 | ss | @meli_proxyy | 15,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5
-URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @meli_proxyy | 13,🇳🇱NL | 🟢 | ss | @meli_proxyy | 15,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5
-FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @meli_proxyy | 13,🇳🇱NL | 🟢 | ss | @meli_proxyy | 15,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5,🇬🇧GB | 🟢 | ss | @meli_proxyy | 14
+URL-TEST = url-test,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5,🇬🇧GB | 🟢 | ss | @meli_proxyy | 14
+FALLBACK = fallback,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 5,🇬🇧GB | 🟢 | ss | @meli_proxyy | 14
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
