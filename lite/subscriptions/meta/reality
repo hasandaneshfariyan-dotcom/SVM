@@ -121,7 +121,6 @@ dns:
 
 proxies:
   - {"name":"🇭🇰HK | 🔴 | vless | @DeamNet_Proxy | 17","type":"vless","server":"16.162.200.251","port":13009,"udp":true,"uuid":"91ddda09-bc1c-426c-bf89-d01391cf0096","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"player.live-video.net","flow":"xtls-rprx-vision","reality-opts":{"public-key":"GuTuiDM9kwjNv8QL3iy_sa18NnoeJ0gtOKMSLZSw_20","short-id":"6ba85179e30d4fc2"}}
-  - {"name":"🇺🇸US | 🔴 | vless | @meli_proxyy | 18","type":"vless","server":"44.201.168.201","port":443,"udp":true,"uuid":"a7e04b44-855e-4fe7-8fa0-31894e928bce","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.chatgpt.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"RYsjWbL0kjpi144PPllR_2C_KK3a071iGBPUUCsHH1A","short-id":"a4844ba7"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -129,7 +128,6 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇭🇰HK | 🔴 | vless | @DeamNet_Proxy | 17'
-      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 18'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -137,14 +135,12 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇭🇰HK | 🔴 | vless | @DeamNet_Proxy | 17'
-      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 18'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇭🇰HK | 🔴 | vless | @DeamNet_Proxy | 17'
-      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 18'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
