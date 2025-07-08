@@ -120,27 +120,23 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"🇫🇮FI | 🔴 | vless | @meli_proxyy | 20","type":"vless","server":"sakotak.storecoco.online","port":2082,"udp":true,"uuid":"44060d3f-59ff-48ed-9456-6ecb3ff6b70c","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"sourceforge.net","reality-opts":{"public-key":"B0semxM5nxVNGbS0sRR_K13_KL8EtEmeoDTHrtUHlVg","short-id":"3de49377"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 20'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 20'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 20'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
