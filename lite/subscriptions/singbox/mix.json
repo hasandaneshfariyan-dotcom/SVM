@@ -222,7 +222,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.146.19",
+            "server": "18.194.185.25",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -244,7 +244,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.138.7",
+            "server": "35.181.146.19",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -525,6 +525,34 @@
         },
         {
             "type": "vless",
+            "server": "sakotak.storecoco.online",
+            "server_port": 2082,
+            "uuid": "44060d3f-59ff-48ed-9456-6ecb3ff6b70c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "sourceforge.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "B0semxM5nxVNGbS0sRR_K13_KL8EtEmeoDTHrtUHlVg",
+                    "short_id": "3de49377"
+                }
+            },
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "vless",
             "server": "162.159.129.11",
             "server_port": 2053,
             "uuid": "b1a8ceea-6601-45b5-a674-7e5b64ab6f6f",
@@ -554,16 +582,6 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-21"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "77.238.229.244",
-            "server_port": 12369,
-            "method": "chacha20-ietf-poly1305",
-            "password": "6G0ODfNwCUGR0KEf3VPQLh",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-22"
         },
         {
