@@ -87,7 +87,9 @@
                 "@SiNAVM-22",
                 "@SiNAVM-23",
                 "@SiNAVM-24",
-                "@SiNAVM-25"
+                "@SiNAVM-25",
+                "@SiNAVM-26",
+                "@SiNAVM-27"
             ]
         },
         {
@@ -118,7 +120,9 @@
                 "@SiNAVM-22",
                 "@SiNAVM-23",
                 "@SiNAVM-24",
-                "@SiNAVM-25"
+                "@SiNAVM-25",
+                "@SiNAVM-26",
+                "@SiNAVM-27"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -218,7 +222,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.102.57",
+            "server": "51.44.138.7",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -240,7 +244,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.236.126.225",
+            "server": "3.74.20.115",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -520,13 +524,23 @@
             "tag": "@SiNAVM-20"
         },
         {
+            "type": "shadowsocks",
+            "server": "77.238.229.244",
+            "server_port": 12369,
+            "method": "chacha20-ietf-poly1305",
+            "password": "6G0ODfNwCUGR0KEf3VPQLh",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-21"
+        },
+        {
             "type": "vless",
             "server": "104.18.26.90",
             "server_port": 8880,
             "uuid": "ad9d0af6-e350-450b-844f-9c29b88da80b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "vless",
@@ -561,7 +575,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-22"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "vless",
@@ -579,28 +593,19 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-23"
-        },
-        {
-            "type": "vless",
-            "server": "102.177.189.29",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TelegramU0001F1E8U0001F1F3",
-                "headers": {
-                    "Host": "102.177.189.29"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
             "tag": "@SiNAVM-24"
         },
         {
             "type": "vless",
+            "server": "66.42.64.40",
+            "server_port": 443,
+            "uuid": "4bf96dd2-f451-4938-8fa4-1a2251290920",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-25"
+        },
+        {
+            "type": "vless",
             "server": "102.177.189.29",
             "server_port": 8880,
             "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
@@ -615,7 +620,25 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-25"
+            "tag": "@SiNAVM-26"
+        },
+        {
+            "type": "vless",
+            "server": "102.177.189.29",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/TelegramU0001F1E8U0001F1F3",
+                "headers": {
+                    "Host": "102.177.189.29"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-27"
         },
         {
             "type": "direct",
