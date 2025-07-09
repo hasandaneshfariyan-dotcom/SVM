@@ -122,6 +122,7 @@ dns:
 proxies:
   - {"name":"🇩🇪DE | 🔴 | vless | @customv2ray | 2","type":"vless","server":"easrtvisufs.selenarahmani.blog","port":17861,"udp":true,"uuid":"a05f7f5b-374d-4255-a70d-a62869cd7d45","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"speedtest.net","grpc-opts":{"grpc-service-name":"TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-"},"reality-opts":{"public-key":"CK4NZOZ03AjWzK4gAs5hXyUfghXepouBPfqJct0KUwQ","short-id":"da"}}
   - {"name":"🇳🇱NL | 🟢 | vless | @customv2ray | 4","type":"vless","server":"nl.cosmonet.online","port":443,"udp":true,"uuid":"7f97131b-0d9d-4be9-b7b4-3fa21403cffa","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"0Us7OO0tExWGiNs6FFRSY_Ong4g8vkylmkElbZB10yw","short-id":"4a7b23"}}
+  - {"name":"🇹🇷TR | 🔴 | vless | @sinavm | 0","type":"vless","server":"62.60.233.250","port":443,"udp":true,"uuid":"fd0cdd44-2361-11f0-9970-45e1d80c4039","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"images.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw","short-id":"4476a3"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,6 +131,7 @@ proxy-groups:
       - FALLBACK
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇳🇱NL | 🟢 | vless | @customv2ray | 4'
+      - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -138,6 +140,7 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇳🇱NL | 🟢 | vless | @customv2ray | 4'
+      - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -145,6 +148,7 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇳🇱NL | 🟢 | vless | @customv2ray | 4'
+      - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
