@@ -118,27 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"147.45.178.200","port":57456,"password":"c40641c1f89e7acb","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇳🇱NL | 🟢 | ss | @meli_proxyy | 3","type":"ss","server":"103.104.247.49","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | ss | @meli_proxyy | 0","type":"ss","server":"147.45.178.200","port":57456,"password":"c40641c1f89e7acb","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 3'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 0'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 3'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 0'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 3'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
