@@ -63,16 +63,14 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -106,34 +104,6 @@
                 }
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "nl.cosmonet.online",
-            "server_port": 443,
-            "uuid": "7f97131b-0d9d-4be9-b7b4-3fa21403cffa",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "yahoo.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "0Us7OO0tExWGiNs6FFRSY_Ong4g8vkylmkElbZB10yw",
-                    "short_id": "4a7b23"
-                }
-            },
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
