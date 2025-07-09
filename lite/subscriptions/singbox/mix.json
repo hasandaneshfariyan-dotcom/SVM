@@ -220,7 +220,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.37.72.82",
+            "server": "13.38.221.138",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -242,7 +242,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.178.143.137",
+            "server": "13.37.72.82",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -366,18 +366,27 @@
         },
         {
             "type": "vless",
-            "server": "meIli.heartina.ir",
-            "server_port": 1002,
-            "uuid": "8039a8e7-9460-4ba8-9532-1f1946fcf169",
+            "server": "172.67.92.147",
+            "server_port": 80,
+            "uuid": "b8be6118-0dd7-4402-ae1a-69b2816f3a7f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "172.67.92.147"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
-            "server": "87.107.144.71",
-            "server_port": 54465,
-            "uuid": "10b1f4a3-63a7-46b4-f05a-023542f0dc11",
+            "server": "meIli.heartina.ir",
+            "server_port": 1002,
+            "uuid": "8039a8e7-9460-4ba8-9532-1f1946fcf169",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-13"
@@ -469,22 +478,46 @@
             "tag": "@SiNAVM-18"
         },
         {
-            "type": "shadowsocks",
-            "server": "20.91.252.21",
-            "server_port": 48172,
-            "method": "chacha20-ietf-poly1305",
-            "password": "51yloQC8D9w1Wae7FHtI65",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "jsbqijd.ki76.wkmxkwnd.kpckwzmnx.theiranoflegends.com",
+            "server_port": 882,
+            "uuid": "528152bf-54f1-4064-b351-bf653c2298c6",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-19"
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 8880,
-            "uuid": "c92bcb56-2660-4cf9-bf03-d1b41a8e8ba8",
+            "server": "172.66.132.12",
+            "server_port": 443,
+            "uuid": "72893d33-5e7a-4eec-948e-09209ea3f659",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "s1.sUbUrl.OrG",
+                "insecure": false,
+                "alpn": [
+                    "h3",
+                    "h2",
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/🧔🏼‍♂️🧔🏼‍♂️",
+                "headers": {
+                    "Host": "s1.sUbUrl.OrG"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-20"
         },
         {
