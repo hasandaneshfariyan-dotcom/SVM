@@ -224,7 +224,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.57.71.35",
+            "server": "35.180.220.25",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -246,7 +246,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.194.185.25",
+            "server": "52.57.71.35",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -539,6 +539,24 @@
         },
         {
             "type": "vless",
+            "server": "104.18.26.90",
+            "server_port": 80,
+            "uuid": "6f690965-3be3-43bb-9331-3ead6efb20aa",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "104.18.26.90"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "vless",
             "server": "wouldyoumarriemepleasefuckthesystem.siasia.ir",
             "server_port": 8443,
             "uuid": "b9d7ed5b-5a8f-4c8b-8fb3-253942424d2a",
@@ -559,16 +577,6 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-21"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "4.250.60.151",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "WstuSnlu4ieA9M0L",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-22"
         },
         {
