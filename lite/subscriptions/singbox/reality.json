@@ -65,7 +65,8 @@
                 "Best Latency",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ]
         },
         {
@@ -74,7 +75,8 @@
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -178,6 +180,34 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "Fv.samiion73.ir",
+            "server_port": 13469,
+            "uuid": "2831b7d5-2cdd-4684-b44e-8ea6d27e8495",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "chatgpt.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ZHQfz5WHmc4qKTjhTw14EU2yaW-TokHCeR9NiJek_2s",
+                    "short_id": "f49785945765b595"
+                }
+            },
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "direct",
