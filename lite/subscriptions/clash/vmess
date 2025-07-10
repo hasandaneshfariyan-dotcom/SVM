@@ -119,6 +119,7 @@ dns:
 
 proxies:
   - {"name":"🇳🇱NL | 🔴 | vmess | @customv2ray | 7","type":"vmess","server":"channel.dollardoon.com","port":"15709","cipher":"auto","uuid":"4ac39e8a-6d5c-48bb-b0d0-f633c829113e","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"🇸🇪SE | 🔴 | vmess | @meli_proxyy | 18","type":"vmess","server":"217.209.77.111","port":"62002","cipher":"auto","uuid":"6024fde7-4e34-4ec3-9b4d-74d24349b9f5","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -126,6 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇳🇱NL | 🔴 | vmess | @customv2ray | 7'
+      - '🇸🇪SE | 🔴 | vmess | @meli_proxyy | 18'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -133,12 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇳🇱NL | 🔴 | vmess | @customv2ray | 7'
+      - '🇸🇪SE | 🔴 | vmess | @meli_proxyy | 18'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇳🇱NL | 🔴 | vmess | @customv2ray | 7'
+      - '🇸🇪SE | 🔴 | vmess | @meli_proxyy | 18'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
