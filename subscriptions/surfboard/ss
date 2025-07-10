@@ -11,14 +11,13 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇬🇧GB | 🟢 | ss | @meli_proxyy | 0 = ss, 172.187.105.25, 443, encrypt-method = chacha20-ietf-poly1305, password = 1xO2cqPazqjGfCfd
-🇳🇱NL | 🟢 | ss | @meli_proxyy | 17 = ss, 103.104.247.49, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-🇩🇪DE | 🟢 | ss | @meli_proxyy | 14 = ss, 147.45.178.200, 57456, encrypt-method = chacha20-ietf-poly1305, password = c40641c1f89e7acb
+🇬🇧GB | 🟢 | ss | @meli_proxyy | 1 = ss, 172.187.105.25, 443, encrypt-method = chacha20-ietf-poly1305, password = 1xO2cqPazqjGfCfd
+🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+🇩🇪DE | 🟢 | ss | @meli_proxyy | 15 = ss, 147.45.178.200, 57456, encrypt-method = chacha20-ietf-poly1305, password = c40641c1f89e7acb
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇩🇪DE | 🟢 | ss | @meli_proxyy | 14
-URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇩🇪DE | 🟢 | ss | @meli_proxyy | 14
-FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @meli_proxyy | 0,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 0,🇩🇪DE | 🟢 | ss | @meli_proxyy | 14
+MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @meli_proxyy | 15
+URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @meli_proxyy | 15
+FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | ss | @meli_proxyy | 15
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
