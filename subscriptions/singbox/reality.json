@@ -65,8 +65,7 @@
                 "Best Latency",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4"
+                "@SiNAVM-3"
             ]
         },
         {
@@ -75,8 +74,7 @@
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4"
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -113,6 +111,34 @@
         },
         {
             "type": "vless",
+            "server": "nl.cosmonet.online",
+            "server_port": 443,
+            "uuid": "7f97131b-0d9d-4be9-b7b4-3fa21403cffa",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "0Us7OO0tExWGiNs6FFRSY_Ong4g8vkylmkElbZB10yw",
+                    "short_id": "4a7b23"
+                }
+            },
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
             "server": "easrtvisufs.selenarahmani.blog",
             "server_port": 17861,
             "uuid": "a05f7f5b-374d-4255-a70d-a62869cd7d45",
@@ -144,63 +170,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "vless",
-            "server": "nl.cosmonet.online",
-            "server_port": 443,
-            "uuid": "7f97131b-0d9d-4be9-b7b4-3fa21403cffa",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "yahoo.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "0Us7OO0tExWGiNs6FFRSY_Ong4g8vkylmkElbZB10yw",
-                    "short_id": "4a7b23"
-                }
-            },
             "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "vless",
-            "server": "62.60.233.250",
-            "server_port": 443,
-            "uuid": "fd0cdd44-2361-11f0-9970-45e1d80c4039",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "images.apple.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw",
-                    "short_id": "4476a3"
-                }
-            },
-            "tag": "@SiNAVM-4"
         },
         {
             "type": "direct",
