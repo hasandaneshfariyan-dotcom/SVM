@@ -120,27 +120,27 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"🇺🇸US | 🔴 | vless | @customv2ray | 0","type":"vless","server":"test-lets-wildcard.spotifycdn.org","port":443,"udp":true,"uuid":"06f5a7cb-3842-49d0-a498-d4165c0eb956","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"www.tgju.org","reality-opts":{"public-key":"MvHAa605zfOrBe-SDP6_ytTmotBw39f6OefvXn2DZhk","short-id":"7f2798f9"}}
+  - {"name":"🇩🇪DE | 🟢 | vless | @meli_proxyy | 9","type":"vless","server":"canine.origamimarketings.com","port":9999,"udp":true,"uuid":"e96adc51-70f2-451d-83c5-77094b9d680f","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"tgju.org","reality-opts":{"public-key":"K0iITauuYEqIayR3IB5Ny8MVKyORDJ65rUSHc3tLe1E","short-id":"42c0b628ba6a42a9"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇺🇸US | 🔴 | vless | @customv2ray | 0'
+      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 9'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '🇺🇸US | 🔴 | vless | @customv2ray | 0'
+      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 9'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '🇺🇸US | 🔴 | vless | @customv2ray | 0'
+      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 9'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
