@@ -12,11 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+🇵🇱PL | 🟢 | ss | @meli_proxyy | 15 = ss, 92.118.205.228, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
 🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0 = ss, 194.107.126.105, 2222, encrypt-method = chacha20-ietf-poly1305, password = qscavF5UviIL-8V-E4raBA
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
-URL-TEST = url-test,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
-FALLBACK = fallback,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @meli_proxyy | 15,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+URL-TEST = url-test,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @meli_proxyy | 15,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+FALLBACK = fallback,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @meli_proxyy | 15,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
