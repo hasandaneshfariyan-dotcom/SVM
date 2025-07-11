@@ -12,13 +12,14 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1 = ss, admin.c2.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 2 = trojan, 3.69.141.184, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 52.47.84.87, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 2 = trojan, 3.69.141.184, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10 = ss, 45.144.48.63, 57456, encrypt-method = chacha20-ietf-poly1305, password = d3837224ed465f00
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17
-URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17
-FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17
+MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10
+URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10
+FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
