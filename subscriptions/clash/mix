@@ -119,8 +119,8 @@ dns:
 
 proxies:
   - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1","type":"ss","server":"admin.c2.webramz.co","port":443,"password":"WstuSnlu4ieA9M0L","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 1","type":"ss","server":"74.177.199.135","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17","type":"ss","server":"45.87.175.192","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 2","type":"ss","server":"74.177.199.135","port":443,"password":"u17T3BvpYaaiuW2c","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"3.69.141.184","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10","type":"ss","server":"45.144.48.63","port":57456,"password":"d3837224ed465f00","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -129,8 +129,8 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 1'
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 2'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
       - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10'
   - name: URL-TEST
     type: url-test
@@ -139,8 +139,8 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 1'
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 2'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
       - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10'
   - name: FALLBACK
     type: fallback
@@ -148,8 +148,8 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 1'
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 2'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
       - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
