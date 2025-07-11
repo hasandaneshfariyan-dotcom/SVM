@@ -482,18 +482,41 @@
         },
         {
             "type": "vless",
-            "server": "web.bandarhp.ir",
-            "server_port": 666,
-            "uuid": "ff8fffd7-3546-488b-a5f2-a74896da74a2",
+            "server": "162.159.129.11",
+            "server_port": 2053,
+            "uuid": "b1a8ceea-6601-45b5-a674-7e5b64ab6f6f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "sub.divib.dynv6.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "sub.divib.dynv6.net"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-20"
         },
         {
             "type": "vless",
-            "server": "300232332.webnama.com.tr",
-            "server_port": 1517,
-            "uuid": "188f1242-b0c0-4992-b480-1da44dae1700",
+            "server": "web.bandarhp.ir",
+            "server_port": 666,
+            "uuid": "ff8fffd7-3546-488b-a5f2-a74896da74a2",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-21"
@@ -563,18 +586,27 @@
         },
         {
             "type": "vless",
-            "server": "91.99.214.14",
-            "server_port": 443,
-            "uuid": "9a85ea24-bd5a-4380-94cb-ffb773cafb33",
+            "server": "199.181.197.254",
+            "server_port": 8880,
+            "uuid": "34c01e61-f4f3-4afb-a83b-406caf8caa33",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram",
+                "headers": {
+                    "Host": "Telegram-channel-WangCai2"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-25"
         },
         {
             "type": "vless",
-            "server": "104.156.246.74",
-            "server_port": 443,
-            "uuid": "a333acaf-2817-4bf9-9221-c1a63bb80de8",
+            "server": "188.245.110.172",
+            "server_port": 33767,
+            "uuid": "df8664db-e7f4-4eb1-a2af-e4b739a90466",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-26"
