@@ -11,16 +11,14 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1 = ss, admin.c2.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
 🇬🇧GB | 🟢 | ss | @meli_proxyy | 1 = ss, 74.177.199.135, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 1 = trojan, 35.180.216.86, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1 = ss, admin.c2.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = WstuSnlu4ieA9M0L
 🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10 = ss, 45.144.48.63, 57456, encrypt-method = chacha20-ietf-poly1305, password = d3837224ed465f00
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 3.67.33.64, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 2 = trojan, 35.180.216.86, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
-URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
-FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 10,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
+MANUAL = select,URL-TEST,FALLBACK,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2
+URL-TEST = url-test,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2
+FALLBACK = fallback,🇬🇧GB | 🟢 | ss | @meli_proxyy | 1,🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 1,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
