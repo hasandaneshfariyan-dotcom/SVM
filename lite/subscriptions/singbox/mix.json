@@ -286,35 +286,53 @@
             "tag": "@SiNAVM-6"
         },
         {
-            "type": "shadowsocks",
-            "server": "45.87.175.192",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cvII85TrW6n0OGyfpHVS1u",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "108.162.196.20",
+            "server_port": 8880,
+            "uuid": "53fa8faf-ba4b-4322-9c69-a3e5b1555049",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "108.162.196.20"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
-            "server": "147135001195.sec22org.com",
+            "server": "104.26.13.31",
             "server_port": 443,
-            "uuid": "ea286109-d20f-415e-849e-4af20ab04b65",
+            "uuid": "70f8697b-f9f3-4692-8e0a-3d1834fd76dc",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "147135001195.sec22org.com",
+                "server_name": "0fD5019a.FL-8hB.paGEs.deV",
                 "insecure": false,
                 "alpn": [
-                    "h3"
+                    "h2",
+                    "http\/1.1"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "chrome"
+                    "fingerprint": "randomized"
                 }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/Telegram@V2ray_Alpha\/",
+                "headers": {
+                    "Host": "0fD5019a.FL-8hB.paGEs.deV"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-8"
         },
@@ -639,25 +657,62 @@
         },
         {
             "type": "vless",
-            "server": "91.99.134.253",
+            "server": "198.62.62.4",
             "server_port": 443,
-            "uuid": "f3fec39b-8695-48d7-96d7-0c31d04f3fe8",
+            "uuid": "cd2e9541-3fce-4d95-9bec-919d884f911e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "hxqom.alexander-sportage.info",
+                "insecure": false,
+                "alpn": [
+                    ""
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/tiger",
+                "headers": {
+                    "Host": "hxqom.alexander-sportage.info"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-25"
         },
         {
             "type": "vless",
-            "server": "104.26.6.89",
-            "server_port": 80,
-            "uuid": "b360267f-81aa-4740-a9c0-9a64fe7f9775",
+            "server": "104.18.26.90",
+            "server_port": 443,
+            "uuid": "518d0495-2139-4bfd-94df-2a029108f1af",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "nextMusIcHAMraH.Site",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/",
+                "path": "\/1E6TZkrhu3EWOwlQ?ed",
                 "headers": {
-                    "Host": "104.26.6.89"
+                    "Host": "nextMusIcHAMraH.Site"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
