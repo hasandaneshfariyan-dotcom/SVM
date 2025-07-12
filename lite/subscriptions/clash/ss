@@ -118,6 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
+  - {"name":"🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 17","type":"ss","server":"45.144.48.63","port":57456,"password":"d3837224ed465f00","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 1","type":"ss","server":"193.29.139.177","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0","type":"ss","server":"194.107.126.105","port":2222,"password":"qscavF5UviIL-8V-E4raBA","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -125,6 +127,8 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
+      - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 1'
       - '🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: URL-TEST
     type: url-test
@@ -132,12 +136,16 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
+      - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 1'
       - '🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
+      - '🇵🇱PL | 🟢 | ss | @DeamNet_Proxy | 17'
+      - '🇳🇱NL | 🟢 | ss | @ShadowProxy66 | 1'
       - '🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
