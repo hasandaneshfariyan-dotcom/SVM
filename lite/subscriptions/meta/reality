@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇹🇷TR | 🔴 | vless | @sinavm | 0","type":"vless","server":"62.60.233.250","port":443,"udp":true,"uuid":"fd0cdd44-2361-11f0-9970-45e1d80c4039","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"images.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw","short-id":"4476a3"}}
+  - {"name":"🇬🇧GB | 🟢 | vless | @meli_proxyy | 44","type":"vless","server":"node-uk-1-v4.soundlesss.com","port":1000,"udp":true,"uuid":"c48da5b2-98a7-4ca3-9ef3-1c9b8dbd3901","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"www.unpkg.com","reality-opts":{"public-key":"ioE61VC3V30U7IdRmQ3bjhOq2ij9tPhVIgAD4JZ4YRY","short-id":"0b5922be64fc5713"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
+      - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 44'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -135,12 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
+      - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 44'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 0'
+      - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 44'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
