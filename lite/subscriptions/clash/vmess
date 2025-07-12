@@ -118,23 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
+  - {"name":"🇮🇷IR | 🔴 | vmess | @customv2ray | 13","type":"vmess","server":"nhel1-tu.mobstore.store","port":"2083","cipher":"auto","uuid":"a9b68e36-eb35-1bbc-b958-ecd0e46ba428","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - '🇮🇷IR | 🔴 | vmess | @customv2ray | 13'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
+      - '🇮🇷IR | 🔴 | vmess | @customv2ray | 13'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
+      - '🇮🇷IR | 🔴 | vmess | @customv2ray | 13'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve

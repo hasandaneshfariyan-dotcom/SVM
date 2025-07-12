@@ -63,14 +63,16 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -95,6 +97,16 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vmess",
+            "server": "nhel1-tu.mobstore.store",
+            "server_port": 2083,
+            "uuid": "a9b68e36-eb35-1bbc-b958-ecd0e46ba428",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
