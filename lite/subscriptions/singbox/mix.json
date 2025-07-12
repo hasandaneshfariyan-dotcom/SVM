@@ -90,7 +90,8 @@
                 "@SiNAVM-25",
                 "@SiNAVM-26",
                 "@SiNAVM-27",
-                "@SiNAVM-28"
+                "@SiNAVM-28",
+                "@SiNAVM-29"
             ]
         },
         {
@@ -124,7 +125,8 @@
                 "@SiNAVM-25",
                 "@SiNAVM-26",
                 "@SiNAVM-27",
-                "@SiNAVM-28"
+                "@SiNAVM-28",
+                "@SiNAVM-29"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -243,7 +245,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.73.26.188",
+            "server": "3.70.33.164",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -265,7 +267,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.124.76.127",
+            "server": "3.78.152.130",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -571,13 +573,22 @@
         },
         {
             "type": "shadowsocks",
-            "server": "172.187.105.25",
+            "server": "74.177.199.135",
             "server_port": 443,
             "method": "chacha20-ietf-poly1305",
-            "password": "1xO2cqPazqjGfCfd",
+            "password": "u17T3BvpYaaiuW2c",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "vless",
+            "server": "151.101.67.8",
+            "server_port": 80,
+            "uuid": "8088c605-e0c2-4774-9ee4-7fa7e47b6112",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "vless",
@@ -612,7 +623,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-22"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "vless",
@@ -630,7 +641,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-23"
+            "tag": "@SiNAVM-24"
         },
         {
             "type": "shadowsocks",
@@ -640,7 +651,7 @@
             "password": "qscavF5UviIL-8V-E4raBA",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-24"
+            "tag": "@SiNAVM-25"
         },
         {
             "type": "vless",
@@ -649,7 +660,7 @@
             "uuid": "c39a101c-0a7b-4940-8e6a-f8346d70b24b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-25"
+            "tag": "@SiNAVM-26"
         },
         {
             "type": "vless",
@@ -666,24 +677,6 @@
                 },
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "vless",
-            "server": "102.177.189.29",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TelegramU0001F1E8U0001F1F3",
-                "headers": {
-                    "Host": "102.177.189.29"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-27"
         },
@@ -704,6 +697,24 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-28"
+        },
+        {
+            "type": "vless",
+            "server": "102.177.189.29",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/TelegramU0001F1E8U0001F1F3",
+                "headers": {
+                    "Host": "102.177.189.29"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-29"
         },
         {
             "type": "direct",
