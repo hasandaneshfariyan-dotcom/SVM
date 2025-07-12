@@ -120,31 +120,31 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
+  - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 30","type":"vless","server":"95.179.170.91","port":443,"udp":true,"uuid":"e8f25e87-f17f-4b38-9ba8-3d3ffd345186","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"dog.21972f59-14b7-3eb3-be11-bf5691d6bf1d.googleapis.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"hTweFDvbSucrGERtiiwDfoqD3vo_Z9cuaqboff3FTXQ"}}
   - {"name":"🇩🇪DE | 🔴 | vless | @customv2ray | 2","type":"vless","server":"easrtvisufs.selenarahmani.blog","port":17861,"udp":true,"uuid":"a05f7f5b-374d-4255-a70d-a62869cd7d45","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"speedtest.net","grpc-opts":{"grpc-service-name":"TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-TELEGRAM-SellofVPN-"},"reality-opts":{"public-key":"CK4NZOZ03AjWzK4gAs5hXyUfghXepouBPfqJct0KUwQ","short-id":"da"}}
-  - {"name":"🇸🇬SG | 🔴 | vless | @meli_proxyy | 28","type":"vless","server":"45.76.159.118","port":443,"udp":true,"uuid":"e8f25e87-f17f-4b38-9ba8-3d3ffd345186","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"dog.21972f59-14b7-3eb3-be11-bf5691d6bf1d.googleapis.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"hTweFDvbSucrGERtiiwDfoqD3vo_Z9cuaqboff3FTXQ"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 30'
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
-      - '🇸🇬SG | 🔴 | vless | @meli_proxyy | 28'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 30'
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
-      - '🇸🇬SG | 🔴 | vless | @meli_proxyy | 28'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
+      - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 30'
       - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
-      - '🇸🇬SG | 🔴 | vless | @meli_proxyy | 28'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
