@@ -241,7 +241,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.247.254",
+            "server": "3.70.103.84",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -263,7 +263,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.36.253.184",
+            "server": "35.181.247.254",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -413,18 +413,18 @@
         },
         {
             "type": "vless",
-            "server": "94.130.170.105",
-            "server_port": 30864,
-            "uuid": "397d3af1-ab9e-4239-8494-cba34fc8534e",
+            "server": "194.135.46.24",
+            "server_port": 443,
+            "uuid": "d499f80c-214c-427b-8b5f-19654932a83f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
-            "server": "109.122.247.128",
-            "server_port": 31311,
-            "uuid": "24145c32-ebea-49d0-92d3-e3e089083108",
+            "server": "94.130.170.105",
+            "server_port": 30864,
+            "uuid": "397d3af1-ab9e-4239-8494-cba34fc8534e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-13"
@@ -532,12 +532,45 @@
         },
         {
             "type": "vless",
-            "server": "213.142.149.141",
-            "server_port": 500,
-            "uuid": "1f625d8c-c8e2-4241-b288-92178cbc3001",
+            "server": "198.62.62.4",
+            "server_port": 443,
+            "uuid": "d0298536-d670-4045-bbb1-ddd5ea68683e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "azadnet-7py.pages.dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/config-proxy-free--Telegram--config-proxy-free--Telegram--config-proxy-free--Telegram--config-proxy-free--Telegram--config-proxy-free--Telegram--config-proxy-free",
+                "headers": {
+                    "Host": "azadnet-7py.pages.dev"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-19"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "45.158.171.136",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "1RWwXhwfAB5gAEozU4G2Pg",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-20"
         },
         {
             "type": "vless",
@@ -568,34 +601,6 @@
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-20"
-        },
-        {
-            "type": "vless",
-            "server": "45.15.170.80",
-            "server_port": 28495,
-            "uuid": "7e296434-2d17-48d3-928d-19eaa34aecb1",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "dl.google.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ",
-                    "short_id": "0ecc2c1392"
-                }
             },
             "tag": "@SiNAVM-21"
         },
