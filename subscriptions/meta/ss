@@ -121,8 +121,9 @@ dns:
 
 proxies:
   - {"name":"🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16","type":"ss","server":"admin.c2.webramz.co","port":443,"password":"WstuSnlu4ieA9M0L","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 9","type":"ss","server":"series-a2.samanehha.co","port":443,"password":"W74XFALLLuw6m5IA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"45.87.175.35","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @meli_proxyy | 14","type":"ss","server":"series-a2.samanehha.co","port":443,"password":"W74XFALLLuw6m5IA","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇳🇱NL | 🟢 | ss | @meli_proxyy | 9","type":"ss","server":"45.158.171.136","port":8080,"password":"1RWwXhwfAB5gAEozU4G2Pg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇰🇿KZ | 🟢 | ss | @meli_proxyy | 15","type":"ss","server":"38.107.234.38","port":57456,"password":"a58fa62b4944ddbf","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +131,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 9'
-      - '🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 14'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 9'
+      - '🇰🇿KZ | 🟢 | ss | @meli_proxyy | 15'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -139,16 +141,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 9'
-      - '🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 14'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 9'
+      - '🇰🇿KZ | 🟢 | ss | @meli_proxyy | 15'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '🇬🇧GB | 🟢 | ss | @DeamNet_Proxy | 16'
-      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 9'
-      - '🇺🇸US | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇬🇧GB | 🟢 | ss | @meli_proxyy | 14'
+      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 9'
+      - '🇰🇿KZ | 🟢 | ss | @meli_proxyy | 15'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
