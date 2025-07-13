@@ -122,8 +122,6 @@ dns:
 proxies:
   - {"name":"🇬🇧GB | 🟢 | vless | @meli_proxyy | 12","type":"vless","server":"193.149.189.205","port":443,"udp":true,"uuid":"358bccd3-aa6c-4afb-9a39-68cf23f032ea","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"google.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZJQpYoxYzfgkWXRmIasamZKkPvQc_a1PaCUdQ_WVzVo","short-id":"5c438db12cee9c"}}
   - {"name":"🇳🇱NL | 🟢 | vless | @meli_proxyy | 8","type":"vless","server":"152.42.136.175","port":433,"udp":true,"uuid":"b8ea183a-0aa8-48e5-9e68-04c7cf9e5e3b","tls":true,"network":"tcp","client-fingerprint":"safari","servername":"eur-lex.europa.eu","flow":"xtls-rprx-vision","reality-opts":{"public-key":"njS5Tdx6sQV0zCwFACf1uikWDSud9HqjS03WvH3_YAg","short-id":"82df26bf775f55"}}
-  - {"name":"🇩🇪DE | 🟢 | vless | @meli_proxyy | 2","type":"vless","server":"51.38.98.69","port":443,"udp":true,"uuid":"6b690c69-7301-44c4-81e8-9d5d7e8263a6","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"-3sZE2OPDhkNtxufF2YqPmoa5hqVna5zalfJfrUiMm0","short-id":"ecd6615548c2bddb"}}
-  - {"name":"🇦🇱AL | 🟢 | vless | @meli_proxyy | 15","type":"vless","server":"45.15.170.80","port":28495,"udp":true,"uuid":"7e296434-2d17-48d3-928d-19eaa34aecb1","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"dl.google.com","reality-opts":{"public-key":"KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ","short-id":"0ecc2c1392"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -132,8 +130,6 @@ proxy-groups:
       - FALLBACK
       - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 12'
       - '🇳🇱NL | 🟢 | vless | @meli_proxyy | 8'
-      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
-      - '🇦🇱AL | 🟢 | vless | @meli_proxyy | 15'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -142,8 +138,6 @@ proxy-groups:
     proxies:
       - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 12'
       - '🇳🇱NL | 🟢 | vless | @meli_proxyy | 8'
-      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
-      - '🇦🇱AL | 🟢 | vless | @meli_proxyy | 15'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -151,8 +145,6 @@ proxy-groups:
     proxies:
       - '🇬🇧GB | 🟢 | vless | @meli_proxyy | 12'
       - '🇳🇱NL | 🟢 | vless | @meli_proxyy | 8'
-      - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
-      - '🇦🇱AL | 🟢 | vless | @meli_proxyy | 15'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
