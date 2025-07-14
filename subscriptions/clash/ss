@@ -120,6 +120,7 @@ dns:
 proxies:
   - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4","type":"ss","server":"45.87.175.22","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 2","type":"ss","server":"62.210.88.22","port":443,"password":"E7rra7VwlSx87SLEsqd0Gu","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇧🇴BO | 🟢 | ss | @DeamNet_Proxy | 1","type":"ss","server":"185.93.173.218","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - FALLBACK
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 2'
+      - '🇧🇴BO | 🟢 | ss | @DeamNet_Proxy | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -136,6 +138,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 2'
+      - '🇧🇴BO | 🟢 | ss | @DeamNet_Proxy | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -143,6 +146,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 2'
+      - '🇧🇴BO | 🟢 | ss | @DeamNet_Proxy | 1'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
