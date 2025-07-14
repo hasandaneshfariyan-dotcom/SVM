@@ -11,12 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0 = ss, 194.107.126.105, 2222, encrypt-method = chacha20-ietf-poly1305, password = qscavF5UviIL-8V-E4raBA
 🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4 = ss, 45.87.175.22, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 51.44.36.244, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
-URL-TEST = url-test,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
-FALLBACK = fallback,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
+URL-TEST = url-test,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
+FALLBACK = fallback,🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
