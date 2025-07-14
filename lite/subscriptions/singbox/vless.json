@@ -84,8 +84,7 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-22"
             ]
         },
         {
@@ -113,8 +112,7 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-22"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -483,23 +481,14 @@
         },
         {
             "type": "vless",
-            "server": "213.142.149.141",
-            "server_port": 500,
-            "uuid": "1f625d8c-c8e2-4241-b288-92178cbc3001",
+            "server": "51.38.98.69",
+            "server_port": 443,
+            "uuid": "6b690c69-7301-44c4-81e8-9d5d7e8263a6",
             "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-16"
-        },
-        {
-            "type": "vless",
-            "server": "162.159.129.67",
-            "server_port": 8443,
-            "uuid": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
+            "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "azadnet1-706.pages.dev",
+                "server_name": "yahoo.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -508,28 +497,24 @@
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "randomized"
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "-3sZE2OPDhkNtxufF2YqPmoa5hqVna5zalfJfrUiMm0",
+                    "short_id": "ecd6615548c2bddb"
                 }
             },
-            "transport": {
-                "type": "ws",
-                "path": "\/azadnet1-706.pages.dev\/",
-                "headers": {
-                    "Host": "azadnet1-706.pages.dev"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "vless",
-            "server": "activeservice.mispd.ir",
-            "server_port": 2096,
-            "uuid": "feea904b-d443-43e1-beaa-621ef7a3de3f",
+            "server": "94.131.108.195",
+            "server_port": 53221,
+            "uuid": "90efad13-d266-4d10-a914-bc40028ec469",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-18"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "vless",
@@ -564,7 +549,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-19"
+            "tag": "@SiNAVM-18"
         },
         {
             "type": "vless",
@@ -596,7 +581,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-20"
+            "tag": "@SiNAVM-19"
         },
         {
             "type": "vless",
@@ -628,6 +613,24 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "vless",
+            "server": "102.177.189.29",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/TelegramU0001F1E8U0001F1F3",
+                "headers": {
+                    "Host": "102.177.189.29"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-21"
         },
         {
@@ -647,24 +650,6 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "vless",
-            "server": "102.177.189.29",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TelegramU0001F1E8U0001F1F3",
-                "headers": {
-                    "Host": "102.177.189.29"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-23"
         },
         {
             "type": "direct",
