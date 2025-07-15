@@ -232,7 +232,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.74.220.92",
+            "server": "3.74.100.225",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -254,7 +254,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.37.30.32",
+            "server": "35.181.182.19",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -521,23 +521,70 @@
             "tag": "@SiNAVM-18"
         },
         {
-            "type": "shadowsocks",
-            "server": "154.205.159.100",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
+            "type": "vless",
+            "server": "194.182.79.72",
+            "server_port": 32826,
+            "uuid": "2dc62e43-90f5-4d72-815b-c64b40d19088",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "sourceforge.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "viVxJfUpCBYia6ZwmuHkuS19C1ARC3OCaaRG9VvOIhg",
+                    "short_id": "e8f24f79"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
             "tag": "@SiNAVM-19"
         },
         {
-            "type": "vmess",
-            "server": "68.183.69.155",
+            "type": "vless",
+            "server": "103.160.204.50",
             "server_port": 443,
-            "uuid": "191be9b2-451f-4939-9c9a-83718e1a04c7",
-            "security": "auto",
-            "alter_id": 0,
+            "uuid": "c98a16e4-0dc5-42f0-b3db-30f04525c123",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "vless8-ekh.pages.dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "vless8-ekh.pages.dev"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-20"
         },
         {
