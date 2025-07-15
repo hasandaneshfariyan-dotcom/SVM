@@ -65,7 +65,8 @@
                 "Best Latency",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ]
         },
         {
@@ -74,40 +75,13 @@
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1,
             "idle_timeout": "9m0s"
-        },
-        {
-            "type": "vless",
-            "server": "v16.vxlimir.com",
-            "server_port": 1370,
-            "uuid": "878879e6-4f80-4e85-a415-85533b536d13",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "refersion.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw",
-                    "short_id": "e1afb93bfe75a34b"
-                }
-            },
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
@@ -133,6 +107,34 @@
                     "enabled": true,
                     "public_key": "TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4",
                     "short_id": "f5"
+                }
+            },
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
+            "server": "v16.vxlimir.com",
+            "server_port": 1370,
+            "uuid": "878879e6-4f80-4e85-a415-85533b536d13",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "refersion.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw",
+                    "short_id": "e1afb93bfe75a34b"
                 }
             },
             "tag": "@SiNAVM-2"
@@ -171,6 +173,34 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "62.60.233.250",
+            "server_port": 443,
+            "uuid": "fd0cdd44-2361-11f0-9970-45e1d80c4039",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "images.apple.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw",
+                    "short_id": "4476a3"
+                }
+            },
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "direct",
