@@ -118,8 +118,9 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4","type":"ss","server":"45.87.175.22","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"15.237.8.193","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4","type":"ss","server":"45.87.175.22","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"3.73.54.252","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇳🇱NL | 🟢 | ss | @SiNAVM | 0","type":"ss","server":"146.103.98.85","port":46303,"password":"VmtM6lUSMzc9lgO7gDzd49","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇫🇷FR | 🟢 | ss | @meli_proxyy | 12","type":"ss","server":"62.210.88.22","port":443,"password":"E7rra7VwlSx87SLEsqd0Gu","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
@@ -128,8 +129,9 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
       - '🇳🇱NL | 🟢 | ss | @SiNAVM | 0'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 12'
   - name: URL-TEST
@@ -138,8 +140,9 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
       - '🇳🇱NL | 🟢 | ss | @SiNAVM | 0'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 12'
   - name: FALLBACK
@@ -147,8 +150,9 @@ proxy-groups:
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
+      - '🇺🇸US | 🟢 | ss | @DeamNet_Proxy | 4'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
       - '🇳🇱NL | 🟢 | ss | @SiNAVM | 0'
       - '🇫🇷FR | 🟢 | ss | @meli_proxyy | 12'
 rules:
