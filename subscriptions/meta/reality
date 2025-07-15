@@ -120,47 +120,47 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"🇩🇪DE | 🔴 | vless | @customv2ray | 2","type":"vless","server":"server1.fergalvpnmod.com","port":28338,"udp":true,"uuid":"0b9ee474-19f6-4d7f-9281-96f239e6cebc","tls":true,"network":"grpc","client-fingerprint":"randomized","servername":"cloudflare.com","grpc-opts":{"grpc-service-name":"Telegram:@FergalVpnMod"},"reality-opts":{"public-key":"MJwVQS7Qs5U_FYJn_osHZJSQ9ioxZRHC2HDPVwt7nmw","short-id":"9ecc4615ce"}}
   - {"name":"🇩🇪DE | 🔴 | vless | @meli_proxyy | 10","type":"vless","server":"server1.fergalvpnmod.com","port":28338,"udp":true,"uuid":"0b9ee474-19f6-4d7f-9281-96f239e6cebc","tls":true,"network":"grpc","client-fingerprint":"randomized","servername":"cloudflare.com","grpc-opts":{"grpc-service-name":"Telegram:@FergalVpnMod"},"reality-opts":{"public-key":"MJwVQS7Qs5U_FYJn_osHZJSQ9ioxZRHC2HDPVwt7nmw","short-id":"9ecc4615ce"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @customv2ray | 2","type":"vless","server":"server1.fergalvpnmod.com","port":28338,"udp":true,"uuid":"0b9ee474-19f6-4d7f-9281-96f239e6cebc","tls":true,"network":"grpc","client-fingerprint":"randomized","servername":"cloudflare.com","grpc-opts":{"grpc-service-name":"Telegram:@FergalVpnMod"},"reality-opts":{"public-key":"MJwVQS7Qs5U_FYJn_osHZJSQ9ioxZRHC2HDPVwt7nmw","short-id":"9ecc4615ce"}}
   - {"name":"🇩🇪DE | 🟢 | vless | @meli_proxyy | 2","type":"vless","server":"91.99.141.177","port":443,"udp":true,"uuid":"1a827c35-7a17-48d8-a9f5-eeed323ca57b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"refersion.com","reality-opts":{"public-key":"SJt4jAvhiR5MVRnl-OPj2BWUXZT6p4oH-Ugl3B0b-VA","short-id":"8ad4b0d652d3e8"}}
   - {"name":"🇩🇪DE | 🟢 | vless | @customv2ray | 3","type":"vless","server":"de.gy-nt.shop","port":443,"udp":true,"uuid":"3488f5ea-47f8-4d6c-b1af-289c010c57cd","tls":true,"network":"tcp","client-fingerprint":"randomized","servername":"miro.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"B65r_UBsBFSlwq7XbrrWI0SuCxkB8KhQEYaGrB54mTc"}}
-  - {"name":"🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1","type":"vless","server":"194.182.79.117","port":35305,"udp":true,"uuid":"4a97cff9-6a61-403f-a4fb-e54853f132a4","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"sourceforge.net","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON"},"reality-opts":{"public-key":"S8LYaLxf-eMRhIuDxpKuHKs6XBSk1mstDowwxjVYEQI","short-id":"99a2319d8ed309"}}
   - {"name":"🇨🇿CZ | 🔴 | vless | @meli_proxyy | 13","type":"vless","server":"194.182.79.72","port":32826,"udp":true,"uuid":"2dc62e43-90f5-4d72-815b-c64b40d19088","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"sourceforge.net","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON"},"reality-opts":{"public-key":"viVxJfUpCBYia6ZwmuHkuS19C1ARC3OCaaRG9VvOIhg","short-id":"e8f24f79"}}
+  - {"name":"🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1","type":"vless","server":"194.182.79.117","port":35305,"udp":true,"uuid":"4a97cff9-6a61-403f-a4fb-e54853f132a4","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"sourceforge.net","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON"},"reality-opts":{"public-key":"S8LYaLxf-eMRhIuDxpKuHKs6XBSk1mstDowwxjVYEQI","short-id":"99a2319d8ed309"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 10'
+      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | vless | @customv2ray | 3'
-      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
       - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 13'
+      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 10'
+      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | vless | @customv2ray | 3'
-      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
       - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 13'
+      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🔴 | vless | @meli_proxyy | 10'
+      - '🇩🇪DE | 🔴 | vless | @customv2ray | 2'
       - '🇩🇪DE | 🟢 | vless | @meli_proxyy | 2'
       - '🇩🇪DE | 🟢 | vless | @customv2ray | 3'
-      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
       - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 13'
+      - '🇨🇿CZ | 🔴 | vless | @TEHRANARGO | 1'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
