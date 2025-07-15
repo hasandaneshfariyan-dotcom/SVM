@@ -69,8 +69,7 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-7"
             ]
         },
         {
@@ -83,8 +82,7 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-7"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -156,14 +154,14 @@
         },
         {
             "type": "vless",
-            "server": "de.gy-nt.shop",
-            "server_port": 443,
-            "uuid": "3488f5ea-47f8-4d6c-b1af-289c010c57cd",
+            "server": "server1.fergalvpnmod.com",
+            "server_port": 28338,
+            "uuid": "0b9ee474-19f6-4d7f-9281-96f239e6cebc",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "miro.com",
+                "server_name": "cloudflare.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -176,9 +174,16 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "B65r_UBsBFSlwq7XbrrWI0SuCxkB8KhQEYaGrB54mTc",
-                    "short_id": ""
+                    "public_key": "MJwVQS7Qs5U_FYJn_osHZJSQ9ioxZRHC2HDPVwt7nmw",
+                    "short_id": "9ecc4615ce"
                 }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "Telegram:@FergalVpnMod",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
             },
             "tag": "@SiNAVM-3"
         },
@@ -212,14 +217,14 @@
         },
         {
             "type": "vless",
-            "server": "server1.fergalvpnmod.com",
-            "server_port": 28338,
-            "uuid": "0b9ee474-19f6-4d7f-9281-96f239e6cebc",
+            "server": "de.gy-nt.shop",
+            "server_port": 443,
+            "uuid": "3488f5ea-47f8-4d6c-b1af-289c010c57cd",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "cloudflare.com",
+                "server_name": "miro.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -232,16 +237,9 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "MJwVQS7Qs5U_FYJn_osHZJSQ9ioxZRHC2HDPVwt7nmw",
-                    "short_id": "9ecc4615ce"
+                    "public_key": "B65r_UBsBFSlwq7XbrrWI0SuCxkB8KhQEYaGrB54mTc",
+                    "short_id": ""
                 }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "Telegram:@FergalVpnMod",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
             },
             "tag": "@SiNAVM-5"
         },
@@ -314,34 +312,6 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "62.60.233.250",
-            "server_port": 443,
-            "uuid": "fd0cdd44-2361-11f0-9970-45e1d80c4039",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "images.apple.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw",
-                    "short_id": "4476a3"
-                }
-            },
-            "tag": "@SiNAVM-8"
         },
         {
             "type": "direct",
