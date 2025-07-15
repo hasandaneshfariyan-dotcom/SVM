@@ -77,7 +77,8 @@
                 "@SiNAVM-12",
                 "@SiNAVM-13",
                 "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-15",
+                "@SiNAVM-16"
             ]
         },
         {
@@ -98,7 +99,8 @@
                 "@SiNAVM-12",
                 "@SiNAVM-13",
                 "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-15",
+                "@SiNAVM-16"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -171,6 +173,15 @@
         },
         {
             "type": "vless",
+            "server": "IPB-AlphaOmega-Company.1AlphaOmega.Org",
+            "server_port": 80,
+            "uuid": "7193b0d2-8a38-466b-845f-8c44f25acb4c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-4"
+        },
+        {
+            "type": "vless",
             "server": "104.24.150.187",
             "server_port": 2087,
             "uuid": "cbfa8a4f-ca68-45b2-80b7-dbdf4d00dc95",
@@ -199,7 +210,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-4"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -231,7 +242,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-5"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "vless",
@@ -249,7 +260,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
@@ -281,7 +292,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -309,15 +320,6 @@
                     "short_id": "e1afb93bfe75a34b"
                 }
             },
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vless",
-            "server": "zzyd6dhd5.pet0er23mh21qq.com",
-            "server_port": 8080,
-            "uuid": "598a6cea-dfd2-4e97-9415-4571f742bf18",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-9"
         },
         {
@@ -350,30 +352,11 @@
         },
         {
             "type": "vless",
-            "server": "91.99.141.177",
-            "server_port": 443,
-            "uuid": "1a827c35-7a17-48d8-a9f5-eeed323ca57b",
+            "server": "zzyd6dhd5.pet0er23mh21qq.com",
+            "server_port": 8080,
+            "uuid": "598a6cea-dfd2-4e97-9415-4571f742bf18",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "refersion.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "SJt4jAvhiR5MVRnl-OPj2BWUXZT6p4oH-Ugl3B0b-VA",
-                    "short_id": "8ad4b0d652d3e8"
-                }
-            },
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-11"
         },
         {
@@ -413,14 +396,14 @@
         },
         {
             "type": "vless",
-            "server": "194.182.79.72",
-            "server_port": 32826,
-            "uuid": "2dc62e43-90f5-4d72-815b-c64b40d19088",
+            "server": "91.99.141.177",
+            "server_port": 443,
+            "uuid": "1a827c35-7a17-48d8-a9f5-eeed323ca57b",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "sourceforge.net",
+                "server_name": "refersion.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -433,16 +416,9 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "viVxJfUpCBYia6ZwmuHkuS19C1ARC3OCaaRG9VvOIhg",
-                    "short_id": "e8f24f79"
+                    "public_key": "SJt4jAvhiR5MVRnl-OPj2BWUXZT6p4oH-Ugl3B0b-VA",
+                    "short_id": "8ad4b0d652d3e8"
                 }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
             },
             "tag": "@SiNAVM-13"
         },
@@ -483,12 +459,47 @@
         },
         {
             "type": "vless",
+            "server": "194.182.79.72",
+            "server_port": 32826,
+            "uuid": "2dc62e43-90f5-4d72-815b-c64b40d19088",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "sourceforge.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "viVxJfUpCBYia6ZwmuHkuS19C1ARC3OCaaRG9VvOIhg",
+                    "short_id": "e8f24f79"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-15"
+        },
+        {
+            "type": "vless",
             "server": "62.60.163.77",
             "server_port": 3333,
             "uuid": "7d283c1a-3a5b-4b2a-a924-0bd256e89726",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "direct",
