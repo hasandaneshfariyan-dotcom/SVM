@@ -12,11 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇳🇱NL | 🟢 | ss | @sinavm | 0 = ss, 146.103.98.85, 46303, encrypt-method = chacha20-ietf-poly1305, password = VmtM6lUSMzc9lgO7gDzd49
+🇫🇷FR | 🟢 | ss | @meli_proxyy | 19 = ss, 62.210.88.22, 443, encrypt-method = chacha20-ietf-poly1305, password = E7rra7VwlSx87SLEsqd0Gu
 🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0 = ss, 194.107.126.105, 2222, encrypt-method = chacha20-ietf-poly1305, password = qscavF5UviIL-8V-E4raBA
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
-URL-TEST = url-test,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
-FALLBACK = fallback,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+MANUAL = select,URL-TEST,FALLBACK,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇫🇷FR | 🟢 | ss | @meli_proxyy | 19,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+URL-TEST = url-test,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇫🇷FR | 🟢 | ss | @meli_proxyy | 19,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
+FALLBACK = fallback,🇳🇱NL | 🟢 | ss | @sinavm | 0,🇫🇷FR | 🟢 | ss | @meli_proxyy | 19,🇩🇪DE | 🟢 | ss | @OpenSSTPVpn | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
