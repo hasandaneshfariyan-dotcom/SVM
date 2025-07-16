@@ -11,13 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇺🇸US | 🔴 | trojan | @meli_proxyy | 0 = trojan, 172.67.181.173, 443, password = f282b878-8711-45a1-8c69-5564172123c1, udp-delay = true, skip-cert-verify = false, sni = vpn.stupidworld.web.id, ws = false
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 0 = trojan, 52.47.68.103, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 2 = trojan, 3.76.156.12, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇺🇸US | 🔴 | trojan | @meli_proxyy | 1 = trojan, 172.67.181.173, 443, password = f282b878-8711-45a1-8c69-5564172123c1, udp-delay = true, skip-cert-verify = false, sni = vpn.stupidworld.web.id, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
-URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
-FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 0,🇫🇷FR | 🟢 | trojan | @DirectVPN | 0,🇩🇪DE | 🟢 | trojan | @DirectVPN | 2
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 1
+URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 1
+FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 1
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
