@@ -121,7 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇹🇷TR | 🔴 | vless | @sinavm | 1","type":"vless","server":"62.60.233.250","port":443,"udp":true,"uuid":"fd0cdd44-2361-11f0-9970-45e1d80c4039","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"images.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw","short-id":"4476a3"}}
-  - {"name":"🇺🇸US | 🟢 | vless | @customv2ray | 14","type":"vless","server":"amazon-4.cristiano.name.ng","port":443,"udp":true,"uuid":"4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"store.steampowered.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4","short-id":"f5"}}
+  - {"name":"🇨🇿CZ | 🔴 | vless | @meli_proxyy | 22","type":"vless","server":"194.182.79.64","port":14072,"udp":true,"uuid":"f5940000-f45f-4f83-822b-9c2deaed74b6","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"sourceforge.net","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON"},"reality-opts":{"public-key":"rBFBT_1w_zGmAu58xZ11pvWfOrf1wmW-LUVKkqwFrTc","short-id":"29c9b711b2a9fb"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -129,7 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
-      - '🇺🇸US | 🟢 | vless | @customv2ray | 14'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 22'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -137,14 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
-      - '🇺🇸US | 🟢 | vless | @customv2ray | 14'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 22'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
-      - '🇺🇸US | 🟢 | vless | @customv2ray | 14'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 22'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
