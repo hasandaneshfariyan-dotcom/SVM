@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇹🇷TR | 🔴 | vless | @sinavm | 1","type":"vless","server":"62.60.233.250","port":443,"udp":true,"uuid":"fd0cdd44-2361-11f0-9970-45e1d80c4039","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"images.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MFsbnsNQsSpZwP-_Ohzako6aHpfK4-rbssxhr3eywWw","short-id":"4476a3"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 17","type":"vless","server":"unique.bitiboot.com","port":443,"udp":true,"uuid":"7bda027c-cbc8-488f-864f-cfb415cd8d77","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"analytics.google.com","reality-opts":{"public-key":"q70yFMTo4Dz6IWwVcL9icqgJPgyIuv3j3n5fZxym6kg","short-id":"40e3350da285"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 17'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -135,12 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 17'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇹🇷TR | 🔴 | vless | @sinavm | 1'
+      - '🇩🇪DE | 🔴 | vless | @DeamNet_Proxy | 17'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
