@@ -12,14 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇺🇸US | 🔴 | trojan | @meli_proxyy | 4 = trojan, 172.67.181.173, 443, password = f282b878-8711-45a1-8c69-5564172123c1, udp-delay = true, skip-cert-verify = false, sni = vpn.stupidworld.web.id, ws = false
-🇺🇸US | 🟢 | ss | @meli_proxyy | 14 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 3.68.174.66, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 17 = ss, 45.158.171.141, 8080, encrypt-method = chacha20-ietf-poly1305, password = QCXDxuDlTTMD7jtgHUjIoj
 🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0 = ss, 83.172.150.185, 8443, encrypt-method = chacha20-ietf-poly1305, password = 90T1jt82c9BfTXwcYn5sw7
+🇺🇸US | 🟢 | ss | @meli_proxyy | 14 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇺🇸US | 🟢 | ss | @meli_proxyy | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0
-URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇺🇸US | 🟢 | ss | @meli_proxyy | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0
-FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇺🇸US | 🟢 | ss | @meli_proxyy | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 17,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @meli_proxyy | 14
+URL-TEST = url-test,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @meli_proxyy | 14
+FALLBACK = fallback,🇺🇸US | 🔴 | trojan | @meli_proxyy | 4,🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0,🇺🇸US | 🟢 | ss | @meli_proxyy | 14
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
