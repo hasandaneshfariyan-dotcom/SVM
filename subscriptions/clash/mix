@@ -118,35 +118,39 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇺🇸US | 🔴 | trojan | @meli_proxyy | 9","type":"trojan","server":"172.67.181.173","port":443,"udp":false,"password":"f282b878-8711-45a1-8c69-5564172123c1","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"vpn.stupidworld.web.id"}
+  - {"name":"🇺🇸US | 🔴 | trojan | @meli_proxyy | 10","type":"trojan","server":"172.67.181.173","port":443,"udp":false,"password":"f282b878-8711-45a1-8c69-5564172123c1","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"vpn.stupidworld.web.id"}
+  - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"13.38.215.131","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 2","type":"trojan","server":"18.156.18.83","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇺🇸US | 🟢 | ss | @meli_proxyy | 19","type":"ss","server":"45.87.175.58","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇵🇱PL | 🟢 | ss | @meli_proxyy | 2","type":"ss","server":"77.83.246.74","port":443,"password":"fhh4RB19PMgTlacghXfo3S","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 9'
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 10'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 19'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 2'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 9'
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 10'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 19'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 9'
+      - '🇺🇸US | 🔴 | trojan | @meli_proxyy | 10'
+      - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 0'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 2'
-      - '🇺🇸US | 🟢 | ss | @meli_proxyy | 19'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
