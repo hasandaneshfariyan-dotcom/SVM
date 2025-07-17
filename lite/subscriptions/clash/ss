@@ -120,6 +120,7 @@ dns:
 proxies:
   - {"name":"🇳🇱NL | 🟢 | ss | @sinavm | 2","type":"ss","server":"146.103.98.85","port":46303,"password":"VmtM6lUSMzc9lgO7gDzd49","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0","type":"ss","server":"83.172.150.185","port":8443,"password":"90T1jt82c9BfTXwcYn5sw7","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇬🇧GB | 🟢 | ss | @DailyV2RY | 168","type":"ss","server":"freakconfig13.felafel.org","port":443,"password":"1xO2cqPazqjGfCfd","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - FALLBACK
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
+      - '🇬🇧GB | 🟢 | ss | @DailyV2RY | 168'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -136,6 +138,7 @@ proxy-groups:
     proxies:
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
+      - '🇬🇧GB | 🟢 | ss | @DailyV2RY | 168'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -143,6 +146,7 @@ proxy-groups:
     proxies:
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
+      - '🇬🇧GB | 🟢 | ss | @DailyV2RY | 168'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
