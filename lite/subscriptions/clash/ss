@@ -119,6 +119,7 @@ dns:
 
 proxies:
   - {"name":"🇳🇱NL | 🟢 | ss | @sinavm | 2","type":"ss","server":"146.103.98.85","port":46303,"password":"VmtM6lUSMzc9lgO7gDzd49","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇵🇱PL | 🟢 | ss | @meli_proxyy | 22","type":"ss","server":"77.83.246.74","port":443,"password":"fhh4RB19PMgTlacghXfo3S","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0","type":"ss","server":"83.172.150.185","port":8443,"password":"90T1jt82c9BfTXwcYn5sw7","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
@@ -127,6 +128,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 22'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: URL-TEST
     type: url-test
@@ -135,6 +137,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 22'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
   - name: FALLBACK
     type: fallback
@@ -142,6 +145,7 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇳🇱NL | 🟢 | ss | @sinavm | 2'
+      - '🇵🇱PL | 🟢 | ss | @meli_proxyy | 22'
       - '🇫🇮FI | 🟢 | ss | @OpenSSTPVpn | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
