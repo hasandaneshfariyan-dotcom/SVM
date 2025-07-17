@@ -74,9 +74,7 @@
                 "@SiNAVM-9",
                 "@SiNAVM-10",
                 "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14"
+                "@SiNAVM-12"
             ]
         },
         {
@@ -94,9 +92,7 @@
                 "@SiNAVM-9",
                 "@SiNAVM-10",
                 "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14"
+                "@SiNAVM-12"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -120,6 +116,24 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
+            "server": "102.177.176.213",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "102.177.176.213"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "vless",
@@ -151,25 +165,16 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
-            "server": "102.177.176.213",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "server": "45.154.2.169",
+            "server_port": 28784,
+            "uuid": "34f8e5f4-bfa1-4032-a978-8f397a401d39",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "102.177.176.213"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "vless",
@@ -201,32 +206,38 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vless",
-            "server": "45.154.2.169",
-            "server_port": 28784,
-            "uuid": "34f8e5f4-bfa1-4032-a978-8f397a401d39",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
-            "server": "MAgicaL-fISh.sEOtoolsfOryoU.co.UK",
-            "server_port": 80,
-            "uuid": "edb4c373-ac92-4430-8f42-94439ca829b9",
+            "server": "104.21.43.168",
+            "server_port": 443,
+            "uuid": "f048315b-8bc2-42ff-9b22-4dcbad2b79e4",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "s1.sUbUrl.OrG",
+                "insecure": false,
+                "alpn": [
+                    "h2",
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/",
+                "path": "\/index.html",
                 "headers": {
-                    "Host": "MAgicaL-fISh.sEOtoolsfOryoU.co.UK"
+                    "Host": "s1.sUbUrl.OrG"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-6"
         },
@@ -264,6 +275,24 @@
         },
         {
             "type": "vless",
+            "server": "45.8.146.207",
+            "server_port": 80,
+            "uuid": "a6c4db3e-7785-429e-8bc5-9eaf7b1a79b1",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/vless\/",
+                "headers": {
+                    "Host": "45.8.146.207"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "vless",
             "server": "www.speedtest.net",
             "server_port": 443,
             "uuid": "289a4e03-317f-4bf8-97d3-e33200df6a2b",
@@ -292,40 +321,22 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vless",
-            "server": "45.8.146.207",
-            "server_port": 80,
-            "uuid": "a6c4db3e-7785-429e-8bc5-9eaf7b1a79b1",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/vless\/",
-                "headers": {
-                    "Host": "45.8.146.207"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
             "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "vless",
-            "server": "91.99.239.156",
-            "server_port": 443,
-            "uuid": "d2d29254-ad3b-495a-b209-5ccc4f12c0a4",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
             "server": "300232332.webnama.com.tr.privatepack.ir",
             "server_port": 1517,
             "uuid": "88f9173d-09b1-463a-99c8-e39852693cba",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-10"
+        },
+        {
+            "type": "vless",
+            "server": "5.223.51.186",
+            "server_port": 80,
+            "uuid": "31cebb90-917e-4bf4-9f2c-8ec4e35b286d",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-11"
@@ -357,43 +368,6 @@
                 }
             },
             "tag": "@SiNAVM-12"
-        },
-        {
-            "type": "vless",
-            "server": "est01-vlr01.tcp-reset-club.net",
-            "server_port": 443,
-            "uuid": "2a02cb25-0f58-4b19-a7a6-8c205fdb9042",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "hls-svod.itunes.apple.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg",
-                    "short_id": "86e999a2cdc2"
-                }
-            },
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "vless",
-            "server": "5.223.51.186",
-            "server_port": 80,
-            "uuid": "31cebb90-917e-4bf4-9f2c-8ec4e35b286d",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-14"
         },
         {
             "type": "direct",
