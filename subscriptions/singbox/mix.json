@@ -78,8 +78,7 @@
                 "@SiNAVM-13",
                 "@SiNAVM-14",
                 "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17"
+                "@SiNAVM-16"
             ]
         },
         {
@@ -101,8 +100,7 @@
                 "@SiNAVM-13",
                 "@SiNAVM-14",
                 "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17"
+                "@SiNAVM-16"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -229,6 +227,24 @@
         },
         {
             "type": "vless",
+            "server": "104.21.112.1",
+            "server_port": 80,
+            "uuid": "6c590c58-0bcd-4b64-a073-c46066080d7e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+                "headers": {
+                    "Host": "104.21.112.1"
+                },
+                "max_early_data": 2480,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vless",
             "server": "www.speedtest.net",
             "server_port": 443,
             "uuid": "38046915-6d82-4d86-8510-b5bcc569d0ea",
@@ -257,43 +273,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "vless",
-            "server": "104.21.112.1",
-            "server_port": 80,
-            "uuid": "6c590c58-0bcd-4b64-a073-c46066080d7e",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
-                "headers": {
-                    "Host": "104.21.112.1"
-                },
-                "max_early_data": 2480,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
             "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "45.8.146.207",
-            "server_port": 80,
-            "uuid": "a6c4db3e-7785-429e-8bc5-9eaf7b1a79b1",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/vless\/",
-                "headers": {
-                    "Host": "45.8.146.207"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-8"
         },
         {
             "type": "vless",
@@ -325,7 +305,35 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "vless",
+            "server": "45.8.146.207",
+            "server_port": 80,
+            "uuid": "a6c4db3e-7785-429e-8bc5-9eaf7b1a79b1",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/vless\/",
+                "headers": {
+                    "Host": "45.8.146.207"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.177",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
@@ -353,27 +361,7 @@
                     "short_id": "eebcfab3"
                 }
             },
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.177",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.22",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
@@ -382,7 +370,7 @@
             "uuid": "88f9173d-09b1-463a-99c8-e39852693cba",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-13"
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
@@ -417,6 +405,16 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
+            "tag": "@SiNAVM-13"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "45.87.175.22",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-14"
         },
         {
@@ -478,15 +476,6 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-16"
-        },
-        {
-            "type": "vless",
-            "server": "n4.asmdns.net",
-            "server_port": 44185,
-            "uuid": "4988687e-df1b-45e6-8f7e-fde45b270d76",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-17"
         },
         {
             "type": "direct",
