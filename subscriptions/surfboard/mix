@@ -13,12 +13,11 @@ enhanced-mode-by-rule = true
 DIRECT = direct
 🇺🇸US | 🟢 | ss | @meli_proxyy | 16 = ss, 45.87.175.22, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 🇳🇱NL | 🟢 | ss | @meli_proxyy | 17 = ss, 193.29.139.177, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 1 = trojan, 63.179.35.160, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇫🇮FI | 🟢 | ss | @meli_proxyy | 5 = ss, 83.147.216.70, 64519, encrypt-method = chacha20-ietf-poly1305, password = YXgS8ComTam7qoesPlzlMo
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 18.197.77.20, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1,🇫🇮FI | 🟢 | ss | @meli_proxyy | 5
-URL-TEST = url-test,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1,🇫🇮FI | 🟢 | ss | @meli_proxyy | 5
-FALLBACK = fallback,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 1,🇫🇮FI | 🟢 | ss | @meli_proxyy | 5
+MANUAL = select,URL-TEST,FALLBACK,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
+URL-TEST = url-test,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
+FALLBACK = fallback,🇺🇸US | 🟢 | ss | @meli_proxyy | 16,🇳🇱NL | 🟢 | ss | @meli_proxyy | 17,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL

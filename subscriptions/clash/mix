@@ -120,8 +120,7 @@ dns:
 proxies:
   - {"name":"🇺🇸US | 🟢 | ss | @meli_proxyy | 16","type":"ss","server":"45.87.175.22","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇳🇱NL | 🟢 | ss | @meli_proxyy | 17","type":"ss","server":"193.29.139.177","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 1","type":"trojan","server":"63.179.35.160","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇫🇮FI | 🟢 | ss | @meli_proxyy | 5","type":"ss","server":"83.147.216.70","port":64519,"password":"YXgS8ComTam7qoesPlzlMo","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 0","type":"trojan","server":"18.197.77.20","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +129,7 @@ proxy-groups:
       - FALLBACK
       - '🇺🇸US | 🟢 | ss | @meli_proxyy | 16'
       - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 17'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 1'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 5'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -140,8 +138,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🟢 | ss | @meli_proxyy | 16'
       - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 17'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 1'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 5'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -149,8 +146,7 @@ proxy-groups:
     proxies:
       - '🇺🇸US | 🟢 | ss | @meli_proxyy | 16'
       - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 17'
-      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 1'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 5'
+      - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 0'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
