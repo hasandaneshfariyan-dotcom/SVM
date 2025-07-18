@@ -311,6 +311,40 @@
         },
         {
             "type": "vless",
+            "server": "104.21.43.168",
+            "server_port": 443,
+            "uuid": "e2c0a0ac-0270-4ebc-acbd-75df71153b0e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "2.link-kon.ir",
+                "insecure": false,
+                "alpn": [
+                    "h3",
+                    "h2",
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/bDUGlAj9BFG7zebG",
+                "headers": {
+                    "Host": "2.link-kon.ir"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
             "server": "vip1.proxystore11.news",
             "server_port": 2052,
             "uuid": "a3aef958-6961-464c-b1a9-b09b0f9cd1f7",
@@ -334,41 +368,6 @@
                     "public_key": "-4S95rjoZIG_AeUxIlwedx89e7C_X4jnePY3RsiF4io",
                     "short_id": "f8fcb589"
                 }
-            },
-            "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "vless",
-            "server": "91.107.180.100",
-            "server_port": 443,
-            "uuid": "01763caa-bd69-47f8-89c4-031b2f0bd8ff",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "zula.ir",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "eZs1Yn6wbXV2RPT47_szgepN6lNKseOb9nprDMrpNmE",
-                    "short_id": "f3"
-                }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "@SobyV2ray",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
             },
             "tag": "@SiNAVM-10"
         },
