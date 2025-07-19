@@ -79,14 +79,14 @@
         },
         {
             "type": "vless",
-            "server": "turbooserver.sadafspace.com",
-            "server_port": 55990,
-            "uuid": "turboo-server",
+            "server": "server2.fergalvpnmod.com",
+            "server_port": 25126,
+            "uuid": "bab6b157-a6e8-4756-a485-dcb4ca476eb9",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "canva.com",
+                "server_name": "cloudflare.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -99,9 +99,16 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "TbZDTzAIogOy-LWQjdqXElxPlUd6xdcwd9xxCqhbj04",
-                    "short_id": "eebcfab3"
+                    "public_key": "AtKTc84OxbQltdeNKIgGRpUBmO1nKRCyqV6OuZmGIik",
+                    "short_id": "1e"
                 }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "Telegram:@FergalVpnMod",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
             },
             "tag": "@SiNAVM-1"
         },
