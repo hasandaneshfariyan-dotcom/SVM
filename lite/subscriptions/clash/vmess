@@ -118,7 +118,6 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇨🇦CA | 🔴 | vmess | @DeamNet_Proxy | 17","type":"vmess","server":"51.79.102.253","port":"80","cipher":"auto","uuid":"58fe1542-5290-40ad-815a-77707a81afe5","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/IOebhLMhl1CTbFHbL95myfRX2","headers":{"host":"51.79.102.253"}}}
   - {"name":"🇮🇷IR | 🔴 | vmess | @customv2ray | 16","type":"vmess","server":"sr10.minhost.sbs","port":"2052","cipher":"auto","uuid":"f793ac81-4ab2-459c-833b-e6a6e34873a2","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
@@ -126,7 +125,6 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇨🇦CA | 🔴 | vmess | @DeamNet_Proxy | 17'
       - '🇮🇷IR | 🔴 | vmess | @customv2ray | 16'
   - name: URL-TEST
     type: url-test
@@ -134,14 +132,12 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '🇨🇦CA | 🔴 | vmess | @DeamNet_Proxy | 17'
       - '🇮🇷IR | 🔴 | vmess | @customv2ray | 16'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇨🇦CA | 🔴 | vmess | @DeamNet_Proxy | 17'
       - '🇮🇷IR | 🔴 | vmess | @customv2ray | 16'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
