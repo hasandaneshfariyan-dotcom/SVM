@@ -76,8 +76,7 @@
                 "@SiNAVM-11",
                 "@SiNAVM-12",
                 "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-14"
             ]
         },
         {
@@ -97,8 +96,7 @@
                 "@SiNAVM-11",
                 "@SiNAVM-12",
                 "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15"
+                "@SiNAVM-14"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -107,33 +105,19 @@
         },
         {
             "type": "vless",
-            "server": "172.66.132.196",
-            "server_port": 443,
-            "uuid": "5de46b0d-10fd-4162-8997-5003f9da30e0",
+            "server": "102.177.176.213",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "mmd-p9k.PagEs.Dev",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
             "transport": {
                 "type": "ws",
-                "path": "\/tel-@v2ray_alpha=",
+                "path": "\/",
                 "headers": {
-                    "Host": "mmd-p9k.PagEs.Dev"
+                    "Host": "102.177.176.213"
                 },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-1"
         },
@@ -207,19 +191,33 @@
         },
         {
             "type": "vless",
-            "server": "102.177.176.213",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "server": "172.66.132.196",
+            "server_port": 443,
+            "uuid": "5de46b0d-10fd-4162-8997-5003f9da30e0",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "mmd-p9k.PagEs.Dev",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "transport": {
                 "type": "ws",
-                "path": "\/",
+                "path": "\/tel-@v2ray_alpha=",
                 "headers": {
-                    "Host": "102.177.176.213"
+                    "Host": "mmd-p9k.PagEs.Dev"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-5"
         },
@@ -324,6 +322,34 @@
         },
         {
             "type": "vless",
+            "server": "turbooserver.sadafspace.com",
+            "server_port": 55990,
+            "uuid": "turboo-server",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "canva.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "TbZDTzAIogOy-LWQjdqXElxPlUd6xdcwd9xxCqhbj04",
+                    "short_id": "eebcfab3"
+                }
+            },
+            "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
             "server": "57.129.41.216",
             "server_port": 8443,
             "uuid": "2f7d96b3-ea62-4081-b337-8d3b6c3771f7",
@@ -352,15 +378,6 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "vless",
-            "server": "em-3.webnama.com.tr",
-            "server_port": 1429,
-            "uuid": "37c38568-d2fb-46f4-a107-ca15890f5cdf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-10"
         },
         {
@@ -383,30 +400,11 @@
         },
         {
             "type": "vless",
-            "server": "turbooserver.sadafspace.com",
-            "server_port": 55990,
-            "uuid": "turboo-server",
+            "server": "em-3.webnama.com.tr",
+            "server_port": 1429,
+            "uuid": "37c38568-d2fb-46f4-a107-ca15890f5cdf",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "canva.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "TbZDTzAIogOy-LWQjdqXElxPlUd6xdcwd9xxCqhbj04",
-                    "short_id": "eebcfab3"
-                }
-            },
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-12"
         },
         {
@@ -473,38 +471,6 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "vless",
-            "server": "62.3.12.185",
-            "server_port": 443,
-            "uuid": "75fde681-ec64-4654-86fa-30732e8e179c",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "NGINX-Z.pages.DEV",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assets",
-                "headers": {
-                    "Host": "NGINX-Z.pages.DEV"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-15"
         },
         {
             "type": "direct",
