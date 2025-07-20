@@ -68,7 +68,8 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6"
+                "@SiNAVM-6",
+                "@SiNAVM-7"
             ]
         },
         {
@@ -80,7 +81,8 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6"
+                "@SiNAVM-6",
+                "@SiNAVM-7"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -268,6 +270,34 @@
                 "permit_without_stream": false
             },
             "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vless",
+            "server": "v19.vxlimir.com",
+            "server_port": 1370,
+            "uuid": "878879e6-4f80-4e85-a415-85533b536d13",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "refersion.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw",
+                    "short_id": "e1afb93bfe75a34b"
+                }
+            },
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "direct",
