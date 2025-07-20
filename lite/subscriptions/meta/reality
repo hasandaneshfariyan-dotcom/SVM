@@ -121,8 +121,8 @@ dns:
 
 proxies:
   - {"name":"🇩🇪DE | 🔴 | vless | @sinavm | 0","type":"vless","server":"91.107.133.59","port":48883,"udp":true,"uuid":"52f9a9c0-ae3e-400c-a5f2-0360025db51d","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"refersion.com","reality-opts":{"public-key":"smZYwv5E-y4d4u5ovxQ8BYcfNE8gy3mkANAQzoWyBmI","short-id":"3518ea8cbd9317"}}
-  - {"name":"🇩🇪DE | 🔴 | vless | @DailyV2RY | 157","type":"vless","server":"78.159.110.180","port":55778,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"tcp","client-fingerprint":null,"servername":"","reality-opts":{"public-key":null}}
-  - {"name":"🇩🇪DE | 🟢 | vless | @DailyV2RY | 158","type":"vless","server":"v19.vxlimir.com","port":1370,"udp":true,"uuid":"878879e6-4f80-4e85-a415-85533b536d13","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"refersion.com","reality-opts":{"public-key":"_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw","short-id":"e1afb93bfe75a34b"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @DailyV2RY | 177","type":"vless","server":"78.159.110.180","port":55778,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"tcp","client-fingerprint":null,"servername":"","reality-opts":{"public-key":null}}
+  - {"name":"🇩🇪DE | 🟢 | vless | @DailyV2RY | 178","type":"vless","server":"v19.vxlimir.com","port":1370,"udp":true,"uuid":"878879e6-4f80-4e85-a415-85533b536d13","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"refersion.com","reality-opts":{"public-key":"_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw","short-id":"e1afb93bfe75a34b"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +130,8 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇩🇪DE | 🔴 | vless | @sinavm | 0'
-      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 157'
-      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 158'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 177'
+      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 178'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -139,16 +139,16 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇩🇪DE | 🔴 | vless | @sinavm | 0'
-      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 157'
-      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 158'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 177'
+      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 178'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇩🇪DE | 🔴 | vless | @sinavm | 0'
-      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 157'
-      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 158'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 177'
+      - '🇩🇪DE | 🟢 | vless | @DailyV2RY | 178'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
