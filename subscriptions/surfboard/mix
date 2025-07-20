@@ -11,10 +11,13 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 1 = trojan, 35.180.162.247, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 18.156.59.108, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 0 = ss, 213.109.147.242, 62685, encrypt-method = chacha20-ietf-poly1305, password = VpKABcOpNNA0l5G2AVOmw8
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 0
+URL-TEST = url-test,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 0
+FALLBACK = fallback,🇫🇷FR | 🟢 | trojan | @DirectVPN | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0,🇳🇱NL | 🟢 | ss | @DeamNet_Proxy | 0
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
