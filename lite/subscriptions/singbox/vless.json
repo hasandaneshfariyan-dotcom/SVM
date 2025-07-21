@@ -84,7 +84,8 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22"
+                "@SiNAVM-22",
+                "@SiNAVM-23"
             ]
         },
         {
@@ -112,7 +113,8 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22"
+                "@SiNAVM-22",
+                "@SiNAVM-23"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -575,17 +577,26 @@
         },
         {
             "type": "vless",
+            "server": "170.187.147.168",
+            "server_port": 443,
+            "uuid": "3b7fcfbf-f26e-4055-bdaa-bb9fae6cab37",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "vless",
             "server": "ipw.gfdv54cvghhgfhgj-njhgj64.info",
             "server_port": 2096,
-            "uuid": "027f5bd9-4095-484c-b149-2fae488b457b",
+            "uuid": "24a4aa9b-b341-4717-9d4a-00d74c2b84e0",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "638883051421404077.amsterdam-prx-dnraaal.info",
+                "server_name": "VmShJ6l4U4.mYsPdMmEtI.cOm",
                 "insecure": false,
                 "alpn": [
-                    ""
+                    "h3h2"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
@@ -596,27 +607,9 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/rlrsttws",
+                "path": "\/",
                 "headers": {
-                    "Host": "638883051421404077.amsterdam-prx-dnraaal.info"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-20"
-        },
-        {
-            "type": "vless",
-            "server": "102.177.189.29",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TelegramU0001F1E8U0001F1F3",
-                "headers": {
-                    "Host": "102.177.189.29"
+                    "Host": "VmShJ6l4U4.mYsPdMmEtI.cOm"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -640,6 +633,24 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-22"
+        },
+        {
+            "type": "vless",
+            "server": "102.177.189.29",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/TelegramU0001F1E8U0001F1F3",
+                "headers": {
+                    "Host": "102.177.189.29"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "direct",
