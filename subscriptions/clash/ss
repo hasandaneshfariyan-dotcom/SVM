@@ -118,35 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 3","type":"ss","server":"45.144.49.140","port":57456,"password":"a58fa62b4944ddbf","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 5","type":"ss","server":"45.139.24.24","port":57456,"password":"360e21d21977dc11","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9","type":"ss","server":"147.78.3.93","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"46.101.245.131","port":44354,"password":"9RviNa4tscjcmCB408vLSg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4","type":"ss","server":"45.144.49.140","port":57456,"password":"a58fa62b4944ddbf","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 3'
-      - '🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 5'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9'
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 3'
-      - '🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 5'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9'
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 3'
-      - '🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 5'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9'
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
