@@ -11,13 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2 = ss, 45.139.24.24, 57456, encrypt-method = chacha20-ietf-poly1305, password = 360e21d21977dc11
-🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9 = ss, 147.78.3.93, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
 🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0 = ss, 45.144.49.140, 57456, encrypt-method = chacha20-ietf-poly1305, password = a58fa62b4944ddbf
+🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2 = ss, 45.139.24.24, 57456, encrypt-method = chacha20-ietf-poly1305, password = 360e21d21977dc11
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2,🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0
-URL-TEST = url-test,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2,🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0
-FALLBACK = fallback,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2,🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 9,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0
+MANUAL = select,URL-TEST,FALLBACK,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2
+URL-TEST = url-test,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2
+FALLBACK = fallback,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 0,🇷🇺RU | 🟢 | ss | @ShadowProxy66 | 2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
