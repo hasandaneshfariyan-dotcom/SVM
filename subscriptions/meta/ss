@@ -122,7 +122,6 @@ dns:
 proxies:
   - {"name":"🇩🇪DE | 🟢 | ss | @SiNAVM | 0","type":"ss","server":"85.208.139.158","port":25607,"password":"KprhRx7jTQu7afcGY3amsD","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"46.101.245.131","port":44354,"password":"9RviNa4tscjcmCB408vLSg","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4","type":"ss","server":"45.144.49.140","port":57456,"password":"a58fa62b4944ddbf","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,7 +130,6 @@ proxy-groups:
       - FALLBACK
       - '🇩🇪DE | 🟢 | ss | @SiNAVM | 0'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -140,7 +138,6 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | ss | @SiNAVM | 0'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -148,7 +145,6 @@ proxy-groups:
     proxies:
       - '🇩🇪DE | 🟢 | ss | @SiNAVM | 0'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
