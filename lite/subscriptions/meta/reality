@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇳🇱NL | 🔴 | vless | @customv2ray | 13","type":"vless","server":"server2.fergalvpnmod.com","port":25126,"udp":true,"uuid":"bab6b157-a6e8-4756-a485-dcb4ca476eb9","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"cloudflare.com","grpc-opts":{"grpc-service-name":"Telegram:@FergalVpnMod"},"reality-opts":{"public-key":"AtKTc84OxbQltdeNKIgGRpUBmO1nKRCyqV6OuZmGIik","short-id":"1e"}}
+  - {"name":"🇩🇪DE | 🔴 | vless | @DailyV2RY | 112","type":"vless","server":"91.99.222.93","port":443,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"xhttp","client-fingerprint":null,"servername":"","reality-opts":{"public-key":null}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇳🇱NL | 🔴 | vless | @customv2ray | 13'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 112'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -135,12 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇳🇱NL | 🔴 | vless | @customv2ray | 13'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 112'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇳🇱NL | 🔴 | vless | @customv2ray | 13'
+      - '🇩🇪DE | 🔴 | vless | @DailyV2RY | 112'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
