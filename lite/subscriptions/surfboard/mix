@@ -11,13 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 14 = trojan, 52.47.143.163, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 15 = trojan, 15.188.128.163, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4 = ss, 45.144.49.140, 57456, encrypt-method = chacha20-ietf-poly1305, password = a58fa62b4944ddbf
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 12 = trojan, 18.192.149.77, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇫🇷FR | 🟢 | trojan | @DirectVPN | 13 = trojan, 15.237.98.61, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇫🇷FR | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4
-URL-TEST = url-test,🇫🇷FR | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4
-FALLBACK = fallback,🇫🇷FR | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇵🇱PL | 🟢 | ss | @ShadowProxy66 | 4
+MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13
+URL-TEST = url-test,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13
+FALLBACK = fallback,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
