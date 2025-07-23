@@ -84,8 +84,7 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-22"
             ]
         },
         {
@@ -113,8 +112,7 @@
                 "@SiNAVM-19",
                 "@SiNAVM-20",
                 "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23"
+                "@SiNAVM-22"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -619,11 +617,20 @@
         },
         {
             "type": "vless",
-            "server": "216.22.5.68",
-            "server_port": 443,
-            "uuid": "5721967b-7414-4694-8110-fa524c96087f",
+            "server": "102.177.189.29",
+            "server_port": 8880,
+            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/TelegramU0001F1E8U0001F1F3",
+                "headers": {
+                    "Host": "102.177.189.29"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-21"
         },
         {
@@ -643,24 +650,6 @@
                 "early_data_header_name": ""
             },
             "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "vless",
-            "server": "102.177.189.29",
-            "server_port": 8880,
-            "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/TelegramU0001F1E8U0001F1F3",
-                "headers": {
-                    "Host": "102.177.189.29"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-23"
         },
         {
             "type": "direct",
