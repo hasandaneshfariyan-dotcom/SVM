@@ -64,7 +64,8 @@
             "outbounds": [
                 "Best Latency",
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
@@ -72,7 +73,8 @@
             "tag": "Best Latency",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -134,6 +136,34 @@
                 }
             },
             "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
+            "server": "meli_proxyy.vip-plan.org",
+            "server_port": 54474,
+            "uuid": "c8fae2e1-bffc-4e20-94f2-8bee7ba14ccd",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "mVptIpBcUtMqN2tfYE8eNwBrhqNdb0lWJoeRvYen8TY",
+                    "short_id": "2cb4454d18"
+                }
+            },
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
