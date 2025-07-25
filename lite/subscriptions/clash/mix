@@ -120,7 +120,6 @@ dns:
 proxies:
   - {"name":"🇫🇷FR | 🟢 | trojan | @DirectVPN | 14","type":"trojan","server":"35.181.196.98","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"🇩🇪DE | 🟢 | trojan | @DirectVPN | 15","type":"trojan","server":"18.153.218.127","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 17","type":"ss","server":"147.78.3.93","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇩🇪DE | 🔴 | vmess | @customv2ray | 24","type":"vmess","server":"movaghat20.funfil.link","port":"48913","cipher":"auto","uuid":"08a3bdd2-2167-4761-b547-e8bd1b4a44ec","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
@@ -130,7 +129,6 @@ proxy-groups:
       - FALLBACK
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 17'
       - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
   - name: URL-TEST
     type: url-test
@@ -140,7 +138,6 @@ proxy-groups:
     proxies:
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 17'
       - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
   - name: FALLBACK
     type: fallback
@@ -149,7 +146,6 @@ proxy-groups:
     proxies:
       - '🇫🇷FR | 🟢 | trojan | @DirectVPN | 14'
       - '🇩🇪DE | 🟢 | trojan | @DirectVPN | 15'
-      - '🇺🇦UA | 🟢 | ss | @DeamNet_Proxy | 17'
       - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
