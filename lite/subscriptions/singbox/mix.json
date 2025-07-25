@@ -418,14 +418,14 @@
         },
         {
             "type": "vless",
-            "server": "5.75.198.47",
+            "server": "104.21.36.57",
             "server_port": 443,
-            "uuid": "1584806e-f63d-4f9b-a0b3-abe64b35a09c",
+            "uuid": "6c11247b-6078-461a-93d5-22e4df284e6d",
             "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
+            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "vpn_proxy_channel_vpn_proxy_channel.hohod.ir",
+                "server_name": "mirror.fullmargintraders.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -435,12 +435,16 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "GpgfsA-U8Y8M3LRcTfsaBViDtp2VlN5riSLLZ2kxEiQ",
-                    "short_id": "974a74bf"
                 }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/wsv\/6c11247b-6078-461a-93d5-22e4df284e6d",
+                "headers": {
+                    "Host": "mirror.fullmargintraders.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-13"
         },
