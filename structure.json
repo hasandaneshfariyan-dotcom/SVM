@@ -8,7 +8,7 @@
     "servers": [
       {
         "tag": "dns_proxy",
-        "address": "tcp://1.1.1.1",
+        "address": "https://1.1.1.1/dns-query",
         "address_resolver": "dns_direct",
         "strategy": "prefer_ipv4",
         "detour": "t.me/sinavm"
@@ -120,8 +120,6 @@
       "outbounds": [],
       "url": "http://whoer.net",
       "interval": "9m0s",
-      "tolerance": 1,
-      "idle_timeout": "9m0s"
     },
     {
       "type": "direct",
