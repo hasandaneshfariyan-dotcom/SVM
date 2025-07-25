@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇩🇪DE | 🔴 | vmess | @customv2ray | 14","type":"vmess","server":"panel3.ipyar.org","port":"32017","cipher":"auto","uuid":"c0ccdeb9-784c-4d67-b904-20dcaac9902a","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"🇩🇪DE | 🔴 | vmess | @customv2ray | 24","type":"vmess","server":"movaghat20.funfil.link","port":"48913","cipher":"auto","uuid":"08a3bdd2-2167-4761-b547-e8bd1b4a44ec","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 14'
+      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 14'
+      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 14'
+      - '🇩🇪DE | 🔴 | vmess | @customv2ray | 24'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
