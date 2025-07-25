@@ -123,19 +123,19 @@
         },
         {
             "type": "vless",
-            "server": "www.speedtest.net.cdn.cloudflare.net",
+            "server": "104.18.26.94",
             "server_port": 80,
-            "uuid": "6b3b071f-096b-4e4c-8d70-0e0b53f27434",
+            "uuid": "bc0a2570-d5fb-4906-b0f0-d47cdcd0a381",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "www.speedtest.net.cdn.cloudflare.net"
+                    "Host": "104.18.26.94"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-2"
         },
@@ -192,19 +192,19 @@
         },
         {
             "type": "vless",
-            "server": "104.18.26.94",
+            "server": "www.speedtest.net.cdn.cloudflare.net",
             "server_port": 80,
-            "uuid": "bc0a2570-d5fb-4906-b0f0-d47cdcd0a381",
+            "uuid": "6b3b071f-096b-4e4c-8d70-0e0b53f27434",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "transport": {
                 "type": "ws",
                 "path": "\/",
                 "headers": {
-                    "Host": "104.18.26.94"
+                    "Host": "www.speedtest.net.cdn.cloudflare.net"
                 },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-5"
         },
@@ -260,6 +260,15 @@
         },
         {
             "type": "vless",
+            "server": "www.speedtest.net",
+            "server_port": 2096,
+            "uuid": "49d6d5dd-bc9b-4ff9-ade9-3b9c25ca5f25",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "vless",
             "server": "www.visa.com.sg",
             "server_port": 2087,
             "uuid": "90c7ad5e-cd15-4314-b39b-aeabd397d592",
@@ -288,15 +297,6 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 2096,
-            "uuid": "49d6d5dd-bc9b-4ff9-ade9-3b9c25ca5f25",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-9"
         },
         {
@@ -319,14 +319,14 @@
         },
         {
             "type": "vless",
-            "server": "5.75.198.47",
-            "server_port": 443,
-            "uuid": "1584806e-f63d-4f9b-a0b3-abe64b35a09c",
+            "server": "49.13.12.238",
+            "server_port": 8501,
+            "uuid": "ac37eb9c-0db8-4056-8f61-e8db4e2da35e",
             "packet_encoding": "xudp",
             "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "vpn_proxy_channel_vpn_proxy_channel.hohod.ir",
+                "server_name": "tgju.org",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -339,8 +339,8 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "GpgfsA-U8Y8M3LRcTfsaBViDtp2VlN5riSLLZ2kxEiQ",
-                    "short_id": "974a74bf"
+                    "public_key": "OJ0wA5wp55uZdD16dutlTZvx1x-rbMMXmiO9D_MMCHI",
+                    "short_id": "e701a013553059ba"
                 }
             },
             "tag": "@SiNAVM-11"
@@ -353,34 +353,6 @@
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-12"
-        },
-        {
-            "type": "vless",
-            "server": "meli_proxyy.vip-plan.org",
-            "server_port": 54474,
-            "uuid": "c8fae2e1-bffc-4e20-94f2-8bee7ba14ccd",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
-            "tls": {
-                "enabled": true,
-                "server_name": "yahoo.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "random"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "mVptIpBcUtMqN2tfYE8eNwBrhqNdb0lWJoeRvYen8TY",
-                    "short_id": "2cb4454d18"
-                }
-            },
-            "tag": "@SiNAVM-13"
         },
         {
             "type": "vless",
@@ -412,6 +384,34 @@
                 },
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-13"
+        },
+        {
+            "type": "vless",
+            "server": "meli_proxyy.vip-plan.org",
+            "server_port": 54474,
+            "uuid": "c8fae2e1-bffc-4e20-94f2-8bee7ba14ccd",
+            "packet_encoding": "xudp",
+            "domain_strategy": "ipv6_only",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "random"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "mVptIpBcUtMqN2tfYE8eNwBrhqNdb0lWJoeRvYen8TY",
+                    "short_id": "2cb4454d18"
+                }
             },
             "tag": "@SiNAVM-14"
         },
