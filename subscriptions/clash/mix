@@ -119,7 +119,6 @@ dns:
 
 proxies:
   - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"46.101.245.131","port":44354,"password":"9RviNa4tscjcmCB408vLSg","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"🇫🇮FI | 🟢 | ss | @meli_proxyy | 1","type":"ss","server":"83.147.216.70","port":64519,"password":"PSmqa9uK9Oo1eivPyXiAH8","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -127,7 +126,6 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -135,14 +133,12 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
-      - '🇫🇮FI | 🟢 | ss | @meli_proxyy | 1'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
