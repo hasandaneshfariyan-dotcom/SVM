@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇫🇷FR | 🔴 | vless | @meli_proxyy | 3","type":"vless","server":"35.181.44.98","port":443,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"xhttp","client-fingerprint":null,"servername":"","reality-opts":{"public-key":null}}
+  - {"name":"🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5","type":"vless","server":"45.83.20.34","port":58164,"udp":true,"uuid":"34c9f621-0614-4b7f-aab3-c4400bb15a89","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"7cbcFHSx2vqz38zW9BmlSIHTTSdNtlgv_S5uZ0MSIAE","short-id":"788456bc"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +129,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇫🇷FR | 🔴 | vless | @meli_proxyy | 3'
+      - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -135,12 +137,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇫🇷FR | 🔴 | vless | @meli_proxyy | 3'
+      - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '🇫🇷FR | 🔴 | vless | @meli_proxyy | 3'
+      - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
