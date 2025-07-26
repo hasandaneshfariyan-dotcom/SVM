@@ -121,6 +121,7 @@ dns:
 
 proxies:
   - {"name":"🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5","type":"vless","server":"45.83.20.34","port":58164,"udp":true,"uuid":"34c9f621-0614-4b7f-aab3-c4400bb15a89","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"7cbcFHSx2vqz38zW9BmlSIHTTSdNtlgv_S5uZ0MSIAE","short-id":"788456bc"}}
+  - {"name":"🇺🇸US | 🔴 | vless | @meli_proxyy | 20","type":"vless","server":"uuk1v.tok8888.com","port":8443,"udp":true,"uuid":"656e8471-baf1-4927-afa9-b9cb745df576","tls":true,"network":"tcp","client-fingerprint":"edge","servername":"www.apple.com.cn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1jupCbzD9RB34YhWct4C6_I1bx_O5Ct7ZnT5dfCiV18"}}
   - {"name":"🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0","type":"vless","server":"49.13.12.238","port":8501,"udp":true,"uuid":"ac37eb9c-0db8-4056-8f61-e8db4e2da35e","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tgju.org","reality-opts":{"public-key":"OJ0wA5wp55uZdD16dutlTZvx1x-rbMMXmiO9D_MMCHI","short-id":"e701a013553059ba"}}
 proxy-groups:
   - name: MANUAL
@@ -129,6 +130,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
+      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
   - name: URL-TEST
     type: url-test
@@ -137,6 +139,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
+      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
   - name: FALLBACK
     type: fallback
@@ -144,6 +147,7 @@ proxy-groups:
     interval: 60
     proxies:
       - '🇧🇪BE | 🟢 | vless | @ShadowProxy66 | 5'
+      - '🇺🇸US | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
