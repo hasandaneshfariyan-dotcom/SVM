@@ -118,31 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇩🇪DE | 🟢 | ss | @SiNAVM | 1","type":"ss","server":"85.208.139.158","port":25607,"password":"DXQocbpII6cMgNuMK5xClQ","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0","type":"ss","server":"46.101.245.131","port":44354,"password":"9RviNa4tscjcmCB408vLSg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | ss | @SiNAVM | 1","type":"ss","server":"85.208.139.158","port":25607,"password":"DXQocbpII6cMgNuMK5xClQ","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
       - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 0'
+      - '🇩🇪DE | 🟢 | ss | @SiNAVM | 1'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
