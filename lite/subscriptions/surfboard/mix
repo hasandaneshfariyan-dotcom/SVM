@@ -12,13 +12,13 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇩🇪DE | 🟢 | ss | @sinavm | 1 = ss, 85.208.139.158, 25607, encrypt-method = chacha20-ietf-poly1305, password = DXQocbpII6cMgNuMK5xClQ
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 12 = trojan, 63.178.130.164, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 13 = trojan, 13.37.56.225, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 16 = trojan, 63.178.189.3, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 17 = trojan, 3.77.178.12, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4 = vmess, 2.188.219.43, 8443, username = b2e38621-035b-43f8-84a5-e92160762fc3, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
-URL-TEST = url-test,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
-FALLBACK = fallback,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 12,🇫🇷FR | 🟢 | trojan | @DirectVPN | 13,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
+MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
+URL-TEST = url-test,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
+FALLBACK = fallback,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 16,🇩🇪DE | 🟢 | trojan | @DirectVPN | 17,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
