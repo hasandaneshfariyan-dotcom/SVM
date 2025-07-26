@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 5","type":"vmess","server":"2.188.219.43","port":"8443","cipher":"auto","uuid":"b2e38621-035b-43f8-84a5-e92160762fc3","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":""}}}
+  - {"name":"🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6","type":"vmess","server":"2.188.219.43","port":"8443","cipher":"auto","uuid":"b2e38621-035b-43f8-84a5-e92160762fc3","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":""}}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 5'
+      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 50
     proxies:
-      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 5'
+      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 5'
+      - '🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
