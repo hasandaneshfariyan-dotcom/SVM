@@ -12,13 +12,14 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 🇩🇪DE | 🟢 | ss | @sinavm | 1 = ss, 85.208.139.158, 25607, encrypt-method = chacha20-ietf-poly1305, password = DXQocbpII6cMgNuMK5xClQ
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 14 = trojan, 3.123.67.61, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 15 = trojan, 35.181.218.101, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6 = vmess, 2.188.219.43, 8443, username = b2e38621-035b-43f8-84a5-e92160762fc3, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 14 = trojan, 63.178.129.186, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇩🇪DE | 🟢 | trojan | @DirectVPN | 15 = trojan, 3.123.67.61, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4 = vmess, 2.188.219.43, 8443, username = b2e38621-035b-43f8-84a5-e92160762fc3, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 5 = ss, 147.45.178.200, 57456, encrypt-method = chacha20-ietf-poly1305, password = c40641c1f89e7acb
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6
-URL-TEST = url-test,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6
-FALLBACK = fallback,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇫🇷FR | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 6
+MANUAL = select,URL-TEST,FALLBACK,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4,🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 5
+URL-TEST = url-test,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4,🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 5
+FALLBACK = fallback,🇩🇪DE | 🟢 | ss | @sinavm | 1,🇩🇪DE | 🟢 | trojan | @DirectVPN | 14,🇩🇪DE | 🟢 | trojan | @DirectVPN | 15,🇮🇷IR | 🔴 | vmess | @ShadowProxy66 | 4,🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
