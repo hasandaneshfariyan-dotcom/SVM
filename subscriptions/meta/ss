@@ -120,6 +120,7 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
+  - {"name":"🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 2","type":"ss","server":"46.101.245.131","port":44354,"password":"9RviNa4tscjcmCB408vLSg","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇩🇪DE | 🟢 | ss | @meli_proxyy | 7","type":"ss","server":"165.22.76.53","port":1080,"password":"RekTXARvUfSommAPQNcCLQ","cipher":"chacha20-ietf-poly1305"}
   - {"name":"🇦🇹AT | 🟢 | ss | @meli_proxyy | 13","type":"ss","server":"promo6v.bystrivpn.ru","port":443,"password":"9JeYy8SkViXuSHVs9GFeSe","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
@@ -128,6 +129,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 2'
       - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 7'
       - '🇦🇹AT | 🟢 | ss | @meli_proxyy | 13'
   - name: URL-TEST
@@ -136,6 +138,7 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 2'
       - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 7'
       - '🇦🇹AT | 🟢 | ss | @meli_proxyy | 13'
   - name: FALLBACK
@@ -143,6 +146,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
+      - '🇩🇪DE | 🟢 | ss | @ShadowProxy66 | 2'
       - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 7'
       - '🇦🇹AT | 🟢 | ss | @meli_proxyy | 13'
 rule-providers:
