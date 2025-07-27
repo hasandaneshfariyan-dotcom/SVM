@@ -483,23 +483,14 @@
         },
         {
             "type": "vless",
-            "server": "185.209.21.36",
-            "server_port": 40887,
-            "uuid": "f782fd9e-8c73-4c00-d7c3-92e3eb48eb4b",
+            "server": "104.21.17.92",
+            "server_port": 443,
+            "uuid": "16d7a04d-e6f4-479f-8914-80d3817317f9",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-20"
-        },
-        {
-            "type": "vless",
-            "server": "185.193.89.61",
-            "server_port": 443,
-            "uuid": "e134f4a5-346e-493f-b74a-988ef7a4ff27",
-            "packet_encoding": "xudp",
-            "domain_strategy": "ipv6_only",
             "tls": {
                 "enabled": true,
-                "server_name": "cdnjs.com",
+                "server_name": "ed19-dc7.pages.dev",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -509,13 +500,26 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "9F7JxyyP-TNLt0dY2xOB0_34I8W0xXIpFY7rZ7-L0Gg",
-                    "short_id": "19aa22f681923dc8"
                 }
             },
+            "transport": {
+                "type": "ws",
+                "path": "\/azarbayjab1.tab.net",
+                "headers": {
+                    "Host": "ed19-dc7.pages.dev"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "vless",
+            "server": "185.209.21.36",
+            "server_port": 40887,
+            "uuid": "f782fd9e-8c73-4c00-d7c3-92e3eb48eb4b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-21"
         },
         {
