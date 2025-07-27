@@ -120,7 +120,6 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"❔XX | 🔴 | vless | @meli_proxyy | 20","type":"vless","server":"nl.safeline.afterhav.ir","port":8880,"udp":true,"uuid":"acd579e6-d9eb-4ebc-bd1e-33291a6182d9","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"www.journalofbigdata.springeropen.com","reality-opts":{"public-key":"xpontmKPYnfUdJtohJcJHmh8X6BZWUjcoVTDmA6paBo","short-id":"ba8703"}}
   - {"name":"🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0","type":"vless","server":"49.13.12.238","port":8501,"udp":true,"uuid":"ac37eb9c-0db8-4056-8f61-e8db4e2da35e","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tgju.org","reality-opts":{"public-key":"OJ0wA5wp55uZdD16dutlTZvx1x-rbMMXmiO9D_MMCHI","short-id":"e701a013553059ba"}}
 proxy-groups:
   - name: MANUAL
@@ -128,7 +127,6 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '❔XX | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
   - name: URL-TEST
     type: url-test
@@ -136,14 +134,12 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '❔XX | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
-      - '❔XX | 🔴 | vless | @meli_proxyy | 20'
       - '🇩🇪DE | 🟢 | vless | @OpenSSTPVpn | 0'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
