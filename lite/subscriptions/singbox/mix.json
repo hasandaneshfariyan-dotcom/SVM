@@ -120,16 +120,6 @@
             "idle_timeout": "9m0s"
         },
         {
-            "type": "shadowsocks",
-            "server": "85.208.139.158",
-            "server_port": 25607,
-            "method": "chacha20-ietf-poly1305",
-            "password": "DXQocbpII6cMgNuMK5xClQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-1"
-        },
-        {
             "type": "vless",
             "server": "91.107.167.104",
             "server_port": 59745,
@@ -162,7 +152,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
@@ -190,7 +180,7 @@
                     "short_id": ""
                 }
             },
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "trojan",
@@ -212,7 +202,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-4"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "trojan",
@@ -234,7 +224,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-5"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "vless",
@@ -252,7 +242,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vmess",
@@ -281,6 +271,38 @@
                 "path": "\/268f7e36",
                 "headers": {
                     "Host": "xc133.meiziba5566.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vless",
+            "server": "privasi.turah.my.id",
+            "server_port": 443,
+            "uuid": "0fbf4f81-2598-4b6a-a623-0ead4cb9efa8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "privasi.turah.my.id",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/Free-CF-Proxy-AD192.3.113.4-19318",
+                "headers": {
+                    "Host": "privasi.turah.my.id"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -381,6 +403,24 @@
         },
         {
             "type": "vless",
+            "server": "104.21.0.0",
+            "server_port": 80,
+            "uuid": "e01387f6-e92e-464e-aa26-6b21611adc86",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+                "headers": {
+                    "Host": "104.21.0.0"
+                },
+                "max_early_data": 2480,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "vless",
             "server": "statue.lnmarketplace.net",
             "server_port": 443,
             "uuid": "7c63f43f-f526-49bb-b5c8-2be26e11ef00",
@@ -400,15 +440,6 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "vless",
-            "server": "45.154.2.169",
-            "server_port": 28784,
-            "uuid": "34f8e5f4-bfa1-4032-a978-8f397a401d39",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-12"
         },
         {
