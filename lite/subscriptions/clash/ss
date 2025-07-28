@@ -119,6 +119,7 @@ dns:
 
 proxies:
   - {"name":"🇩🇪DE | 🟢 | ss | @sinavm | 1","type":"ss","server":"85.208.139.158","port":25607,"password":"DXQocbpII6cMgNuMK5xClQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🇩🇪DE | 🟢 | ss | @meli_proxyy | 17","type":"ss","server":"165.22.76.53","port":1080,"password":"RekTXARvUfSommAPQNcCLQ","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -126,6 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇩🇪DE | 🟢 | ss | @sinavm | 1'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 17'
   - name: URL-TEST
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -133,12 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇩🇪DE | 🟢 | ss | @sinavm | 1'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 17'
   - name: FALLBACK
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 60
     proxies:
       - '🇩🇪DE | 🟢 | ss | @sinavm | 1'
+      - '🇩🇪DE | 🟢 | ss | @meli_proxyy | 17'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
