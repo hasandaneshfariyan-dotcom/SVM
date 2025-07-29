@@ -121,9 +121,10 @@ dns:
 
 proxies:
   - {"name":"🇭🇺HU | 🟢 | vless | @OpenSSTPVpn | 1","type":"vless","server":"5.182.38.91","port":17267,"udp":true,"uuid":"1c7fcc38-e6be-43c5-875f-b8de2516b9f2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"SnWZg6ORcQepuWLI1EVCTTVc4KyfDiGWR4o_CXCMhgk","short-id":"4ae260"}}
-  - {"name":"🇫🇮FI | 🔴 | vless | @meli_proxyy | 11","type":"vless","server":"65.109.221.186","port":2083,"udp":true,"uuid":"b131228a-b895-4237-ac4b-0edad7759468","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"khamenei.ir","grpc-opts":{"grpc-service-name":"melov2ray"},"reality-opts":{"public-key":"mDWXgatiJqUc4fmeDQqGusEBIhjFVrQ85y_ZUfNpFV8","short-id":"54602915a7"}}
-  - {"name":"🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17","type":"vless","server":"194.182.79.252","port":37814,"udp":true,"uuid":"d5f63b9e-780a-472a-9d1b-e2088087a037","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON"},"reality-opts":{"public-key":"rk5UKshtrRPf3achXqaxQgA-7EryZABGx6fSXv35D14","short-id":"10a5"}}
+  - {"name":"🇳🇱NL | 🟢 | vless | @Outline_Vpn | 3","type":"vless","server":"185.33.24.229","port":28495,"udp":true,"uuid":"7e296434-2d17-48d3-928d-19eaa34aecb1","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"dl.google.com","reality-opts":{"public-key":"KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ","short-id":"0ecc2c1392"}}
   - {"name":"🇷🇺RU | 🟢 | vless | @OpenSSTPVpn | 0","type":"vless","server":"103.113.68.50","port":8443,"udp":true,"uuid":"bc91c64b-0bd4-4be4-9f59-6a05338d99e5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"google.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"SMNWMGR4RhgxRdmktv2kTEnSc1bRhDcWeAFTDXH_hFs"}}
+  - {"name":"🇷🇺RU | 🟢 | vless | @customv2ray | 13","type":"vless","server":"ru01-vlr01.tcp-reset-club.net","port":443,"udp":true,"uuid":"2a02cb25-0f58-4b19-a7a6-8c205fdb9042","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"hls-svod.itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg","short-id":"48720c"}}
+  - {"name":"🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17","type":"vless","server":"194.182.79.252","port":37814,"udp":true,"uuid":"d5f63b9e-780a-472a-9d1b-e2088087a037","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON"},"reality-opts":{"public-key":"rk5UKshtrRPf3achXqaxQgA-7EryZABGx6fSXv35D14","short-id":"10a5"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,9 +132,10 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '🇭🇺HU | 🟢 | vless | @OpenSSTPVpn | 1'
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 11'
-      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
+      - '🇳🇱NL | 🟢 | vless | @Outline_Vpn | 3'
       - '🇷🇺RU | 🟢 | vless | @OpenSSTPVpn | 0'
+      - '🇷🇺RU | 🟢 | vless | @customv2ray | 13'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -141,18 +143,20 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '🇭🇺HU | 🟢 | vless | @OpenSSTPVpn | 1'
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 11'
-      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
+      - '🇳🇱NL | 🟢 | vless | @Outline_Vpn | 3'
       - '🇷🇺RU | 🟢 | vless | @OpenSSTPVpn | 0'
+      - '🇷🇺RU | 🟢 | vless | @customv2ray | 13'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '🇭🇺HU | 🟢 | vless | @OpenSSTPVpn | 1'
-      - '🇫🇮FI | 🔴 | vless | @meli_proxyy | 11'
-      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
+      - '🇳🇱NL | 🟢 | vless | @Outline_Vpn | 3'
       - '🇷🇺RU | 🟢 | vless | @OpenSSTPVpn | 0'
+      - '🇷🇺RU | 🟢 | vless | @customv2ray | 13'
+      - '🇨🇿CZ | 🔴 | vless | @meli_proxyy | 17'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
