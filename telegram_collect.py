@@ -2,7 +2,6 @@ import logging
 import json
 import re
 import requests
-import os
 from telethon.sync import TelegramClient
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -56,14 +55,11 @@ async def main():
             except Exception as e:
                 logging.error(f"Error fetching sublink {url}: {e}")
 
-        # ذخیره کانفیگ‌ها با نام‌های @sinavm-<index> یا @sinavm-lite-<index>
-        output_file = 'config.txt'
-        name_prefix = '@sinavm-lite' if os.getcwd().endswith('lite') else '@sinavm'
-        logging.info(f"Saving {len(configs)} configs to {output_file}")
-        with open(output_file, 'w', encoding='utf-8') as f:
+        logging.info(f"Saved {len(configs)} configs to config.txt")
+        with open('config.txt', 'w', encoding='utf-8') as f:
             for i, config in enumerate(configs, 1):
                 config_parts = config.split('#', 1)
-                new_config = config_parts[0] + f"#{name_prefix}-{i}"
+                new_config = config_parts[0] + f"#@sinavm-{i}"
                 f.write(new_config + '\n')
 
 if __name__ == '__main__':
