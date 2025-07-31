@@ -69,6 +69,7 @@ $configsIp = [
 echo "\nProcessing Configs\n";
 $totalSources = count($configsList);
 $tempSource = 1;
+$configIndex = 1; // اندیس کلی برای نام‌گذاری @sinavm-<index>
 
 // Loop through each source in the configs list
 foreach ($configsList as $source => $configs) {
@@ -95,23 +96,10 @@ foreach ($configsList as $source => $configs) {
             $configHash = $configsHash[$type];
             $configIp = $configsIp[$type];
             $decodedConfig = configParse(explode("<", $config)[0]);
-            $configLocation =
-                ip_info($decodedConfig[$configIp])->country ?? "XX";
-            $configFlag =
-                $configLocation === "XX" ? "❔" : ($configLocation === "CF" ? "🚩" : getFlags($configLocation));
-            $isEncrypted = 
-                isEncrypted($config) ? "🟢" : "🔴";
-            $decodedConfig[$configHash] =
-                $configFlag .
-                $configLocation .
-                " | " . 
-                $isEncrypted .
-                " | " .
-                $type .
-                " | @" .
-                $source .
-                " | " .
-                strval($key);
+            // تنظیم نام جدید به فرمت @sinavm-<index>
+            $decodedConfig[$configHash] = "@sinavm-" . $configIndex;
+            $configIndex++; // افزایش اندیس برای کانفیگ بعدی
+            $configLocation = ip_info($decodedConfig[$configIp])->country ?? "XX";
             $encodedConfig = reparseConfig($decodedConfig, $type);
             if (substr($encodedConfig, 0, 10) !== "ss://Og==@") {
                 $finalOutput[] = str_replace(
@@ -152,3 +140,4 @@ foreach ($locationBased as $location => $configs) {
 file_put_contents("config.txt", implode("\n", $finalOutput));
 
 echo "\nGetting Configs Done!\n";
+?>
