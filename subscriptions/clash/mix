@@ -118,27 +118,55 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇳🇱NL | 🟢 | ss | @meli_proxyy | 15","type":"ss","server":"193.29.139.235","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"VL-0428-011_","type":"trojan","server":"aio.zipzap.biz.id","port":443,"udp":false,"password":"f282b878-8711-45a1-8c69-5564172123c1","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"aio.zipzap.biz.id"}
+  - {"name":"VL-0431-012_","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"VL-0508-053_","type":"trojan","server":"104.21.72.109","port":443,"udp":false,"password":"f282b878-8711-45a1-8c69-5564172123c1","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"vpn.stupidworld.web.id"}
+  - {"name":"VL-0508-054_","type":"trojan","server":"188.114.99.81","port":443,"udp":false,"password":"auto","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"mazq100za43.962dael.workers.dev"}
+  - {"name":"VL-0508-070_","type":"trojan","server":"104.21.72.108","port":443,"udp":false,"password":"auto","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"esetsecuritylicense1.cxlrazo.workers.dev"}
+  - {"name":"VL-0505-076_","type":"trojan","server":"104.21.48.61","port":443,"udp":false,"password":"auto","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"nameless-term-9c25.vpnconnect202020.workers.dev"}
+  - {"name":"VL-0423-016_","type":"ss","server":"ct.uigame.space","port":2024,"password":"33LpoU8X/xHnCD+cbNe+7p0pK/JngDLM+5+RILrxyfVFRW/niKz5Eu0rWyVcDho=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"VL-0508-062_","type":"trojan","server":"104.18.5.250","port":2053,"udp":false,"password":"trojan","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ana-service-anaservice--anaservice-antenircomorg.fmwlmluu.workers.dev"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 15'
+      - 'VL-0428-011_'
+      - 'VL-0431-012_'
+      - 'VL-0508-053_'
+      - 'VL-0508-054_'
+      - 'VL-0508-070_'
+      - 'VL-0505-076_'
+      - 'VL-0423-016_'
+      - 'VL-0508-062_'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 15'
+      - 'VL-0428-011_'
+      - 'VL-0431-012_'
+      - 'VL-0508-053_'
+      - 'VL-0508-054_'
+      - 'VL-0508-070_'
+      - 'VL-0505-076_'
+      - 'VL-0423-016_'
+      - 'VL-0508-062_'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇳🇱NL | 🟢 | ss | @meli_proxyy | 15'
+      - 'VL-0428-011_'
+      - 'VL-0431-012_'
+      - 'VL-0508-053_'
+      - 'VL-0508-054_'
+      - 'VL-0508-070_'
+      - 'VL-0505-076_'
+      - 'VL-0423-016_'
+      - 'VL-0508-062_'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve

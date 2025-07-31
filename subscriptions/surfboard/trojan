@@ -11,12 +11,17 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-🇫🇷FR | 🟢 | trojan | @DirectVPN | 2 = trojan, 13.37.138.94, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-🇩🇪DE | 🟢 | trojan | @DirectVPN | 0 = trojan, 3.120.254.90, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+VL-0428-011_ = trojan, aio.zipzap.biz.id, 443, password = f282b878-8711-45a1-8c69-5564172123c1, udp-delay = true, skip-cert-verify = false, sni = aio.zipzap.biz.id, ws = false
+VL-0431-012_ = trojan, kfjdi.pages.dev, 443, password = er668, udp-delay = true, skip-cert-verify = false, ws = false
+VL-0508-053_ = trojan, 104.21.72.109, 443, password = f282b878-8711-45a1-8c69-5564172123c1, udp-delay = true, skip-cert-verify = false, sni = vpn.stupidworld.web.id, ws = false
+VL-0508-054_ = trojan, 188.114.99.81, 443, password = auto, udp-delay = true, skip-cert-verify = false, sni = mazq100za43.962dael.workers.dev, ws = false
+VL-0508-070_ = trojan, 104.21.72.108, 443, password = auto, udp-delay = true, skip-cert-verify = false, sni = esetsecuritylicense1.cxlrazo.workers.dev, ws = false
+VL-0505-076_ = trojan, 104.21.48.61, 443, password = auto, udp-delay = true, skip-cert-verify = false, sni = nameless-term-9c25.vpnconnect202020.workers.dev, ws = false
+VL-0508-062_ = trojan, 104.18.5.250, 2053, password = trojan, udp-delay = true, skip-cert-verify = false, sni = ana-service-anaservice--anaservice-antenircomorg.fmwlmluu.workers.dev, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
-URL-TEST = url-test,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
-FALLBACK = fallback,🇫🇷FR | 🟢 | trojan | @DirectVPN | 2,🇩🇪DE | 🟢 | trojan | @DirectVPN | 0
+MANUAL = select,URL-TEST,FALLBACK,VL-0428-011_,VL-0431-012_,VL-0508-053_,VL-0508-054_,VL-0508-070_,VL-0505-076_,VL-0508-062_
+URL-TEST = url-test,VL-0428-011_,VL-0431-012_,VL-0508-053_,VL-0508-054_,VL-0508-070_,VL-0505-076_,VL-0508-062_
+FALLBACK = fallback,VL-0428-011_,VL-0431-012_,VL-0508-053_,VL-0508-054_,VL-0508-070_,VL-0505-076_,VL-0508-062_
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
