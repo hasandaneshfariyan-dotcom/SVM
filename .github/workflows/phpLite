@@ -3,7 +3,7 @@ name: "Let's sinavm but Lite!"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/21 * * * *'
+    - cron: '*/60 * * * *'  # تغییر به هر 60 دقیقه برای کاهش کنفلیکت
 
 concurrency:
   group: "sinavm-lite"
@@ -12,9 +12,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    needs: sinavm-full  # وابستگی به sinavm-full
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -43,6 +44,7 @@ jobs:
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
           git config credential.helper store
+          git pull --rebase  # اضافه کردن git pull --rebase برای رفع کنفلیکت
           git add -A
           git commit -m "🧌 Lite Configs Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')" --allow-empty
           git push
@@ -65,7 +67,7 @@ jobs:
       - name: Execute PHP script
         run: |
           set -e
-          git pull
+          git pull --rebase
           cd lite
           php -d display_errors ../config-test.php || true
           php -d display_errors duplicate.php
