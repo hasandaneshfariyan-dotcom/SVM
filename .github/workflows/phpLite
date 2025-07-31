@@ -1,78 +1,82 @@
-name: "Let's sinavm but Lite!"
+import logging
+import json
+import re
+import requests
+import os
+from telethon.sync import TelegramClient
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '*/60 * * * *'  # هر 60 دقیقه برای کاهش کنفلیکت
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-concurrency:
-  group: "sinavm-lite"
-  cancel-in-progress: true
+with open('channels.json', 'r', encoding='utf-8') as file:
+    channels = json.load(file)
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    needs: sinavm-full  # وابستگی به sinavm-full
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+with open('sublinks.json', 'r', encoding='utf-8') as file:
+    sublinks_data = json.load(file)
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+api_id = os.getenv('TELEGRAM_API_ID')
+api_hash = os.getenv('TELEGRAM_API_HASH')
+phone_or_token = os.getenv('TELEGRAM_PHONE_OR_TOKEN')  # شماره تلفن یا توکن بات
 
-      - name: Install Python Dependencies
-        run: |
-          pip install telethon requests
+configs = []
 
-      - name: Run Telegram Collector for Lite
-        env:
-          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
-          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
-          TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
-        run: |
-          cd lite
-          python ../telegram_collect.py
+async def main():
+    if not phone_or_token:
+        logging.error("TELEGRAM_PHONE_OR_TOKEN is not set in environment variables")
+        raise ValueError("TELEGRAM_PHONE_OR_TOKEN is required")
 
-      - name: Check Changes
-        run: |
-          git status
+    async with TelegramClient('session', api_id, api_hash, phone=phone_or_token) as client:
+        logging.info("Connecting to Telegram...")
+        await client.connect()
+        if not await client.is_user_authorized():
+            logging.error("Failed to authenticate with Telegram. Check TELEGRAM_PHONE_OR_TOKEN.")
+            raise ValueError("Telegram authentication failed")
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.email "sina.bb2006@gmail.com"
-          git config --global user.name "sinavm"
-          git config credential.helper store
-          for i in {1..3}; do
-            git pull --rebase
-            git add -A
-            git commit -m "🥷 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')" --allow-empty
-            git push && break || sleep 5
-          done
+        logging.info("Successfully connected to Telegram")
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
+        # جمع‌آوری کانفیگ‌ها از کانال‌های تلگرام
+        for channel, protocols in channels.items():
+            logging.info(f"Processing channel: {channel}")
+            try:
+                async for message in client.iter_messages(channel, limit=40):
+                    if message.text:
+                        for protocol in protocols:
+                            pattern = rf'({protocol}:\/\/[^\s<]+)'
+                            matches = re.findall(pattern, message.text)
+                            for match in matches:
+                                configs.append(match)
+            except Exception as e:
+                logging.error(f"Error processing channel {channel}: {e}")
 
-      - name: Install Dependencies for HiddifyCli
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl tar
+        # جمع‌آوری کانفیگ‌ها از ساب‌لینک‌ها
+        for sublink in sublinks_data['sublinks']:
+            url = sublink['url']
+            protocols = sublink['protocols']
+            logging.info(f"Fetching configs from {url}")
+            try:
+                response = requests.get(url)
+                response.raise_for_status()
+                sublink_configs = response.text.strip().split('\n')
+                for config in sublink_configs:
+                    for protocol in protocols:
+                        if config.startswith(f"{protocol}://"):
+                            configs.append(config)
+            except Exception as e:
+                logging.error(f"Error fetching sublink {url}: {e}")
 
-      - name: Run Clash API
-        run: |
-          docker run -d -p 6756:6756 dreamacro/clash --port 6756
-          sleep 10
+        # ذخیره کانفیگ‌ها با نام‌های @sinavm-<index> یا @sinavm-lite-<index>
+        output_file = 'config.txt'
+        name_prefix = '@sinavm-lite' if os.getcwd().endswith('lite') else '@sinavm'
+        logging.info(f"Saving {len(configs)} configs to {output_file}")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for i, config in enumerate(configs, 1):
+                config_parts = config.split('#', 1)
+                new_config = config_parts[0] + f"#{name_prefix}-{i}"
+                f.write(new_config + '\n')
 
-      - name: Execute PHP script
-        run: |
-          set -e
-          git pull --rebase
-          cd lite
-          php -d display_errors ../config-test.php || true
-          php -d display_errors duplicate.php
-          php -d display_errors sort.php
-          php -d display_errors toSingbox.php
-          php -d display_errors toClashSurfboard.php
+if __name__ == '__main__':
+    import asyncio
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        logging.error(f"Failed to run script: {e}")
+        exit(1)
