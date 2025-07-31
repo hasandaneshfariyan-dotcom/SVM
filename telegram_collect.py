@@ -87,9 +87,11 @@ async def main():
         # حذف موارد تکراری
         configs = list(dict.fromkeys(configs))
 
-        # ذخیره کانفیگ‌ها در config.txt
+        # ذخیره کانفیگ‌ها در config.txt با تگ شماره‌دار
         with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(configs))
+            for idx, config in enumerate(configs, start=1):
+                tagged_config = f"{config}#@SiNAVM-{idx}"
+                f.write(tagged_config + '\n')
         logging.info(f"Saved {len(configs)} configs to {output_file}")
 
     except Exception as e:
