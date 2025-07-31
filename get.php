@@ -96,9 +96,9 @@ foreach ($configsList as $source => $configs) {
             $configHash = $configsHash[$type];
             $configIp = $configsIp[$type];
             $decodedConfig = configParse(explode("<", $config)[0]);
-            // تنظیم نام جدید به فرمت @sinavm-<index>
+
             $decodedConfig[$configHash] = "@sinavm-" . $configIndex;
-            $configIndex++; // افزایش اندیس برای کانفیگ بعدی
+            $configIndex++; 
             $configLocation = ip_info($decodedConfig[$configIp])->country ?? "XX";
             $encodedConfig = reparseConfig($decodedConfig, $type);
             if (substr($encodedConfig, 0, 10) !== "ss://Og==@") {
