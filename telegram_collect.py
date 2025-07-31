@@ -15,20 +15,16 @@ with open('sublinks.json', 'r', encoding='utf-8') as file:
 
 api_id = os.getenv('TELEGRAM_API_ID')
 api_hash = os.getenv('TELEGRAM_API_HASH')
-phone_or_token = os.getenv('TELEGRAM_PHONE_OR_TOKEN')  # شماره تلفن یا توکن بات
 
 configs = []
 
 async def main():
-    if not phone_or_token:
-        logging.error("TELEGRAM_PHONE_OR_TOKEN is not set in environment variables")
-        raise ValueError("TELEGRAM_PHONE_OR_TOKEN is required")
-
-    async with TelegramClient('session', api_id, api_hash, phone=phone_or_token) as client:
+    # استفاده از فایل session بدون نیاز به phone_or_token
+    async with TelegramClient('session', api_id, api_hash, connection_retries=5, retry_delay=10) as client:
         logging.info("Connecting to Telegram...")
         await client.connect()
         if not await client.is_user_authorized():
-            logging.error("Failed to authenticate with Telegram. Check TELEGRAM_PHONE_OR_TOKEN.")
+            logging.error("Failed to authenticate with Telegram. Ensure a valid session file exists.")
             raise ValueError("Telegram authentication failed")
 
         logging.info("Successfully connected to Telegram")
@@ -53,7 +49,7 @@ async def main():
             protocols = sublink['protocols']
             logging.info(f"Fetching configs from {url}")
             try:
-                response = requests.get(url)
+                response = requests.get(url, timeout=10)
                 response.raise_for_status()
                 sublink_configs = response.text.strip().split('\n')
                 for config in sublink_configs:
