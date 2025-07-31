@@ -15,21 +15,19 @@ with open('sublinks.json', 'r', encoding='utf-8') as file:
 
 api_id = os.getenv('TELEGRAM_API_ID')
 api_hash = os.getenv('TELEGRAM_API_HASH')
+session = os.getenv('TELEGRAM_SESSION')
 
 configs = []
 
 async def main():
-    # استفاده از فایل session بدون نیاز به phone_or_token
-    async with TelegramClient('session', api_id, api_hash, connection_retries=5, retry_delay=10) as client:
+    async with TelegramClient('session', api_id, api_hash) as client:
         logging.info("Connecting to Telegram...")
         await client.connect()
         if not await client.is_user_authorized():
-            logging.error("Failed to authenticate with Telegram. Ensure a valid session file exists.")
-            raise ValueError("Telegram authentication failed")
-
+            logging.error("Failed to connect to Telegram")
+            return
         logging.info("Successfully connected to Telegram")
 
-        # جمع‌آوری کانفیگ‌ها از کانال‌های تلگرام
         for channel, protocols in channels.items():
             logging.info(f"Processing channel: {channel}")
             try:
@@ -43,13 +41,12 @@ async def main():
             except Exception as e:
                 logging.error(f"Error processing channel {channel}: {e}")
 
-        # جمع‌آوری کانفیگ‌ها از ساب‌لینک‌ها
         for sublink in sublinks_data['sublinks']:
             url = sublink['url']
             protocols = sublink['protocols']
             logging.info(f"Fetching configs from {url}")
             try:
-                response = requests.get(url, timeout=10)
+                response = requests.get(url)
                 response.raise_for_status()
                 sublink_configs = response.text.strip().split('\n')
                 for config in sublink_configs:
@@ -71,8 +68,4 @@ async def main():
 
 if __name__ == '__main__':
     import asyncio
-    try:
-        asyncio.run(main())
-    except Exception as e:
-        logging.error(f"Failed to run script: {e}")
-        exit(1)
+    asyncio.run(main())
