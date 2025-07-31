@@ -24,24 +24,26 @@ function parseQuery($query) {
 }
 
 // پردازش هر خط از config.txt
-foreach ($configs as $config) {
+foreach ($configs as $index => $config) {
+    // Skip empty lines
+    if (empty(trim($config))) {
+        continue;
+    }
+
     // جدا کردن URI و نام
-    if (!preg_match('/^(.*?)(#.*)$/', $config, $matches)) continue;
+    if (!preg_match('/^(.*?)(#.*)?$/', $config, $matches)) continue;
     $uri = $matches[1];
-    $nameParts = explode('|', trim($matches[2], '#'));
-    if (count($nameParts) < 5) continue;
-    
-    $name = trim($nameParts[0]);
-    $type = trim($nameParts[2]);
-    $channel = trim($nameParts[3]);
-    $index = trim($nameParts[4]);
+    $newName = "@sinavm-" . ($index + 1); // نام جدید: @sinavm-<index+1>
+
+    // تشخیص نوع پروتکل
+    $type = explode('://', $uri)[0];
 
     // فقط پروتکل‌های پشتیبانی‌شده
     if (!in_array($type, ['vless', 'trojan', 'vmess', 'ss'])) continue;
 
-    // تجزیه URI
-    $proxy = ['name' => "$name | $type | $channel | $index"];
-    
+    // تنظیم نام proxy
+    $proxy = ['name' => $newName];
+
     if ($type === 'vless') {
         if (!preg_match('/^vless:\/\/([^@]+)@([^:]+):(\d+)\?(.*)$/', $uri, $matches)) continue;
         $uuid = $matches[1];
