@@ -1,102 +1,69 @@
+import logging
 import json
 import re
-import os
 import requests
-from telethon import TelegramClient
-from telethon.sessions import StringSession
-import asyncio
-import logging
+from telethon.sync import TelegramClient
+import os
 
-# تنظیمات لاگ
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# اطلاعات API تلگرام از متغیرهای محیطی
-api_id = int(os.getenv('TELEGRAM_API_ID'))
+with open('channels.json', 'r', encoding='utf-8') as file:
+    channels = json.load(file)
+
+with open('sublinks.json', 'r', encoding='utf-8') as file:
+    sublinks_data = json.load(file)
+
+api_id = os.getenv('TELEGRAM_API_ID')
 api_hash = os.getenv('TELEGRAM_API_HASH')
-session_string = os.getenv('TELEGRAM_SESSION')
+session = os.getenv('TELEGRAM_SESSION')
 
-# مسیر فایل‌ها
-channels_file = 'channels.json'  # فایل لیست کانال‌های تلگرام
-sublinks_file = 'sublinks.json'  # فایل لیست ساب‌لینک‌ها
-output_file = 'config.txt'       # فایل خروجی برای کانفیگ‌ها
+configs = []
 
-# تابع برای دریافت کانفیگ‌ها از ساب‌لینک
-def fetch_configs_from_sublink(url, protocols):
-    try:
-        response = requests.get(url.split('#')[0])  # حذف بخش #VIBE%7CPOWER
-        response.raise_for_status()
-        configs = response.text.strip().split('\n')
-        # فیلتر کردن کانفیگ‌ها بر اساس پروتکل‌های مجاز
-        filtered_configs = [
-            config for config in configs
-            if config and re.match(r'(vless|vmess|trojan|ss|tuic|hy2):\/\/[^\s]+', config)
-            and config.split('://')[0] in protocols
-        ]
-        logging.info(f"Fetched {len(filtered_configs)} configs from {url}")
-        return filtered_configs
-    except Exception as e:
-        logging.error(f"Error fetching sublink {url}: {e}")
-        return []
-
-# تابع اصلی
 async def main():
-    # ایجاد کلاینت تلگرام با StringSession
-    client = TelegramClient(StringSession(session_string), api_id, api_hash)
-    
-    try:
-        # اتصال به تلگرام
-        await client.start()
+    async with TelegramClient('session', api_id, api_hash) as client:
+        logging.info("Connecting to Telegram...")
+        await client.connect()
+        if not await client.is_user_authorized():
+            logging.error("Failed to connect to Telegram")
+            return
         logging.info("Successfully connected to Telegram")
 
-        # لیست کانفیگ‌ها
-        configs = []
+        for channel, protocols in channels.items():
+            logging.info(f"Processing channel: {channel}")
+            try:
+                async for message in client.iter_messages(channel, limit=40):
+                    if message.text:
+                        for protocol in protocols:
+                            pattern = rf'({protocol}:\/\/[^\s<]+)'
+                            matches = re.findall(pattern, message.text)
+                            for match in matches:
+                                configs.append(match)
+            except Exception as e:
+                logging.error(f"Error processing channel {channel}: {e}")
 
-        # 1. جمع‌آوری کانفیگ‌ها از کانال‌های تلگرام
-        try:
-            with open(channels_file, 'r', encoding='utf-8') as f:
-                channels_data = json.load(f)
+        for sublink in sublinks_data['sublinks']:
+            url = sublink['url']
+            protocols = sublink['protocols']
+            logging.info(f"Fetching configs from {url}")
+            try:
+                response = requests.get(url)
+                response.raise_for_status()
+                sublink_configs = response.text.strip().split('\n')
+                for config in sublink_configs:
+                    for protocol in protocols:
+                        if config.startswith(f"{protocol}://"):
+                            configs.append(config)
+            except Exception as e:
+                logging.error(f"Error fetching sublink {url}: {e}")
 
-            for channel_name, protocols in channels_data.items():
-                logging.info(f"Processing channel: {channel_name}")
-                try:
-                    channel_entity = await client.get_entity(f"@{channel_name}")
-                    async for message in client.iter_messages(channel_entity, limit=100):
-                        if message.text:
-                            config_matches = re.findall(r'(vless|vmess|trojan|ss|tuic|hy2):\/\/[^\s]+', message.text)
-                            for config in config_matches:
-                                if config.split('://')[0] in protocols:
-                                    configs.append(config)
-                except Exception as e:
-                    logging.error(f"Error processing channel {channel_name}: {e}")
-        except FileNotFoundError:
-            logging.warning(f"{channels_file} not found, skipping Telegram channels")
-
-        # 2. جمع‌آوری کانفیگ‌ها از ساب‌لینک‌ها
-        try:
-            with open(sublinks_file, 'r', encoding='utf-8') as f:
-                sublinks_data = json.load(f)
-
-            for sublink in sublinks_data.get('sublinks', []):
-                url = sublink.get('url')
-                protocols = sublink.get('protocols', [])
-                sublink_configs = fetch_configs_from_sublink(url, protocols)
-                configs.extend(sublink_configs)
-        except FileNotFoundError:
-            logging.warning(f"{sublinks_file} not found, skipping sublinks")
-
-        # حذف موارد تکراری
-        configs = list(dict.fromkeys(configs))
-
-        # ذخیره کانفیگ‌ها در config.txt
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(configs))
+        output_file = 'config.txt'
         logging.info(f"Saved {len(configs)} configs to {output_file}")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            for i, config in enumerate(configs, 1):
+                config_parts = config.split('#', 1)
+                new_config = config_parts[0] + f"#@sinavm-{i}"
+                f.write(new_config + '\n')
 
-    except Exception as e:
-        logging.error(f"Error: {e}")
-    finally:
-        await client.disconnect()
-
-# اجرای اسکریپت
 if __name__ == '__main__':
+    import asyncio
     asyncio.run(main())
