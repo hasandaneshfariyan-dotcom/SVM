@@ -10,51 +10,41 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  sinavm-full:
+  sinavm-telegram:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          php-version: '7.4'
+          python-version: '3.9'
 
-      - name: Install Dependencies for HiddifyCli
+      - name: Install Python Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y curl tar
+          pip install telethon requests
 
-      - name: Run Clash API
+      - name: Run Telegram Collector
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
         run: |
-          docker run -d -p 6756:6756 dreamacro/clash --port 6756
-          sleep 10 # Wait for Clash to start
+          python telegram_collect.py
 
-      - name: Execute PHP script
+      - name: Commit and Push Changes
         run: |
-          set -e
-          git pull --rebase
-          php -d display_errors get.php
-          php -d display_errors config-test.php || true
-          php -d display_errors channelsAssets.php
-          php -d display_errors duplicate.php
-          php -d display_errors sort.php
-          php -d display_errors toSingbox.php
-          php -d display_errors toClashSurfboard.php
-          php -d display_errors hiddifyWarp.php
-          
-          git config --global user.email "sina.bb2006@gmail.com"
-          git config --global user.name "sinavm"
+          git config --global user.email "sina2941@gmail.com"
+          git config --global user.name "sinabigo"
           git config credential.helper store
-          
           git add -A
-          git commit -m "🥷 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "🥷 Telegram and Sublink Configs Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
           git push
 
-  sinavm-lite:
+  sinavm-full:
     runs-on: ubuntu-latest
-    needs: sinavm-full 
+    needs: sinavm-telegram
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -72,24 +62,83 @@ jobs:
       - name: Run Clash API
         run: |
           docker run -d -p 6756:6756 dreamacro/clash --port 6756
-          sleep 10 # Wait for Clash to start
+          sleep 10
 
       - name: Execute PHP script
         run: |
-          set -e  
+          set -e
+          git pull --rebase
+          php -d display_errors config-test.php || true
+          php -d display_errors channelsAssets.php
+          php -d display_errors duplicate.php
+          php -d display_errors sort.php
+          php -d display_errors toSingbox.php
+          php -d display_errors toClashSurfboard.php
+          php -d display_errors hiddifyWarp.php
+          
+          git config --global user.email "sina2941@gmail.com"
+          git config --global user.name "sinabigo"
+          git config credential.helper store
+          
+          git add -A
+          git commit -m "🥷 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git push
+
+  sinavm-lite:
+    runs-on: ubuntu-latest
+    needs: sinavm-full
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install telethon requests
+
+      - name: Run Telegram Collector for Lite
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
+        run: |
+          cd lite
+          python ../telegram_collect.py
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Install Dependencies for HiddifyCli
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl tar
+
+      - name: Run Clash API
+        run: |
+          docker run -d -p 6756:6756 dreamacro/clash --port 6756
+          sleep 10
+
+      - name: Execute PHP script
+        run: |
+          set -e
           git pull
           cd lite
-          php -d display_errors get.php
           php -d display_errors ../config-test.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           
-          git config --global user.email "sina.bb2006@gmail.com"
-          git config --global user.name "sinavm"
+          git config --global user.email "sina2941@gmail.com"
+          git config --global user.name "sinabigo"
           git config credential.helper store
           
           git add -A
-          git commit -m "🥷 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "🥷 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
           git push
