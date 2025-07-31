@@ -7,111 +7,62 @@
 {
     "log": {
         "disabled": true,
-        "level": "panic",
-        "timestamp": true
+        "level": "panic"
     },
     "dns": {
         "servers": [
             {
-                "tag": "dns_proxy",
-                "address": "https:\/\/1.1.1.1\/dns-query",
-                "address_resolver": "dns_direct",
+                "tag": "Internet-dns",
+                "address": "tcp:\/\/1.1.1.2",
                 "strategy": "prefer_ipv4",
-                "detour": "t.me\/sinavm"
+                "detour": "Internet"
             },
             {
-                "tag": "dns_direct",
-                "address": "local",
+                "tag": "direct-dns",
+                "address": "tcp:\/\/1.1.1.2",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
-            },
-            {
-                "tag": "direct",
-                "address": "tls:\/\/8.8.8.8",
-                "detour": "direct"
-            },
-            {
-                "tag": "dns_block",
-                "address": "rcode:\/\/success"
             }
         ],
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns_direct"
+                "server": "direct-dns"
             },
             {
                 "domain_regex": [
                     ".*\\.ir$",
                     ".*\\.xn--mgba3a4f16a$"
                 ],
-                "server": "dns_direct"
+                "server": "direct-dns"
             }
         ],
-        "final": "dns_proxy",
         "strategy": "prefer_ipv4",
         "independent_cache": true
     },
-    "ntp": {
-        "enabled": true,
-        "server": "ir.pool.ntp.org",
-        "server_port": 123,
-        "detour": "direct"
-    },
     "inbounds": [
         {
-            "type": "mixed",
-            "listen": "127.0.0.1",
-            "listen_port": 20122,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
-        },
-        {
-            "type": "http",
-            "listen": "127.0.0.1",
-            "listen_port": 8181,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
-        },
-        {
-            "type": "socks",
-            "listen": "127.0.0.1",
-            "listen_port": 8080,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
-        },
-        {
             "type": "tun",
-            "address": [
-                "172.19.0.1\/30",
-                "fdfe:dcba:9876::1\/126"
-            ],
+            "tag": "tun-in",
+            "interface_name": "@SiNAVM",
+            "mtu": 9000,
+            "address": "172.18.0.1\/30",
             "auto_route": true,
             "strict_route": true,
+            "route_exclude_address": [
+                "192.168.0.0\/16",
+                "fc00::\/7"
+            ],
             "stack": "mixed",
-            "platform": {
-                "http_proxy": {
-                    "enabled": true,
-                    "server": "127.0.0.1",
-                    "server_port": 20122
-                }
-            },
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "domain_strategy": "prefer_ipv4"
         }
     ],
     "outbounds": [
         {
             "type": "selector",
-            "tag": "t.me\/sinavm",
+            "tag": "Internet",
             "outbounds": [
+                "Best Latency",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
                 "@SiNAVM-3",
@@ -123,7 +74,7 @@
         },
         {
             "type": "urltest",
-            "tag": "@𝙎𝙄𝙉𝘼𝙑𝙈",
+            "tag": "Best Latency",
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
@@ -133,8 +84,10 @@
                 "@SiNAVM-6",
                 "@SiNAVM-7"
             ],
-            "url": "http:\/\/whoer.net",
-            "interval": "9m0s"
+            "url": "http:\/\/1.1.1.1\/",
+            "interval": "3m0s",
+            "tolerance": 1,
+            "idle_timeout": "9m0s"
         },
         {
             "type": "trojan",
@@ -361,7 +314,6 @@
     "route": {
         "rules": [
             {
-                "inbound": "tun-in",
                 "action": "sniff"
             },
             {
@@ -381,13 +333,10 @@
                 "action": "hijack-dns"
             },
             {
-                "clash_mode": "Direct",
-                "outbound": "direct"
-            },
-            {
                 "network": "tcp",
                 "port": 853,
-                "action": "reject"
+                "action": "reject",
+                "method": "default"
             },
             {
                 "network": "udp",
@@ -395,11 +344,8 @@
                     443,
                     853
                 ],
-                "action": "reject"
-            },
-            {
-                "inbound": "tun-in",
-                "action": "resolve"
+                "action": "reject",
+                "method": "default"
             },
             {
                 "ip_is_private": true,
@@ -414,7 +360,8 @@
             },
             {
                 "protocol": "stun",
-                "action": "reject"
+                "action": "reject",
+                "method": "default"
             },
             {
                 "source_ip_cidr": [
@@ -425,7 +372,8 @@
                     "224.0.0.0\/3",
                     "ff00::\/8"
                 ],
-                "action": "reject"
+                "action": "reject",
+                "method": "default"
             }
         ],
         "auto_detect_interface": true,
@@ -435,14 +383,7 @@
         "cache_file": {
             "enabled": true,
             "path": "cache.db",
-            "cache_id": "@SiNAVM",
-            "store_fakeip": true
-        },
-        "clash_api": {
-            "external_controller": "127.0.0.1:9090",
-            "default_mode": "@𝙎𝙄𝙉𝘼𝙑𝙈",
-            "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
-            "access_control_allow_private_network": true
+            "cache_id": "@SiNAVM"
         }
     }
 }
