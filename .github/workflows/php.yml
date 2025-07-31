@@ -33,13 +33,17 @@ jobs:
         run: |
           python telegram_collect.py
 
+      - name: Check Changes
+        run: |
+          git status
+
       - name: Commit and Push Changes
         run: |
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
           git config credential.helper store
           git add -A
-          git commit -m "🥷 Telegram and Sublink Configs Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "🥷 Telegram and Sublink Configs Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')" --allow-empty
           git push
 
   sinavm-full:
@@ -81,7 +85,7 @@ jobs:
           git config credential.helper store
           
           git add -A
-          git commit -m "🥷 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "🥷 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')" --allow-empty
           git push
 
   sinavm-lite:
@@ -109,6 +113,19 @@ jobs:
           cd lite
           python ../telegram_collect.py
 
+      - name: Check Changes
+        run: |
+          git status
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "sina.bb2006@gmail.com"
+          git config --global user.name "sinavm"
+          git config credential.helper store
+          git add -A
+          git commit -m "🥷 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')" --allow-empty
+          git push
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -134,11 +151,3 @@ jobs:
           php -d display_errors sort.php
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
-          
-          git config --global user.email "sina.bb2006@gmail.com"
-          git config --global user.name "sinavm"
-          git config credential.helper store
-          
-          git add -A
-          git commit -m "🥷 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
-          git push
