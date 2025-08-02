@@ -523,7 +523,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.127.195.226",
+            "server": "63.179.45.126",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -545,7 +545,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.31.58",
+            "server": "3.127.195.226",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -567,7 +567,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.47.195.183",
+            "server": "51.44.31.58",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -589,7 +589,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.28.184.137",
+            "server": "52.47.195.183",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -611,7 +611,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.38.225.194",
+            "server": "52.28.184.137",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -633,7 +633,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.208.153",
+            "server": "13.38.225.194",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -655,7 +655,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.70.34.175",
+            "server": "35.181.208.153",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -677,7 +677,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.59.85.17",
+            "server": "3.70.34.175",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -699,7 +699,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.38.152.12",
+            "server": "52.59.85.17",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -721,7 +721,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.180.56.98",
+            "server": "13.38.152.12",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -743,7 +743,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.120.56.31",
+            "server": "35.180.56.98",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -765,7 +765,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.158.192.180",
+            "server": "3.120.56.31",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -787,7 +787,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.236.10.186",
+            "server": "18.158.192.180",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -809,7 +809,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.47.42.196",
+            "server": "15.236.10.186",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -831,7 +831,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.179.65.24",
+            "server": "52.47.42.196",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -2565,11 +2565,20 @@
         },
         {
             "type": "vless",
-            "server": "85.133.204.55",
-            "server_port": 44032,
-            "uuid": "4c4d5d6c-4d88-4df1-9a95-048885f7415f",
+            "server": "client.bluwave.ir",
+            "server_port": 80,
+            "uuid": "e3eec9d9-ab70-4617-9e19-60860112c634",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "client.bluwave.ir"
+                },
+                "max_early_data": 1861,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
             "tag": "@SiNAVM-119"
         },
         {
@@ -2589,24 +2598,6 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-120"
-        },
-        {
-            "type": "vless",
-            "server": "client.bluwave.ir",
-            "server_port": 80,
-            "uuid": "e3eec9d9-ab70-4617-9e19-60860112c634",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "client.bluwave.ir"
-                },
-                "max_early_data": 1861,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-121"
         },
         {
             "type": "vless",
@@ -2638,7 +2629,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-122"
+            "tag": "@SiNAVM-121"
         },
         {
             "type": "vless",
@@ -2671,7 +2662,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-123"
+            "tag": "@SiNAVM-122"
         },
         {
             "type": "vless",
@@ -2703,7 +2694,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-124"
+            "tag": "@SiNAVM-123"
         },
         {
             "type": "vless",
@@ -2735,7 +2726,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-125"
+            "tag": "@SiNAVM-124"
         },
         {
             "type": "vless",
@@ -2763,7 +2754,7 @@
                     "short_id": "a1b2c3d4e5f67890<\/code><br\/><br\/><br\/><b><tg-emoji"
                 }
             },
-            "tag": "@SiNAVM-126"
+            "tag": "@SiNAVM-125"
         },
         {
             "type": "vless",
@@ -2795,7 +2786,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-127"
+            "tag": "@SiNAVM-126"
         },
         {
             "type": "vless",
@@ -2823,6 +2814,38 @@
                 "path": "\/",
                 "headers": {
                     "Host": "vl.hongkong6.qzz.io<\/code><br\/><br\/><br\/><b><tg-emoji"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-127"
+        },
+        {
+            "type": "vless",
+            "server": "104.26.15.69",
+            "server_port": 2096,
+            "uuid": "30f2d443-af46-4dd6-83c9-b5e17299ebd2",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "carlotta.shoorekeeper.cloudns.org<\/code><\/div>",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "carlotta.shoorekeeper.cloudns.org<\/code><\/div>"
                 },
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
