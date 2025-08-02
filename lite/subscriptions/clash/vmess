@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"🇷🇴RO | 🔴 | vmess | @meli_proxyy | 20","type":"vmess","server":"5.182.37.231","port":"49664","cipher":"auto","uuid":"9395474c-e2a1-4565-ba56-c16e7373c4c4","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"@sinavm-90","type":"vmess","server":"panel3.ipyar.org","port":"32017","cipher":"auto","uuid":"c0ccdeb9-784c-4d67-b904-20dcaac9902a","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '🇷🇴RO | 🔴 | vmess | @meli_proxyy | 20'
+      - '@sinavm-90'
   - name: URL-TEST
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '🇷🇴RO | 🔴 | vmess | @meli_proxyy | 20'
+      - '@sinavm-90'
   - name: FALLBACK
     type: fallback
-    url: http://www.gstatic.com/generate_204
+    url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '🇷🇴RO | 🔴 | vmess | @meli_proxyy | 20'
+      - '@sinavm-90'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
