@@ -7,21 +7,19 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
-// Fetch the JSON data from the API and decode it into an associative array
-$sourcesArray = json_decode(
-    file_get_contents("channels.json"),
-    true
-);
+// Fetch the JSON data from channels.json and sublinks.json
+$sourcesArray = json_decode(file_get_contents("channels.json"), true);
+$sublinksArray = json_decode(file_get_contents("sublinks.json"), true);
 
 // Count the total number of sources
-$totalSources = count($sourcesArray);
+$totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
 $tempCounter = 1;
 
 // Initialize an empty array to store the configurations
 $configsList = [];
 echo "Fetching Configs\n";
 
-// Loop through each source in the sources array
+// Loop through each source in the channels array (API)
 foreach ($sourcesArray as $source => $types) {
     // Calculate the percentage complete
     $percentage = ($tempCounter / $totalSources) * 100;
@@ -33,12 +31,39 @@ foreach ($sourcesArray as $source => $types) {
     echo "] $percentage%";
     $tempCounter++;
 
-    // Fetch the data from the source
+    // Fetch the data from the Telegram API
     $tempData = file_get_contents("https://t.me/s/" . $source);
     $type = implode("|", $types);
     $tempExtract = extractLinksByType($tempData, $type);
     if (!is_null($tempExtract)) {
         $configsList[$source] = $tempExtract;
+    }
+}
+
+// Loop through each sublink in sublinks.json
+foreach ($sublinksArray['sublinks'] as $sublink) {
+    // Calculate the percentage complete
+    $percentage = ($tempCounter / $totalSources) * 100;
+
+    // Print the progress bar
+    echo "\rProgress: [";
+    echo str_repeat("=", $tempCounter);
+    echo str_repeat(" ", $totalSources - $tempCounter);
+    echo "] $percentage%";
+    $tempCounter++;
+
+    $url = $sublink['url'];
+    $protocols = implode("|", $sublink['protocols']);
+    try {
+        $response = file_get_contents($url);
+        $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
+            return preg_match("/^($protocols):\/\//", $config);
+        });
+        if (!empty($sublink_configs)) {
+            $configsList[$url] = $sublink_configs;
+        }
+    } catch (Exception $e) {
+        echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
     }
 }
 
@@ -90,15 +115,17 @@ foreach ($configsList as $source => $configs) {
         echo "] $percentage%";
         $tempCounter++;
 
-        // If the config is valid and the key is less than or equal to 15
+        // If the config is valid and the key is less than or equal to 40
         if (is_valid($config) && $key >= $limitKey) {
             $type = detect_type($config);
             $configHash = $configsHash[$type];
             $configIp = $configsIp[$type];
-            $decodedConfig = configParse(explode("<", $config)[0]);
+            // حذف نام‌های قبلی بعد از #
+            $config = explode("<", explode("#", $config)[0])[0];
+            $decodedConfig = configParse($config);
 
-            $decodedConfig[$configHash] = "@sinavm-" . $configIndex;
-            $configIndex++; 
+            $decodedConfig[$configHash] = (getcwd() == getcwd() . "/lite" ? "@sinavm-lite-" : "@sinavm-") . $configIndex;
+            $configIndex++;
             $configLocation = ip_info($decodedConfig[$configIp])->country ?? "XX";
             $encodedConfig = reparseConfig($decodedConfig, $type);
             if (substr($encodedConfig, 0, 10) !== "ss://Og==@") {
