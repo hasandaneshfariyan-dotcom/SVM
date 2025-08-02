@@ -120,8 +120,8 @@ foreach ($configsList as $source => $configs) {
             $type = detect_type($config);
             $configHash = $configsHash[$type];
             $configIp = $configsIp[$type];
-            // حذف نام‌های قبلی بعد از #
-            $config = explode("<", explode("#", $config)[0])[0];
+            // حذف هر چیزی بعد از اولین # و قبل از <
+            $config = preg_replace("/#.*?(?=(<|$))/", "", $config);
             $decodedConfig = configParse($config);
 
             $decodedConfig[$configHash] = (getcwd() == getcwd() . "/lite" ? "@sinavm-lite-" : "@sinavm-") . $configIndex;
