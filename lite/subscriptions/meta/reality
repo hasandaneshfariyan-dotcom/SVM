@@ -131,9 +131,9 @@ proxies:
   - {"name":"@sinavm-125","type":"vless","server":"freedam.wirecard.store","port":2053,"udp":true,"uuid":"ce3acfb7-a0e8-4f96-b9ff-75c2657997fa","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"freedom.wirecard.store","flow":"xtls-rprx-vision","grpc-opts":{"grpc-service-name":"bing"},"reality-opts":{"public-key":"hRwCV7x14uQ7jdsLqsxvklkR4Mtf7kRsZhboIKRbsR4","short-id":"c531427f9b41"}}
   - {"name":"@sinavm-146","type":"vless","server":"db01.ssr.ee","port":443,"udp":true,"uuid":"9d0a75d2-f747-4afa-b43f-d208af9e8f9a","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"3tyvN86mGzMnYhAMX06SJMYSWhG02rqzTr7GjS-OaWI","short-id":"6ba85179e30d4fc2"}}
   - {"name":"@sinavm-155","type":"vless","server":"83.147.18.191","port":4653,"udp":true,"uuid":"d9bd2578-dc93-40cc-87ab-69a915a0baad","tls":true,"network":"xhttp","client-fingerprint":"firefox","servername":"tgju.org","reality-opts":{"public-key":"g23nq_R9TIMbMIGQHB6gjDNewFzrHXPcj72bTS-RtX8","short-id":"a1b2c3d4e5f67890"}}
-  - {"name":"@sinavm-166","type":"vless","server":"45.134.14.12","port":2053,"udp":true,"uuid":"9b9c1822-6786-4089-b2ef-dc659349e624","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"VnxRxDbVm63-M061U7so84kI-9hox9buqGdgx-AHvCQ"}}
-  - {"name":"@sinavm-167","type":"vless","server":"63.178.196.32","port":443,"udp":true,"uuid":"4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"store.steampowered.com","reality-opts":{"public-key":"TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4","short-id":"f5"}}
-  - {"name":"@sinavm-171","type":"vless","server":"194.182.79.65","port":43238,"udp":true,"uuid":"c2d3226b-6618-496d-bc0f-7b93f492169a","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","grpc-opts":{"grpc-service-name":"Join-ZEDMODEON-ZEDMODEON-bia-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON"},"reality-opts":{"public-key":"XT1LHVlN21T2ml8nULA18Y4REuyaBNF9FM9PPcx89xs","short-id":"e165dc66"}}
+  - {"name":"@sinavm-158","type":"vless","server":"Loadbalance.systemgamingirani.ir","port":443,"udp":true,"uuid":"8af733bd-c094-4e99-add3-95f380cda5e7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tgju.org","reality-opts":{"public-key":"v3_phZMVMpR1IKmwS3HEBQGE5Yh8rFyZJOplk71hWkg","short-id":"b7859e878ab2fb"}}
+  - {"name":"@sinavm-167","type":"vless","server":"45.134.14.12","port":2053,"udp":true,"uuid":"9b9c1822-6786-4089-b2ef-dc659349e624","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"journalofbigdata.springeropen.com","reality-opts":{"public-key":"VnxRxDbVm63-M061U7so84kI-9hox9buqGdgx-AHvCQ"}}
+  - {"name":"@sinavm-168","type":"vless","server":"63.178.196.32","port":443,"udp":true,"uuid":"4c26ebc3-7784-46d8-b52a-7b0ccae6f4b4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"store.steampowered.com","reality-opts":{"public-key":"TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4","short-id":"f5"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -151,9 +151,9 @@ proxy-groups:
       - '@sinavm-125'
       - '@sinavm-146'
       - '@sinavm-155'
-      - '@sinavm-166'
+      - '@sinavm-158'
       - '@sinavm-167'
-      - '@sinavm-171'
+      - '@sinavm-168'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -171,9 +171,9 @@ proxy-groups:
       - '@sinavm-125'
       - '@sinavm-146'
       - '@sinavm-155'
-      - '@sinavm-166'
+      - '@sinavm-158'
       - '@sinavm-167'
-      - '@sinavm-171'
+      - '@sinavm-168'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -190,9 +190,9 @@ proxy-groups:
       - '@sinavm-125'
       - '@sinavm-146'
       - '@sinavm-155'
-      - '@sinavm-166'
+      - '@sinavm-158'
       - '@sinavm-167'
-      - '@sinavm-171'
+      - '@sinavm-168'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
