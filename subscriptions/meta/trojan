@@ -133,6 +133,8 @@ proxies:
   - {"name":"@sinavm-19","type":"trojan","server":"63.178.151.21","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-20","type":"trojan","server":"18.193.191.106","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-21","type":"trojan","server":"13.39.63.75","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-22","type":"trojan","server":"35.181.248.2","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-23","type":"trojan","server":"52.59.100.190","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -152,6 +154,8 @@ proxy-groups:
       - '@sinavm-19'
       - '@sinavm-20'
       - '@sinavm-21'
+      - '@sinavm-22'
+      - '@sinavm-23'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -171,6 +175,8 @@ proxy-groups:
       - '@sinavm-19'
       - '@sinavm-20'
       - '@sinavm-21'
+      - '@sinavm-22'
+      - '@sinavm-23'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -189,6 +195,8 @@ proxy-groups:
       - '@sinavm-19'
       - '@sinavm-20'
       - '@sinavm-21'
+      - '@sinavm-22'
+      - '@sinavm-23'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
