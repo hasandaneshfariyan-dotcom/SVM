@@ -120,31 +120,35 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"@sinavm-131","type":"vless","server":"db01.ssr.ee","port":443,"udp":true,"uuid":"9d0a75d2-f747-4afa-b43f-d208af9e8f9a","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"AeJ40fWPYK3WSDtY_AGv3ewG_kwQvAoDtf3KIgk1DRU","short-id":"6ba85179e30d4fc2</code></div>"}}
-  - {"name":"@sinavm-162","type":"vless","server":"49.13.199.42","port":443,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"store.steampowered.com","reality-opts":{"public-key":"TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4","short-id":"f5"}}
+  - {"name":"@sinavm-129","type":"vless","server":"db01.ssr.ee","port":443,"udp":true,"uuid":"9d0a75d2-f747-4afa-b43f-d208af9e8f9a","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"AeJ40fWPYK3WSDtY_AGv3ewG_kwQvAoDtf3KIgk1DRU","short-id":"6ba85179e30d4fc2</code></div>"}}
+  - {"name":"@sinavm-160","type":"vless","server":"ru.shatak.store","port":7021,"udp":true,"uuid":"5a7a7e1e-7e1e-47ea-9e1e-e1e65e1e7e1e","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"www.journalofbigdata.springeropen.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"TmD2tgPqVKs9s4FiP6qgaRR1vE03_l30_PKlljwkJiQ","short-id":"7fec3adb0c3aee58"}}
+  - {"name":"@sinavm-165","type":"vless","server":"49.13.199.42","port":443,"udp":true,"uuid":"9e003436-1354-4510-8dd6-5834dc1e7829","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"store.steampowered.com","reality-opts":{"public-key":"TGlPtfVzGIVpMauPRMGJj2Uu6GUiCpu5ZizIIjw-wx4","short-id":"f5"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@sinavm-131'
-      - '@sinavm-162'
+      - '@sinavm-129'
+      - '@sinavm-160'
+      - '@sinavm-165'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '@sinavm-131'
-      - '@sinavm-162'
+      - '@sinavm-129'
+      - '@sinavm-160'
+      - '@sinavm-165'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '@sinavm-131'
-      - '@sinavm-162'
+      - '@sinavm-129'
+      - '@sinavm-160'
+      - '@sinavm-165'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
