@@ -120,6 +120,7 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
+  - {"name":"@sinavm-6","type":"trojan","server":"63.178.100.140","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-7","type":"trojan","server":"18.193.13.65","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-8","type":"trojan","server":"13.39.239.251","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-9","type":"trojan","server":"13.36.139.6","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
@@ -140,6 +141,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
+      - '@sinavm-6'
       - '@sinavm-7'
       - '@sinavm-8'
       - '@sinavm-9'
@@ -160,6 +162,7 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
+      - '@sinavm-6'
       - '@sinavm-7'
       - '@sinavm-8'
       - '@sinavm-9'
@@ -179,6 +182,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
+      - '@sinavm-6'
       - '@sinavm-7'
       - '@sinavm-8'
       - '@sinavm-9'

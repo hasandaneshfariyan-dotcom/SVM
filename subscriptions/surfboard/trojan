@@ -11,6 +11,7 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+@sinavm-6 = trojan, 63.178.100.140, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-7 = trojan, 18.193.13.65, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-8 = trojan, 13.39.239.251, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-9 = trojan, 13.36.139.6, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
@@ -26,9 +27,9 @@ DIRECT = direct
 @sinavm-20 = trojan, 35.180.206.105, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-21 = trojan, 13.39.59.229, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
-URL-TEST = url-test,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
-FALLBACK = fallback,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
+MANUAL = select,URL-TEST,FALLBACK,@sinavm-6,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
+URL-TEST = url-test,@sinavm-6,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
+FALLBACK = fallback,@sinavm-6,@sinavm-7,@sinavm-8,@sinavm-9,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-15,@sinavm-16,@sinavm-17,@sinavm-18,@sinavm-19,@sinavm-20,@sinavm-21
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
