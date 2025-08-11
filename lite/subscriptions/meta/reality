@@ -120,35 +120,35 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"@sinavm-47","type":"vless","server":"ru.maviks.eu","port":443,"udp":true,"uuid":"0a947205-01a0-4634-8e78-daf200d02def","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"rhEEZAZBX-seWl5f0JmyE19Iwxb5zTNH5yT-FhaS8Hw","short-id":"200f99e321</code><br/><br/><blockquote"}}
-  - {"name":"@sinavm-110","type":"vless","server":"195.133.8.126","port":8081,"udp":true,"uuid":"fa886719-16fa-4b10-88c5-3c00a6f5a5f1","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"C4lraeO0FAYyFmDWbRmHmX53xTf4XMalv5kGefeWBmA","short-id":"4662ad</pre><br/><tg-emoji"}}
-  - {"name":"@sinavm-125","type":"vless","server":"db01.ssr.ee","port":443,"udp":true,"uuid":"9d0a75d2-f747-4afa-b43f-d208af9e8f9a","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"AeJ40fWPYK3WSDtY_AGv3ewG_kwQvAoDtf3KIgk1DRU","short-id":"6ba85179e30d4fc2</code></div>"}}
+  - {"name":"@sinavm-49","type":"vless","server":"ru.maviks.eu","port":443,"udp":true,"uuid":"0a947205-01a0-4634-8e78-daf200d02def","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"rhEEZAZBX-seWl5f0JmyE19Iwxb5zTNH5yT-FhaS8Hw","short-id":"200f99e321</code><br/><br/><blockquote"}}
+  - {"name":"@sinavm-112","type":"vless","server":"195.133.8.126","port":8081,"udp":true,"uuid":"fa886719-16fa-4b10-88c5-3c00a6f5a5f1","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"C4lraeO0FAYyFmDWbRmHmX53xTf4XMalv5kGefeWBmA","short-id":"4662ad</pre><br/><tg-emoji"}}
+  - {"name":"@sinavm-127","type":"vless","server":"db01.ssr.ee","port":443,"udp":true,"uuid":"9d0a75d2-f747-4afa-b43f-d208af9e8f9a","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"itunes.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"AeJ40fWPYK3WSDtY_AGv3ewG_kwQvAoDtf3KIgk1DRU","short-id":"6ba85179e30d4fc2</code></div>"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@sinavm-47'
-      - '@sinavm-110'
-      - '@sinavm-125'
+      - '@sinavm-49'
+      - '@sinavm-112'
+      - '@sinavm-127'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '@sinavm-47'
-      - '@sinavm-110'
-      - '@sinavm-125'
+      - '@sinavm-49'
+      - '@sinavm-112'
+      - '@sinavm-127'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '@sinavm-47'
-      - '@sinavm-110'
-      - '@sinavm-125'
+      - '@sinavm-49'
+      - '@sinavm-112'
+      - '@sinavm-127'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
