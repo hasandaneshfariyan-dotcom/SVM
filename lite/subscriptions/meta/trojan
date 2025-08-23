@@ -137,8 +137,8 @@ proxies:
   - {"name":"@sinavm-27","type":"trojan","server":"18.159.228.109","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-28","type":"trojan","server":"18.195.47.244","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-29","type":"trojan","server":"35.181.96.121","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-221","type":"trojan","server":"sws.ftpcomand.com","port":110,"udp":false,"password":"LG7HKcZFIJ","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"sws.ftpcomand.com"}
-  - {"name":"@sinavm-224","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"@sinavm-220","type":"trojan","server":"sws.ftpcomand.com","port":110,"udp":false,"password":"LG7HKcZFIJ","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"sws.ftpcomand.com"}
+  - {"name":"@sinavm-223","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -162,8 +162,8 @@ proxy-groups:
       - '@sinavm-27'
       - '@sinavm-28'
       - '@sinavm-29'
-      - '@sinavm-221'
-      - '@sinavm-224'
+      - '@sinavm-220'
+      - '@sinavm-223'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -187,8 +187,8 @@ proxy-groups:
       - '@sinavm-27'
       - '@sinavm-28'
       - '@sinavm-29'
-      - '@sinavm-221'
-      - '@sinavm-224'
+      - '@sinavm-220'
+      - '@sinavm-223'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -211,8 +211,8 @@ proxy-groups:
       - '@sinavm-27'
       - '@sinavm-28'
       - '@sinavm-29'
-      - '@sinavm-221'
-      - '@sinavm-224'
+      - '@sinavm-220'
+      - '@sinavm-223'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
