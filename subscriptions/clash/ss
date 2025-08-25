@@ -119,7 +119,7 @@ dns:
 
 proxies:
   - {"name":"@sinavm-2","type":"ss","server":"62.133.62.109","port":443,"password":"jifuR2NTM0Yt","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@sinavm-101","type":"ss","server":"138.197.192.62","port":443,"password":"CGCYQgKSHn6DRoihc1mPZl","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@sinavm-103","type":"ss","server":"138.197.192.62","port":443,"password":"CGCYQgKSHn6DRoihc1mPZl","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -127,7 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@sinavm-2'
-      - '@sinavm-101'
+      - '@sinavm-103'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -135,14 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@sinavm-2'
-      - '@sinavm-101'
+      - '@sinavm-103'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '@sinavm-2'
-      - '@sinavm-101'
+      - '@sinavm-103'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
