@@ -136,8 +136,7 @@ proxies:
   - {"name":"@sinavm-29","type":"trojan","server":"51.44.110.242","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-30","type":"trojan","server":"3.127.42.60","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-31","type":"trojan","server":"15.236.172.89","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-218","type":"trojan","server":"sws.ftpcomand.com","port":110,"udp":false,"password":"LG7HKcZFIJ","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"sws.ftpcomand.com"}
-  - {"name":"@sinavm-221","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"@sinavm-222","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -160,8 +159,7 @@ proxy-groups:
       - '@sinavm-29'
       - '@sinavm-30'
       - '@sinavm-31'
-      - '@sinavm-218'
-      - '@sinavm-221'
+      - '@sinavm-222'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -184,8 +182,7 @@ proxy-groups:
       - '@sinavm-29'
       - '@sinavm-30'
       - '@sinavm-31'
-      - '@sinavm-218'
-      - '@sinavm-221'
+      - '@sinavm-222'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -207,8 +204,7 @@ proxy-groups:
       - '@sinavm-29'
       - '@sinavm-30'
       - '@sinavm-31'
-      - '@sinavm-218'
-      - '@sinavm-221'
+      - '@sinavm-222'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
