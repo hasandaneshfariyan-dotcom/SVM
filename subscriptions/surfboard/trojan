@@ -11,6 +11,7 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+@sinavm-10 = trojan, 35.180.143.131, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-11 = trojan, 63.179.23.253, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-12 = trojan, 3.68.140.204, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-13 = trojan, 13.36.223.77, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
@@ -23,10 +24,12 @@ DIRECT = direct
 @sinavm-22 = trojan, 18.184.155.163, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-23 = trojan, 18.157.139.35, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @sinavm-24 = trojan, 13.39.190.179, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+@sinavm-26 = trojan, 3.72.135.219, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+@sinavm-27 = trojan, 63.178.135.7, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24
-URL-TEST = url-test,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24
-FALLBACK = fallback,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24
+MANUAL = select,URL-TEST,FALLBACK,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24,@sinavm-26,@sinavm-27
+URL-TEST = url-test,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24,@sinavm-26,@sinavm-27
+FALLBACK = fallback,@sinavm-10,@sinavm-11,@sinavm-12,@sinavm-13,@sinavm-14,@sinavm-15,@sinavm-16,@sinavm-18,@sinavm-19,@sinavm-21,@sinavm-22,@sinavm-23,@sinavm-24,@sinavm-26,@sinavm-27
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
