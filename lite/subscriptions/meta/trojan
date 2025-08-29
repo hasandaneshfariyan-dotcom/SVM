@@ -120,6 +120,7 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
+  - {"name":"@sinavm-16","type":"trojan","server":"35.180.143.131","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-17","type":"trojan","server":"63.179.23.253","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-18","type":"trojan","server":"3.68.140.204","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-19","type":"trojan","server":"13.36.223.77","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
@@ -132,13 +133,16 @@ proxies:
   - {"name":"@sinavm-28","type":"trojan","server":"18.184.155.163","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-29","type":"trojan","server":"18.157.139.35","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-30","type":"trojan","server":"13.39.190.179","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-227","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"@sinavm-32","type":"trojan","server":"3.72.135.219","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-33","type":"trojan","server":"63.178.135.7","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-229","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - '@sinavm-16'
       - '@sinavm-17'
       - '@sinavm-18'
       - '@sinavm-19'
@@ -151,13 +155,16 @@ proxy-groups:
       - '@sinavm-28'
       - '@sinavm-29'
       - '@sinavm-30'
-      - '@sinavm-227'
+      - '@sinavm-32'
+      - '@sinavm-33'
+      - '@sinavm-229'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
+      - '@sinavm-16'
       - '@sinavm-17'
       - '@sinavm-18'
       - '@sinavm-19'
@@ -170,12 +177,15 @@ proxy-groups:
       - '@sinavm-28'
       - '@sinavm-29'
       - '@sinavm-30'
-      - '@sinavm-227'
+      - '@sinavm-32'
+      - '@sinavm-33'
+      - '@sinavm-229'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
+      - '@sinavm-16'
       - '@sinavm-17'
       - '@sinavm-18'
       - '@sinavm-19'
@@ -188,7 +198,9 @@ proxy-groups:
       - '@sinavm-28'
       - '@sinavm-29'
       - '@sinavm-30'
-      - '@sinavm-227'
+      - '@sinavm-32'
+      - '@sinavm-33'
+      - '@sinavm-229'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
