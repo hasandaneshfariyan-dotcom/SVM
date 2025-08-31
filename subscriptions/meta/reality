@@ -126,9 +126,9 @@ proxies:
   - {"name":"@sinavm-64","type":"vless","server":"84.234.29.214","port":8585,"udp":true,"uuid":"9eb0500f-c906-4731-90a6-08ad66122d74","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"telwebion.com","reality-opts":{"public-key":"gjC92YX5coiPD3G1BLIZwGKfQsUpSA005WfJd6xBxhc","short-id":"c3fe60ab</code><br/></blockquote><i"}}
   - {"name":"@sinavm-112","type":"vless","server":"185.234.66.82","port":443,"udp":true,"uuid":"b5e8bfe7-6cdb-402d-b243-1e0f53ebb582","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"Tgju.org","flow":"xtls-rprx-vision","reality-opts":{"public-key":"S_2bepGaT7EHeH5DdyEgio421RTgrAvvOOQiaq8zV0g","short-id":"b525ecd2fc<br/><br/>vless://32c07748-0ad4-4d34-943f-b0b978564766@91.98.19.40:38644/?encryption=none"}}
   - {"name":"@sinavm-129","type":"vless","server":"78.47.216.178","port":8443,"udp":true,"uuid":"3668c58e-63f9-41d9-af93-ea4eaefde81b","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"refersion.com","reality-opts":{"public-key":"r3FLw76bxhgit74mzJTglRM-ujPZ9f-HemByQ-uZqms","short-id":"27e6b66aa77662fb</code><br/><br/><b><tg-emoji"}}
-  - {"name":"@sinavm-148","type":"vless","server":"46.62.128.241","port":8443,"udp":true,"uuid":"3668c58e-63f9-41d9-af93-ea4eaefde81b","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"refersion.com","reality-opts":{"public-key":"r3FLw76bxhgit74mzJTglRM-ujPZ9f-HemByQ-uZqms","short-id":"27e6b66aa77662fb</code></div>"}}
-  - {"name":"@sinavm-149","type":"vless","server":"159.65.20.117","port":80,"udp":true,"uuid":"af49c00f-a53b-4888-ba00-d9d021631dc2","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"orderup.com","reality-opts":{"public-key":"apMp75KQjgaRWegaiPc_ufULi0B7Mz-oUnSCJU9hRmc","short-id":"0c4e1fcb8576e1</code></div>"}}
-  - {"name":"@sinavm-151","type":"vless","server":"63.141.128.13","port":80,"udp":true,"uuid":"e385932f-423d-49de-a2e0-7ac92339ae92","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"tgju.org","reality-opts":{"public-key":"b14Nibi1pMPwFPqgiyZRS3a6-Y-Q8EsE5urKnA-RkAc","short-id":"adf8a1f5689177a2</code></div>"}}
+  - {"name":"@sinavm-151","type":"vless","server":"46.62.128.241","port":8443,"udp":true,"uuid":"3668c58e-63f9-41d9-af93-ea4eaefde81b","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"refersion.com","reality-opts":{"public-key":"r3FLw76bxhgit74mzJTglRM-ujPZ9f-HemByQ-uZqms","short-id":"27e6b66aa77662fb</code></div>"}}
+  - {"name":"@sinavm-152","type":"vless","server":"159.65.20.117","port":80,"udp":true,"uuid":"af49c00f-a53b-4888-ba00-d9d021631dc2","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"orderup.com","reality-opts":{"public-key":"apMp75KQjgaRWegaiPc_ufULi0B7Mz-oUnSCJU9hRmc","short-id":"0c4e1fcb8576e1</code></div>"}}
+  - {"name":"@sinavm-154","type":"vless","server":"63.141.128.13","port":80,"udp":true,"uuid":"e385932f-423d-49de-a2e0-7ac92339ae92","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"tgju.org","reality-opts":{"public-key":"b14Nibi1pMPwFPqgiyZRS3a6-Y-Q8EsE5urKnA-RkAc","short-id":"adf8a1f5689177a2</code></div>"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -141,9 +141,9 @@ proxy-groups:
       - '@sinavm-64'
       - '@sinavm-112'
       - '@sinavm-129'
-      - '@sinavm-148'
-      - '@sinavm-149'
       - '@sinavm-151'
+      - '@sinavm-152'
+      - '@sinavm-154'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -156,9 +156,9 @@ proxy-groups:
       - '@sinavm-64'
       - '@sinavm-112'
       - '@sinavm-129'
-      - '@sinavm-148'
-      - '@sinavm-149'
       - '@sinavm-151'
+      - '@sinavm-152'
+      - '@sinavm-154'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -170,9 +170,9 @@ proxy-groups:
       - '@sinavm-64'
       - '@sinavm-112'
       - '@sinavm-129'
-      - '@sinavm-148'
-      - '@sinavm-149'
       - '@sinavm-151'
+      - '@sinavm-152'
+      - '@sinavm-154'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
