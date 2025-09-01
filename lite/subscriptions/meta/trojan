@@ -135,8 +135,8 @@ proxies:
   - {"name":"@sinavm-26","type":"trojan","server":"35.181.187.105","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-27","type":"trojan","server":"3.78.75.41","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-28","type":"trojan","server":"63.179.8.202","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-210","type":"trojan","server":"104.26.12.31","port":8443,"udp":false,"password":"trojan","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fofang.pages.dev"}
-  - {"name":"@sinavm-245","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"@sinavm-209","type":"trojan","server":"104.26.12.31","port":8443,"udp":false,"password":"trojan","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fofang.pages.dev"}
+  - {"name":"@sinavm-244","type":"trojan","server":"kfjdi.pages.dev","port":443,"udp":false,"password":"er668","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -158,8 +158,8 @@ proxy-groups:
       - '@sinavm-26'
       - '@sinavm-27'
       - '@sinavm-28'
-      - '@sinavm-210'
-      - '@sinavm-245'
+      - '@sinavm-209'
+      - '@sinavm-244'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -181,8 +181,8 @@ proxy-groups:
       - '@sinavm-26'
       - '@sinavm-27'
       - '@sinavm-28'
-      - '@sinavm-210'
-      - '@sinavm-245'
+      - '@sinavm-209'
+      - '@sinavm-244'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -203,8 +203,8 @@ proxy-groups:
       - '@sinavm-26'
       - '@sinavm-27'
       - '@sinavm-28'
-      - '@sinavm-210'
-      - '@sinavm-245'
+      - '@sinavm-209'
+      - '@sinavm-244'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
