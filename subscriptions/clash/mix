@@ -131,7 +131,11 @@ proxies:
   - {"name":"@sinavm-18","type":"trojan","server":"15.188.191.121","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-20","type":"trojan","server":"3.65.233.81","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-21","type":"trojan","server":"3.121.143.77","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-110","type":"ss","server":"138.68.6.88","port":443,"password":"WStKA4n7KqAFCJxzw8cuM0","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@sinavm-22","type":"trojan","server":"13.39.0.130","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-23","type":"trojan","server":"15.236.2.42","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-24","type":"trojan","server":"3.78.49.204","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-25","type":"trojan","server":"3.74.129.76","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-115","type":"ss","server":"138.68.6.88","port":443,"password":"WStKA4n7KqAFCJxzw8cuM0","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -151,7 +155,11 @@ proxy-groups:
       - '@sinavm-18'
       - '@sinavm-20'
       - '@sinavm-21'
-      - '@sinavm-110'
+      - '@sinavm-22'
+      - '@sinavm-23'
+      - '@sinavm-24'
+      - '@sinavm-25'
+      - '@sinavm-115'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -171,7 +179,11 @@ proxy-groups:
       - '@sinavm-18'
       - '@sinavm-20'
       - '@sinavm-21'
-      - '@sinavm-110'
+      - '@sinavm-22'
+      - '@sinavm-23'
+      - '@sinavm-24'
+      - '@sinavm-25'
+      - '@sinavm-115'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -190,7 +202,11 @@ proxy-groups:
       - '@sinavm-18'
       - '@sinavm-20'
       - '@sinavm-21'
-      - '@sinavm-110'
+      - '@sinavm-22'
+      - '@sinavm-23'
+      - '@sinavm-24'
+      - '@sinavm-25'
+      - '@sinavm-115'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
