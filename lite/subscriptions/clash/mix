@@ -118,6 +118,7 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
+  - {"name":"@sinavm-11","type":"trojan","server":"13.36.49.89","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-12","type":"trojan","server":"3.65.97.31","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-13","type":"trojan","server":"63.179.50.132","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-14","type":"trojan","server":"15.188.112.221","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
@@ -132,13 +133,17 @@ proxies:
   - {"name":"@sinavm-23","type":"trojan","server":"52.47.55.148","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-24","type":"trojan","server":"3.76.18.3","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@sinavm-25","type":"trojan","server":"18.199.51.132","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@sinavm-157","type":"trojan","server":"news.farsonline24.ir","port":443,"udp":false,"password":"JPPDF8O3AI","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"@sinavm-26","type":"trojan","server":"51.44.106.132","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-27","type":"trojan","server":"35.180.235.199","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-28","type":"trojan","server":"63.176.195.141","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@sinavm-161","type":"trojan","server":"news.farsonline24.ir","port":443,"udp":false,"password":"JPPDF8O3AI","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - '@sinavm-11'
       - '@sinavm-12'
       - '@sinavm-13'
       - '@sinavm-14'
@@ -153,13 +158,17 @@ proxy-groups:
       - '@sinavm-23'
       - '@sinavm-24'
       - '@sinavm-25'
-      - '@sinavm-157'
+      - '@sinavm-26'
+      - '@sinavm-27'
+      - '@sinavm-28'
+      - '@sinavm-161'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
+      - '@sinavm-11'
       - '@sinavm-12'
       - '@sinavm-13'
       - '@sinavm-14'
@@ -174,12 +183,16 @@ proxy-groups:
       - '@sinavm-23'
       - '@sinavm-24'
       - '@sinavm-25'
-      - '@sinavm-157'
+      - '@sinavm-26'
+      - '@sinavm-27'
+      - '@sinavm-28'
+      - '@sinavm-161'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
+      - '@sinavm-11'
       - '@sinavm-12'
       - '@sinavm-13'
       - '@sinavm-14'
@@ -194,7 +207,10 @@ proxy-groups:
       - '@sinavm-23'
       - '@sinavm-24'
       - '@sinavm-25'
-      - '@sinavm-157'
+      - '@sinavm-26'
+      - '@sinavm-27'
+      - '@sinavm-28'
+      - '@sinavm-161'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
