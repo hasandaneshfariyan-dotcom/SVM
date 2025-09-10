@@ -1,0 +1,1654 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "www.speedtest.net",
+          "www.visa.com.sg",
+          "www.visa.com",
+          "numberland.ir",
+          "gozargahvpn-gozargahvpn-gozargahvpn.mymtn.sbs",
+          "ne.baziir.ir",
+          "pqh23v4.vetmainconf.shop",
+          "elegant-corporation.seotoolsforyou.co.uk",
+          "638854250044096905.prague-drc-dcrabd.info",
+          "client.bluwave.ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "172.67.204.84",
+        "104.21.69.44",
+        "2606:4700:3031::ac43:cc54",
+        "2606:4700:3032::6815:452c",
+        "104.17.148.22",
+        "104.17.147.22",
+        "104.18.0.48",
+        "104.18.1.48",
+        "2606:4700::6812:30",
+        "2606:4700::6812:130"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "0.0.0.0",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@sinavm-1 § 0",
+        "@sinavm-2 § 1",
+        "@sinavm-3 § 2",
+        "@sinavm-4 § 3",
+        "@sinavm-5 § 4",
+        "@sinavm-6 § 5",
+        "@sinavm-7 § 6",
+        "@sinavm-8 § 7",
+        "@sinavm-9 § 8",
+        "@sinavm-10 § 9",
+        "@sinavm-11 § 10",
+        "@sinavm-12 § 11",
+        "@sinavm-13 § 12",
+        "@sinavm-14 § 13",
+        "@sinavm-15 § 14",
+        "@sinavm-16 § 15",
+        "@sinavm-17 § 16",
+        "@sinavm-18 § 17",
+        "@sinavm-19 § 18",
+        "@sinavm-20 § 19",
+        "@sinavm-21 § 20",
+        "@sinavm-22 § 21",
+        "@sinavm-23 § 22",
+        "@sinavm-24 § 23",
+        "@sinavm-25 § 24",
+        "@sinavm-26 § 25",
+        "@sinavm-27 § 26",
+        "@sinavm-28 § 27",
+        "@sinavm-29 § 28",
+        "@sinavm-30 § 29",
+        "@sinavm-31 § 30",
+        "@sinavm-32 § 31",
+        "@sinavm-33 § 32",
+        "@sinavm-34 § 33",
+        "@sinavm-35 § 34",
+        "@sinavm-36 § 35",
+        "@sinavm-37 § 36",
+        "@sinavm-40 § 37",
+        "@sinavm-41 § 38",
+        "@sinavm-54 § 39",
+        "@sinavm-57 § 40",
+        "@sinavm-60 § 41",
+        "@sinavm-61 § 42",
+        "@sinavm-63 § 43",
+        "@sinavm-64 § 44",
+        "@sinavm-65 § 45",
+        "@sinavm-67 § 46",
+        "@sinavm-68 § 47",
+        "@sinavm-72 § 48",
+        "@sinavm-76 § 49",
+        "@sinavm-77 § 50",
+        "@sinavm-78 § 51",
+        "@sinavm-79 § 52",
+        "@sinavm-80 § 53",
+        "@sinavm-81 § 54",
+        "@sinavm-82 § 55",
+        "@sinavm-87 § 56",
+        "@sinavm-88 § 57",
+        "@sinavm-90 § 58",
+        "@sinavm-93 § 59",
+        "@sinavm-95 § 60",
+        "@sinavm-99 § 61",
+        "@sinavm-101 § 62",
+        "@sinavm-104 § 63",
+        "@sinavm-106 § 64",
+        "@sinavm-108 § 65",
+        "@sinavm-110 § 66",
+        "@sinavm-112 § 67",
+        "@sinavm-117 § 68",
+        "@sinavm-121 § 69",
+        "@sinavm-122 § 70",
+        "@sinavm-123 § 71",
+        "@sinavm-126 § 72"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@sinavm-1 § 0",
+        "@sinavm-2 § 1",
+        "@sinavm-3 § 2",
+        "@sinavm-4 § 3",
+        "@sinavm-5 § 4",
+        "@sinavm-6 § 5",
+        "@sinavm-7 § 6",
+        "@sinavm-8 § 7",
+        "@sinavm-9 § 8",
+        "@sinavm-10 § 9",
+        "@sinavm-11 § 10",
+        "@sinavm-12 § 11",
+        "@sinavm-13 § 12",
+        "@sinavm-14 § 13",
+        "@sinavm-15 § 14",
+        "@sinavm-16 § 15",
+        "@sinavm-17 § 16",
+        "@sinavm-18 § 17",
+        "@sinavm-19 § 18",
+        "@sinavm-20 § 19",
+        "@sinavm-21 § 20",
+        "@sinavm-22 § 21",
+        "@sinavm-23 § 22",
+        "@sinavm-24 § 23",
+        "@sinavm-25 § 24",
+        "@sinavm-26 § 25",
+        "@sinavm-27 § 26",
+        "@sinavm-28 § 27",
+        "@sinavm-29 § 28",
+        "@sinavm-30 § 29",
+        "@sinavm-31 § 30",
+        "@sinavm-32 § 31",
+        "@sinavm-33 § 32",
+        "@sinavm-34 § 33",
+        "@sinavm-35 § 34",
+        "@sinavm-36 § 35",
+        "@sinavm-37 § 36",
+        "@sinavm-40 § 37",
+        "@sinavm-41 § 38",
+        "@sinavm-54 § 39",
+        "@sinavm-57 § 40",
+        "@sinavm-60 § 41",
+        "@sinavm-61 § 42",
+        "@sinavm-63 § 43",
+        "@sinavm-64 § 44",
+        "@sinavm-65 § 45",
+        "@sinavm-67 § 46",
+        "@sinavm-68 § 47",
+        "@sinavm-72 § 48",
+        "@sinavm-76 § 49",
+        "@sinavm-77 § 50",
+        "@sinavm-78 § 51",
+        "@sinavm-79 § 52",
+        "@sinavm-80 § 53",
+        "@sinavm-81 § 54",
+        "@sinavm-82 § 55",
+        "@sinavm-87 § 56",
+        "@sinavm-88 § 57",
+        "@sinavm-90 § 58",
+        "@sinavm-93 § 59",
+        "@sinavm-95 § 60",
+        "@sinavm-99 § 61",
+        "@sinavm-101 § 62",
+        "@sinavm-104 § 63",
+        "@sinavm-106 § 64",
+        "@sinavm-108 § 65",
+        "@sinavm-110 § 66",
+        "@sinavm-112 § 67",
+        "@sinavm-117 § 68",
+        "@sinavm-121 § 69",
+        "@sinavm-122 § 70",
+        "@sinavm-123 § 71",
+        "@sinavm-126 § 72"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "166h40m0s",
+      "idle_timeout": "1666h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-1 § 0",
+      "server": "31.130.144.71",
+      "server_port": 443,
+      "uuid": "1ab44c12-1462-422e-aeab-aaa025636f61",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "lIziyIMqT_eVG87EqNB97p9SPiDW4DXIFMm-J0SbAWY",
+          "short_id": "ed"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-2 § 1",
+      "server": "45.12.139.106",
+      "server_port": 8443,
+      "uuid": "da370882-ecfa-4aca-b713-af43492dd904",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "yt.fasssst.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "EPR1I26IOfbKgiuzGKAlA94Xxca_cqNGH4AwvblhKGc",
+          "short_id": "cb0b2f96db2277a0"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-3 § 2",
+      "server": "51.44.37.164",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-4 § 3",
+      "server": "13.37.56.104",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-5 § 4",
+      "server": "3.78.88.96",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-6 § 5",
+      "server": "3.126.199.220",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-7 § 6",
+      "server": "15.188.176.84",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-8 § 7",
+      "server": "52.47.125.157",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-9 § 8",
+      "server": "63.179.68.47",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-10 § 9",
+      "server": "3.67.59.182",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-11 § 10",
+      "server": "13.36.105.165",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-12 § 11",
+      "server": "51.44.227.40",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-13 § 12",
+      "server": "18.184.177.160",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-14 § 13",
+      "server": "3.120.171.4",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-15 § 14",
+      "server": "13.36.52.224",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-16 § 15",
+      "server": "13.37.0.133",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-17 § 16",
+      "server": "18.199.132.134",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-18 § 17",
+      "server": "3.126.107.40",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-19 § 18",
+      "server": "51.44.49.244",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@sinavm-20 § 19",
+      "server": "15.237.73.245",
+      "server_port": 22223,
+      "password": "telegram-id-directvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-21 § 20",
+      "server": "172.67.209.105",
+      "server_port": 2095,
+      "uuid": "1953c1e6-af68-4c60-a6f8-f8194de580f6",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "worker-ancient-bonus-70e8.96dc4cc80bfb.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-22 § 21",
+      "server": "pqh23v4.vetmainconf.shop",
+      "server_port": 8880,
+      "uuid": "e4824193-4f54-453b-d037-88368e85ef0e",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-23 § 22",
+      "server": "www.speedtest.net",
+      "server_port": 443,
+      "uuid": "d7d6745c-7264-44a4-a62f-97b4ce83a951",
+      "tls": {
+        "enabled": true,
+        "server_name": "totoo.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/f0yhmkdlahdju7ot?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "totoo.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-24 § 23",
+      "server": "www.visa.com.sg",
+      "server_port": 8443,
+      "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-coo.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "azadnet-coo.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-25 § 24",
+      "server": "www.visa.com.sg",
+      "server_port": 8443,
+      "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-dbi.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "azadnet-dbi.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-26 § 25",
+      "server": "172.67.209.105",
+      "server_port": 2052,
+      "uuid": "1953c1e6-af68-4c60-a6f8-f8194de580f6",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2048\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "worker-ancient-bonus-70e8.96dc4cc80bfb.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-27 § 26",
+      "server": "104.18.14.19",
+      "server_port": 2095,
+      "uuid": "13ed4a8b-6049-4f26-8cb3-9870df4fda4c",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "0107.cxypogon.workers.dev\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-28 § 27",
+      "server": "104.21.32.1",
+      "server_port": 8443,
+      "uuid": "6b437afc-62b3-40ba-9112-ee667a783c3d",
+      "tls": {
+        "enabled": true,
+        "server_name": "free.bxxxcws.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/icstt1xldgwwzme7?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "free.bxxxcws.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-29 § 28",
+      "server": "104.21.48.1",
+      "server_port": 443,
+      "uuid": "0836463b-214f-4af6-aa85-85a56a62388e",
+      "tls": {
+        "enabled": true,
+        "server_name": "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/lcjhys6g5v2zkfzm?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "d2127a49-flat-wood-c4b5.milia-akbarpoor.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-30 § 29",
+      "server": "www.speedtest.net",
+      "server_port": 2053,
+      "uuid": "2cec2733-389a-46a7-9053-218594a6336d",
+      "tls": {
+        "enabled": true,
+        "server_name": "newmtproxi.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/xt5k4hxwph3djcxv?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "newmtproxi.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-31 § 30",
+      "server": "www.visa.com",
+      "server_port": 2095,
+      "uuid": "252d7c6c-3f50-44fb-9a51-13963fc727e0",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "headers": {
+          "Host": "0105.f5s8fbc2.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-32 § 31",
+      "server": "104.16.1.47",
+      "server_port": 80,
+      "uuid": "b550a101-63fe-4862-bfd3-8b87bb4168dd",
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "flat-bread-ddb6-ppal03.joriy39169.workers.dev\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-33 § 32",
+      "server": "185.234.66.81",
+      "server_port": 443,
+      "uuid": "6e812804-b0e8-4eff-9c2e-96c6fed96f1b",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/lkjdasws%3C/pre%3E%3Cbr/%3E%3Cbr/%3E%3Ci",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-34 § 33",
+      "server": "elegant-corporation.seotoolsforyou.co.uk",
+      "server_port": 80,
+      "uuid": "d03d8815-a06f-408f-a62f-6c84869b96a9",
+      "transport": {
+        "type": "ws",
+        "path": "/?---join-telegram-freev2rng---join-telegram-freev2rng---join-telegram-freev2rng---join-telegram-freev2rng---join-telegram-freev2rng\u003c/pre\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-35 § 34",
+      "server": "638854250044096905.prague-drc-dcrabd.info",
+      "server_port": 8880,
+      "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-36 § 35",
+      "server": "45.82.251.133",
+      "server_port": 8880,
+      "uuid": "e4824193-4f54-453b-d037-88368e85ef0e",
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-37 § 36",
+      "server": "185.242.87.140",
+      "server_port": 443,
+      "uuid": "3a08182c-ef44-4137-afac-12d2f58994e6",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/hxwdnrws%3C/pre%3E%3Cbr/%3E%3Cbr/%3E%3Ci",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-40 § 37",
+      "server": "82.148.21.174",
+      "server_port": 443,
+      "uuid": "1a6fe500-59da-4598-8576-256f06765ffb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "ru.sfasti.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8",
+          "short_id": "16895459a2c7768d\u003c/code\u003e\u003c/blockquote\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-41 § 38",
+      "server": "www.speedtest.net",
+      "server_port": 8443,
+      "uuid": "53522818-cb03-4840-ba94-05e63fc3ddcc",
+      "tls": {
+        "enabled": true,
+        "server_name": "balancer.hamster.name.ng\u003c/code\u003e\u003c/blockquote\u003e\u003cbr/\u003e\u003cbr/\u003e\u003ci",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "balancer.hamster.name.ng"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-54 § 39",
+      "server": "212.41.8.198",
+      "server_port": 443,
+      "uuid": "d4e4c02a-d969-47a6-ba0f-3d433fdac206",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "wa.sfasti.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8",
+          "short_id": "16895459a2c7768d\u003c/code\u003e\u003cbr/\u003e\u003c/blockquote\u003e\u003ci"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-57 § 40",
+      "server": "212.41.8.198",
+      "server_port": 443,
+      "uuid": "d4e4c02a-d969-47a6-ba0f-3d433fdac206",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "wa.sfasti.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8",
+          "short_id": "16895459a2c7768d\u003c/code\u003e\u003c/blockquote\u003e\u003cbr/\u003e\u003ci"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-60 § 41",
+      "server": "www.speedtest.net",
+      "server_port": 2052,
+      "uuid": "e5c6a9d4-03e0-4d43-91cc-c3e153b96eb6",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Bia.joinbede.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-61 § 42",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "c319b01e-ac54-4d5c-f8b2-3fb2256c23cc",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Vmessorg.paradoxone.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-63 § 43",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "cb5190f9-d041-4699-986d-083387ecc745",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Vmessorg.paradoxone.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-64 § 44",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "78e3cff7-75e1-4418-9db0-b3a00aece703",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Vmessorg.paradoxone.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-65 § 45",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "95260b6a-e711-455c-d273-3439ca210d44",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Vmessorg.paradoxone.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-67 § 46",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "e71e9e5c-f27f-4b20-fbbe-acb7b6a62d23",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "vmessorg.joinbede.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-68 § 47",
+      "server": "numberland.ir",
+      "server_port": 2052,
+      "uuid": "95260b6a-e711-455c-d273-3439ca210d44",
+      "transport": {
+        "type": "ws",
+        "path": "/@vmessorg----@vmessorg-----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg----@vmessorg",
+        "headers": {
+          "Host": "Vmessorg.paradoxone.ir"
+        },
+        "max_early_data": 2480,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-72 § 48",
+      "server": "64.188.97.71",
+      "server_port": 34045,
+      "uuid": "d8dd94fd-540e-461d-b5d4-acebef02c22a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "ocost-dy.wmlefl.cc\u003cbr/\u003e\u003cbr/\u003evmess://eyJhZGQiOiJmYXBlbmcub3JnIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJmYXBlbmcub3JnIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiJsaW5rdndzIiwicG9ydCI6IjQ0MyIsInBzIjoiQ2hhbm5lbCBpZDogQFNoYWRvd1Byb3h5NjYg8J HqfCfh6oiLCJzY3kiOiJhdXRvIiwic25pIjoiZmFwZW5nLm9yZyIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9\u003cbr/\u003e\u003cbr/\u003evmess://eyJhZGQiOiJsYW1tYWxhbmQub3JnIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJsYW1tYWxhbmQub3JnIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiJsaW5rdndzIiwicG9ydCI6IjQ0MyIsInBzIjoiQ2hhbm5lbCBpZDogQFNoYWRvd1Byb3h5NjYg8J HqfCfh6oiLCJzY3kiOiJhdXRvIiwic25pIjoibGFtbWFsYW5kLm9yZyIsInRscyI6InRscyIsInR5cGUiOiIiLCJ2IjoiMiJ9\u003cbr/\u003e\u003cbr/\u003evmess://eyJhZGQiOiI1Ny4xMjkuNjQuMjM4IiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJrYXBlbGxlbmcuY29tIiwiaWQiOiIwM2ZjYzYxOC1iOTNkLTY3OTYtNmFlZC04YTM4Yzk3NWQ1ODEiLCJuZXQiOiJ3cyIsInBhdGgiOiIvbGlua3Z3cyIsInBvcnQiOiI0NDMiLCJwcyI6IkNoYW5uZWwgaWQ6IEBTaGFkb3dQcm94eTY2IPCfh6nwn4eqIiwic2N5IjoiYXV0byIsInNuaSI6ImthcGVsbGVuZy5jb20iLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoiLS0tIiwidiI6IjIifQ==\u003c/pre\u003e\u003cbr/\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "ocost-dy.wmlefl.cc"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-76 § 49",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "bb5857b4-9630-4101-8090-cc23db9531b7",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-77 § 50",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "025a2602-e9d0-40db-92ea-dfc256ef2a6a",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-78 § 51",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "8e34718c-31b7-4d1c-932d-57bc1eae8f68",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-79 § 52",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "5cbf2e86-3520-4461-cf3f-720f9766b28b",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-80 § 53",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "a7eaa893-1304-4821-a0d0-d3c481668722",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-81 § 54",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "c8c9741c-6d62-472b-aad9-7b1e0bafb1a7",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-82 § 55",
+      "server": "GozargahVPN-GozargahVPN-GozargahVPN.mymtn.sbs",
+      "server_port": 443,
+      "uuid": "0480d8ec-5151-4ae6-a58a-5be806b6128b",
+      "transport": {
+        "type": "http",
+        "path": "/@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN-@GozargahVPN",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-87 § 56",
+      "server": "client.bluwave.ir",
+      "server_port": 80,
+      "uuid": "e3eec9d9-ab70-4617-9e19-60860112c634",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "Bluewave.ai"
+        },
+        "max_early_data": 1861,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-88 § 57",
+      "server": "client.bluwave.ir",
+      "server_port": 80,
+      "uuid": "e3eec9d9-ab70-4617-9e19-60860112c634",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "Bluewave.ai"
+        },
+        "max_early_data": 1861,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-90 § 58",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "a4b17aa4-8723-4f12-945d-9e3bdf926bf7",
+      "tls": {
+        "enabled": true,
+        "server_name": "nb-fi.parsdl.xyz\u003c/code\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cb\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/hajmi",
+        "headers": {
+          "Host": "dbe661d5a761ff6c.s-5HU09JDF-97SHS.WWWrubika.irto.xn--ls8haaaaaaaaaaaaaaaaaa.la.which.xn--ls8haaaaaaaaaaaaaaaaaa.xn-ls8faaaaaaaaaa.speedtest.net.google.com.eu.ir.nl.aparat.com.komak.IR.Nb-De.85858569.xYz."
+        },
+        "max_early_data": 2050,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-93 § 59",
+      "server": "172.66.40.99",
+      "server_port": 2096,
+      "uuid": "502ce704-dcec-4f92-9489-505c99ce6c89",
+      "tls": {
+        "enabled": true,
+        "server_name": "o2.gerlemondns.info\u003c/code\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cb\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "o2.gerlemondns.info"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-95 § 60",
+      "server": "Ne.baziir.ir",
+      "server_port": 2010,
+      "uuid": "365efeec-0aab-18f9-530f-3bf8e29a54d3",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "tgju.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AUg2h16X8xP5s7tnkcDuyfX5CBV7WvCoY48OKhbtQyw",
+          "short_id": "821bbc44dd7a4e15\u003c/code\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cb\u003e\u003ctg-emoji"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-99 § 61",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "953d84ee-2985-44b9-8a69-b4d31bceab32",
+      "tls": {
+        "enabled": true,
+        "server_name": "mango1.mangoap.org\u003c/code\u003e\u003cbr/\u003e\u003cbr/\u003e\u003cb\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "mango1.mangoap.org"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-101 § 62",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "242de.speedtest20.sbs\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "242de.speedtest20.sbs"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-104 § 63",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "eus.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "eus.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-106 § 64",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "ers.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "ers.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-108 § 65",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "rws.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "rws.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-110 § 66",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "wIs.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "rws.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-112 § 67",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "wIs.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "wIs.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-117 § 68",
+      "server": "172.66.40.99",
+      "server_port": 443,
+      "uuid": "telegram-id-Arfilter",
+      "tls": {
+        "enabled": true,
+        "server_name": "bSo.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg\u003c/code\u003e\u003cbr/\u003e\u003ccode\u003e\u003cbr/\u003e\u003c/code\u003e\u003ctg-emoji",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "bSo.2SeDkFjEuIxIjD0Ew9DvKcxoisiEk61.BlOg"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-121 § 69",
+      "server": "102.177.176.213",
+      "server_port": 8880,
+      "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+      "transport": {
+        "type": "ws",
+        "path": "/%3C/b%3E%3C/tg-spoiler%3E%3C/div%3E",
+        "headers": {
+          "Host": "jp.laoyoutiao.link"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-122 § 70",
+      "server": "102.177.189.29",
+      "server_port": 8880,
+      "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+      "transport": {
+        "type": "ws",
+        "path": "/TelegramU0001F1E8U0001F1F3%3C/div%3E",
+        "headers": {
+          "Host": "hk.laoyoutiao.link"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-123 § 71",
+      "server": "102.177.176.213",
+      "server_port": 8880,
+      "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+      "transport": {
+        "type": "ws",
+        "path": "/%3C/div%3E",
+        "headers": {
+          "Host": "jp.laoyoutiao.link"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@sinavm-126 § 72",
+      "server": "102.177.189.29",
+      "server_port": 8880,
+      "uuid": "fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf",
+      "transport": {
+        "type": "ws",
+        "path": "//TelegramU0001F1E8U0001F1F3%3C/div%3E",
+        "headers": {
+          "Host": "hk.laoyoutiao.link"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {},
+    "geosite": {},
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "geoip": "private",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:6756",
+      "external_ui": "webui",
+      "secret": "xXxTestxXx"
+    }
+  }
+}

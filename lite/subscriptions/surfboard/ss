@@ -1,0 +1,21 @@
+#!MANAGED-CONFIG  interval=60 strict=false
+
+[General]
+loglevel = notify
+interface = 127.0.0.1
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
+ipv6 = true
+dns-server = system, 223.5.5.5
+exclude-simple-hostnames = true
+enhanced-mode-by-rule = true
+
+[Proxy]
+DIRECT = direct
+@sinavm-81 = ss, 64.227.60.3, 443, encrypt-method = chacha20-ietf-poly1305, password = h6vZBNpbn40mJ1Zgxl4v6b
+[Proxy Group]
+MANUAL = select,URL-TEST,FALLBACK,@sinavm-81
+URL-TEST = url-test,@sinavm-81
+FALLBACK = fallback,@sinavm-81
+[Rule]
+GEOIP,IR,DIRECT
+FINAL,MANUAL

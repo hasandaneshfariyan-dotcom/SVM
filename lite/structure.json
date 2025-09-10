@@ -1,198 +1,146 @@
 {
   "log": {
-    "disabled": false,
-    "level": "fatal",
-    "timestamp": true
-  },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "0.0.0.0:9090",
-      "external_ui": "yacd",
-      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "direct",
-      "secret": "",
-      "default_mode": "rule"
-    }
+    "disabled": true,
+    "level": "panic"
   },
   "dns": {
     "servers": [
       {
-        "address": "tcp://185.228.168.9",
-        "address_resolver": "dns-direct",
-        "strategy": "ipv4_only",
-        "tag": "dns-remote"
+        "tag": "Internet-dns",
+        "address": "tcp://1.1.1.2",
+        "strategy": "prefer_ipv4",
+        "detour": "Internet"
       },
       {
-        "address": "tcp://185.228.168.9",
-        "address_resolver": "dns-local",
-        "detour": "direct",
-        "strategy": "ipv4_only",
-        "tag": "dns-direct"
-      },
-      {
-        "address": "local",
-        "detour": "direct",
-        "tag": "dns-local"
-      },
-      {
-        "address": "rcode://success",
-        "tag": "dns-block"
+        "tag": "direct-dns",
+        "address": "tcp://1.1.1.2",
+        "strategy": "prefer_ipv4",
+        "detour": "direct"
       }
     ],
     "rules": [
       {
-        "domain_suffix": [
-          ".ir"
-        ],
-        "server": "dns-direct"
-      },
-      {
-        "outbound": "direct",
-        "server": "dns-direct",
-        "rewrite_ttl": 20
-      },
-      {
         "outbound": "any",
-        "server": "dns-direct",
-        "rewrite_ttl": 20
+        "server": "direct-dns"
+      },
+      {
+        "domain_regex": [
+          ".*\\.ir$",
+          ".*\\.xn--mgba3a4f16a$"
+        ],
+        "server": "direct-dns"
       }
     ],
-    "reverse_mapping": true,
-    "strategy": "ipv4_only",
+    "strategy": "prefer_ipv4",
     "independent_cache": true
   },
   "inbounds": [
     {
-      "listen": "0.0.0.0",
-      "listen_port": 6450,
-      "override_address": "8.8.8.8",
-      "override_port": 53,
-      "tag": "dns-in",
-      "type": "direct"
-    },
-    {
       "type": "tun",
       "tag": "tun-in",
-      "domain_strategy": "",
-      "interface_name": "tun0",
-      "inet4_address": "172.19.0.1/30",
+      "interface_name": "@SiNAVM",
       "mtu": 9000,
+      "address": "172.18.0.1/30",
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
-      "endpoint_independent_nat": true,
-      "sniff": true,
-      "sniff_override_destination": false
-    },
-    {
-      "domain_strategy": "",
-      "listen": "0.0.0.0",
-      "listen_port": 2080,
-      "sniff": true,
-      "sniff_override_destination": false,
-      "tag": "mixed-in",
-      "type": "mixed"
+      "route_exclude_address": [
+        "192.168.0.0/16",
+        "fc00::/7"
+      ],
+      "stack": "mixed",
+      "domain_strategy": "prefer_ipv4"
     }
   ],
   "outbounds": [
     {
-      "tag": "proxy",
       "type": "selector",
-      "outbounds": [
-        "URL-TEST"
-      ]
+      "tag": "Internet",
+      "outbounds": ["Best Latency"]
     },
     {
-      "tag": "URL-TEST",
       "type": "urltest",
+      "tag": "Best Latency",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "3m",
-      "tolerance": 50
+      "url": "http://1.1.1.1/",
+      "interval": "3m0s",
+      "tolerance": 1,
+      "idle_timeout": "9m0s"
     },
     {
-      "tag": "direct",
-      "type": "direct"
-    },
-    {
-      "tag": "bypass",
-      "type": "direct"
-    },
-    {
-      "tag": "block",
-      "type": "block"
-    },
-    {
-      "tag": "dns-out",
-      "type": "dns"
+      "type": "direct",
+      "tag": "direct"
     }
   ],
   "route": {
-    "auto_detect_interface": true,
-    "override_android_vpn": true,
-    "final": "proxy",
-    "geoip": {
-      "download_url": "https://github.com/MiSaturo/sing-box-geoip-ir/releases/latest/download/geoip.db",
-      "download_detour": "direct"
-    },
-    "geosite": {
-      "download_url": "https://github.com/MasterKia/iran-hosted-domains/releases/latest/download/iran-geosite.db",
-      "download_detour": "direct"
-    },
     "rules": [
       {
-        "outbound": "dns-out",
-        "port": [
-          53
-        ]
+        "action": "sniff"
       },
       {
-        "inbound": [
-          "dns-in"
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "inbound": "dns-in"
+          },
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
         ],
-        "outbound": "dns-out"
+        "action": "hijack-dns"
       },
       {
-        "domain_suffix": [
-          "ir"
-        ],
-        "outbound": "bypass"
+        "network": "tcp",
+        "port": 853,
+        "action": "reject",
+        "method": "default"
       },
       {
-        "geoip": [
-          "ir"
-        ],
-        "outbound": "bypass"
+        "network": "udp",
+        "port": [443, 853],
+        "action": "reject",
+        "method": "default"
       },
       {
-        "geosite": [
-          "ir"
+        "ip_is_private": true,
+        "outbound": "direct"
+      },
+      {
+        "domain_regex": [
+          ".*\\.ir$",
+          ".*\\.xn--mgba3a4f16a$"
         ],
         "outbound": "direct"
       },
       {
-        "geosite": [
-          "other"
-        ],
-        "outbound": "direct"
+        "protocol": "stun",
+        "action": "reject",
+        "method": "default"
       },
       {
-        "geosite": [
-          "ads"
+        "source_ip_cidr": [
+          "224.0.0.0/3",
+          "ff00::/8"
         ],
-        "outbound": "block"
-      },
-      {
         "ip_cidr": [
           "224.0.0.0/3",
           "ff00::/8"
         ],
-        "outbound": "block",
-        "source_ip_cidr": [
-          "224.0.0.0/3",
-          "ff00::/8"
-        ]
+        "action": "reject",
+        "method": "default"
       }
-    ]
+    ],
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "@SiNAVM"
+    }
   }
 }

@@ -3,29 +3,29 @@
 $inputFile = 'config.txt';
 $outputFile = 'clash-config.yaml';
 
-// خواندن config.txt
+‎// خواندن config.txt
 $configs = file($inputFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 if (!$configs) {
     die("Error: config.txt is empty or not found.\n");
 }
 
-// آماده‌سازی ساختار YAML
+‎// آماده‌سازی ساختار YAML
 $yaml = [
     'mixed-port' => 7890,
     'external-controller' => '0.0.0.0:6756',
     'proxies' => []
 ];
 
-// تابع برای تجزیه query string
+‎// تابع برای تجزیه query string
 function parseQuery($query) {
     $params = [];
     parse_str($query, $params);
     return $params;
 }
 
-// پردازش هر خط از config.txt
+‎// پردازش هر خط از config.txt
 foreach ($configs as $config) {
-    // جدا کردن URI و نام
+‎    // جدا کردن URI و نام
     if (!preg_match('/^(.*?)(#.*)$/', $config, $matches)) continue;
     $uri = $matches[1];
     $nameParts = explode('|', trim($matches[2], '#'));
@@ -36,10 +36,10 @@ foreach ($configs as $config) {
     $channel = trim($nameParts[3]);
     $index = trim($nameParts[4]);
 
-    // فقط پروتکل‌های پشتیبانی‌شده
+‎    // فقط پروتکل‌های پشتیبانی‌شده
     if (!in_array($type, ['vless', 'trojan', 'vmess', 'ss'])) continue;
 
-    // تجزیه URI
+‎    // تجزیه URI
     $proxy = ['name' => "$name | $type | $channel | $index"];
     
     if ($type === 'vless') {
@@ -129,13 +129,13 @@ foreach ($configs as $config) {
     $yaml['proxies'][] = array_filter($proxy, fn($v) => !is_null($v));
 }
 
-// تبدیل به YAML
+‎// تبدیل به YAML
 if (!function_exists('yaml_emit')) {
     die("Error: PHP YAML extension is required.\n");
 }
 $yamlContent = yaml_emit($yaml, YAML_UTF8_ENCODING);
 
-// نوشتن به فایل
+‎// نوشتن به فایل
 file_put_contents($outputFile, $yamlContent);
 echo "Clash config generated: $outputFile\n";
 ?>

@@ -3,23 +3,36 @@
 function is_ip($string)
 {
     $ip_pattern = '/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/';
-    if (preg_match($ip_pattern, $string)) {
-        return true;
-    } else {
-        return false;
+    return preg_match($ip_pattern, $string);
+}
+
+function convertToJson($input)
+{
+    $lines = explode("\n", $input);
+    $data = [];
+    foreach ($lines as $line) {
+        $parts = explode("=", $line);
+        if (count($parts) == 2 && !empty($parts[0]) && !empty($parts[1])) {
+            $key = trim($parts[0]);
+            $value = trim($parts[1]);
+            $data[$key] = $value;
+        }
     }
+    return json_encode($data);
 }
 
 function ip_info($ip)
 {
-    // Check if the IP is from Cloudflare
     if (is_cloudflare_ip($ip)) {
+        $traceUrl = "http://$ip/cdn-cgi/trace";
+        $traceData = json_decode(convertToJson(file_get_contents($traceUrl)), true);
+        $country = $traceData['loc'] ?? "CF";
         return (object) [
-            "country" => "CF",
+            "country" => $country,
         ];
     }
 
-    if (is_ip($ip) === false) {
+    if (!is_ip($ip)) {
         $ip_address_array = dns_get_record($ip, DNS_A);
         if (empty($ip_address_array)) {
             return null;
@@ -28,7 +41,6 @@ function ip_info($ip)
         $ip = $ip_address_array[$randomKey]["ip"];
     }
 
-    // List of API endpoints
     $endpoints = [
         "https://ipapi.co/{ip}/json/",
         "https://ipwhois.app/json/{ip}",
@@ -36,44 +48,31 @@ function ip_info($ip)
         "https://api.ipbase.com/v1/json/{ip}",
     ];
 
-    // Initialize an empty result object
     $result = (object) [
         "country" => "XX",
     ];
 
-    // Loop through each endpoint
     foreach ($endpoints as $endpoint) {
-        // Construct the full URL
         $url = str_replace("{ip}", $ip, $endpoint);
-
         $options = [
             "http" => [
-                "header" =>
-                    "User-Agent: Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.102011-10-16 20:23:10\r\n", // i.e. An iPad
+                "header" => "User-Agent: Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.102011-10-16 20:23:10\r\n",
             ],
         ];
 
         $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-
+        $response = @file_get_contents($url, false, $context);
         if ($response !== false) {
             $data = json_decode($response);
-
-            // Extract relevant information and update the result object
-            if ($endpoint == $endpoints[0]) {
-                // Data from ipapi.co
+            if ($endpoint === $endpoints[0]) {
                 $result->country = $data->country_code ?? "XX";
-            } elseif ($endpoint == $endpoints[1]) {
-                // Data from ipwhois.app
+            } elseif ($endpoint === $endpoints[1]) {
                 $result->country = $data->country_code ?? "XX";
-            } elseif ($endpoint == $endpoints[2]) {
-                // Data from geoplugin.net
+            } elseif ($endpoint === $endpoints[2]) {
                 $result->country = $data->geoplugin_countryCode ?? "XX";
-            } elseif ($endpoint == $endpoints[3]) {
-                // Data from ipbase.com
+            } elseif ($endpoint === $endpoints[3]) {
                 $result->country = $data->country_code ?? "XX";
             }
-            // Break out of the loop since we found a successful endpoint
             break;
         }
     }
@@ -83,52 +82,49 @@ function ip_info($ip)
 
 function is_cloudflare_ip($ip)
 {
-    // Get the Cloudflare IP ranges
     $cloudflare_ranges = file_get_contents('https://www.cloudflare.com/ips-v4');
     $cloudflare_ranges = explode("\n", $cloudflare_ranges);
-
     foreach ($cloudflare_ranges as $range) {
-        if (ipv4_in_range($ip, $range)) {
+        if (cidr_match($ip, $range)) {
             return true;
         }
     }
-
     return false;
 }
 
-function ipv4_in_range($ip, $range)
+function cidr_match($ip, $range)
 {
-    $rangeArray = explode("\n", $range);
-    $ipArray = explode("\n", $ip);
-
-    if ($ipArray[0] === $rangeArray[0] && $ipArray[1] === $rangeArray[1] && $ipArray[2] === $rangeArray[2]) {
-        return true;
-    }
-
-    return false;
+    list($subnet, $bits) = explode('/', $range);
+    $bits = $bits ?? 32;
+    $ip = ip2long($ip);
+    $subnet = ip2long($subnet);
+    $mask = -1 << (32 - $bits);
+    $subnet &= $mask;
+    return ($ip & $mask) == $subnet;
 }
 
 function is_valid($input)
 {
-    if (stripos($input, "…") !== false or stripos($input, "...") !== false) {
+    if (empty($input) || stripos($input, "…") !== false || stripos($input, "...") !== false) {
         return false;
     }
-    return true;
+    return preg_match('/^(vmess|vless|trojan|ss|hysteria2|tuic):\/\//', $input);
 }
 
-function isEncrypted($input) {
+function isEncrypted($input)
+{
     $decodedConfig = configParse($input);
     $configType = detect_type($input);
 
-    if ($configType === "vmess" && $decodedConfig['tls'] !== "" && $decodedConfig['scy'] !== "none") {
+    if ($configType === "vmess" && !empty($decodedConfig['tls']) && $decodedConfig['scy'] !== "none") {
         return true;
     } elseif (in_array($configType, ["vless", "trojan"]) && !empty($decodedConfig['params']['security']) && $decodedConfig['params']['security'] !== "none") {
         return true;
     } elseif ($configType === "ss") {
         return true;
-    } elseif ($configType === "tuic" /*&& $decodedConfig['params']['allow_insecure'] === "0" && !empty($decodedConfig['params']['allow_insecure'])*/) {
+    } elseif ($configType === "tuic" && !empty($decodedConfig['params']['allow_insecure']) && $decodedConfig['params']['allow_insecure'] === "0") {
         return true;
-    } elseif ($configType === "hy2" /*&& $decodedConfig['params']['insecure'] === "0" && !empty($decodedConfig['params']['insecure'])*/) {
+    } elseif ($configType === "hy2" && !empty($decodedConfig['params']['insecure']) && $decodedConfig['params']['insecure'] === "0") {
         return true;
     }
     return false;
@@ -136,6 +132,9 @@ function isEncrypted($input) {
 
 function getFlags($country_code)
 {
+    if (strlen($country_code) !== 2) {
+        return "🏳️";
+    }
     $flag = mb_convert_encoding(
         "&#" . (127397 + ord($country_code[0])) . ";",
         "UTF-8",
@@ -169,26 +168,36 @@ function detect_type($input)
     } elseif (substr($input, 0, 11) === "hysteria://") {
         return "hysteria";
     }
+    return null;
 }
 
 function extractLinksByType($inputString, $configType)
 {
     $pattern = "/(" . $configType . '):\/\/[^"\'\s]+/';
     preg_match_all($pattern, $inputString, $matches);
+    return empty($matches[0]) ? null : $matches[0];
+}
 
-    if (empty($matches[0])) {
-        return null;
-    } else {
-        return $matches[0];
-    }
+function parseQuery($query)
+{
+    $params = [];
+    parse_str($query, $params);
+    return $params;
 }
 
 function configParse($input)
 {
     $configType = detect_type($input);
+    if (!$configType) {
+        return null;
+    }
+
     if ($configType === "vmess") {
         $vmess_data = substr($input, 8);
         $decoded_data = json_decode(base64_decode($vmess_data), true);
+        if (!$decoded_data) {
+            return null;
+        }
         return $decoded_data;
     } elseif (
         $configType === "vless" ||
@@ -197,56 +206,61 @@ function configParse($input)
         $configType === "hy2"
     ) {
         $parsedUrl = parse_url($input);
+        if (!$parsedUrl) {
+            return null;
+        }
         $params = [];
         if (isset($parsedUrl["query"])) {
-            parse_str($parsedUrl["query"], $params);
+            $params = parseQuery($parsedUrl["query"]);
         }
         $output = [
             "protocol" => $configType,
-            "username" => isset($parsedUrl["user"]) ? $parsedUrl["user"] : "",
-            "hostname" => isset($parsedUrl["host"]) ? $parsedUrl["host"] : "",
-            "port" => isset($parsedUrl["port"]) ? $parsedUrl["port"] : "",
+            "username" => $parsedUrl["user"] ?? "",
+            "hostname" => $parsedUrl["host"] ?? "",
+            "port" => $parsedUrl["port"] ?? "",
             "params" => $params,
-            "hash" => isset($parsedUrl["fragment"])
-                ? $parsedUrl["fragment"]
-                : "@@SiNAVM | lite" . getRandomName(),
+            "hash" => isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName(),
         ];
-
         if ($configType === "tuic") {
-            $output["pass"] = isset($parsedUrl["pass"])
-                ? $parsedUrl["pass"]
-                : "";
+            $output["pass"] = $params["password"] ?? "";
+            if (empty($output["username"]) || empty($output["pass"])) {
+                return null;
+            }
         }
         return $output;
     } elseif ($configType === "ss") {
         $url = parse_url($input);
-        if (isBase64($url["user"])) {
-            $url["user"] = base64_decode($url["user"]);
+        if (!$url) {
+            return null;
         }
-        list($encryption_method, $password) = explode(
-            ":",
-            $url["user"]
-        );
-        $server_address = $url["host"];
-        $server_port = $url["port"];
-        $name = isset($url["fragment"]) ? urldecode($url["fragment"]) : "@SiNAVM | lite" . getRandomName();
-        $server = [
-            "encryption_method" => $encryption_method,
-            "password" => $password,
-            "server_address" => $server_address,
-            "server_port" => $server_port,
-            "name" => $name,
+        $user = $url["user"] ?? "";
+        if (isBase64($user)) {
+            $user = base64_decode($user);
+        }
+        $userParts = explode(":", $user);
+        if (count($userParts) < 2) {
+            return null;
+        }
+        $output = [
+            "encryption_method" => $userParts[0],
+            "password" => $userParts[1],
+            "server_address" => $url["host"] ?? "",
+            "server_port" => $url["port"] ?? "",
+            "name" => isset($url["fragment"]) ? urldecode($url["fragment"]) : "SiNAVM" . getRandomName(),
         ];
-        return $server;
+        if (empty($output["server_address"]) || empty($output["password"])) {
+            return null;
+        }
+        return $output;
     }
+    return null;
 }
 
 function reparseConfig($configArray, $configType)
 {
     if ($configType === "vmess") {
         $encoded_data = base64_encode(json_encode($configArray));
-        $vmess_config = "vmess://" . $encoded_data;
-        return $vmess_config;
+        return "vmess://" . $encoded_data;
     } elseif (
         $configType === "vless" ||
         $configType === "trojan" ||
@@ -270,14 +284,15 @@ function reparseConfig($configArray, $configType)
         }
         return $url;
     }
+    return null;
 }
 
 function addUsernameAndPassword($obj)
 {
     $url = "";
-    if ($obj["username"] !== "") {
+    if (!empty($obj["username"])) {
         $url .= $obj["username"];
-        if (isset($obj["pass"]) && $obj["pass"] !== "") {
+        if (isset($obj["pass"]) && !empty($obj["pass"])) {
             $url .= ":" . $obj["pass"];
         }
         $url .= "@";
@@ -288,7 +303,7 @@ function addUsernameAndPassword($obj)
 function addPort($obj)
 {
     $url = "";
-    if (isset($obj["port"]) && $obj["port"] !== "") {
+    if (!empty($obj["port"])) {
         $url .= ":" . $obj["port"];
     }
     return $url;
@@ -306,7 +321,7 @@ function addParams($obj)
 function addHash($obj)
 {
     $url = "";
-    if (isset($obj["hash"]) && $obj["hash"] !== "") {
+    if (!empty($obj["hash"])) {
         $url .= "#" . str_replace(" ", "%20", $obj["hash"]);
     }
     return $url;
@@ -315,34 +330,21 @@ function addHash($obj)
 function is_reality($input)
 {
     $type = detect_type($input);
-    if (stripos($input, "reality") !== false && $type === "vless") {
-        return true;
-    }
-    return false;
+    return ($type === "vless" && stripos($input, "security=reality") !== false);
 }
 
 function isBase64($input)
 {
-    if (base64_encode(base64_decode($input)) === $input) {
-        return true;
-    }
-
-    return false;
+    return (base64_encode(base64_decode($input, true)) === $input);
 }
 
-function getRandomName() {
-    $alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    $name = '';
-    for ($i = 0; $i < 10; $i++) {
-      // Get a random letter from the alphabet
-      $randomLetter = $alphabet[rand(0, strlen($alphabet) - 1)];
-      // Add the letter to the name string
-      $name .= $randomLetter;
-    }
-    return $name;
-  }
+function getRandomName()
+{
+    return substr(md5(uniqid()), 0, 8);
+}
 
-function deleteFolder($folder) {
+function deleteFolder($folder)
+{
     if (!is_dir($folder)) {
         return;
     }
@@ -356,18 +358,14 @@ function deleteFolder($folder) {
 function tehran_time()
 {
     date_default_timezone_set("Asia/Tehran");
-    $tehran_time = time();
-    $formatted_time = date("Y-m-d H:i:s", $tehran_time);
-
-    return $formatted_time;
+    return date("Y-m-d H:i:s", time());
 }
 
-function hiddifyHeader ($subscriptionName) {
-    return "#profile-title: base64:" . base64_encode($subscriptionName) . "
-#profile-update-interval: 1
-#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
-#support-url: https://t.me/SiNAVM
-#profile-web-page-url: https://github.com/sinavm/SVM
-
-";
+function hiddifyHeader($subscriptionName)
+{
+    return "#profile-title: base64:" . base64_encode($subscriptionName) . "\n" .
+           "#profile-update-interval: 1\n" .
+           "#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531\n" .
+           "#support-url: https://t.me/sinavm\n" .
+           "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
 }
