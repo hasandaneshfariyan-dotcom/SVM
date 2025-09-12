@@ -1,0 +1,40 @@
+name: "Let's sinavm but Lite!"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/21 * * * *'
+
+concurrency:
+  group: "sinavm-lite"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3 
+          
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          
+      - name: Execute PHP script
+        run: |
+          set -e  
+          cd lite
+          php -d display_errors get.php
+          php -d display_errors duplicate.php
+          php -d display_errors sort.php
+          php -d display_errors toSingbox.php
+          php -d display_errors toClashSurfboard.php
+
+          git config --global user.email "sina.bb2006@gmail.com"
+          git config --global user.name "sinavm"
+          git config credential.helper store
+
+          git add -A
+          git commit -m "🧌 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git push
