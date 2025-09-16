@@ -63,14 +63,18 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -79,13 +83,33 @@
         },
         {
             "type": "shadowsocks",
-            "server": "64.227.60.3",
+            "server": "promo1o.bystrivpn.ru",
             "server_port": 443,
             "method": "chacha20-ietf-poly1305",
-            "password": "h6vZBNpbn40mJ1Zgxl4v6b",
+            "password": "0NeN5ta7FLa5B9DLytU0um",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "h110vpnnl.outlinekeys.net",
+            "server_port": 52571,
+            "method": "chacha20-ietf-poly1305",
+            "password": "NWlwEnQZWP9Zry50xQaxd1",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "h110vpnch.outlinekeys.net",
+            "server_port": 4248,
+            "method": "chacha20-ietf-poly1305",
+            "password": "f7fIfq3JYvXLwn0qMOpYAT",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
