@@ -120,43 +120,43 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"@sinavm-42","type":"vless","server":"ru.sfasti.ru","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><i"}}
-  - {"name":"@sinavm-67","type":"vless","server":"176.114.86.241","port":443,"udp":true,"uuid":"6fae85ca-395a-4f27-9eb2-75123befc475","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
-  - {"name":"@sinavm-69","type":"vless","server":"80.249.131.7","port":443,"udp":true,"uuid":"d4e4c02a-d969-47a6-ba0f-3d433fdac206","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"wa.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
-  - {"name":"@sinavm-72","type":"vless","server":"82.148.21.174","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
-  - {"name":"@sinavm-105","type":"vless","server":"185.113.10.132","port":8650,"udp":true,"uuid":"e1fd5a63-a979-459c-8f64-6f70cb682e23","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yandex.ru","reality-opts":{"public-key":"VyqZFwN3bBX4b0e5dgs7a5aaNMEgP0H5u_RpNjuKVxg","short-id":"b99b026cd8ee7c</code><br/><br/><b><tg-emoji"}}
+  - {"name":"@sinavm-41","type":"vless","server":"ru.sfasti.ru","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><i"}}
+  - {"name":"@sinavm-66","type":"vless","server":"176.114.86.241","port":443,"udp":true,"uuid":"6fae85ca-395a-4f27-9eb2-75123befc475","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
+  - {"name":"@sinavm-68","type":"vless","server":"80.249.131.7","port":443,"udp":true,"uuid":"d4e4c02a-d969-47a6-ba0f-3d433fdac206","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"wa.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
+  - {"name":"@sinavm-71","type":"vless","server":"82.148.21.174","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
+  - {"name":"@sinavm-104","type":"vless","server":"185.113.10.132","port":8650,"udp":true,"uuid":"e1fd5a63-a979-459c-8f64-6f70cb682e23","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yandex.ru","reality-opts":{"public-key":"VyqZFwN3bBX4b0e5dgs7a5aaNMEgP0H5u_RpNjuKVxg","short-id":"b99b026cd8ee7c</code><br/><br/><b><tg-emoji"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@sinavm-42'
-      - '@sinavm-67'
-      - '@sinavm-69'
-      - '@sinavm-72'
-      - '@sinavm-105'
+      - '@sinavm-41'
+      - '@sinavm-66'
+      - '@sinavm-68'
+      - '@sinavm-71'
+      - '@sinavm-104'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '@sinavm-42'
-      - '@sinavm-67'
-      - '@sinavm-69'
-      - '@sinavm-72'
-      - '@sinavm-105'
+      - '@sinavm-41'
+      - '@sinavm-66'
+      - '@sinavm-68'
+      - '@sinavm-71'
+      - '@sinavm-104'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '@sinavm-42'
-      - '@sinavm-67'
-      - '@sinavm-69'
-      - '@sinavm-72'
-      - '@sinavm-105'
+      - '@sinavm-41'
+      - '@sinavm-66'
+      - '@sinavm-68'
+      - '@sinavm-71'
+      - '@sinavm-104'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
