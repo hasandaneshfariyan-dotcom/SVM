@@ -126,6 +126,7 @@ proxies:
   - {"name":"@sinavm-36","type":"vless","server":"94.26.228.10","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><br/><i"}}
   - {"name":"@sinavm-41","type":"vless","server":"ru.sfasti.ru","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><i"}}
   - {"name":"@sinavm-68","type":"vless","server":"149.248.76.13","port":443,"udp":true,"uuid":"241039cb-2396-4a3d-832b-3e3fa21db2b7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"google.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"eJAx8p3teHDSj_x99qIJJNEXIRe6l-1GUzKalcF-FQY","short-id":"d18273"}}
+  - {"name":"@sinavm-90","type":"vless","server":"185.231.172.40","port":21934,"udp":true,"uuid":"97c4bb03-efab-4257-b75a-09ab232d4f10","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tgju.org","reality-opts":{"public-key":"W00lFZIKlJIvB72gsQ_VcnIfojArIGTwpcasNJnuwEE","short-id":"c827e82862a03011</code></div>"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -138,6 +139,7 @@ proxy-groups:
       - '@sinavm-36'
       - '@sinavm-41'
       - '@sinavm-68'
+      - '@sinavm-90'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -150,6 +152,7 @@ proxy-groups:
       - '@sinavm-36'
       - '@sinavm-41'
       - '@sinavm-68'
+      - '@sinavm-90'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -161,6 +164,7 @@ proxy-groups:
       - '@sinavm-36'
       - '@sinavm-41'
       - '@sinavm-68'
+      - '@sinavm-90'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
