@@ -1,54 +1,89 @@
 {
   "log": {
-    "disabled": true,
     "level": "panic"
   },
   "dns": {
     "servers": [
       {
-        "tag": "Internet-dns",
-        "address": "tcp://1.1.1.2",
-        "strategy": "prefer_ipv4",
-        "detour": "Internet"
-      },
-      {
-        "tag": "direct-dns",
-        "address": "tcp://1.1.1.2",
+        "tag": "Local-DNS",
+        "address": "https://1.1.1.1:443/dns-query",
+        "address_resolver": "Local-DNS-Resolver",
         "strategy": "prefer_ipv4",
         "detour": "direct"
+      },
+      {
+        "tag": "Local-DNS-Resolver",
+        "address": "local",
+        "address_resolver": "Local-DNS-Resolver",
+        "strategy": "prefer_ipv4",
+        "detour": "direct"
+      },
+      {
+        "tag": "Remote-DNS",
+        "address": "tcp://8.8.8.8",
+        "address_resolver": "Local-DNS-Resolver"
+      },
+      {
+        "tag": "dns_block",
+        "address": "rcode://success"
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "direct-dns"
-      },
-      {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
-        "server": "direct-dns"
+        "server": "Local-DNS-Resolver"
       }
     ],
-    "strategy": "prefer_ipv4",
+    "final": "Remote-DNS",
     "independent_cache": true
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "ir.pool.ntp.org",
+    "server_port": 123,
+    "detour": "direct"
   },
   "inbounds": [
     {
       "type": "tun",
-      "tag": "tun-in",
-      "interface_name": "@SiNAVM",
-      "mtu": 9000,
-      "address": "172.18.0.1/30",
-      "auto_route": true,
-      "strict_route": true,
-      "route_exclude_address": [
-        "192.168.0.0/16",
-        "fc00::/7"
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
       ],
+      "auto_route": true,
       "stack": "mixed",
-      "domain_strategy": "prefer_ipv4"
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
+        }
+      },
+      "sniff": true,
+      "sniff_override_destination": true,
+      "domain_strategy": "ipv4_only",
+      "endpoint_independent_nat": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "udp_fragment": false
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20120,
+      "udp_fragment": false
+    },
+    {
+      "type": "http",
+      "tag": "http-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20121,
+      "udp_fragment": false
     }
   ],
   "outbounds": [
@@ -63,8 +98,7 @@
       "outbounds": [],
       "url": "http://1.1.1.1/",
       "interval": "3m0s",
-      "tolerance": 1,
-      "idle_timeout": "9m0s"
+      "tolerance": 150
     },
     {
       "type": "direct",
@@ -74,73 +108,34 @@
   "route": {
     "rules": [
       {
-        "action": "sniff"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "inbound": "dns-in"
-          },
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
+        "protocol": "dns",
         "action": "hijack-dns"
       },
       {
-        "network": "tcp",
-        "port": 853,
+        "protocol": "quic",
         "action": "reject",
         "method": "default"
       },
       {
-        "network": "udp",
-        "port": [443, 853],
-        "action": "reject",
-        "method": "default"
-      },
-      {
-        "ip_is_private": true,
+        "clash_mode": "Direct",
         "outbound": "direct"
-      },
-      {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "protocol": "stun",
-        "action": "reject",
-        "method": "default"
-      },
-      {
-        "source_ip_cidr": [
-          "224.0.0.0/3",
-          "ff00::/8"
-        ],
-        "ip_cidr": [
-          "224.0.0.0/3",
-          "ff00::/8"
-        ],
-        "action": "reject",
-        "method": "default"
       }
     ],
-    "auto_detect_interface": true,
-    "override_android_vpn": true
+    "auto_detect_interface": true
   },
   "experimental": {
     "cache_file": {
       "enabled": true,
       "path": "cache.db",
-      "cache_id": "@SiNAVM"
+      "store_fakeip": true,
+      "store_rdrc": true,
+      "rdrc_timeout": "168h0m0s"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:20123",
+      "secret": "sinavm317a8047fbac2a2f0b297",
+      "default_mode": "@SiNAVM👈🏻تلگرام",
+      "access_control_allow_origin": "*"
     }
   }
 }
