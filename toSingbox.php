@@ -53,7 +53,7 @@ function setTls($decodedConfig, $configType)
         $tlsConfig["reality"] = [
             "enabled" => true,
             "public_key" => $decodedConfig["params"]["pbk"] ?? "",
-            "short_id" => $decodedConfig["params"]["sid"] ?? ""
+            "short_id" => preg_replace('/[^a-f0-9]/i', '', $decodedConfig["params"]["sid"] ?? "")
         ];
     }
     if ($configType === "hy2" && !empty($decodedConfig["params"]["ech"])) {
@@ -329,9 +329,19 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     $newOutbounds = [];
     $newOutbounds[] = $structure['outbounds'][0]; // Internet
     $newOutbounds[] = $structure['outbounds'][1]; // Best Latency
+
     foreach ($configsArray as $config) {
+        // --------- پاکسازی HTML و فاصله‌ها ---------
+        $config = preg_replace('/<[^>]+>/', '', $config);
+        $config = trim($config);
+
         $toSingbox = toSingbox($config);
         if ($toSingbox) {
+            // --------- پاکسازی short_id فقط با هگز ---------
+            if (isset($toSingbox['tls']['reality']['short_id'])) {
+                $toSingbox['tls']['reality']['short_id'] = preg_replace('/[^a-f0-9]/i', '', $toSingbox['tls']['reality']['short_id']);
+            }
+
             $toSingbox['tag'] = "@SiNAVM-$index";
             $newOutbounds[] = $toSingbox;
             $newOutbounds[0]['outbounds'][] = $toSingbox['tag']; // Add to selector
@@ -339,6 +349,7 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
             $index++;
         }
     }
+
     $newOutbounds[] = [
         "type" => "direct",
         "tag" => "direct"
@@ -347,6 +358,7 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     return hiddifyHeader($configsName) . json_encode($structure, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 }
 
+// ------------------ اجرای تبدیل ------------------
 $directoryOfFiles = [
     "subscriptions/xray/base64/mix",
     "subscriptions/xray/base64/vmess",
