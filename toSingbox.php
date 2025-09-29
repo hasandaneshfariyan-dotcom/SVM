@@ -1,12 +1,20 @@
 <?php
-// Enable error reporting
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ERROR | E_PARSE);
+// functions.php - اصلاح‌شده برای جلوگیری از خطای short_id و اعتبارسنجی Reality
 
-// Include the functions file
-require "functions.php";
+// --- Helper validators ---
+function is_hex_string($s) {
+    return is_string($s) && $s !== '' && preg_match('/^[0-9a-fA-F]+$/', $s);
+}
 
+function is_base64_string($s) {
+    if (!is_string($s) || $s === '') return false;
+    // حذف فضاها و بررسی پایه‌ای base64
+    $s = trim($s);
+    // base64 چاراکترهای A-Z a-z 0-9 + / = و - _ (در base64url) ممکنه باشند
+    return preg_match('/^[A-Za-z0-9+\/=]+$|^[A-Za-z0-9\-_]+$/', $s);
+}
+
+// --- موجودی که شما قبلاً داشتید ---
 function processWsPath($input)
 {
     if (empty($input)) {
@@ -37,11 +45,17 @@ function setTls($decodedConfig, $configType)
         "tuic" => $decodedConfig["params"]["sni"] ?? $decodedConfig["hostname"] ?? "",
         "hy2" => $decodedConfig["params"]["sni"] ?? $decodedConfig["hostname"] ?? ""
     ];
+
+    $insecureFlag = (isset($decodedConfig["params"]["insecure"]) && ($decodedConfig["params"]["insecure"] === "1" || $decodedConfig["params"]["insecure"] === 1 || $decodedConfig["params"]["insecure"] === "true"));
+
+    $alpnRaw = $decodedConfig["params"]["alpn"] ?? ($configType === "tuic" ? "h3,spdy/3.1" : "h3");
+    $alpnArr = array_filter(array_map('trim', explode(",", $alpnRaw)));
+
     $tlsConfig = [
         "enabled" => true,
-        "server_name" => $serverNameTypes[$configType],
-        "insecure" => isset($decodedConfig["params"]["insecure"]) && $decodedConfig["params"]["insecure"] === "1",
-        "alpn" => explode(",", $decodedConfig["params"]["alpn"] ?? ($configType === "tuic" ? "h3,spdy/3.1" : "h3")),
+        "server_name" => $serverNameTypes[$configType] ?? "",
+        "insecure" => $insecureFlag,
+        "alpn" => !empty($alpnArr) ? $alpnArr : ["h3"],
         "min_version" => "1.3",
         "max_version" => "1.3",
         "utls" => [
@@ -49,19 +63,46 @@ function setTls($decodedConfig, $configType)
             "fingerprint" => $decodedConfig["params"]["fp"] ?? "chrome"
         ]
     ];
+
+    // Reality validation: only add reality if pbk and sid look valid
     if ($configType === "vless" && !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
-        $tlsConfig["reality"] = [
-            "enabled" => true,
-            "public_key" => $decodedConfig["params"]["pbk"] ?? "",
-            "short_id" => $decodedConfig["params"]["sid"] ?? ""
-        ];
+        $pbk = $decodedConfig["params"]["pbk"] ?? "";
+        $sid = $decodedConfig["params"]["sid"] ?? "";
+
+        // pbk می‌تواند base64 یا hex باشد — حداقل بررسی ابتدایی
+        $pbk_ok = is_base64_string($pbk) || is_hex_string($pbk);
+
+        // sid باید هگز باشد (اجتناب از کاراکترهای نامعتبر مثل '<')
+        $sid_ok = is_hex_string($sid);
+
+        if ($pbk_ok && $sid_ok) {
+            // مقداردهی امن
+            $tlsConfig["reality"] = [
+                "enabled" => true,
+                "public_key" => $pbk,
+                "short_id" => $sid
+            ];
+        } else {
+            // اگر هرکدام نامعتبر است، بهتر است reality را فعال نکنیم — بالاترین ایمنی: رد کانفیگ بر عهده caller
+            // این تابع فقط یک آرایه TLS می‌سازد؛ تصمیم‌گیری نهایی در caller انجام می‌شود.
+            $tlsConfig["reality"] = [
+                "enabled" => false
+            ];
+        }
     }
+
+    // ECH support for hy2
     if ($configType === "hy2" && !empty($decodedConfig["params"]["ech"])) {
-        $tlsConfig["ech"] = [
-            "enabled" => true,
-            "config" => explode(",", $decodedConfig["params"]["ech"])
-        ];
+        $echListRaw = $decodedConfig["params"]["ech"];
+        $echArr = array_filter(array_map('trim', explode(",", $echListRaw)));
+        if (!empty($echArr)) {
+            $tlsConfig["ech"] = [
+                "enabled" => true,
+                "config" => $echArr
+            ];
+        }
     }
+
     return $tlsConfig;
 }
 
@@ -95,32 +136,40 @@ function setTransport($decodedConfig, $configType, $transportType)
         "tuic" => $decodedConfig["params"]["serviceName"] ?? "",
         "hy2" => $decodedConfig["params"]["serviceName"] ?? ""
     ];
+
     $transportTypes = [
         "ws" => [
             "type" => "ws",
-            "path" => $pathTypes[$configType],
+            "path" => $pathTypes[$configType] ?? "/",
             "headers" => [
-                "Host" => $serverNameTypes[$configType]
+                "Host" => $serverNameTypes[$configType] ?? ""
             ],
-            "max_early_data" => $earlyData[$configType],
-            "early_data_header_name" => $earlyData[$configType] > 0 ? "Sec-WebSocket-Protocol" : ""
+            "max_early_data" => intval($earlyData[$configType] ?? 0),
+            "early_data_header_name" => (intval($earlyData[$configType] ?? 0) > 0 ? "Sec-WebSocket-Protocol" : "")
         ],
         "grpc" => [
             "type" => "grpc",
-            "service_name" => $servicenameTypes[$configType],
+            "service_name" => $servicenameTypes[$configType] ?? "",
             "idle_timeout" => "15s",
             "ping_timeout" => "15s",
             "permit_without_stream" => false
         ],
         "http" => [
             "type" => "http",
-            "host" => [$serverNameTypes[$configType]],
-            "path" => $pathTypes[$configType]
+            "host" => [$serverNameTypes[$configType] ?? ""],
+            "path" => $pathTypes[$configType] ?? "/"
         ]
     ];
+
+    // اگر transport از نوع grpc است اما service_name خالی است، بازگرداندن null تا caller حذفش کند
+    if ($transportType === "grpc" && empty($transportTypes["grpc"]["service_name"])) {
+        return null;
+    }
+
     return $transportTypes[$transportType] ?? null;
 }
 
+// --- تبدیل vmess -> singbox ---
 function vmessToSingbox($input)
 {
     $decodedConfig = configParse($input);
@@ -136,31 +185,41 @@ function vmessToSingbox($input)
         "alter_id" => intval($decodedConfig["aid"] ?? 0),
         "domain_strategy" => "prefer_ipv4"
     ];
-    if (($decodedConfig["port"] === "443" || $decodedConfig["tls"] === "tls") && !empty($configResult["server"])) {
+
+    // TLS check (port 443 or tls param)
+    if ((($decodedConfig["port"] ?? "") === "443" || ($decodedConfig["tls"] ?? "") === "tls") && !empty($configResult["server"])) {
         $tls = setTls($decodedConfig, "vmess");
         if (!empty($tls["server_name"])) {
             $configResult["tls"] = $tls;
         }
     }
+
+    // transport
     if (!empty($decodedConfig["net"]) && in_array($decodedConfig["net"], ["ws", "grpc", "http"])) {
         $transport = setTransport($decodedConfig, "vmess", $decodedConfig["net"]);
         if ($transport) {
             $configResult["transport"] = $transport;
         }
     }
+
+    // grpc must have service_name
     if (isset($configResult["transport"]) && $configResult["transport"]["type"] === "grpc" && empty($configResult["transport"]["service_name"])) {
         return null;
     }
-    return !empty($configResult["server"]) && !empty($configResult["uuid"]) ? $configResult : null;
+
+    return (!empty($configResult["server"]) && !empty($configResult["uuid"])) ? $configResult : null;
 }
 
+// --- تبدیل vless -> singbox (با اعتبارسنجی reality) ---
 function vlessToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
         return null;
     }
+
     $isReality = !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality";
+
     $configResult = [
         "type" => "vless",
         "server" => $decodedConfig["hostname"] ?? "",
@@ -169,27 +228,56 @@ function vlessToSingbox($input)
         "packet_encoding" => "xudp",
         "domain_strategy" => $isReality ? "ipv6_only" : "prefer_ipv4"
     ];
-    if (($decodedConfig["port"] === "443" || !empty($decodedConfig["params"]["security"]) && in_array($decodedConfig["params"]["security"], ["tls", "reality"])) && !empty($configResult["server"])) {
+
+    // TLS + Reality
+    if ((($decodedConfig["port"] ?? "") === "443" || (!empty($decodedConfig["params"]["security"]) && in_array($decodedConfig["params"]["security"], ["tls", "reality"]))) && !empty($configResult["server"])) {
         $tls = setTls($decodedConfig, "vless");
-        if (!empty($tls["server_name"]) || $tls["reality"]["enabled"] ?? false) {
+
+        // اگر reality فعال و واقعاً valid است — باید pbk و sid معتبر باشند
+        if (!empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
+            $pbk = $decodedConfig["params"]["pbk"] ?? "";
+            $sid = $decodedConfig["params"]["sid"] ?? "";
+
+            $pbk_ok = is_base64_string($pbk) || is_hex_string($pbk);
+            $sid_ok = is_hex_string($sid);
+
+            if ($pbk_ok && $sid_ok) {
+                // setTls قبلاً reality را به صورت enabled=false یا enabled=true اضافه کرده بود؛ برای اطمینان دوباره مقدار درست قرار می‌دهیم
+                $tls["reality"] = [
+                    "enabled" => true,
+                    "public_key" => $pbk,
+                    "short_id" => $sid
+                ];
+            } else {
+                // اگر reality ناقص است => کانفیگ نامعتبر است (برای جلوگیری از خطای sing-box)
+                return null;
+            }
+        }
+
+        // اگر server_name خالی نبود یا reality فعال شده، tls را اعمال کن
+        if ((!empty($tls["server_name"])) || (!empty($tls["reality"]["enabled"] ?? false))) {
             $configResult["tls"] = $tls;
         }
     }
+
+    // transport
     if (!empty($decodedConfig["params"]["type"]) && in_array($decodedConfig["params"]["type"], ["ws", "grpc", "http"])) {
         $transport = setTransport($decodedConfig, "vless", $decodedConfig["params"]["type"]);
         if ($transport) {
             $configResult["transport"] = $transport;
         }
     }
+
+    // grpc must have service_name
     if (isset($configResult["transport"]) && $configResult["transport"]["type"] === "grpc" && empty($configResult["transport"]["service_name"])) {
         return null;
     }
-    if ($isReality && (empty($decodedConfig["params"]["pbk"]) || empty($configResult["server"]))) {
-        return null;
-    }
-    return !empty($configResult["server"]) && !empty($configResult["uuid"]) ? $configResult : null;
+
+    // reality specific checks: pbk and short_id already بررسی شدند بالاتر
+    return (!empty($configResult["server"]) && !empty($configResult["uuid"])) ? $configResult : null;
 }
 
+// --- تبدیل trojan -> singbox ---
 function trojanToSingbox($input)
 {
     $decodedConfig = configParse($input);
@@ -203,24 +291,29 @@ function trojanToSingbox($input)
         "password" => $decodedConfig["username"] ?? "",
         "domain_strategy" => "prefer_ipv4"
     ];
-    if (($decodedConfig["port"] === "443" || !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "tls") && !empty($configResult["server"])) {
+
+    if ((($decodedConfig["port"] ?? "") === "443" || (!empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "tls")) && !empty($configResult["server"])) {
         $tls = setTls($decodedConfig, "trojan");
         if (!empty($tls["server_name"])) {
             $configResult["tls"] = $tls;
         }
     }
+
     if (!empty($decodedConfig["params"]["type"]) && in_array($decodedConfig["params"]["type"], ["ws", "grpc", "http"])) {
         $transport = setTransport($decodedConfig, "trojan", $decodedConfig["params"]["type"]);
         if ($transport) {
             $configResult["transport"] = $transport;
         }
     }
+
     if (isset($configResult["transport"]) && $configResult["transport"]["type"] === "grpc" && empty($configResult["transport"]["service_name"])) {
         return null;
     }
-    return !empty($configResult["server"]) && !empty($configResult["password"]) ? $configResult : null;
+
+    return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
+// --- تبدیل shadowsocks -> singbox ---
 function ssToSingbox($input)
 {
     $decodedConfig = configParse($input);
@@ -244,9 +337,10 @@ function ssToSingbox($input)
         "udp_over_tcp" => true,
         "domain_strategy" => "prefer_ipv4"
     ];
-    return !empty($configResult["server"]) && !empty($configResult["password"]) ? $configResult : null;
+    return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
+// --- تبدیل tuic -> singbox ---
 function tuicToSingbox($input)
 {
     $decodedConfig = configParse($input);
@@ -270,9 +364,10 @@ function tuicToSingbox($input)
     if (!empty($tls["server_name"])) {
         $configResult["tls"] = $tls;
     }
-    return !empty($configResult["server"]) && !empty($configResult["uuid"]) && !empty($configResult["password"]) ? $configResult : null;
+    return (!empty($configResult["server"]) && !empty($configResult["uuid"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
+// --- تبدیل hysteria2 -> singbox ---
 function hy2ToSingbox($input)
 {
     $decodedConfig = configParse($input);
@@ -301,9 +396,10 @@ function hy2ToSingbox($input)
     if (!empty($tls["server_name"]) || !empty($tls["ech"])) {
         $configResult["tls"] = $tls;
     }
-    return !empty($configResult["server"]) && !empty($configResult["password"]) ? $configResult : null;
+    return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
+// --- wrapper toSingbox (uses helper functions detect_type, is_valid, configParse which should exist) ---
 function toSingbox($input)
 {
     if (!is_valid($input)) {
@@ -321,6 +417,7 @@ function toSingbox($input)
     return isset($functionsArray[$configType]) ? $functionsArray[$configType]($input) : null;
 }
 
+// --- processConvertion unchanged (keeps original behaviour) ---
 function processConvertion($base64ConfigsList, $configsName = "Created By sinavm")
 {
     $configsArray = array_filter(explode("\n", base64_decode($base64ConfigsList)), 'strlen');
@@ -346,23 +443,3 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     $structure['outbounds'] = $newOutbounds;
     return hiddifyHeader($configsName) . json_encode($structure, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 }
-
-$directoryOfFiles = [
-    "subscriptions/xray/base64/mix",
-    "subscriptions/xray/base64/vmess",
-    "subscriptions/xray/base64/vless",
-    "subscriptions/xray/base64/reality",
-    "subscriptions/xray/base64/tuic",
-    "subscriptions/xray/base64/hy2",
-    "subscriptions/xray/base64/ss",
-    "subscriptions/xray/base64/trojan"
-];
-
-foreach ($directoryOfFiles as $directory) {
-    $configsName = "@SiNAVM | " . explode("/", $directory)[3];
-    $configsData = file_get_contents($directory);
-    $convertionResult = processConvertion($configsData, $configsName);
-    file_put_contents("subscriptions/singbox/" . explode("/", $directory)[3] . ".json", $convertionResult);
-}
-
-echo "Conversion to Sing-box completed successfully!\n";
