@@ -118,35 +118,35 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@sinavm-5","type":"ss","server":"193.149.187.51","port":23448,"password":"fJ078ScrQZ5i5b3x3M3GKb","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@sinavm-154","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"4i8qPtnT2GiRqcGaTB8NDBrVk6efZ68W9ZMzHqmjShqZ4qbyJf66oPaTWefqfJ6dWo9ta36DXUXhXh7SrDV7WfJvzvPvFkp8","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@sinavm-166","type":"ss","server":"4.223.106.240","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-5","type":"ss","server":"193.149.187.51","port":23448,"password":"fJ078ScrQZ5i5b3x3M3GKb","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-146","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"4i8qPtnT2GiRqcGaTB8NDBrVk6efZ68W9ZMzHqmjShqZ4qbyJf66oPaTWefqfJ6dWo9ta36DXUXhXh7SrDV7WfJvzvPvFkp8","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-158","type":"ss","server":"4.223.106.240","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@sinavm-5'
-      - '@sinavm-154'
-      - '@sinavm-166'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-146'
+      - '@SiNAVM-ss-158'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@sinavm-5'
-      - '@sinavm-154'
-      - '@sinavm-166'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-146'
+      - '@SiNAVM-ss-158'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@sinavm-5'
-      - '@sinavm-154'
-      - '@sinavm-166'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-146'
+      - '@SiNAVM-ss-158'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
