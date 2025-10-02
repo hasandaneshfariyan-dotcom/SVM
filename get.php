@@ -9,7 +9,25 @@ require "functions.php";
 
 // Fetch the JSON data from channels.json and sublinks.json
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
-$sublinksArray = json_decode(file_get_contents("sublinks.json"), true);
+$sublinksJson = file_get_contents("sublinks.json");
+
+// Replace placeholders with actual URLs from environment variables
+$sublinksJson = str_replace(
+    [
+        "__PRIVATE_LINK_SiNAVM_1__",
+        "__PRIVATE_LINK_SiNAVM_2__",
+        "__PRIVATE_LINK_SiNAVM_3__"
+    ],
+    [
+        getenv("PRIVATE_LINK_SiNAVM_1"),
+        getenv("PRIVATE_LINK_SiNAVM_2"),
+        getenv("PRIVATE_LINK_SiNAVM_3")
+    ],
+    $sublinksJson
+);
+
+// Decode the modified JSON
+$sublinksArray = json_decode($sublinksJson, true);
 
 // Count the total number of sources
 $totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
