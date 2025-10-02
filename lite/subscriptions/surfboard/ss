@@ -12,11 +12,10 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 @SiNAVM-ss-5 = ss, 193.149.187.51, 23448, encrypt-method = chacha20-ietf-poly1305, password = fJ078ScrQZ5i5b3x3M3GKb
-@SiNAVM-ss-179 = ss, azjnac1.uksouth.cloudapp.azure.com, 443, encrypt-method = chacha20-ietf-poly1305, password = b2EJuconC460KllN
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-5,@SiNAVM-ss-179
-URL-TEST = url-test,@SiNAVM-ss-5,@SiNAVM-ss-179
-FALLBACK = fallback,@SiNAVM-ss-5,@SiNAVM-ss-179
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-5
+URL-TEST = url-test,@SiNAVM-ss-5
+FALLBACK = fallback,@SiNAVM-ss-5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
