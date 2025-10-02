@@ -198,6 +198,17 @@ function configParse($input)
         if (!$decoded_data) {
             return null;
         }
+        // تمیزسازی فیلدهای vmess
+        foreach ($decoded_data as $k => $v) {
+            if (in_array($k, ['host', 'sni'])) {
+                preg_match('/^[a-zA-Z0-9.-_*]+/', $v, $m);
+                $decoded_data[$k] = $m[0] ?? '';
+            } elseif ($k === 'path') {
+                $decoded_data[$k] = strip_tags($v);
+            } elseif ($k === 'ps') {
+                $decoded_data[$k] = strip_tags($v);
+            }
+        }
         return $decoded_data;
     } elseif (
         $configType === "vless" ||
@@ -212,6 +223,32 @@ function configParse($input)
         $params = [];
         if (isset($parsedUrl["query"])) {
             $params = parseQuery($parsedUrl["query"]);
+        }
+        // تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
+        foreach ($params as $key => $val) {
+            $val = trim(strip_tags($val)); // حذف تگ‌های HTML
+            switch ($key) {
+                case 'sid':
+                    preg_match('/^[0-9a-fA-F]+/', $val, $m);
+                    $params[$key] = $m[0] ?? '';
+                    break;
+                case 'pbk':
+                    preg_match('/^[A-Za-z0-9+\/=]+/', $val, $m);
+                    $params[$key] = $m[0] ?? '';
+                    break;
+                case 'sni':
+                case 'host':
+                case 'server_name':
+                    preg_match('/^[a-zA-Z0-9.-_*]+/', $val, $m);
+                    $params[$key] = $m[0] ?? '';
+                    break;
+                case 'path':
+                case 'serviceName':
+                    $params[$key] = preg_replace('/<[^>]*>/', '', $val); // حذف تگ‌های باقی‌مانده
+                    break;
+                default:
+                    $params[$key] = $val;
+            }
         }
         $output = [
             "protocol" => $configType,
@@ -246,7 +283,7 @@ function configParse($input)
             "password" => $userParts[1],
             "server_address" => $url["host"] ?? "",
             "server_port" => $url["port"] ?? "",
-            "name" => isset($url["fragment"]) ? urldecode($url["fragment"]) : "SiNAVM" . getRandomName(),
+            "name" => isset($url["fragment"]) ? strip_tags(urldecode($url["fragment"])) : "SiNAVM" . getRandomName(),
         ];
         if (empty($output["server_address"]) || empty($output["password"])) {
             return null;
