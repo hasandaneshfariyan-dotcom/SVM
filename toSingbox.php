@@ -11,13 +11,13 @@ function is_base64_string($s) {
     return preg_match('/^[A-Za-z0-9+\/=]+$|^[A-Za-z0-9\-_]+$/', $s);
 }
 
-// --- Parse and clean config ---
+
 function configParse($input) {
     // حذف تگ‌های HTML و رشته‌های اضافی
     $input = preg_replace('/<[^>]+>|\s*vmess:\/\/[^\s]*/', '', $input);
     $input = str_replace(["\r", "\n"], '', $input);
 
-    // تجزیه URL
+
     $url = parse_url($input);
     if (!$url) return null;
 
@@ -29,7 +29,7 @@ function configParse($input) {
     $result['params'] = [];
     parse_str(strtok(''), $params);
 
-    // پاک‌سازی پارامترها
+
     foreach ($params as $key => $value) {
         $value = strip_tags($value);
         $value = preg_replace('/vmess:\/\/[^\s]*/', '', $value);
@@ -42,7 +42,7 @@ function configParse($input) {
     return $result;
 }
 
-// --- Process WebSocket path ---
+
 function processWsPath($input) {
     if (empty($input)) {
         return ["path" => "/", "max_early_data" => 0];
@@ -63,7 +63,7 @@ function processWsPath($input) {
     ];
 }
 
-// --- Set TLS configuration ---
+
 function setTls($decodedConfig, $configType) {
     $serverNameTypes = [
         "vmess" => $decodedConfig["sni"] ?? $decodedConfig["add"] ?? "",
@@ -133,7 +133,7 @@ function setTls($decodedConfig, $configType) {
     return $tlsConfig;
 }
 
-// --- Set transport configuration ---
+
 function setTransport($decodedConfig, $configType, $transportType) {
     $serverNameTypes = [
         "vmess" => $decodedConfig["sni"] ?? $decodedConfig["add"] ?? "",
@@ -199,7 +199,7 @@ function setTransport($decodedConfig, $configType, $transportType) {
     return $transportTypes[$transportType] ?? null;
 }
 
-// --- Convert vmess to singbox ---
+
 function vmessToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -236,7 +236,7 @@ function vmessToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["uuid"])) ? $configResult : null;
 }
 
-// --- Convert vless to singbox ---
+
 function vlessToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -275,7 +275,7 @@ function vlessToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["uuid"])) ? $configResult : null;
 }
 
-// --- Convert trojan to singbox ---
+
 function trojanToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -310,7 +310,7 @@ function trojanToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
-// --- Convert shadowsocks to singbox ---
+
 function ssToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -336,7 +336,7 @@ function ssToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
-// --- Convert tuic to singbox ---
+
 function tuicToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -362,7 +362,7 @@ function tuicToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["uuid"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
-// --- Convert hysteria2 to singbox ---
+
 function hy2ToSingbox($input) {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
@@ -393,7 +393,7 @@ function hy2ToSingbox($input) {
     return (!empty($configResult["server"]) && !empty($configResult["password"])) ? $configResult : null;
 }
 
-// --- Wrapper for conversion ---
+
 function toSingbox($input) {
     if (!is_valid($input)) {
         return null;
@@ -410,7 +410,7 @@ function toSingbox($input) {
     return isset($functionsArray[$configType]) ? $functionsArray[$configType]($input) : null;
 }
 
-// --- Process conversion ---
+
 function processConvertion($base64ConfigsList, $configsName = "Created By sinavm") {
     $configsArray = array_filter(explode("\n", base64_decode($base64ConfigsList)), 'strlen');
     $structure = json_decode(file_get_contents('structure.json'), true);
