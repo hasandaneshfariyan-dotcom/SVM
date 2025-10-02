@@ -1,10 +1,8 @@
 <?php
-// Enable error reporting
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ERROR | E_PARSE);
 
-// Include the functions file
 require "functions.php";
 
 function processWsPath($input)
@@ -158,6 +156,9 @@ function vlessToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) {
+        return null;
+    }
+    if (!empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
         return null;
     }
     $isReality = !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality";
@@ -327,15 +328,15 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     $structure = json_decode(file_get_contents('structure.json'), true);
     $index = 1;
     $newOutbounds = [];
-    $newOutbounds[] = $structure['outbounds'][0]; // Internet
-    $newOutbounds[] = $structure['outbounds'][1]; // Best Latency
+    $newOutbounds[] = $structure['outbounds'][0];
+    $newOutbounds[] = $structure['outbounds'][1];
     foreach ($configsArray as $config) {
         $toSingbox = toSingbox($config);
         if ($toSingbox) {
             $toSingbox['tag'] = "@SiNAVM-$index";
             $newOutbounds[] = $toSingbox;
-            $newOutbounds[0]['outbounds'][] = $toSingbox['tag']; // Add to selector
-            $newOutbounds[1]['outbounds'][] = $toSingbox['tag']; // Add to urltest
+            $newOutbounds[0]['outbounds'][] = $toSingbox['tag'];
+            $newOutbounds[1]['outbounds'][] = $toSingbox['tag'];
             $index++;
         }
     }
