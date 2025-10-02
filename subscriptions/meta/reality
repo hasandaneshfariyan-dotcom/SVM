@@ -130,6 +130,9 @@ proxies:
   - {"name":"@sinavm-50","type":"vless","server":"ru.sfasti.ru","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8","short-id":"16895459a2c7768d</code></blockquote><br/><i"}}
   - {"name":"@sinavm-75","type":"vless","server":"149.248.76.13","port":443,"udp":true,"uuid":"241039cb-2396-4a3d-832b-3e3fa21db2b7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"google.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"eJAx8p3teHDSj_x99qIJJNEXIRe6l-1GUzKalcF-FQY","short-id":"d18273"}}
   - {"name":"@sinavm-99","type":"vless","server":"91.99.150.201","port":443,"udp":true,"uuid":"9eeaebce-523f-4fa2-a4b9-547f86159cf1","tls":true,"network":"xhttp","client-fingerprint":"chrome","servername":"store.steampowered.com<br/><br/>ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpiMkVKdWNvbkM0NjBLbGxO@azjnac1.uksouth.cloudapp.azure.com:443</code></div>","reality-opts":{"public-key":"vX8qXNM0VFTgIQkf2h2yNfV-VLAthnRoQ5m9vt2XzhQ"}}
+  - {"name":"@sinavm-192","type":"vless","server":"5.182.38.91","port":17267,"udp":true,"uuid":"1c7fcc38-e6be-43c5-875f-b8de2516b9f2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"SnWZg6ORcQepuWLI1EVCTTVc4KyfDiGWR4o_CXCMhgk","short-id":"4ae260"}}
+  - {"name":"@sinavm-193","type":"vless","server":"5.182.38.91","port":17267,"udp":true,"uuid":"1c7fcc38-e6be-43c5-875f-b8de2516b9f2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","reality-opts":{"public-key":"SnWZg6ORcQepuWLI1EVCTTVc4KyfDiGWR4o_CXCMhgk","short-id":"4ae260"}}
+  - {"name":"@sinavm-196","type":"vless","server":"magazine.sentry-warrunner.xyz","port":443,"udp":true,"uuid":"14eba471-4623-4ed1-b937-f5b2206749bf","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"miro.com","grpc-opts":{"grpc-service-name":"Telegram-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers"},"reality-opts":{"public-key":"UrGT7bAn2UND3kx81QHACf_6qReN8V6_o70kZerONk4","short-id":"1c547814"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -146,6 +149,9 @@ proxy-groups:
       - '@sinavm-50'
       - '@sinavm-75'
       - '@sinavm-99'
+      - '@sinavm-192'
+      - '@sinavm-193'
+      - '@sinavm-196'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -162,6 +168,9 @@ proxy-groups:
       - '@sinavm-50'
       - '@sinavm-75'
       - '@sinavm-99'
+      - '@sinavm-192'
+      - '@sinavm-193'
+      - '@sinavm-196'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -177,6 +186,9 @@ proxy-groups:
       - '@sinavm-50'
       - '@sinavm-75'
       - '@sinavm-99'
+      - '@sinavm-192'
+      - '@sinavm-193'
+      - '@sinavm-196'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
