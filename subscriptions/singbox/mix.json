@@ -13,13 +13,13 @@
         "servers": [
             {
                 "tag": "Internet-dns",
-                "address": "tcp:\/\/1.1.1.2",
+                "address": "http:\/\/1.1.1.1:443\/dns-query",
                 "strategy": "prefer_ipv4",
                 "detour": "Internet"
             },
             {
                 "tag": "direct-dns",
-                "address": "tcp:\/\/1.1.1.2",
+                "address": "tcp:\/\/1.1.1.1",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
             }
@@ -27,13 +27,6 @@
         "rules": [
             {
                 "outbound": "any",
-                "server": "direct-dns"
-            },
-            {
-                "domain_regex": [
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
                 "server": "direct-dns"
             }
         ],
@@ -44,7 +37,7 @@
         {
             "type": "tun",
             "tag": "tun-in",
-            "interface_name": "@SiNAVM",
+            "interface_name": "direct",
             "mtu": 9000,
             "address": "172.18.0.1\/30",
             "auto_route": true,
@@ -358,8 +351,7 @@
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
-            "tolerance": 1,
-            "idle_timeout": "9m0s"
+            "tolerance": 1
         },
         {
             "type": "vless",
@@ -382,7 +374,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.125.84.206",
+            "server": "52.29.132.86",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -404,7 +396,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.0.113",
+            "server": "3.125.84.206",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -426,7 +418,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.44.155",
+            "server": "35.181.0.113",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -448,7 +440,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.189.248",
+            "server": "51.44.44.155",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -470,7 +462,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.29.86",
+            "server": "15.188.189.248",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -492,7 +484,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.156.39.96",
+            "server": "15.188.29.86",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -514,7 +506,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.123.174.23",
+            "server": "35.156.39.96",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -536,7 +528,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.237.235.80",
+            "server": "3.123.174.23",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -558,7 +550,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.113.139",
+            "server": "15.237.235.80",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -580,7 +572,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.176.243",
+            "server": "15.188.113.139",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -602,7 +594,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.153.36.107",
+            "server": "15.188.176.243",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -624,7 +616,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.195.229.64",
+            "server": "18.153.36.107",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -646,7 +638,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.32.128",
+            "server": "18.195.229.64",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -668,7 +660,7 @@
         },
         {
             "type": "trojan",
-            "server": "52.47.122.22",
+            "server": "15.188.32.128",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -690,7 +682,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.237.11.174",
+            "server": "52.47.122.22",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -712,7 +704,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.36.57.120",
+            "server": "15.237.11.174",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -3254,13 +3246,6 @@
             },
             {
                 "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "domain_regex": [
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
                 "outbound": "direct"
             },
             {
