@@ -118,31 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@sinavm-5","type":"ss","server":"193.149.187.51","port":23448,"password":"fJ078ScrQZ5i5b3x3M3GKb","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@sinavm-169","type":"ss","server":"azjnac1.uksouth.cloudapp.azure.com","port":443,"password":"b2EJuconC460KllN","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-5","type":"ss","server":"193.149.187.51","port":23448,"password":"fJ078ScrQZ5i5b3x3M3GKb","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-179","type":"ss","server":"azjnac1.uksouth.cloudapp.azure.com","port":443,"password":"b2EJuconC460KllN","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@sinavm-5'
-      - '@sinavm-169'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-179'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@sinavm-5'
-      - '@sinavm-169'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-179'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@sinavm-5'
-      - '@sinavm-169'
+      - '@SiNAVM-ss-5'
+      - '@SiNAVM-ss-179'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
