@@ -7,13 +7,13 @@
     "servers": [
       {
         "tag": "Internet-dns",
-        "address": "tcp://1.1.1.2",
+        "address": "http://1.1.1.1:443/dns-query",
         "strategy": "prefer_ipv4",
         "detour": "Internet"
       },
       {
         "tag": "direct-dns",
-        "address": "tcp://1.1.1.2",
+        "address": "tcp://1.1.1.1",
         "strategy": "prefer_ipv4",
         "detour": "direct"
       }
@@ -21,13 +21,6 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "direct-dns"
-      },
-      {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
         "server": "direct-dns"
       }
     ],
@@ -38,7 +31,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "@SiNAVM",
+      "interface_name": "direct",
       "mtu": 9000,
       "address": "172.18.0.1/30",
       "auto_route": true,
@@ -63,8 +56,7 @@
       "outbounds": [],
       "url": "http://1.1.1.1/",
       "interval": "3m0s",
-      "tolerance": 1,
-      "idle_timeout": "9m0s"
+      "tolerance": 1
     },
     {
       "type": "direct",
@@ -106,13 +98,6 @@
       },
       {
         "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
         "outbound": "direct"
       },
       {
