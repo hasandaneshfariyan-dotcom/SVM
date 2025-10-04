@@ -120,7 +120,6 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"@SiNAVM-ss-5","type":"ss","server":"193.149.187.51","port":23448,"password":"fJ078ScrQZ5i5b3x3M3GKb","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-137","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"4i8qPtnT2GiRqcGaTB8NDBrVk6efZ68W9ZMzHqmjShqZ4qbyJf66oPaTWefqfJ6dWo9ta36DXUXhXh7SrDV7WfJvzvPvFkp8","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-149","type":"ss","server":"4.223.106.240","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
@@ -129,7 +128,6 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-5'
       - '@SiNAVM-ss-137'
       - '@SiNAVM-ss-149'
   - name: URL-TEST
@@ -138,7 +136,6 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-5'
       - '@SiNAVM-ss-137'
       - '@SiNAVM-ss-149'
   - name: FALLBACK
@@ -146,7 +143,6 @@ proxy-groups:
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '@SiNAVM-ss-5'
       - '@SiNAVM-ss-137'
       - '@SiNAVM-ss-149'
 rule-providers:
