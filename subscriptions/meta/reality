@@ -129,7 +129,8 @@ proxies:
   - {"name":"@SiNAVM-vless-43","type":"vless","server":"82.148.21.174","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J","short-id":"16895459a2c7768d"}}
   - {"name":"@SiNAVM-vless-46","type":"vless","server":"94.26.228.10","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J","short-id":"16895459a2c7768d"}}
   - {"name":"@SiNAVM-vless-51","type":"vless","server":"ru.sfasti.ru","port":443,"udp":true,"uuid":"1a6fe500-59da-4598-8576-256f06765ffb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"ru.sfasti.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"J","short-id":"16895459a2c7768d"}}
-  - {"name":"@SiNAVM-vless-168","type":"vless","server":"188.68.53.100","port":6666,"udp":true,"uuid":"0abf9050-c7be-464d-80af-24094c2b97de","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"Tgju.org","reality-opts":{"public-key":"S","short-id":"b525ecd2fc"}}
+  - {"name":"@SiNAVM-vless-80","type":"vless","server":"vfast7.hvitrin.ir","port":49330,"udp":true,"uuid":"ac7b6757-05c0-4a28-8b08-14ab496a5fe4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"miro.com","reality-opts":{"public-key":"Dee9YE139lZpb4V3QytB8DvHY3nTCnEXzk2IjvMLHi8","short-id":"b3"}}
+  - {"name":"@SiNAVM-vless-170","type":"vless","server":"188.68.53.100","port":6666,"udp":true,"uuid":"0abf9050-c7be-464d-80af-24094c2b97de","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"Tgju.org","reality-opts":{"public-key":"S","short-id":"b525ecd2fc"}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -145,7 +146,8 @@ proxy-groups:
       - '@SiNAVM-vless-43'
       - '@SiNAVM-vless-46'
       - '@SiNAVM-vless-51'
-      - '@SiNAVM-vless-168'
+      - '@SiNAVM-vless-80'
+      - '@SiNAVM-vless-170'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -161,7 +163,8 @@ proxy-groups:
       - '@SiNAVM-vless-43'
       - '@SiNAVM-vless-46'
       - '@SiNAVM-vless-51'
-      - '@SiNAVM-vless-168'
+      - '@SiNAVM-vless-80'
+      - '@SiNAVM-vless-170'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -176,7 +179,8 @@ proxy-groups:
       - '@SiNAVM-vless-43'
       - '@SiNAVM-vless-46'
       - '@SiNAVM-vless-51'
-      - '@SiNAVM-vless-168'
+      - '@SiNAVM-vless-80'
+      - '@SiNAVM-vless-170'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
