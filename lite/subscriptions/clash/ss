@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-ss-158","type":"ss","server":"c1.nastuh.link","port":443,"password":"WiitXs6BHZgSNlit","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-182","type":"ss","server":"c1.nastuh.link","port":443,"password":"WiitXs6BHZgSNlit","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-182'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-182'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-182'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
