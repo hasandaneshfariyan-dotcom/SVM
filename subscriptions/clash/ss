@@ -119,9 +119,10 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-1","type":"ss","server":"91.204.75.128","port":14731,"password":"uSP0xCMu9d6cdVxkH9JMDE","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-131","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-138","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-139","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-24","type":"ss","server":"185.47.253.227","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-138","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-145","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-146","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -129,9 +130,10 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-131'
+      - '@SiNAVM-ss-24'
       - '@SiNAVM-ss-138'
-      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-145'
+      - '@SiNAVM-ss-146'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -139,18 +141,20 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-131'
+      - '@SiNAVM-ss-24'
       - '@SiNAVM-ss-138'
-      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-145'
+      - '@SiNAVM-ss-146'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-131'
+      - '@SiNAVM-ss-24'
       - '@SiNAVM-ss-138'
-      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-145'
+      - '@SiNAVM-ss-146'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
