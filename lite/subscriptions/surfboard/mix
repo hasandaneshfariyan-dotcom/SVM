@@ -26,12 +26,14 @@ DIRECT = direct
 @SiNAVM-trojan-26 = trojan, 35.180.94.176, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @SiNAVM-trojan-27 = trojan, 13.36.246.100, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 @SiNAVM-trojan-28 = trojan, 15.188.182.245, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-@SiNAVM-ss-157 = ss, azjnac1.uksouth.cloudapp.azure.com, 443, encrypt-method = chacha20-ietf-poly1305, password = b2EJuconC460KllN
-@SiNAVM-ss-158 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-trojan-29 = trojan, 3.120.212.236, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+@SiNAVM-trojan-30 = trojan, 18.157.172.107, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
+@SiNAVM-ss-159 = ss, azjnac1.uksouth.cloudapp.azure.com, 443, encrypt-method = chacha20-ietf-poly1305, password = b2EJuconC460KllN
+@SiNAVM-ss-160 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-ss-157,@SiNAVM-ss-158
-URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-ss-157,@SiNAVM-ss-158
-FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-ss-157,@SiNAVM-ss-158
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-trojan-29,@SiNAVM-trojan-30,@SiNAVM-ss-159,@SiNAVM-ss-160
+URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-trojan-29,@SiNAVM-trojan-30,@SiNAVM-ss-159,@SiNAVM-ss-160
+FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-trojan-15,@SiNAVM-trojan-16,@SiNAVM-trojan-17,@SiNAVM-trojan-18,@SiNAVM-trojan-19,@SiNAVM-trojan-20,@SiNAVM-trojan-21,@SiNAVM-trojan-22,@SiNAVM-trojan-23,@SiNAVM-trojan-24,@SiNAVM-trojan-25,@SiNAVM-trojan-26,@SiNAVM-trojan-27,@SiNAVM-trojan-28,@SiNAVM-trojan-29,@SiNAVM-trojan-30,@SiNAVM-ss-159,@SiNAVM-ss-160
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
