@@ -11,14 +11,13 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-34 = ss, 45.87.175.69, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-157 = ss, ie01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
-@SiNAVM-ss-164 = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = EUdGim7lQN0RPVxHql55od
-@SiNAVM-ss-165 = ss, 135.225.124.80, 48172, encrypt-method = chacha20-ietf-poly1305, password = 51yloQC8D9w1Wae7FHtI65
+@SiNAVM-ss-153 = ss, ie01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
+@SiNAVM-ss-160 = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = EUdGim7lQN0RPVxHql55od
+@SiNAVM-ss-161 = ss, 135.225.124.80, 48172, encrypt-method = chacha20-ietf-poly1305, password = 51yloQC8D9w1Wae7FHtI65
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-34,@SiNAVM-ss-157,@SiNAVM-ss-164,@SiNAVM-ss-165
-URL-TEST = url-test,@SiNAVM-ss-34,@SiNAVM-ss-157,@SiNAVM-ss-164,@SiNAVM-ss-165
-FALLBACK = fallback,@SiNAVM-ss-34,@SiNAVM-ss-157,@SiNAVM-ss-164,@SiNAVM-ss-165
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
+URL-TEST = url-test,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
+FALLBACK = fallback,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
