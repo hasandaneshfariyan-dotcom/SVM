@@ -11,17 +11,15 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-23 = ss, 185.47.253.227, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
-@SiNAVM-ss-25 = ss, 2.ilgm.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-26 = ss, 185.123.101.241, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
-@SiNAVM-ss-31 = ss, at01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
-@SiNAVM-ss-155 = ss, ie01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
-@SiNAVM-ss-162 = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = EUdGim7lQN0RPVxHql55od
-@SiNAVM-ss-163 = ss, 135.225.124.80, 48172, encrypt-method = chacha20-ietf-poly1305, password = 51yloQC8D9w1Wae7FHtI65
+@SiNAVM-ss-32 = ss, 185.47.253.227, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
+@SiNAVM-ss-34 = ss, 2.ilgm.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-ss-153 = ss, ie01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
+@SiNAVM-ss-160 = ss, h110vpnde2.outlinekeys.net, 53122, encrypt-method = chacha20-ietf-poly1305, password = EUdGim7lQN0RPVxHql55od
+@SiNAVM-ss-161 = ss, 135.225.124.80, 48172, encrypt-method = chacha20-ietf-poly1305, password = 51yloQC8D9w1Wae7FHtI65
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-23,@SiNAVM-ss-25,@SiNAVM-ss-26,@SiNAVM-ss-31,@SiNAVM-ss-155,@SiNAVM-ss-162,@SiNAVM-ss-163
-URL-TEST = url-test,@SiNAVM-ss-23,@SiNAVM-ss-25,@SiNAVM-ss-26,@SiNAVM-ss-31,@SiNAVM-ss-155,@SiNAVM-ss-162,@SiNAVM-ss-163
-FALLBACK = fallback,@SiNAVM-ss-23,@SiNAVM-ss-25,@SiNAVM-ss-26,@SiNAVM-ss-31,@SiNAVM-ss-155,@SiNAVM-ss-162,@SiNAVM-ss-163
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-32,@SiNAVM-ss-34,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
+URL-TEST = url-test,@SiNAVM-ss-32,@SiNAVM-ss-34,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
+FALLBACK = fallback,@SiNAVM-ss-32,@SiNAVM-ss-34,@SiNAVM-ss-153,@SiNAVM-ss-160,@SiNAVM-ss-161
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
