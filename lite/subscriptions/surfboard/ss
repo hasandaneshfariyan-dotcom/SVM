@@ -11,14 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-35 = ss, 185.47.253.227, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
-@SiNAVM-ss-37 = ss, 2.ilgm.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-38 = ss, 185.123.101.241, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
-@SiNAVM-ss-43 = ss, at01.giamping.com, 8080, encrypt-method = chacha20-ietf-poly1305, password = 42000e02-6b4d-46ad-a572-80db7db2a9ce
+@SiNAVM-ss-43 = ss, 185.47.253.227, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
+@SiNAVM-ss-45 = ss, 2.ilgm.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-35,@SiNAVM-ss-37,@SiNAVM-ss-38,@SiNAVM-ss-43
-URL-TEST = url-test,@SiNAVM-ss-35,@SiNAVM-ss-37,@SiNAVM-ss-38,@SiNAVM-ss-43
-FALLBACK = fallback,@SiNAVM-ss-35,@SiNAVM-ss-37,@SiNAVM-ss-38,@SiNAVM-ss-43
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-43,@SiNAVM-ss-45
+URL-TEST = url-test,@SiNAVM-ss-43,@SiNAVM-ss-45
+FALLBACK = fallback,@SiNAVM-ss-43,@SiNAVM-ss-45
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
