@@ -118,43 +118,43 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-ss-22","type":"ss","server":"193.29.139.157","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-34","type":"ss","server":"79.133.122.157","port":808,"password":"tvX1v#NSFP_LG_bJ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-154","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-161","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-162","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-23","type":"ss","server":"at01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-35","type":"ss","server":"74.50.99.86","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-156","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-163","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-164","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-161'
-      - '@SiNAVM-ss-162'
+      - '@SiNAVM-ss-23'
+      - '@SiNAVM-ss-35'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-164'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-161'
-      - '@SiNAVM-ss-162'
+      - '@SiNAVM-ss-23'
+      - '@SiNAVM-ss-35'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-164'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-161'
-      - '@SiNAVM-ss-162'
+      - '@SiNAVM-ss-23'
+      - '@SiNAVM-ss-35'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-164'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
