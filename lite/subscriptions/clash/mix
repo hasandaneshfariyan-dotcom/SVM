@@ -132,8 +132,10 @@ proxies:
   - {"name":"@SiNAVM-trojan-26","type":"trojan","server":"13.38.199.103","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-27","type":"trojan","server":"13.39.30.145","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-28","type":"trojan","server":"35.181.251.73","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-ss-33","type":"ss","server":"193.29.139.157","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-45","type":"ss","server":"79.133.122.157","port":808,"password":"tvX1v#NSFP_LG_bJ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-trojan-29","type":"trojan","server":"52.58.100.127","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-30","type":"trojan","server":"3.75.167.139","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-ss-34","type":"ss","server":"at01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-46","type":"ss","server":"74.50.99.86","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -154,8 +156,10 @@ proxy-groups:
       - '@SiNAVM-trojan-26'
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
-      - '@SiNAVM-ss-33'
-      - '@SiNAVM-ss-45'
+      - '@SiNAVM-trojan-29'
+      - '@SiNAVM-trojan-30'
+      - '@SiNAVM-ss-34'
+      - '@SiNAVM-ss-46'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -176,8 +180,10 @@ proxy-groups:
       - '@SiNAVM-trojan-26'
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
-      - '@SiNAVM-ss-33'
-      - '@SiNAVM-ss-45'
+      - '@SiNAVM-trojan-29'
+      - '@SiNAVM-trojan-30'
+      - '@SiNAVM-ss-34'
+      - '@SiNAVM-ss-46'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -197,8 +203,10 @@ proxy-groups:
       - '@SiNAVM-trojan-26'
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
-      - '@SiNAVM-ss-33'
-      - '@SiNAVM-ss-45'
+      - '@SiNAVM-trojan-29'
+      - '@SiNAVM-trojan-30'
+      - '@SiNAVM-ss-34'
+      - '@SiNAVM-ss-46'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
