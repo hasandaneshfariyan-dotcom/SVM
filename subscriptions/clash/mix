@@ -132,10 +132,11 @@ proxies:
   - {"name":"@SiNAVM-trojan-13","type":"trojan","server":"15.188.151.116","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-14","type":"trojan","server":"15.236.86.144","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-15","type":"trojan","server":"51.44.120.127","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-ss-23","type":"ss","server":"de14.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-147","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-154","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-155","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-trojan-16","type":"trojan","server":"3.70.102.146","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-17","type":"trojan","server":"3.123.135.131","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-ss-149","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-156","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-157","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -156,10 +157,11 @@ proxy-groups:
       - '@SiNAVM-trojan-13'
       - '@SiNAVM-trojan-14'
       - '@SiNAVM-trojan-15'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-155'
+      - '@SiNAVM-trojan-16'
+      - '@SiNAVM-trojan-17'
+      - '@SiNAVM-ss-149'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-157'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -180,10 +182,11 @@ proxy-groups:
       - '@SiNAVM-trojan-13'
       - '@SiNAVM-trojan-14'
       - '@SiNAVM-trojan-15'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-155'
+      - '@SiNAVM-trojan-16'
+      - '@SiNAVM-trojan-17'
+      - '@SiNAVM-ss-149'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-157'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -203,10 +206,11 @@ proxy-groups:
       - '@SiNAVM-trojan-13'
       - '@SiNAVM-trojan-14'
       - '@SiNAVM-trojan-15'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-154'
-      - '@SiNAVM-ss-155'
+      - '@SiNAVM-trojan-16'
+      - '@SiNAVM-trojan-17'
+      - '@SiNAVM-ss-149'
+      - '@SiNAVM-ss-156'
+      - '@SiNAVM-ss-157'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
