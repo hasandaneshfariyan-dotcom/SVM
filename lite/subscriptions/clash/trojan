@@ -131,6 +131,8 @@ proxies:
   - {"name":"@SiNAVM-trojan-24","type":"trojan","server":"51.44.54.207","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-25","type":"trojan","server":"13.39.213.129","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-26","type":"trojan","server":"52.47.176.67","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-27","type":"trojan","server":"63.176.207.54","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-28","type":"trojan","server":"3.70.0.107","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -150,6 +152,8 @@ proxy-groups:
       - '@SiNAVM-trojan-24'
       - '@SiNAVM-trojan-25'
       - '@SiNAVM-trojan-26'
+      - '@SiNAVM-trojan-27'
+      - '@SiNAVM-trojan-28'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -169,6 +173,8 @@ proxy-groups:
       - '@SiNAVM-trojan-24'
       - '@SiNAVM-trojan-25'
       - '@SiNAVM-trojan-26'
+      - '@SiNAVM-trojan-27'
+      - '@SiNAVM-trojan-28'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -187,6 +193,8 @@ proxy-groups:
       - '@SiNAVM-trojan-24'
       - '@SiNAVM-trojan-25'
       - '@SiNAVM-trojan-26'
+      - '@SiNAVM-trojan-27'
+      - '@SiNAVM-trojan-28'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
