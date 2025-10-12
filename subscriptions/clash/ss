@@ -118,39 +118,39 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-ss-25","type":"ss","server":"223.165.4.173","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-145","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-152","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-153","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-27","type":"ss","server":"223.165.4.173","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-147","type":"ss","server":"ie01.giamping.com","port":8080,"password":"42000e02-6b4d-46ad-a572-80db7db2a9ce","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-154","type":"ss","server":"h110vpnde2.outlinekeys.net","port":53122,"password":"EUdGim7lQN0RPVxHql55od","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-155","type":"ss","server":"135.225.124.80","port":48172,"password":"51yloQC8D9w1Wae7FHtI65","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-153'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-155'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-153'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-155'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-153'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-155'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
