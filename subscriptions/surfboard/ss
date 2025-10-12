@@ -11,13 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-23 = ss, 45.87.175.165, 8080, encrypt-method = chacha20-ietf-poly1305, password = QCXDxuDlTTMD7jtgHUjIoj
-@SiNAVM-ss-28 = ss, 45.87.175.192, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-@SiNAVM-ss-30 = ss, 45.87.175.92, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-ss-22 = ss, 45.87.175.69, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-23,@SiNAVM-ss-28,@SiNAVM-ss-30
-URL-TEST = url-test,@SiNAVM-ss-23,@SiNAVM-ss-28,@SiNAVM-ss-30
-FALLBACK = fallback,@SiNAVM-ss-23,@SiNAVM-ss-28,@SiNAVM-ss-30
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-22
+URL-TEST = url-test,@SiNAVM-ss-22
+FALLBACK = fallback,@SiNAVM-ss-22
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
