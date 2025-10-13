@@ -55,16 +55,29 @@
             "type": "selector",
             "tag": "Internet",
             "outbounds": [
-                "Best Latency"
+                "Best Latency",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "shadowsocks",
+            "server": "79.133.122.157",
+            "server_port": 808,
+            "method": "chacha20-ietf-poly1305",
+            "password": "tvX1v#NSFP_LG_bJ",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
