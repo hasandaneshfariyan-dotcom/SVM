@@ -175,7 +175,12 @@
                 "@SiNAVM-110",
                 "@SiNAVM-111",
                 "@SiNAVM-112",
-                "@SiNAVM-113"
+                "@SiNAVM-113",
+                "@SiNAVM-114",
+                "@SiNAVM-115",
+                "@SiNAVM-116",
+                "@SiNAVM-117",
+                "@SiNAVM-118"
             ]
         },
         {
@@ -294,7 +299,12 @@
                 "@SiNAVM-110",
                 "@SiNAVM-111",
                 "@SiNAVM-112",
-                "@SiNAVM-113"
+                "@SiNAVM-113",
+                "@SiNAVM-114",
+                "@SiNAVM-115",
+                "@SiNAVM-116",
+                "@SiNAVM-117",
+                "@SiNAVM-118"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -485,7 +495,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.236.214.190",
+            "server": "63.178.101.45",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -507,7 +517,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.39.241.57",
+            "server": "18.158.157.91",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -529,7 +539,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.36.49.235",
+            "server": "15.236.214.190",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -551,7 +561,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.121.96.220",
+            "server": "13.39.241.57",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -573,7 +583,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.39.188.47",
+            "server": "13.36.49.235",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -595,7 +605,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.216.83",
+            "server": "3.121.96.220",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -617,7 +627,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.212.125",
+            "server": "13.39.188.47",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -639,7 +649,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.243.87",
+            "server": "35.181.216.83",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -661,7 +671,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.77.60.212",
+            "server": "35.181.212.125",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -683,7 +693,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.176.30.165",
+            "server": "35.181.243.87",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -705,7 +715,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.37.210.69",
+            "server": "3.77.60.212",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -727,7 +737,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.36.118.254",
+            "server": "63.176.30.165",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -749,7 +759,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.102.132",
+            "server": "13.37.210.69",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -771,7 +781,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.180.91.167",
+            "server": "13.36.118.254",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -792,38 +802,37 @@
             "tag": "@SiNAVM-22"
         },
         {
-            "type": "trojan",
-            "server": "3.124.147.46",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
+            "type": "vless",
+            "server": "104.18.20.69",
+            "server_port": 2095,
+            "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "104.18.20.69"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-23"
         },
         {
-            "type": "trojan",
-            "server": "52.47.214.14",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
+            "type": "vless",
+            "server": "65.109.118.175",
+            "server_port": 443,
+            "uuid": "fa72a38c-56bf-4f3b-9735-e96e9840ae54",
+            "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
+                "server_name": "app.chandplus.com",
                 "insecure": false,
                 "alpn": [
+                    "h3",
+                    "h2",
                     "http\/1.1"
                 ],
                 "min_version": "1.3",
@@ -837,14 +846,14 @@
         },
         {
             "type": "vless",
-            "server": "162.159.152.69",
-            "server_port": 443,
-            "uuid": "c98a16e4-0dc5-42f0-b3db-30f04525c123",
+            "server": "www.visa.com.sg",
+            "server_port": 8443,
+            "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "zzz-eff.pages.dev",
+                "server_name": "azadnet-4nb.pages.dev",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -853,30 +862,48 @@
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "chrome"
+                    "fingerprint": "random"
                 }
             },
             "transport": {
                 "type": "ws",
-                "path": "\/<\/pre><br\/><br\/>",
+                "path": "\/",
                 "headers": {
-                    "Host": "zzz-eff.pages.dev"
+                    "Host": "azadnet-4nb.pages.dev"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "tag": "@SiNAVM-25"
         },
         {
             "type": "vless",
-            "server": "172.67.153.156",
-            "server_port": 8443,
-            "uuid": "57ba2ab1-a283-42eb-82ee-dc3561a805b8",
+            "server": "104.18.15.19",
+            "server_port": 8880,
+            "uuid": "c2aff09d-4fd7-4ee6-adc3-78eb352debe7",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "104.18.15.19"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-26"
+        },
+        {
+            "type": "vless",
+            "server": "160.16.123.65",
+            "server_port": 443,
+            "uuid": "019931aa-8cba-3a74-6c77-cb288ae52f2a",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "ovhwuxian.pai50288.uk",
+                "server_name": "0000yhuxn8zf1sqvj1qx.x0uck1bfji4.8f25.dbhnjola4.bmj6yq1giy.ujwpeuoqhayd.pci8t1.paxljcy7c.u9v3a.a1s36uciu.2r11kwhbqtj9k5ix.neib.cn",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -890,41 +917,9 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/57ba2ab1<\/pre><br\/><br\/>",
+                "path": "\/snippets?ip=proxyip:port(443)",
                 "headers": {
-                    "Host": "ovhwuxian.pai50288.uk"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "vless",
-            "server": "www.speedtest.net",
-            "server_port": 443,
-            "uuid": "db8b1cf8-c339-4bbb-9520-d78de52cda8e",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "TEstS-9qX.pAges.DEv",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/<\/pre><br\/><br\/>",
-                "headers": {
-                    "Host": "TEstS-9qX.pAges.DEv"
+                    "Host": "0000yhuxn8zf1sqvj1qx.x0uck1bfji4.8f25.dbhnjola4.bmj6yq1giy.ujwpeuoqhayd.pci8t1.paxljcy7c.u9v3a.a1s36uciu.2r11kwhbqtj9k5ix.neib.cn"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -933,30 +928,30 @@
         },
         {
             "type": "vless",
-            "server": "104.27.62.243",
-            "server_port": 443,
-            "uuid": "3c36eadb-747a-4166-8db0-23fec9883ea2",
+            "server": "45.82.249.42",
+            "server_port": 8443,
+            "uuid": "6938efdb-b699-464d-8098-ae35b886b5c7",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "harmony-427.pages.dev",
+                "server_name": "pq.chile1.09vpn.com",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "min_version": "1.3",
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "firefox"
+                    "fingerprint": "chrome"
                 }
             },
             "transport": {
                 "type": "ws",
-                "path": "\/?ed<\/pre><br\/><br\/>",
+                "path": "\/vless\/<\/pre><br\/><br\/>",
                 "headers": {
-                    "Host": "harmony-427.pages.dev"
+                    "Host": "pq.chile1.09vpn.com"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
@@ -965,14 +960,64 @@
         },
         {
             "type": "vless",
-            "server": "45.131.5.253",
-            "server_port": 2096,
-            "uuid": "f61a4285-7264-4d07-9408-7b9ba1922c26",
+            "server": "172.66.47.82",
+            "server_port": 2053,
+            "uuid": "80764883-7f6b-4c46-8ecd-887cdf541c07",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "gaosir.unfeeling.sbs",
+                "server_name": "edC32e3B.bpb-PaNel-EN-87s.PAGes.dEv",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomized"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/oqLIXWAi6lzpnumQ<\/pre><br\/><br\/>",
+                "headers": {
+                    "Host": "edC32e3B.bpb-PaNel-EN-87s.PAGes.dEv"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-29"
+        },
+        {
+            "type": "vless",
+            "server": "light-presence.oneeat.co",
+            "server_port": 80,
+            "uuid": "7e74ff43-3a90-48b3-8372-7d92a045c2d4",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/<\/pre><br\/><br\/>",
+                "headers": {
+                    "Host": "light-presence.oneeat.co"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-30"
+        },
+        {
+            "type": "vless",
+            "server": "braze.com",
+            "server_port": 443,
+            "uuid": "4e1f0fc6-a7f8-4642-bd35-6a3aa0bb2fc8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "hdfynpv2c1.farvaharforever.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -986,25 +1031,25 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/Telegram🇨🇳 @WangCai2 \/",
+                "path": "\/Iyq035lnud9R8ruNNrqGxZZ2<\/pre><br\/><br\/>",
                 "headers": {
-                    "Host": "gaosir.unfeeling.sbs"
+                    "Host": "hdfynpv2c1.farvaharforever.com"
                 },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-29"
+            "tag": "@SiNAVM-31"
         },
         {
             "type": "vless",
-            "server": "65.108.1.249",
+            "server": "www.speedtest.net",
             "server_port": 443,
-            "uuid": "14e4cf26-44e1-4888-ba87-e5e6ba3a6b0f",
+            "uuid": "74c1f4fc-8091-42ef-a6c9-a4b3ce0c1427",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "cdn.chandplus.com",
+                "server_name": "vENom.ItgoOdMoRniNG422.Workers.Dev",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -1016,13 +1061,118 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-30"
+            "transport": {
+                "type": "ws",
+                "path": "\/mINLCAO9kH3i4dvI",
+                "headers": {
+                    "Host": "vENom.ItgoOdMoRniNG422.Workers.Dev"
+                },
+                "max_early_data": 2560,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "tag": "@SiNAVM-32"
         },
         {
             "type": "vless",
-            "server": "kifpool.me",
+            "server": "google.sosorg.nyc.mn",
             "server_port": 443,
-            "uuid": "b754b53a-aaf5-475c-eeed-46806c2aa63f",
+            "uuid": "0199889f-d499-8cad-99f7-7507ed9a819b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "bpg.307986.dpdns.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/snippets?ip=ProxyIP.Oracle.cmliussss.net",
+                "headers": {
+                    "Host": "bpg.307986.dpdns.org"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-33"
+        },
+        {
+            "type": "vless",
+            "server": "92.118.228.154",
+            "server_port": 443,
+            "uuid": "8250d638-45df-41fa-b06f-160d1cb1de0c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/YnqGMcAt\/<\/pre><br\/><br\/>",
+                "headers": {
+                    "Host": "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-34"
+        },
+        {
+            "type": "vless",
+            "server": "104.26.12.31",
+            "server_port": 443,
+            "uuid": "01996d6c-ca12-a514-1884-58805e80e2c9",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "000091gm0s8g08211s2q.rjp.3jrlr9edbfkg.s0add.dl24k.ghz.krcipuw0kx.vztx9qx.1luaw5rro.4sztyya.guarx48okfdavgn0i245is5g86r359.neib.cn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/snippets?ip=proxyip:port(443)",
+                "headers": {
+                    "Host": "000091gm0s8g08211s2q.rjp.3jrlr9edbfkg.s0add.dl24k.ghz.krcipuw0kx.vztx9qx.1luaw5rro.4sztyya.guarx48okfdavgn0i245is5g86r359.neib.cn"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-35"
+        },
+        {
+            "type": "vless",
+            "server": "openai.com",
+            "server_port": 443,
+            "uuid": "101e6a7d-7d10-4859-a626-8a76daab4547",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
@@ -1036,30 +1186,30 @@
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "chrome"
+                    "fingerprint": "randomized"
                 }
             },
             "transport": {
                 "type": "ws",
-                "path": "\/<\/pre><br\/><br\/>",
+                "path": "\/?ed<\/pre><br\/><br\/>",
                 "headers": {
                     "Host": "nkang2replace.airlineshoma.com"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-31"
+            "tag": "@SiNAVM-36"
         },
         {
             "type": "vless",
-            "server": "185.234.66.94",
+            "server": "time.is",
             "server_port": 443,
-            "uuid": "2b25cdb0-ecb2-4caa-910d-b2e5b2309ca3",
+            "uuid": "d0298536-d670-4045-bbb1-ddd5ea68683e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "185.234.66.94",
+                "server_name": "a.azadnet002.ddns-ip.net",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -1068,19 +1218,19 @@
                 "max_version": "1.3",
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "chrome"
+                    "fingerprint": "randomized"
                 }
             },
             "transport": {
                 "type": "ws",
-                "path": "\/tqjkmwws",
+                "path": "\/",
                 "headers": {
-                    "Host": "185.234.66.94"
+                    "Host": "a.azadnet002.ddns-ip.net"
                 },
-                "max_early_data": 2048,
+                "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-32"
+            "tag": "@SiNAVM-37"
         },
         {
             "type": "vless",
@@ -1096,7 +1246,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-33"
+            "tag": "@SiNAVM-38"
         },
         {
             "type": "vless",
@@ -1105,7 +1255,7 @@
             "uuid": "e138b9d4-1bc9-49d0-b6ad-34347e464c05",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-34"
+            "tag": "@SiNAVM-39"
         },
         {
             "type": "vless",
@@ -1114,7 +1264,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-35"
+            "tag": "@SiNAVM-40"
         },
         {
             "type": "vless",
@@ -1123,7 +1273,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-36"
+            "tag": "@SiNAVM-41"
         },
         {
             "type": "vless",
@@ -1139,7 +1289,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-37"
+            "tag": "@SiNAVM-42"
         },
         {
             "type": "vless",
@@ -1155,7 +1305,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-38"
+            "tag": "@SiNAVM-43"
         },
         {
             "type": "vless",
@@ -1171,7 +1321,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-39"
+            "tag": "@SiNAVM-44"
         },
         {
             "type": "vless",
@@ -1187,7 +1337,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-40"
+            "tag": "@SiNAVM-45"
         },
         {
             "type": "vless",
@@ -1196,7 +1346,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-41"
+            "tag": "@SiNAVM-46"
         },
         {
             "type": "vless",
@@ -1212,7 +1362,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-42"
+            "tag": "@SiNAVM-47"
         },
         {
             "type": "vless",
@@ -1244,7 +1394,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-43"
+            "tag": "@SiNAVM-48"
         },
         {
             "type": "vless",
@@ -1260,7 +1410,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-44"
+            "tag": "@SiNAVM-49"
         },
         {
             "type": "vless",
@@ -1293,7 +1443,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-45"
+            "tag": "@SiNAVM-50"
         },
         {
             "type": "vless",
@@ -1326,7 +1476,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-46"
+            "tag": "@SiNAVM-51"
         },
         {
             "type": "vless",
@@ -1335,7 +1485,7 @@
             "uuid": "3c0eedb1-d195-4bf1-9bf1-840957547e9f",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-47"
+            "tag": "@SiNAVM-52"
         },
         {
             "type": "vless",
@@ -1344,7 +1494,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-48"
+            "tag": "@SiNAVM-53"
         },
         {
             "type": "vless",
@@ -1377,7 +1527,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-49"
+            "tag": "@SiNAVM-54"
         },
         {
             "type": "vless",
@@ -1386,7 +1536,7 @@
             "uuid": "4182c59d-3b09-4bc9-ef7a-71e5628749e8",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-50"
+            "tag": "@SiNAVM-55"
         },
         {
             "type": "vless",
@@ -1402,7 +1552,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-51"
+            "tag": "@SiNAVM-56"
         },
         {
             "type": "vless",
@@ -1411,7 +1561,7 @@
             "uuid": "64d6d0d4-3706-4837-b154-cda2816adcc5",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-52"
+            "tag": "@SiNAVM-57"
         },
         {
             "type": "vless",
@@ -1420,7 +1570,7 @@
             "uuid": "e4824193-4f54-453b-d037-88368e85ef0e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-53"
+            "tag": "@SiNAVM-58"
         },
         {
             "type": "vless",
@@ -1429,7 +1579,7 @@
             "uuid": "e4824193-4f54-453b-d037-88368e85ef0e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-54"
+            "tag": "@SiNAVM-59"
         },
         {
             "type": "vless",
@@ -1461,7 +1611,7 @@
                 "max_early_data": 512,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-55"
+            "tag": "@SiNAVM-60"
         },
         {
             "type": "vless",
@@ -1494,7 +1644,7 @@
                 "max_early_data": 512,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-56"
+            "tag": "@SiNAVM-61"
         },
         {
             "type": "vless",
@@ -1526,7 +1676,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-57"
+            "tag": "@SiNAVM-62"
         },
         {
             "type": "vless",
@@ -1535,7 +1685,7 @@
             "uuid": "8e4ec018-b237-48ef-a09b-c8c2b2cee74b",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-58"
+            "tag": "@SiNAVM-63"
         },
         {
             "type": "vless",
@@ -1544,7 +1694,7 @@
             "uuid": "d4437242-7039-4e88-b83b-f383fa5ffda2",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-59"
+            "tag": "@SiNAVM-64"
         },
         {
             "type": "vless",
@@ -1553,7 +1703,7 @@
             "uuid": "a1a9906c-f387-4092-b73c-576dc510bad8",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-60"
+            "tag": "@SiNAVM-65"
         },
         {
             "type": "vless",
@@ -1562,7 +1712,7 @@
             "uuid": "e5979603-c215-4d5f-811a-316b45f6df17",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-61"
+            "tag": "@SiNAVM-66"
         },
         {
             "type": "vless",
@@ -1587,7 +1737,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-62"
+            "tag": "@SiNAVM-67"
         },
         {
             "type": "vless",
@@ -1620,7 +1770,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-63"
+            "tag": "@SiNAVM-68"
         },
         {
             "type": "vless",
@@ -1652,7 +1802,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-64"
+            "tag": "@SiNAVM-69"
         },
         {
             "type": "vless",
@@ -1684,7 +1834,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-65"
+            "tag": "@SiNAVM-70"
         },
         {
             "type": "vless",
@@ -1717,7 +1867,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-66"
+            "tag": "@SiNAVM-71"
         },
         {
             "type": "vless",
@@ -1750,7 +1900,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-67"
+            "tag": "@SiNAVM-72"
         },
         {
             "type": "vless",
@@ -1783,7 +1933,7 @@
                 "max_early_data": 2550,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-68"
+            "tag": "@SiNAVM-73"
         },
         {
             "type": "vless",
@@ -1807,7 +1957,7 @@
                     "fingerprint": "randomized"
                 }
             },
-            "tag": "@SiNAVM-69"
+            "tag": "@SiNAVM-74"
         },
         {
             "type": "vless",
@@ -1825,7 +1975,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-70"
+            "tag": "@SiNAVM-75"
         },
         {
             "type": "vless",
@@ -1855,7 +2005,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-71"
+            "tag": "@SiNAVM-76"
         },
         {
             "type": "vless",
@@ -1871,7 +2021,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-72"
+            "tag": "@SiNAVM-77"
         },
         {
             "type": "vless",
@@ -1887,7 +2037,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-73"
+            "tag": "@SiNAVM-78"
         },
         {
             "type": "vless",
@@ -1903,7 +2053,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-74"
+            "tag": "@SiNAVM-79"
         },
         {
             "type": "vless",
@@ -1919,7 +2069,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-75"
+            "tag": "@SiNAVM-80"
         },
         {
             "type": "vless",
@@ -1935,7 +2085,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-76"
+            "tag": "@SiNAVM-81"
         },
         {
             "type": "vless",
@@ -1944,7 +2094,7 @@
             "uuid": "115e0e05-2820-4ae9-bf62-4142ce058574",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-77"
+            "tag": "@SiNAVM-82"
         },
         {
             "type": "vless",
@@ -1960,7 +2110,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-78"
+            "tag": "@SiNAVM-83"
         },
         {
             "type": "vless",
@@ -1976,7 +2126,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-79"
+            "tag": "@SiNAVM-84"
         },
         {
             "type": "vless",
@@ -1992,7 +2142,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-80"
+            "tag": "@SiNAVM-85"
         },
         {
             "type": "vless",
@@ -2008,7 +2158,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-81"
+            "tag": "@SiNAVM-86"
         },
         {
             "type": "vless",
@@ -2026,7 +2176,7 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-82"
+            "tag": "@SiNAVM-87"
         },
         {
             "type": "vless",
@@ -2044,7 +2194,7 @@
                 "max_early_data": 1861,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-83"
+            "tag": "@SiNAVM-88"
         },
         {
             "type": "vless",
@@ -2067,7 +2217,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-84"
+            "tag": "@SiNAVM-89"
         },
         {
             "type": "vless",
@@ -2099,7 +2249,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-85"
+            "tag": "@SiNAVM-90"
         },
         {
             "type": "vless",
@@ -2115,7 +2265,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-86"
+            "tag": "@SiNAVM-91"
         },
         {
             "type": "vless",
@@ -2138,7 +2288,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-87"
+            "tag": "@SiNAVM-92"
         },
         {
             "type": "vless",
@@ -2161,7 +2311,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-88"
+            "tag": "@SiNAVM-93"
         },
         {
             "type": "vless",
@@ -2184,7 +2334,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-89"
+            "tag": "@SiNAVM-94"
         },
         {
             "type": "vless",
@@ -2200,7 +2350,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-90"
+            "tag": "@SiNAVM-95"
         },
         {
             "type": "vless",
@@ -2216,7 +2366,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-91"
+            "tag": "@SiNAVM-96"
         },
         {
             "type": "vless",
@@ -2239,7 +2389,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-92"
+            "tag": "@SiNAVM-97"
         },
         {
             "type": "vless",
@@ -2255,7 +2405,16 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-93"
+            "tag": "@SiNAVM-98"
+        },
+        {
+            "type": "vless",
+            "server": "kz01-vlr01.tcp-reset-club.net",
+            "server_port": 443,
+            "uuid": "c80bbc09-837d-495f-bebc-3e8ac5dede41",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-99"
         },
         {
             "type": "vless",
@@ -2287,7 +2446,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-94"
+            "tag": "@SiNAVM-100"
         },
         {
             "type": "vless",
@@ -2296,7 +2455,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-95"
+            "tag": "@SiNAVM-101"
         },
         {
             "type": "vless",
@@ -2305,7 +2464,7 @@
             "uuid": "7ad71a16-f67c-410b-968e-187fd5b49f94",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-96"
+            "tag": "@SiNAVM-102"
         },
         {
             "type": "vless",
@@ -2321,7 +2480,7 @@
                 "ping_timeout": "15s",
                 "permit_without_stream": false
             },
-            "tag": "@SiNAVM-97"
+            "tag": "@SiNAVM-103"
         },
         {
             "type": "vless",
@@ -2330,7 +2489,7 @@
             "uuid": "df0680ca-e43c-498d-ed86-8e196eedd012",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-98"
+            "tag": "@SiNAVM-104"
         },
         {
             "type": "vless",
@@ -2339,16 +2498,7 @@
             "uuid": "32f9d965-00d6-4ed2-a047-c0c5609a543d",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-99"
-        },
-        {
-            "type": "vless",
-            "server": "65.109.210.33",
-            "server_port": 2083,
-            "uuid": "df637e12-9381-4270-aeaa-42e5cfcbb0c2",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-100"
+            "tag": "@SiNAVM-105"
         },
         {
             "type": "vless",
@@ -2381,7 +2531,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-101"
+            "tag": "@SiNAVM-106"
         },
         {
             "type": "vless",
@@ -2414,7 +2564,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-102"
+            "tag": "@SiNAVM-107"
         },
         {
             "type": "vless",
@@ -2447,7 +2597,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-103"
+            "tag": "@SiNAVM-108"
         },
         {
             "type": "vless",
@@ -2480,7 +2630,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-104"
+            "tag": "@SiNAVM-109"
         },
         {
             "type": "vless",
@@ -2513,7 +2663,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-105"
+            "tag": "@SiNAVM-110"
         },
         {
             "type": "vless",
@@ -2522,7 +2672,7 @@
             "uuid": "telegram-id-ArV2ray",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-106"
+            "tag": "@SiNAVM-111"
         },
         {
             "type": "vless",
@@ -2555,7 +2705,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-107"
+            "tag": "@SiNAVM-112"
         },
         {
             "type": "vless",
@@ -2564,7 +2714,7 @@
             "uuid": "telegram-id-ArV2ray",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-108"
+            "tag": "@SiNAVM-113"
         },
         {
             "type": "vless",
@@ -2597,7 +2747,7 @@
                 "max_early_data": 2048,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-109"
+            "tag": "@SiNAVM-114"
         },
         {
             "type": "vless",
@@ -2615,7 +2765,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-110"
+            "tag": "@SiNAVM-115"
         },
         {
             "type": "vless",
@@ -2633,7 +2783,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-111"
+            "tag": "@SiNAVM-116"
         },
         {
             "type": "vless",
@@ -2651,7 +2801,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-112"
+            "tag": "@SiNAVM-117"
         },
         {
             "type": "vless",
@@ -2669,7 +2819,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-113"
+            "tag": "@SiNAVM-118"
         },
         {
             "type": "direct",
