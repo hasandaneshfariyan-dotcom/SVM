@@ -56,14 +56,18 @@
             "tag": "Internet",
             "outbounds": [
                 "Best Latency",
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
             "type": "urltest",
             "tag": "Best Latency",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -71,13 +75,33 @@
         },
         {
             "type": "shadowsocks",
-            "server": "79.133.122.157",
-            "server_port": 808,
+            "server": "series-a2.samanehha.co",
+            "server_port": 443,
             "method": "chacha20-ietf-poly1305",
-            "password": "tvX1v#NSFP_LG_bJ",
+            "password": "W74XFALLLuw6m5IA",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "185.47.253.171",
+            "server_port": 990,
+            "method": "chacha20-ietf-poly1305",
+            "password": "f8f7aCzcPKbsF8p3",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "c1.nastuh.link",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "lntfVeiB7cy3Hm1O",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
