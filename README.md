@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/v2ray-collector-banner.png" alt="V2Ray Collector Banner" width="600">
+  <img src="https://sinavm.github.io/sinavm/logo/sinavm_logo.jpg" alt="V2Ray Collector Banner" width="120">
 </p>
 
 # 🌠 V2Ray Collector
