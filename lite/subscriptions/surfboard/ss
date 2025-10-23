@@ -11,15 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-92 = ss, 81.90.31.219, 443, encrypt-method = chacha20-ietf-poly1305, password = zG32bkjj3cehXt2B8eijbV
-@SiNAVM-ss-93 = ss, 194.87.45.189, 443, encrypt-method = chacha20-ietf-poly1305, password = AnxMfj2oL2RaZTQVfVd5EY
-@SiNAVM-ss-94 = ss, 77.83.246.74, 443, encrypt-method = chacha20-ietf-poly1305, password = rPXoikINbSFDBeDx5BzKi7
-@SiNAVM-ss-95 = ss, 89.185.84.185, 443, encrypt-method = chacha20-ietf-poly1305, password = DOOg9CAD1UgZ2iRsu5fchI
-@SiNAVM-ss-96 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = zZstuX4hnknPkVxvOb8Iy5
+@SiNAVM-ss-89 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = zZstuX4hnknPkVxvOb8Iy5
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-92,@SiNAVM-ss-93,@SiNAVM-ss-94,@SiNAVM-ss-95,@SiNAVM-ss-96
-URL-TEST = url-test,@SiNAVM-ss-92,@SiNAVM-ss-93,@SiNAVM-ss-94,@SiNAVM-ss-95,@SiNAVM-ss-96
-FALLBACK = fallback,@SiNAVM-ss-92,@SiNAVM-ss-93,@SiNAVM-ss-94,@SiNAVM-ss-95,@SiNAVM-ss-96
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-89
+URL-TEST = url-test,@SiNAVM-ss-89
+FALLBACK = fallback,@SiNAVM-ss-89
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
