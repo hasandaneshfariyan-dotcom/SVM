@@ -118,67 +118,67 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-ss-75","type":"ss","server":"81.19.141.45","port":443,"password":"zZstuX4hnknPkVxvOb8Iy5","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-151","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-152","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-154","type":"ss","server":"62.100.205.177","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-156","type":"ss","server":"45.87.175.158","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-158","type":"ss","server":"45.87.175.168","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-159","type":"ss","server":"45.87.175.185","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-163","type":"ss","server":"102.207.216.176","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-166","type":"ss","server":"185.163.204.94","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-167","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-170","type":"ss","server":"45.87.175.155","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-80","type":"ss","server":"81.19.141.45","port":443,"password":"zZstuX4hnknPkVxvOb8Iy5","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-156","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-157","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-159","type":"ss","server":"62.100.205.177","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-161","type":"ss","server":"45.87.175.158","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-163","type":"ss","server":"45.87.175.168","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-164","type":"ss","server":"45.87.175.185","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-168","type":"ss","server":"102.207.216.176","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-171","type":"ss","server":"185.163.204.94","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-172","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-175","type":"ss","server":"45.87.175.155","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-75'
-      - '@SiNAVM-ss-151'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-80'
       - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-157'
       - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-161'
       - '@SiNAVM-ss-163'
-      - '@SiNAVM-ss-166'
-      - '@SiNAVM-ss-167'
-      - '@SiNAVM-ss-170'
+      - '@SiNAVM-ss-164'
+      - '@SiNAVM-ss-168'
+      - '@SiNAVM-ss-171'
+      - '@SiNAVM-ss-172'
+      - '@SiNAVM-ss-175'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-75'
-      - '@SiNAVM-ss-151'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-80'
       - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-157'
       - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-161'
       - '@SiNAVM-ss-163'
-      - '@SiNAVM-ss-166'
-      - '@SiNAVM-ss-167'
-      - '@SiNAVM-ss-170'
+      - '@SiNAVM-ss-164'
+      - '@SiNAVM-ss-168'
+      - '@SiNAVM-ss-171'
+      - '@SiNAVM-ss-172'
+      - '@SiNAVM-ss-175'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-ss-75'
-      - '@SiNAVM-ss-151'
-      - '@SiNAVM-ss-152'
-      - '@SiNAVM-ss-154'
+      - '@SiNAVM-ss-80'
       - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-158'
+      - '@SiNAVM-ss-157'
       - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-161'
       - '@SiNAVM-ss-163'
-      - '@SiNAVM-ss-166'
-      - '@SiNAVM-ss-167'
-      - '@SiNAVM-ss-170'
+      - '@SiNAVM-ss-164'
+      - '@SiNAVM-ss-168'
+      - '@SiNAVM-ss-171'
+      - '@SiNAVM-ss-172'
+      - '@SiNAVM-ss-175'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
