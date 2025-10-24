@@ -11,13 +11,13 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-ss-40 = ss, 45.87.175.170, 8080, encrypt-method = chacha20-ietf-poly1305, password = QCXDxuDlTTMD7jtgHUjIoj
-@SiNAVM-ss-91 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = zZstuX4hnknPkVxvOb8Iy5
-@SiNAVM-ss-174 = ss, azjnac1.uksouth.cloudapp.azure.com, 443, encrypt-method = chacha20-ietf-poly1305, password = ksg929BWf1K220dG
+@SiNAVM-ss-38 = ss, 45.87.175.170, 8080, encrypt-method = chacha20-ietf-poly1305, password = QCXDxuDlTTMD7jtgHUjIoj
+@SiNAVM-ss-89 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = zZstuX4hnknPkVxvOb8Iy5
+@SiNAVM-ss-172 = ss, azjnac1.uksouth.cloudapp.azure.com, 443, encrypt-method = chacha20-ietf-poly1305, password = ksg929BWf1K220dG
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-40,@SiNAVM-ss-91,@SiNAVM-ss-174
-URL-TEST = url-test,@SiNAVM-ss-40,@SiNAVM-ss-91,@SiNAVM-ss-174
-FALLBACK = fallback,@SiNAVM-ss-40,@SiNAVM-ss-91,@SiNAVM-ss-174
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-38,@SiNAVM-ss-89,@SiNAVM-ss-172
+URL-TEST = url-test,@SiNAVM-ss-38,@SiNAVM-ss-89,@SiNAVM-ss-172
+FALLBACK = fallback,@SiNAVM-ss-38,@SiNAVM-ss-89,@SiNAVM-ss-172
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
