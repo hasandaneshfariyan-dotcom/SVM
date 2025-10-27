@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="3;url=sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#🚸@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
+<meta http-equiv="refresh" content="3;url=sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#2️⃣@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
 <title>کانفیگ سینگ باکس شماره ٢</title>
 <style>
     body {
@@ -143,9 +143,22 @@
         100% { background-position: 0% 50%; }
     }
 
-    .footer { background: rgba(0,0,0,0.7); padding: 10px; font-size: 16px; text-align: center; color: #bbb; margin-top: auto; }
-    .footer a { color: #00d9ff; text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    .footer { 
+        background: rgba(0,0,0,0.7); 
+        padding: 10px; 
+        font-size: 16px; 
+        text-align: center; 
+        color: #bbb; 
+        margin-top: auto; 
+    }
+    .footer a { 
+        color: #ffcc00; 
+        text-decoration: none; 
+        margin: 0 10px; 
+    }
+    .footer a:hover { 
+        text-decoration: underline; 
+    }
 
     @media (max-width: 768px) {
         .redirect-link { font-size: 18px; }
@@ -163,17 +176,168 @@
         .info-text { font-size: 14px; }
         .telegram-box, .github-box, .visit-box { width: 110px; font-size: 12px; padding: 6px; }
     }
+
+    /* ===== بازی (مپی شده از کد دوم) ===== */
+    :root {
+        --game-height: 55vh;
+        --game-max-height: 400px;
+        --font-base: 1rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    .game-container {
+        background: linear-gradient(270deg, #ff2a6d, #ff8c00, #ff2a6d);
+        background-size: 600% 600%;
+        animation: pulseGradient 3s ease infinite;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255,42,109,0.7), 0 0 40px rgba(255,140,0,0.4);
+        margin-bottom: 20px;
+        width: 90%;
+        max-width: 380px;
+        height: var(--game-height);
+        max-height: var(--game-max-height);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(-30px);
+        animation: fadeSlideIn 1s forwards 0.2s;
+    }
+
+    .game-canvas {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: linear-gradient(to bottom, #87CEEB 0%, #98D8E8 70%, #228B22 100%);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .player {
+        position: absolute;
+        font-size: 7vw;
+        max-font-size: 32px;
+        transition: none;
+        user-select: none;
+        left: 12%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .pipe {
+        position: absolute;
+        background: linear-gradient(#2ecc71, #27ae60);
+        width: 15vw;
+        max-width: 60px;
+        bottom: 0;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .score {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        font-size: 6vw;
+        max-font-size: 26px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px 4px #000;
+        z-index: 10;
+    }
+
+    .lives {
+        position: absolute;
+        top: 8px;
+        left: 12px;
+        font-size: 6vw;
+        max-font-size: 26px;
+        color: #ff4444;
+        text-shadow: 2px 2px 4px #000;
+        z-index: 10;
+    }
+
+    .game-over {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.9);
+        color: #ff2a6d;
+        padding: 15px 25px;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 4.5vw;
+        max-font-size: 18px;
+        text-shadow: 0 0 8px #fff;
+        display: none;
+        z-index: 100;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .game-over small {
+        font-size: 3.5vw;
+        max-font-size: 14px;
+        display: block;
+        margin-top: 8px;
+        color: #ffcc00;
+    }
+
+    .explosion {
+        position: absolute;
+        font-size: 10vw;
+        max-font-size: 45px;
+        pointer-events: none;
+        animation: explode 0.8s forwards;
+        z-index: 99;
+    }
+
+    @keyframes explode {
+        0% { opacity: 1; transform: scale(0.3) rotate(0deg); }
+        100% { opacity: 0; transform: scale(2) rotate(360deg); }
+    }
+
+    .game-text {
+        margin-top: 8px;
+        font-size: 3.8vw;
+        max-font-size: 15px;
+        font-weight: bold;
+        color: #000;
+        text-shadow: 0 0 4px rgba(255,255,255,0.7);
+    }
+
+    @media (max-width: 480px) {
+        :root { --game-height: 50vh; --game-max-height: 320px; }
+        .game-container { width: 95%; }
+    }
 </style>
 </head>
 <body>
 <div class="content">
+
+    <!-- بازی آسان (مپی شده) -->
+    <div class="game-container" id="gameContainer">
+        <div class="game-canvas" id="gameCanvas">
+            <div class="score" id="score">0</div>
+            <div class="lives" id="lives">❤️❤️❤️</div>
+            <div class="player" id="player">🚀</div>
+            <div class="game-over" id="gameOver">
+                بازی تمام شد! 🎮<br>
+                <small>دوباره کلیک کن</small>
+            </div>
+        </div>
+        <div class="game-text">لمس کن تا بپری! 👆</div>
+    </div>
+
     <div class="header">کانال تلگرامی <a href="https://T.me/sinavm" target="_blank">SiNAVM</a></div>
     <div class="header">کانفیگ سینگ باکس شماره ٢</div>
 
     <div class="status-text">در حال انتقال کانفیگ...</div>
     <div class="info-text">اگر بعد از ٣ ثانیه انجام نشد، روی لینک زیر کلیک کنید:</div>
 
-    <a class="redirect-link" href="sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#🚸@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
+    <a class="redirect-link" href="sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#2️⃣@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
         وارد کردن دستی کانفیگ
     </a>
 </div>
@@ -192,15 +356,171 @@
     <div class="visit-box">بازدید کل: <span id="total-visit-count">...</span></div>
 </div>
 
+<!-- فوتر با لینک‌های قانونی (مپی شده) -->
 <div class="footer">
-    طراحی و توسعه توسط <a href="https://T.me/SinaVM" target="_blank">@SiNAVM</a>
+    <a href="https://sinavm.github.io/sinavm/legal_pages/about.html">درباره ما</a> |
+    <a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html">حریم خصوصی</a> |
+    <a href="https://sinavm.github.io/sinavm/legal_pages/terms.html">شرایط</a>
 </div>
 
 <script>
+// بازدید شمار
 fetch('https://page-views.count1.workers.dev')
     .then(r => r.text())
     .then(data => { document.getElementById("total-visit-count").innerText = data; })
     .catch(e => console.error(e));
+
+// بازی آسان: فقط مانع پایین + 3 جان
+const canvas = document.getElementById('gameCanvas');
+const player = document.getElementById('player');
+const gameOverScreen = document.getElementById('gameOver');
+const scoreDisplay = document.getElementById('score');
+const livesDisplay = document.getElementById('lives');
+
+let gameActive = false;
+let gravity = 0.3;
+let lift = -8;
+let velocity = 0;
+let posY = 150;
+let speed = 1.5;
+let pipes = [];
+let score = 0;
+let lives = 3;
+let frame = 0;
+let gameLoop;
+let lastCrashY = 0;
+
+function startGame() {
+    gameActive = true;
+    gameOverScreen.style.display = 'none';
+    pipes.forEach(p => p.elem.remove());
+    pipes = [];
+    score = 0;
+    speed = 1.5;
+    lives = 3;
+    posY = canvas.offsetHeight / 2 - 50;
+    velocity = 0;
+    scoreDisplay.textContent = '0';
+    livesDisplay.textContent = '❤️❤️❤️';
+    frame = 0;
+    updateSizes();
+    loop();
+}
+
+function loseLife() {
+    lives--;
+    createExplosion(60, lastCrashY);
+    
+    if (lives > 0) {
+        posY = lastCrashY - 20;
+        velocity = lift * 0.8;
+        livesDisplay.textContent = '❤️'.repeat(lives);
+    } else {
+        gameActive = false;
+        cancelAnimationFrame(gameLoop);
+        gameOverScreen.style.display = 'block';
+    }
+}
+
+function createExplosion(x, y) {
+    const exp = document.createElement('div');
+    exp.className = 'explosion';
+    exp.innerText = '💥';
+    exp.style.left = (x - 20) + 'px';
+    exp.style.top = (y - 20) + 'px';
+    canvas.appendChild(exp);
+    setTimeout(() => exp.remove(), 800);
+}
+
+function createPipe() {
+    const height = 80 + Math.random() * 120;
+    const pipe = document.createElement('div');
+    pipe.className = 'pipe';
+    pipe.style.height = height + 'px';
+    pipe.style.right = '-80px';
+    canvas.appendChild(pipe);
+    pipes.push({ elem: pipe, x: canvas.offsetWidth, height: height });
+}
+
+function jump() {
+    if (!gameActive) { startGame(); return; }
+    velocity = lift;
+}
+
+canvas.addEventListener('click', jump);
+canvas.addEventListener('touchstart', e => { e.preventDefault(); jump(); });
+
+function updateSizes() {
+    const width = canvas.offsetWidth;
+    player.style.fontSize = Math.min(width * 0.08, 32) + 'px';
+    document.querySelectorAll('.pipe').forEach(p => {
+        p.style.width = Math.min(width * 0.15, 60) + 'px';
+    });
+}
+window.addEventListener('resize', updateSizes);
+
+function loop() {
+    if (!gameActive) return;
+
+    velocity += gravity;
+    posY += velocity;
+    player.style.top = posY + 'px';
+    lastCrashY = posY;
+
+    if (posY < 10) { posY = 10; velocity = 0; }
+
+    if (posY > canvas.offsetHeight - 40) {
+        loseLife();
+        return;
+    }
+
+    frame++;
+    if (frame % 140 === 0) createPipe();
+
+    pipes.forEach((pipe, i) => {
+        pipe.x -= speed;
+        pipe.elem.style.right = (canvas.offsetWidth - pipe.x) + 'px';
+
+        if (!pipe.passed && pipe.x < 80) {
+            pipe.passed = true;
+            score++;
+            scoreDisplay.textContent = score;
+            speed = Math.min(speed + 0.15, 3.5);
+        }
+
+        if (pipe.x < -80) {
+            pipe.elem.remove();
+            pipes.splice(i, 1);
+        }
+
+        if (pipe.x < 100 && pipe.x > 20) {
+            const playerBottom = posY + 35;
+            if (playerBottom > canvas.offsetHeight - pipe.height) {
+                loseLife();
+            }
+        }
+    });
+
+    gameLoop = requestAnimationFrame(loop);
+}
+
+// پیام شروع
+setTimeout(() => {
+    const msg = document.createElement('div');
+    msg.innerText = 'آسون! 👆 لمس کن';
+    msg.style.cssText = `
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff; font-weight: bold; font-size: 4.5vw;
+        max-font-size: 18px; text-shadow: 0 0 10px #000;
+        z-index: 20; background: rgba(0,0,0,0.5);
+        padding: 10px 20px; border-radius: 10px;
+    `;
+    canvas.appendChild(msg);
+    setTimeout(() => msg.remove(), 3000);
+}, 500);
+
+updateSizes();
 </script>
 </body>
 </html>
