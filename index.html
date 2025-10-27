@@ -100,7 +100,6 @@
         transition: all 0.3s ease;
     }
 
-    /* Telegram */
     .telegram-box {
         display: flex; align-items: center; justify-content: center;
         background: linear-gradient(270deg, #00d9ff, #0088cc, #00d9ff);
@@ -112,7 +111,6 @@
     .telegram-box img { width: 22px; height: 22px; margin-left: 5px; }
     .telegram-box:hover { transform: scale(1.12) rotate(-2deg); box-shadow: 0 0 25px rgba(0,217,255,1),0 0 50px rgba(0,136,204,0.8); }
 
-    /* Github */
     .github-box {
         display: flex; align-items: center; justify-content: center;
         background: linear-gradient(270deg, #6e5494, #9b59b6, #6e5494);
@@ -126,7 +124,7 @@
     .github-box img { width: 22px; height: 22px; margin-left: 5px; }
     .github-box:hover { transform: scale(1.12) rotate(2deg); box-shadow: 0 0 25px rgba(155,89,182,1),0 0 50px rgba(110,84,148,0.8); }
 
-    /* Visit count */
+
     .visit-box {
         background: rgba(0,0,0,0.5);
         color: white;
@@ -177,7 +175,7 @@
         .telegram-box, .github-box, .visit-box { width: 110px; font-size: 12px; padding: 6px; }
     }
 
-    /* ===== بازی (مپی شده از کد دوم) ===== */
+
     :root {
         --game-height: 55vh;
         --game-max-height: 400px;
@@ -317,7 +315,7 @@
 <body>
 <div class="content">
 
-    <!-- بازی آسان (مپی شده) -->
+
     <div class="game-container" id="gameContainer">
         <div class="game-canvas" id="gameCanvas">
             <div class="score" id="score">0</div>
@@ -356,7 +354,7 @@
     <div class="visit-box">بازدید کل: <span id="total-visit-count">...</span></div>
 </div>
 
-<!-- فوتر با لینک‌های قانونی (مپی شده) -->
+
 <div class="footer">
     <a href="https://sinavm.github.io/sinavm/legal_pages/about.html">درباره ما</a> |
     <a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html">حریم خصوصی</a> |
@@ -364,13 +362,12 @@
 </div>
 
 <script>
-// بازدید شمار
+
 fetch('https://page-views.count1.workers.dev')
     .then(r => r.text())
     .then(data => { document.getElementById("total-visit-count").innerText = data; })
     .catch(e => console.error(e));
 
-// بازی آسان: فقط مانع پایین + 3 جان
 const canvas = document.getElementById('gameCanvas');
 const player = document.getElementById('player');
 const gameOverScreen = document.getElementById('gameOver');
@@ -382,7 +379,7 @@ let gravity = 0.3;
 let lift = -8;
 let velocity = 0;
 let posY = 150;
-let speed = 1.5;
+let speed = 1.8;
 let pipes = [];
 let score = 0;
 let lives = 3;
@@ -504,10 +501,9 @@ function loop() {
     gameLoop = requestAnimationFrame(loop);
 }
 
-// پیام شروع
 setTimeout(() => {
     const msg = document.createElement('div');
-    msg.innerText = 'آسون! 👆 لمس کن';
+    msg.innerText = 'بازیه؟👆 لمس کن';
     msg.style.cssText = `
         position: absolute; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
