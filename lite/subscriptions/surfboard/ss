@@ -15,15 +15,11 @@ DIRECT = direct
 @SiNAVM-ss-38 = ss, fin.outlinebot1.ru, 5904, encrypt-method = chacha20-ietf-poly1305, password = 5TZnwPb23pQS39lIucspJw
 @SiNAVM-ss-40 = ss, 45.87.175.58, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 @SiNAVM-ss-48 = ss, 193.29.139.202, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-109 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = 8H9uvETx5kW6fE1bzyDdad
-@SiNAVM-ss-110 = ss, 81.90.31.219, 443, encrypt-method = chacha20-ietf-poly1305, password = mrFQKCr81RnN0QePhKsVPB
-@SiNAVM-ss-111 = ss, 194.87.45.189, 443, encrypt-method = chacha20-ietf-poly1305, password = UuwdEN48BBWPpXN8u8KQ1z
-@SiNAVM-ss-112 = ss, 89.185.84.185, 443, encrypt-method = chacha20-ietf-poly1305, password = TYPi1NkF4vZKctu0ZrrHKb
-@SiNAVM-ss-113 = ss, 77.83.246.74, 443, encrypt-method = chacha20-ietf-poly1305, password = wscAfIPuTNRmmsU1E2Ij8l
+@SiNAVM-ss-110 = ss, 81.19.141.45, 443, encrypt-method = chacha20-ietf-poly1305, password = 8H9uvETx5kW6fE1bzyDdad
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-109,@SiNAVM-ss-110,@SiNAVM-ss-111,@SiNAVM-ss-112,@SiNAVM-ss-113
-URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-109,@SiNAVM-ss-110,@SiNAVM-ss-111,@SiNAVM-ss-112,@SiNAVM-ss-113
-FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-109,@SiNAVM-ss-110,@SiNAVM-ss-111,@SiNAVM-ss-112,@SiNAVM-ss-113
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-110
+URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-110
+FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-38,@SiNAVM-ss-40,@SiNAVM-ss-48,@SiNAVM-ss-110
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
