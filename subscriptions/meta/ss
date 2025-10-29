@@ -124,12 +124,12 @@ proxies:
   - {"name":"@SiNAVM-ss-26","type":"ss","server":"fin.outlinebot1.ru","port":5904,"password":"5TZnwPb23pQS39lIucspJw","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-28","type":"ss","server":"45.87.175.58","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-36","type":"ss","server":"193.29.139.202","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-100","type":"ss","server":"81.19.141.45","port":443,"password":"8H9uvETx5kW6fE1bzyDdad","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-184","type":"ss","server":"m1.cartio.sbs","port":2096,"password":"AqgBwYDeQA","cipher":"aes-256-gcm"}
-  - {"name":"@SiNAVM-ss-202","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"eAsrTRMvEBYpJigh3CCPZgoGQbunHRbdoCJEjj4mCRMbKxbrTrYLwsRdCzLHzDA34aDj1KG4FtbTgeh3PBwR4Ey6JXSfpLa2","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-205","type":"ss","server":"45.87.175.177","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-206","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-207","type":"ss","server":"91.219.237.163","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-101","type":"ss","server":"81.19.141.45","port":443,"password":"8H9uvETx5kW6fE1bzyDdad","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-185","type":"ss","server":"m1.cartio.sbs","port":2096,"password":"AqgBwYDeQA","cipher":"aes-256-gcm"}
+  - {"name":"@SiNAVM-ss-203","type":"ss","server":"imap.roomyinmita.name","port":40565,"password":"eAsrTRMvEBYpJigh3CCPZgoGQbunHRbdoCJEjj4mCRMbKxbrTrYLwsRdCzLHzDA34aDj1KG4FtbTgeh3PBwR4Ey6JXSfpLa2","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-206","type":"ss","server":"45.87.175.177","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-207","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-208","type":"ss","server":"91.219.237.163","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -140,12 +140,12 @@ proxy-groups:
       - '@SiNAVM-ss-26'
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-36'
-      - '@SiNAVM-ss-100'
-      - '@SiNAVM-ss-184'
-      - '@SiNAVM-ss-202'
-      - '@SiNAVM-ss-205'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-185'
+      - '@SiNAVM-ss-203'
       - '@SiNAVM-ss-206'
       - '@SiNAVM-ss-207'
+      - '@SiNAVM-ss-208'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -156,12 +156,12 @@ proxy-groups:
       - '@SiNAVM-ss-26'
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-36'
-      - '@SiNAVM-ss-100'
-      - '@SiNAVM-ss-184'
-      - '@SiNAVM-ss-202'
-      - '@SiNAVM-ss-205'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-185'
+      - '@SiNAVM-ss-203'
       - '@SiNAVM-ss-206'
       - '@SiNAVM-ss-207'
+      - '@SiNAVM-ss-208'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -171,12 +171,12 @@ proxy-groups:
       - '@SiNAVM-ss-26'
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-36'
-      - '@SiNAVM-ss-100'
-      - '@SiNAVM-ss-184'
-      - '@SiNAVM-ss-202'
-      - '@SiNAVM-ss-205'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-185'
+      - '@SiNAVM-ss-203'
       - '@SiNAVM-ss-206'
       - '@SiNAVM-ss-207'
+      - '@SiNAVM-ss-208'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
