@@ -121,13 +121,13 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-1","type":"ss","server":"195.35.113.79","port":443,"password":"8326978747U037CB9MKDQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-45","type":"ss","server":"fin.outlinebot1.ru","port":5904,"password":"5TZnwPb23pQS39lIucspJw","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-47","type":"ss","server":"45.87.175.58","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-110","type":"ss","server":"81.90.31.219","port":443,"password":"Lz68Wf8nm31EcfB0V7HC1T","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-111","type":"ss","server":"77.83.246.74","port":443,"password":"xp1JCg7vnknRc8FGKWf80l","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-112","type":"ss","server":"194.87.45.189","port":443,"password":"1SITPYc2k3dkXpCc1wMlsT","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-113","type":"ss","server":"89.185.84.185","port":443,"password":"OCMSOdMgB53MIYIhiQzz1n","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-114","type":"ss","server":"81.19.141.45","port":443,"password":"LZ3pHFUBXtKKhaSrL9zLCs","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-49","type":"ss","server":"fin.outlinebot1.ru","port":5904,"password":"5TZnwPb23pQS39lIucspJw","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-51","type":"ss","server":"45.87.175.58","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-115","type":"ss","server":"81.90.31.219","port":443,"password":"Lz68Wf8nm31EcfB0V7HC1T","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-116","type":"ss","server":"77.83.246.74","port":443,"password":"xp1JCg7vnknRc8FGKWf80l","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-117","type":"ss","server":"194.87.45.189","port":443,"password":"1SITPYc2k3dkXpCc1wMlsT","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-118","type":"ss","server":"89.185.84.185","port":443,"password":"OCMSOdMgB53MIYIhiQzz1n","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-119","type":"ss","server":"81.19.141.45","port":443,"password":"LZ3pHFUBXtKKhaSrL9zLCs","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -135,13 +135,13 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-45'
-      - '@SiNAVM-ss-47'
-      - '@SiNAVM-ss-110'
-      - '@SiNAVM-ss-111'
-      - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
-      - '@SiNAVM-ss-114'
+      - '@SiNAVM-ss-49'
+      - '@SiNAVM-ss-51'
+      - '@SiNAVM-ss-115'
+      - '@SiNAVM-ss-116'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-118'
+      - '@SiNAVM-ss-119'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -149,26 +149,26 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-45'
-      - '@SiNAVM-ss-47'
-      - '@SiNAVM-ss-110'
-      - '@SiNAVM-ss-111'
-      - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
-      - '@SiNAVM-ss-114'
+      - '@SiNAVM-ss-49'
+      - '@SiNAVM-ss-51'
+      - '@SiNAVM-ss-115'
+      - '@SiNAVM-ss-116'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-118'
+      - '@SiNAVM-ss-119'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-45'
-      - '@SiNAVM-ss-47'
-      - '@SiNAVM-ss-110'
-      - '@SiNAVM-ss-111'
-      - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
-      - '@SiNAVM-ss-114'
+      - '@SiNAVM-ss-49'
+      - '@SiNAVM-ss-51'
+      - '@SiNAVM-ss-115'
+      - '@SiNAVM-ss-116'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-118'
+      - '@SiNAVM-ss-119'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
