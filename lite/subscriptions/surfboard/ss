@@ -12,12 +12,12 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 @SiNAVM-ss-1 = ss, 195.35.113.79, 443, encrypt-method = chacha20-ietf-poly1305, password = 8326978747U037CB9MKDQ
-@SiNAVM-ss-42 = ss, 92.112.126.90, 443, encrypt-method = chacha20-ietf-poly1305, password = 9tqhMdIrTkgQ46PvhyAtMH
-@SiNAVM-ss-109 = ss, 45.158.171.70, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-ss-40 = ss, 92.112.126.90, 443, encrypt-method = chacha20-ietf-poly1305, password = 9tqhMdIrTkgQ46PvhyAtMH
+@SiNAVM-ss-108 = ss, 45.158.171.70, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-42,@SiNAVM-ss-109
-URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-42,@SiNAVM-ss-109
-FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-42,@SiNAVM-ss-109
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-40,@SiNAVM-ss-108
+URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-40,@SiNAVM-ss-108
+FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-40,@SiNAVM-ss-108
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
