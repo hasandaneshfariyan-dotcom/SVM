@@ -12,16 +12,17 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 @SiNAVM-ss-1 = ss, 195.35.113.79, 443, encrypt-method = chacha20-ietf-poly1305, password = 8326978747U037CB9MKDQ
-@SiNAVM-ss-97 = ss, 45.158.171.70, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-177 = ss, m1.cartio.sbs, 2096, encrypt-method = aes-256-gcm, password = AqgBwYDeQA
-@SiNAVM-ss-195 = ss, imap.roomyinmita.name, 40565, encrypt-method = chacha20-ietf-poly1305, password = eAsrTRMvEBYpJigh3CCPZgoGQbunHRbdoCJEjj4mCRMbKxbrTrYLwsRdCzLHzDA34aDj1KG4FtbTgeh3PBwR4Ey6JXSfpLa2
-@SiNAVM-ss-198 = ss, 45.87.175.177, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-@SiNAVM-ss-199 = ss, 45.87.175.193, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-@SiNAVM-ss-200 = ss, 91.219.237.163, 990, encrypt-method = chacha20-ietf-poly1305, password = ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+@SiNAVM-ss-20 = ss, 45.87.175.166, 8080, encrypt-method = chacha20-ietf-poly1305, password = QCXDxuDlTTMD7jtgHUjIoj
+@SiNAVM-ss-95 = ss, 45.158.171.70, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-ss-175 = ss, m1.cartio.sbs, 2096, encrypt-method = aes-256-gcm, password = AqgBwYDeQA
+@SiNAVM-ss-193 = ss, imap.roomyinmita.name, 40565, encrypt-method = chacha20-ietf-poly1305, password = eAsrTRMvEBYpJigh3CCPZgoGQbunHRbdoCJEjj4mCRMbKxbrTrYLwsRdCzLHzDA34aDj1KG4FtbTgeh3PBwR4Ey6JXSfpLa2
+@SiNAVM-ss-196 = ss, 45.87.175.177, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+@SiNAVM-ss-197 = ss, 45.87.175.193, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+@SiNAVM-ss-198 = ss, 91.219.237.163, 990, encrypt-method = chacha20-ietf-poly1305, password = ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-97,@SiNAVM-ss-177,@SiNAVM-ss-195,@SiNAVM-ss-198,@SiNAVM-ss-199,@SiNAVM-ss-200
-URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-97,@SiNAVM-ss-177,@SiNAVM-ss-195,@SiNAVM-ss-198,@SiNAVM-ss-199,@SiNAVM-ss-200
-FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-97,@SiNAVM-ss-177,@SiNAVM-ss-195,@SiNAVM-ss-198,@SiNAVM-ss-199,@SiNAVM-ss-200
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-20,@SiNAVM-ss-95,@SiNAVM-ss-175,@SiNAVM-ss-193,@SiNAVM-ss-196,@SiNAVM-ss-197,@SiNAVM-ss-198
+URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-20,@SiNAVM-ss-95,@SiNAVM-ss-175,@SiNAVM-ss-193,@SiNAVM-ss-196,@SiNAVM-ss-197,@SiNAVM-ss-198
+FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-20,@SiNAVM-ss-95,@SiNAVM-ss-175,@SiNAVM-ss-193,@SiNAVM-ss-196,@SiNAVM-ss-197,@SiNAVM-ss-198
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
