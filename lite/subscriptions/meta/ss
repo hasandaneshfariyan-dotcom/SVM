@@ -121,8 +121,10 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-1","type":"ss","server":"195.35.113.79","port":443,"password":"8326978747U037CB9MKDQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-97","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-151","type":"ss","server":"109.122.197.192","port":443,"password":"JNK7CvuvWTpF2ZY3d9ygt1","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-37","type":"ss","server":"ltnl16.saint.ydns.eu","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-40","type":"ss","server":"45.87.175.181","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-101","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-158","type":"ss","server":"109.122.197.192","port":443,"password":"JNK7CvuvWTpF2ZY3d9ygt1","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +132,10 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-97'
-      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-37'
+      - '@SiNAVM-ss-40'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-158'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -139,16 +143,20 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-97'
-      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-37'
+      - '@SiNAVM-ss-40'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-158'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-97'
-      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-37'
+      - '@SiNAVM-ss-40'
+      - '@SiNAVM-ss-101'
+      - '@SiNAVM-ss-158'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
