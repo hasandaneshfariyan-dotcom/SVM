@@ -119,14 +119,14 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-1","type":"ss","server":"195.35.113.79","port":443,"password":"8326978747U037CB9MKDQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-23","type":"ss","server":"45.87.175.181","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-85","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-122","type":"ss","server":"109.122.197.192","port":443,"password":"JNK7CvuvWTpF2ZY3d9ygt1","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-155","type":"ss","server":"46.183.217.204","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-156","type":"ss","server":"45.134.13.75","port":443,"password":"7ceb6444-4595-4c89-91e2-6a606a3f59b2","cipher":"aes-256-gcm"}
-  - {"name":"@SiNAVM-ss-168","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-170","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-182","type":"ss","server":"h110vpnde.outlinekeys.net","port":7048,"password":"UpvYdhs8bc37DeJC3noLMh","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-29","type":"ss","server":"ltnl16.saint.ydns.eu","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-32","type":"ss","server":"45.87.175.181","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-117","type":"ss","server":"109.122.197.192","port":443,"password":"JNK7CvuvWTpF2ZY3d9ygt1","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-150","type":"ss","server":"46.183.217.204","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-151","type":"ss","server":"45.134.13.75","port":443,"password":"7ceb6444-4595-4c89-91e2-6a606a3f59b2","cipher":"aes-256-gcm"}
+  - {"name":"@SiNAVM-ss-163","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-165","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-177","type":"ss","server":"h110vpnde.outlinekeys.net","port":7048,"password":"UpvYdhs8bc37DeJC3noLMh","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -134,14 +134,14 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-85'
-      - '@SiNAVM-ss-122'
-      - '@SiNAVM-ss-155'
-      - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-168'
-      - '@SiNAVM-ss-170'
-      - '@SiNAVM-ss-182'
+      - '@SiNAVM-ss-29'
+      - '@SiNAVM-ss-32'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-150'
+      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-165'
+      - '@SiNAVM-ss-177'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -149,28 +149,28 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-85'
-      - '@SiNAVM-ss-122'
-      - '@SiNAVM-ss-155'
-      - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-168'
-      - '@SiNAVM-ss-170'
-      - '@SiNAVM-ss-182'
+      - '@SiNAVM-ss-29'
+      - '@SiNAVM-ss-32'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-150'
+      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-165'
+      - '@SiNAVM-ss-177'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '@SiNAVM-ss-1'
-      - '@SiNAVM-ss-23'
-      - '@SiNAVM-ss-85'
-      - '@SiNAVM-ss-122'
-      - '@SiNAVM-ss-155'
-      - '@SiNAVM-ss-156'
-      - '@SiNAVM-ss-168'
-      - '@SiNAVM-ss-170'
-      - '@SiNAVM-ss-182'
+      - '@SiNAVM-ss-29'
+      - '@SiNAVM-ss-32'
+      - '@SiNAVM-ss-117'
+      - '@SiNAVM-ss-150'
+      - '@SiNAVM-ss-151'
+      - '@SiNAVM-ss-163'
+      - '@SiNAVM-ss-165'
+      - '@SiNAVM-ss-177'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
