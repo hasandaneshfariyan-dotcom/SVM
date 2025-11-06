@@ -12,14 +12,13 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 @SiNAVM-ss-1 = ss, 195.35.113.79, 443, encrypt-method = chacha20-ietf-poly1305, password = 8326978747U037CB9MKDQ
-@SiNAVM-ss-37 = ss, ltnl16.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
-@SiNAVM-ss-40 = ss, 45.87.175.181, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
-@SiNAVM-ss-101 = ss, 38.180.105.12, 443, encrypt-method = chacha20-ietf-poly1305, password = tJlEWh2PzDMew8qo9YkPEA
-@SiNAVM-ss-158 = ss, 109.122.197.192, 443, encrypt-method = chacha20-ietf-poly1305, password = JNK7CvuvWTpF2ZY3d9ygt1
+@SiNAVM-ss-45 = ss, ltnl16.saint.ydns.eu, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+@SiNAVM-ss-48 = ss, 45.87.175.181, 8080, encrypt-method = chacha20-ietf-poly1305, password = cvII85TrW6n0OGyfpHVS1u
+@SiNAVM-ss-154 = ss, 109.122.197.192, 443, encrypt-method = chacha20-ietf-poly1305, password = JNK7CvuvWTpF2ZY3d9ygt1
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-37,@SiNAVM-ss-40,@SiNAVM-ss-101,@SiNAVM-ss-158
-URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-37,@SiNAVM-ss-40,@SiNAVM-ss-101,@SiNAVM-ss-158
-FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-37,@SiNAVM-ss-40,@SiNAVM-ss-101,@SiNAVM-ss-158
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-1,@SiNAVM-ss-45,@SiNAVM-ss-48,@SiNAVM-ss-154
+URL-TEST = url-test,@SiNAVM-ss-1,@SiNAVM-ss-45,@SiNAVM-ss-48,@SiNAVM-ss-154
+FALLBACK = fallback,@SiNAVM-ss-1,@SiNAVM-ss-45,@SiNAVM-ss-48,@SiNAVM-ss-154
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
