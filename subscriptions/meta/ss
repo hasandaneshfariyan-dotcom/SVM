@@ -121,11 +121,12 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-34","type":"ss","server":"185.47.254.87","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-132","type":"ss","server":"46.183.217.204","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-133","type":"ss","server":"45.134.13.75","port":443,"password":"7ceb6444-4595-4c89-91e2-6a606a3f59b2","cipher":"aes-256-gcm"}
-  - {"name":"@SiNAVM-ss-145","type":"ss","server":"45.87.175.193","port":8080,"password":"cvII85TrW6n0OGyfpHVS1u","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-147","type":"ss","server":"176.126.83.158","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-159","type":"ss","server":"h110vpnde.outlinekeys.net","port":7048,"password":"UpvYdhs8bc37DeJC3noLMh","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-130","type":"ss","server":"84.200.91.158","port":443,"password":"75f0ada7-52cf-4919-bea8-4da0d058a5e9","cipher":"aes-256-gcm"}
+  - {"name":"@SiNAVM-ss-134","type":"ss","server":"45.87.175.158","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-135","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-136","type":"ss","server":"66.23.207.82","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-139","type":"ss","server":"119.59.127.129","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-140","type":"ss","server":"23.95.76.59","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -133,11 +134,12 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-132'
-      - '@SiNAVM-ss-133'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-130'
+      - '@SiNAVM-ss-134'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-136'
+      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-140'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -145,22 +147,24 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-132'
-      - '@SiNAVM-ss-133'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-130'
+      - '@SiNAVM-ss-134'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-136'
+      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-140'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '@SiNAVM-ss-34'
-      - '@SiNAVM-ss-132'
-      - '@SiNAVM-ss-133'
-      - '@SiNAVM-ss-145'
-      - '@SiNAVM-ss-147'
-      - '@SiNAVM-ss-159'
+      - '@SiNAVM-ss-130'
+      - '@SiNAVM-ss-134'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-136'
+      - '@SiNAVM-ss-139'
+      - '@SiNAVM-ss-140'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
