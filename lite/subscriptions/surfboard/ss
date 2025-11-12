@@ -13,15 +13,10 @@ enhanced-mode-by-rule = true
 DIRECT = direct
 @SiNAVM-ss-40 = ss, 185.47.255.22, 990, encrypt-method = chacha20-ietf-poly1305, password = f8f7aCzcPKbsF8p3
 @SiNAVM-ss-44 = ss, arxfw2b78fi2q9hzylhn.freesocks.work, 443, encrypt-method = chacha20-ietf-poly1305, password = Nk9asglDzHzjktVzTkvhaA
-@SiNAVM-ss-166 = ss, series-a2-mec.varzesh360.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
-@SiNAVM-ss-169 = ss, api.namasha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
-@SiNAVM-ss-171 = ss, series-a1.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = W74XFALLLuw6m5IA
-@SiNAVM-ss-178 = ss, series-a2-mec.samanehha.co, 443, encrypt-method = chacha20-ietf-poly1305, password = u17T3BvpYaaiuW2c
-@SiNAVM-ss-182 = ss, admin.c1.webramz.co, 443, encrypt-method = chacha20-ietf-poly1305, password = 1xO2cqPazqjGfCfd
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-40,@SiNAVM-ss-44,@SiNAVM-ss-166,@SiNAVM-ss-169,@SiNAVM-ss-171,@SiNAVM-ss-178,@SiNAVM-ss-182
-URL-TEST = url-test,@SiNAVM-ss-40,@SiNAVM-ss-44,@SiNAVM-ss-166,@SiNAVM-ss-169,@SiNAVM-ss-171,@SiNAVM-ss-178,@SiNAVM-ss-182
-FALLBACK = fallback,@SiNAVM-ss-40,@SiNAVM-ss-44,@SiNAVM-ss-166,@SiNAVM-ss-169,@SiNAVM-ss-171,@SiNAVM-ss-178,@SiNAVM-ss-182
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-40,@SiNAVM-ss-44
+URL-TEST = url-test,@SiNAVM-ss-40,@SiNAVM-ss-44
+FALLBACK = fallback,@SiNAVM-ss-40,@SiNAVM-ss-44
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
