@@ -131,7 +131,9 @@ proxies:
   - {"name":"@SiNAVM-trojan-16","type":"trojan","server":"63.178.186.196","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-17","type":"trojan","server":"13.36.32.209","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-18","type":"trojan","server":"35.181.231.28","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-ss-21","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-trojan-19","type":"trojan","server":"18.158.20.161","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-20","type":"trojan","server":"63.179.16.109","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-ss-23","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -151,7 +153,9 @@ proxy-groups:
       - '@SiNAVM-trojan-16'
       - '@SiNAVM-trojan-17'
       - '@SiNAVM-trojan-18'
-      - '@SiNAVM-ss-21'
+      - '@SiNAVM-trojan-19'
+      - '@SiNAVM-trojan-20'
+      - '@SiNAVM-ss-23'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -171,7 +175,9 @@ proxy-groups:
       - '@SiNAVM-trojan-16'
       - '@SiNAVM-trojan-17'
       - '@SiNAVM-trojan-18'
-      - '@SiNAVM-ss-21'
+      - '@SiNAVM-trojan-19'
+      - '@SiNAVM-trojan-20'
+      - '@SiNAVM-ss-23'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -190,7 +196,9 @@ proxy-groups:
       - '@SiNAVM-trojan-16'
       - '@SiNAVM-trojan-17'
       - '@SiNAVM-trojan-18'
-      - '@SiNAVM-ss-21'
+      - '@SiNAVM-trojan-19'
+      - '@SiNAVM-trojan-20'
+      - '@SiNAVM-ss-23'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
