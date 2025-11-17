@@ -118,59 +118,59 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-ss-22","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-25","type":"ss","server":"92.112.126.90","port":443,"password":"9tqhMdIrTkgQ46PvhyAtMH","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-30","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-70","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-71","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-72","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-73","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-74","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-75","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-24","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-27","type":"ss","server":"92.112.126.90","port":443,"password":"9tqhMdIrTkgQ46PvhyAtMH","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-32","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-71","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-72","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-73","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-74","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-75","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-76","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-30'
-      - '@SiNAVM-ss-70'
+      - '@SiNAVM-ss-24'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-71'
       - '@SiNAVM-ss-72'
       - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
+      - '@SiNAVM-ss-76'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-30'
-      - '@SiNAVM-ss-70'
+      - '@SiNAVM-ss-24'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-71'
       - '@SiNAVM-ss-72'
       - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
+      - '@SiNAVM-ss-76'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-ss-22'
-      - '@SiNAVM-ss-25'
-      - '@SiNAVM-ss-30'
-      - '@SiNAVM-ss-70'
+      - '@SiNAVM-ss-24'
+      - '@SiNAVM-ss-27'
+      - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-71'
       - '@SiNAVM-ss-72'
       - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
+      - '@SiNAVM-ss-76'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
