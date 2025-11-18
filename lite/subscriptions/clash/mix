@@ -140,13 +140,13 @@ proxies:
   - {"name":"@SiNAVM-ss-49","type":"ss","server":"192.71.166.102","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-55","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-trojan-61","type":"trojan","server":"155.138.228.41","port":19313,"udp":false,"password":"vp0GmFj.yIw1RZrd","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.gstatic.com"}
-  - {"name":"@SiNAVM-ss-91","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-92","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-93","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-94","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-95","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-96","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-trojan-150","type":"trojan","server":"96.9.213.108","port":12646,"udp":false,"password":"G9CHhXltVx","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"steampowered.com"}
+  - {"name":"@SiNAVM-ss-90","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-91","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-92","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-93","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-94","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-95","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-trojan-152","type":"trojan","server":"96.9.213.108","port":12646,"udp":false,"password":"G9CHhXltVx","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"steampowered.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -175,13 +175,13 @@ proxy-groups:
       - '@SiNAVM-ss-49'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-trojan-61'
+      - '@SiNAVM-ss-90'
       - '@SiNAVM-ss-91'
       - '@SiNAVM-ss-92'
       - '@SiNAVM-ss-93'
       - '@SiNAVM-ss-94'
       - '@SiNAVM-ss-95'
-      - '@SiNAVM-ss-96'
-      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-152'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -210,13 +210,13 @@ proxy-groups:
       - '@SiNAVM-ss-49'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-trojan-61'
+      - '@SiNAVM-ss-90'
       - '@SiNAVM-ss-91'
       - '@SiNAVM-ss-92'
       - '@SiNAVM-ss-93'
       - '@SiNAVM-ss-94'
       - '@SiNAVM-ss-95'
-      - '@SiNAVM-ss-96'
-      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-152'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -244,13 +244,13 @@ proxy-groups:
       - '@SiNAVM-ss-49'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-trojan-61'
+      - '@SiNAVM-ss-90'
       - '@SiNAVM-ss-91'
       - '@SiNAVM-ss-92'
       - '@SiNAVM-ss-93'
       - '@SiNAVM-ss-94'
       - '@SiNAVM-ss-95'
-      - '@SiNAVM-ss-96'
-      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-152'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
