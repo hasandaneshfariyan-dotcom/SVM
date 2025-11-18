@@ -123,12 +123,12 @@ proxies:
   - {"name":"@SiNAVM-ss-28","type":"ss","server":"38.244.136.233","port":443,"password":"dAHM1pm8ag7KdlrUylQi6t","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-32","type":"ss","server":"192.71.166.102","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-38","type":"ss","server":"142.4.216.225","port":80,"password":"JIhN6rBKkaEboLNXVSv5rq","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-72","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-73","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-74","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-75","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-76","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-77","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-74","type":"ss","server":"81.90.31.219","port":443,"password":"JC1BDEXOdYnc77cH0iuQAO","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-75","type":"ss","server":"89.185.84.185","port":443,"password":"8ExkSWeciR2c9prFpwJ4jX","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-76","type":"ss","server":"194.87.45.189","port":443,"password":"qbyTjrZECEWtB3IRtWr35m","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-77","type":"ss","server":"38.180.105.12","port":443,"password":"tJlEWh2PzDMew8qo9YkPEA","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-78","type":"ss","server":"77.83.246.74","port":443,"password":"cyV2HqVsjk3cEMvdN9iKtN","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-79","type":"ss","server":"193.29.139.191","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -138,12 +138,12 @@ proxy-groups:
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-72'
-      - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
       - '@SiNAVM-ss-76'
       - '@SiNAVM-ss-77'
+      - '@SiNAVM-ss-78'
+      - '@SiNAVM-ss-79'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -153,12 +153,12 @@ proxy-groups:
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-72'
-      - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
       - '@SiNAVM-ss-76'
       - '@SiNAVM-ss-77'
+      - '@SiNAVM-ss-78'
+      - '@SiNAVM-ss-79'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -167,12 +167,12 @@ proxy-groups:
       - '@SiNAVM-ss-28'
       - '@SiNAVM-ss-32'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-72'
-      - '@SiNAVM-ss-73'
       - '@SiNAVM-ss-74'
       - '@SiNAVM-ss-75'
       - '@SiNAVM-ss-76'
       - '@SiNAVM-ss-77'
+      - '@SiNAVM-ss-78'
+      - '@SiNAVM-ss-79'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
