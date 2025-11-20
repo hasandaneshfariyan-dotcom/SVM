@@ -137,7 +137,8 @@ proxies:
   - {"name":"@SiNAVM-trojan-38","type":"trojan","server":"3.77.167.140","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-39","type":"trojan","server":"13.39.215.120","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-40","type":"trojan","server":"13.36.72.124","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-ss-52","type":"ss","server":"38.244.136.233","port":443,"password":"dAHM1pm8ag7KdlrUylQi6t","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-41","type":"ss","server":"134.255.210.49","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-trojan-56","type":"trojan","server":"145.223.70.115","port":25365,"udp":false,"password":"eDHWaPzxcl","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"apple.com<br/>vless://df0680ca-e43c-498d-ed86-8e196eedd012@94.131.110.119:8880/?type=grpc"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -163,7 +164,8 @@ proxy-groups:
       - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-39'
       - '@SiNAVM-trojan-40'
-      - '@SiNAVM-ss-52'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-trojan-56'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -189,7 +191,8 @@ proxy-groups:
       - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-39'
       - '@SiNAVM-trojan-40'
-      - '@SiNAVM-ss-52'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-trojan-56'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -214,7 +217,8 @@ proxy-groups:
       - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-39'
       - '@SiNAVM-trojan-40'
-      - '@SiNAVM-ss-52'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-trojan-56'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
