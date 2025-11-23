@@ -11,12 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-vmess-153 = vmess, 5.231.56.98, 3721, username = 5f2f0765-f331-4d1e-8560-d2fb533dd6fe, ws = true, tls = , vmess-aead = true, ws-path = , ws-headers = Host:"", skip-cert-verify = true, tfo = false
-@SiNAVM-vmess-155 = vmess, 45.8.146.129, 80, username = 0704016f-5435-4655-be6a-771a5aba52c3, ws = true, tls = , vmess-aead = true, ws-path = /vmess/, ws-headers = Host:"google.com", skip-cert-verify = true, tfo = false
+@SiNAVM-vmess-152 = vmess, 5.231.56.98, 3721, username = 5f2f0765-f331-4d1e-8560-d2fb533dd6fe, ws = true, tls = , vmess-aead = true, ws-path = , ws-headers = Host:"", skip-cert-verify = true, tfo = false
+@SiNAVM-vmess-154 = vmess, 45.8.146.129, 80, username = 0704016f-5435-4655-be6a-771a5aba52c3, ws = true, tls = , vmess-aead = true, ws-path = /vmess/, ws-headers = Host:"google.com", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-153,@SiNAVM-vmess-155
-URL-TEST = url-test,@SiNAVM-vmess-153,@SiNAVM-vmess-155
-FALLBACK = fallback,@SiNAVM-vmess-153,@SiNAVM-vmess-155
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-152,@SiNAVM-vmess-154
+URL-TEST = url-test,@SiNAVM-vmess-152,@SiNAVM-vmess-154
+FALLBACK = fallback,@SiNAVM-vmess-152,@SiNAVM-vmess-154
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
