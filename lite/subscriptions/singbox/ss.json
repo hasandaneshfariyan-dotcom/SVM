@@ -64,7 +64,8 @@
             "outbounds": [
                 "Best Latency",
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
@@ -72,7 +73,8 @@
             "tag": "Best Latency",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -91,13 +93,23 @@
         },
         {
             "type": "shadowsocks",
+            "server": "51.195.119.47",
+            "server_port": 1080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "qXvO7zYU7KeaB0Md7DQLow",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "shadowsocks",
             "server": "188.214.36.155",
             "server_port": 990,
             "method": "chacha20-ietf-poly1305",
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
