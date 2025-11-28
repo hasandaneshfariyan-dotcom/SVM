@@ -133,7 +133,9 @@ proxies:
   - {"name":"@SiNAVM-trojan-28","type":"trojan","server":"13.38.179.73","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-30","type":"trojan","server":"13.37.149.144","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-31","type":"trojan","server":"54.93.35.33","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-trojan-54","type":"trojan","server":"217.69.10.156","port":16288,"udp":false,"password":"5fbEkKmVOdAY 8_-","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"web.max.ru"}
+  - {"name":"@SiNAVM-trojan-32","type":"trojan","server":"63.184.0.115","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-33","type":"trojan","server":"13.39.66.173","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-56","type":"trojan","server":"217.69.10.156","port":16288,"udp":false,"password":"5fbEkKmVOdAY 8_-","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"web.max.ru"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -153,7 +155,9 @@ proxy-groups:
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
-      - '@SiNAVM-trojan-54'
+      - '@SiNAVM-trojan-32'
+      - '@SiNAVM-trojan-33'
+      - '@SiNAVM-trojan-56'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -173,7 +177,9 @@ proxy-groups:
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
-      - '@SiNAVM-trojan-54'
+      - '@SiNAVM-trojan-32'
+      - '@SiNAVM-trojan-33'
+      - '@SiNAVM-trojan-56'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -192,7 +198,9 @@ proxy-groups:
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
-      - '@SiNAVM-trojan-54'
+      - '@SiNAVM-trojan-32'
+      - '@SiNAVM-trojan-33'
+      - '@SiNAVM-trojan-56'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
