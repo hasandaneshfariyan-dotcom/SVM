@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-vmess-172","type":"vmess","server":"finland.mobilesalimi.sbs","port":"8081","cipher":"auto","uuid":"8d139848-488e-4541-bc2d-7808f46e41dc","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"@SiNAVM-vmess-171","type":"vmess","server":"finland.mobilesalimi.sbs","port":"8081","cipher":"auto","uuid":"8d139848-488e-4541-bc2d-7808f46e41dc","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-vmess-172'
+      - '@SiNAVM-vmess-171'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-vmess-172'
+      - '@SiNAVM-vmess-171'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-vmess-172'
+      - '@SiNAVM-vmess-171'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
