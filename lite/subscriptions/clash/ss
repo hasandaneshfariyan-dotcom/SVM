@@ -119,7 +119,7 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-4","type":"ss","server":"95.181.162.236","port":20904,"password":"H5PueWRwANIUF0knf3UGCD","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-36","type":"ss","server":"147.78.1.27","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-34","type":"ss","server":"147.78.1.27","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -127,7 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-34'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -135,14 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-34'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-34'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
