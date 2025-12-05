@@ -121,8 +121,9 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-4","type":"ss","server":"95.181.162.236","port":20904,"password":"H5PueWRwANIUF0knf3UGCD","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-35","type":"ss","server":"154.205.159.100","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-36","type":"ss","server":"185.47.252.251","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-41","type":"ss","server":"119.59.98.58","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-43","type":"ss","server":"154.205.159.100","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-44","type":"ss","server":"185.47.252.251","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,8 +131,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-35'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-ss-43'
+      - '@SiNAVM-ss-44'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -139,16 +141,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-35'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-ss-43'
+      - '@SiNAVM-ss-44'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '@SiNAVM-ss-4'
-      - '@SiNAVM-ss-35'
-      - '@SiNAVM-ss-36'
+      - '@SiNAVM-ss-41'
+      - '@SiNAVM-ss-43'
+      - '@SiNAVM-ss-44'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
