@@ -11,11 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-vmess-150 = vmess, 185.90.62.25, 44749, username = 4f3cfda3-a255-40eb-8801-71f9fffb19d6, ws = true, tls = 1, vmess-aead = true, ws-path = /speedtest, ws-headers = Host:"imafake.locker", skip-cert-verify = true, tfo = false
+@SiNAVM-vmess-151 = vmess, 185.90.62.25, 44749, username = 4f3cfda3-a255-40eb-8801-71f9fffb19d6, ws = true, tls = 1, vmess-aead = true, ws-path = /speedtest, ws-headers = Host:"imafake.locker", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-150
-URL-TEST = url-test,@SiNAVM-vmess-150
-FALLBACK = fallback,@SiNAVM-vmess-150
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-151
+URL-TEST = url-test,@SiNAVM-vmess-151
+FALLBACK = fallback,@SiNAVM-vmess-151
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
