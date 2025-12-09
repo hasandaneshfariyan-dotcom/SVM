@@ -135,9 +135,11 @@ proxies:
   - {"name":"@SiNAVM-trojan-34","type":"trojan","server":"15.236.106.204","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-35","type":"trojan","server":"13.39.212.231","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-36","type":"trojan","server":"3.121.158.132","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-trojan-178","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
-  - {"name":"@SiNAVM-trojan-179","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
-  - {"name":"@SiNAVM-trojan-180","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
+  - {"name":"@SiNAVM-trojan-37","type":"trojan","server":"63.181.59.61","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-38","type":"trojan","server":"13.37.144.126","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
+  - {"name":"@SiNAVM-trojan-180","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
+  - {"name":"@SiNAVM-trojan-181","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
+  - {"name":"@SiNAVM-trojan-182","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -159,9 +161,11 @@ proxy-groups:
       - '@SiNAVM-trojan-34'
       - '@SiNAVM-trojan-35'
       - '@SiNAVM-trojan-36'
-      - '@SiNAVM-trojan-178'
-      - '@SiNAVM-trojan-179'
+      - '@SiNAVM-trojan-37'
+      - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-180'
+      - '@SiNAVM-trojan-181'
+      - '@SiNAVM-trojan-182'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -183,9 +187,11 @@ proxy-groups:
       - '@SiNAVM-trojan-34'
       - '@SiNAVM-trojan-35'
       - '@SiNAVM-trojan-36'
-      - '@SiNAVM-trojan-178'
-      - '@SiNAVM-trojan-179'
+      - '@SiNAVM-trojan-37'
+      - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-180'
+      - '@SiNAVM-trojan-181'
+      - '@SiNAVM-trojan-182'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -206,9 +212,11 @@ proxy-groups:
       - '@SiNAVM-trojan-34'
       - '@SiNAVM-trojan-35'
       - '@SiNAVM-trojan-36'
-      - '@SiNAVM-trojan-178'
-      - '@SiNAVM-trojan-179'
+      - '@SiNAVM-trojan-37'
+      - '@SiNAVM-trojan-38'
       - '@SiNAVM-trojan-180'
+      - '@SiNAVM-trojan-181'
+      - '@SiNAVM-trojan-182'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
