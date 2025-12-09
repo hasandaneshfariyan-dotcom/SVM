@@ -120,27 +120,27 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"@SiNAVM-vmess-171","type":"vmess","server":"185.90.62.25","port":"44749","cipher":"auto","uuid":"4f3cfda3-a255-40eb-8801-71f9fffb19d6","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/speedtest","headers":{"host":"imafake.locker"}}}
+  - {"name":"@SiNAVM-vmess-173","type":"vmess","server":"185.90.62.25","port":"44749","cipher":"auto","uuid":"4f3cfda3-a255-40eb-8801-71f9fffb19d6","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/speedtest","headers":{"host":"imafake.locker"}}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-vmess-171'
+      - '@SiNAVM-vmess-173'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-vmess-171'
+      - '@SiNAVM-vmess-173'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - '@SiNAVM-vmess-171'
+      - '@SiNAVM-vmess-173'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
