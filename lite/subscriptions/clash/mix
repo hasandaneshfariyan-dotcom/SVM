@@ -139,10 +139,9 @@ proxies:
   - {"name":"@SiNAVM-ss-53","type":"ss","server":"185.47.254.87","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-55","type":"ss","server":"185.192.124.188","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-59","type":"ss","server":"119.59.98.58","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-61","type":"ss","server":"154.205.159.100","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-trojan-179","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
-  - {"name":"@SiNAVM-trojan-180","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
-  - {"name":"@SiNAVM-trojan-181","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
+  - {"name":"@SiNAVM-trojan-178","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
+  - {"name":"@SiNAVM-trojan-179","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
+  - {"name":"@SiNAVM-trojan-180","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -170,10 +169,9 @@ proxy-groups:
       - '@SiNAVM-ss-53'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-ss-59'
-      - '@SiNAVM-ss-61'
+      - '@SiNAVM-trojan-178'
       - '@SiNAVM-trojan-179'
       - '@SiNAVM-trojan-180'
-      - '@SiNAVM-trojan-181'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -201,10 +199,9 @@ proxy-groups:
       - '@SiNAVM-ss-53'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-ss-59'
-      - '@SiNAVM-ss-61'
+      - '@SiNAVM-trojan-178'
       - '@SiNAVM-trojan-179'
       - '@SiNAVM-trojan-180'
-      - '@SiNAVM-trojan-181'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -231,10 +228,9 @@ proxy-groups:
       - '@SiNAVM-ss-53'
       - '@SiNAVM-ss-55'
       - '@SiNAVM-ss-59'
-      - '@SiNAVM-ss-61'
+      - '@SiNAVM-trojan-178'
       - '@SiNAVM-trojan-179'
       - '@SiNAVM-trojan-180'
-      - '@SiNAVM-trojan-181'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
