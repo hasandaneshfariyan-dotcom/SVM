@@ -120,14 +120,13 @@ dns:
 proxies:
   - {"name":"@SiNAVM-ss-36","type":"ss","server":"185.47.254.87","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-38","type":"ss","server":"185.192.124.188","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-42","type":"ss","server":"119.59.98.58","port":990,"password":"f8f7aCzcPKbsF8p3","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-131","type":"ss","server":"209.74.86.194","port":14936,"password":"ppgtoOHdm7cszGunBWBTqQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-133","type":"ss","server":"82.38.31.191","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-134","type":"ss","server":"82.38.31.214","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-136","type":"ss","server":"45.87.175.177","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-139","type":"ss","server":"82.38.31.194","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-140","type":"ss","server":"82.38.31.208","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-147","type":"ss","server":"209.74.86.117","port":22011,"password":"YF0qsSdUHeJxp3ycKlP1Ka","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-126","type":"ss","server":"209.74.86.194","port":14936,"password":"ppgtoOHdm7cszGunBWBTqQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-128","type":"ss","server":"82.38.31.191","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-129","type":"ss","server":"82.38.31.214","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-131","type":"ss","server":"45.87.175.177","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-134","type":"ss","server":"82.38.31.194","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-135","type":"ss","server":"82.38.31.208","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-142","type":"ss","server":"209.74.86.117","port":22011,"password":"YF0qsSdUHeJxp3ycKlP1Ka","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -136,14 +135,13 @@ proxy-groups:
       - FALLBACK
       - '@SiNAVM-ss-36'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-42'
+      - '@SiNAVM-ss-126'
+      - '@SiNAVM-ss-128'
+      - '@SiNAVM-ss-129'
       - '@SiNAVM-ss-131'
-      - '@SiNAVM-ss-133'
       - '@SiNAVM-ss-134'
-      - '@SiNAVM-ss-136'
-      - '@SiNAVM-ss-139'
-      - '@SiNAVM-ss-140'
-      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-142'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -152,14 +150,13 @@ proxy-groups:
     proxies:
       - '@SiNAVM-ss-36'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-42'
+      - '@SiNAVM-ss-126'
+      - '@SiNAVM-ss-128'
+      - '@SiNAVM-ss-129'
       - '@SiNAVM-ss-131'
-      - '@SiNAVM-ss-133'
       - '@SiNAVM-ss-134'
-      - '@SiNAVM-ss-136'
-      - '@SiNAVM-ss-139'
-      - '@SiNAVM-ss-140'
-      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-142'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -167,14 +164,13 @@ proxy-groups:
     proxies:
       - '@SiNAVM-ss-36'
       - '@SiNAVM-ss-38'
-      - '@SiNAVM-ss-42'
+      - '@SiNAVM-ss-126'
+      - '@SiNAVM-ss-128'
+      - '@SiNAVM-ss-129'
       - '@SiNAVM-ss-131'
-      - '@SiNAVM-ss-133'
       - '@SiNAVM-ss-134'
-      - '@SiNAVM-ss-136'
-      - '@SiNAVM-ss-139'
-      - '@SiNAVM-ss-140'
-      - '@SiNAVM-ss-147'
+      - '@SiNAVM-ss-135'
+      - '@SiNAVM-ss-142'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
