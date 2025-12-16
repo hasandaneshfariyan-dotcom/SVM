@@ -119,7 +119,7 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-58","type":"ss","server":"promo1o.bystrivpn.ru","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-97","type":"ss","server":"51.195.203.247","port":8443,"password":"OMOpV2XCoMOBYsKGAjLDmsKkw6bDpMOkdVhtD15fwpQqw70AN8Krw6AyH8OaCQ==","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-98","type":"ss","server":"51.195.203.247","port":8443,"password":"OMOpV2XCoMOBYsKGAjLDmsKkw6bDpMOkdVhtD15fwpQqw70AN8Krw6AyH8OaCQ==","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -127,7 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-58'
-      - '@SiNAVM-ss-97'
+      - '@SiNAVM-ss-98'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -135,14 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-58'
-      - '@SiNAVM-ss-97'
+      - '@SiNAVM-ss-98'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - '@SiNAVM-ss-58'
-      - '@SiNAVM-ss-97'
+      - '@SiNAVM-ss-98'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
