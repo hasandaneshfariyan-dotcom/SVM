@@ -121,8 +121,8 @@ proxies:
   - {"name":"@SiNAVM-ss-8","type":"ss","server":"78.40.116.165","port":30604,"password":"MryXRyZ9MYr49y2OvEYVRq","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-10","type":"ss","server":"45.88.183.124","port":25578,"password":"bCZLsl80SLLqkljWS7yRk8","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-11","type":"ss","server":"31.3.209.183","port":28212,"password":"Kmn7dHPw5wNfkqQMPcGWQA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-112","type":"ss","server":"45.95.232.236","port":4248,"password":"hNOZp9FIp83Q6ZeWIJbeTM","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-113","type":"ss","server":"51.195.203.247","port":8443,"password":"OMOpV2XCoMOBYsKGAjLDmsKkw6bDpMOkdVhtD15fwpQqw70AN8Krw6AyH8OaCQ==","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-111","type":"ss","server":"45.95.232.236","port":4248,"password":"hNOZp9FIp83Q6ZeWIJbeTM","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-112","type":"ss","server":"51.195.203.247","port":8443,"password":"OMOpV2XCoMOBYsKGAjLDmsKkw6bDpMOkdVhtD15fwpQqw70AN8Krw6AyH8OaCQ==","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -132,8 +132,8 @@ proxy-groups:
       - '@SiNAVM-ss-8'
       - '@SiNAVM-ss-10'
       - '@SiNAVM-ss-11'
+      - '@SiNAVM-ss-111'
       - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -143,8 +143,8 @@ proxy-groups:
       - '@SiNAVM-ss-8'
       - '@SiNAVM-ss-10'
       - '@SiNAVM-ss-11'
+      - '@SiNAVM-ss-111'
       - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -153,8 +153,8 @@ proxy-groups:
       - '@SiNAVM-ss-8'
       - '@SiNAVM-ss-10'
       - '@SiNAVM-ss-11'
+      - '@SiNAVM-ss-111'
       - '@SiNAVM-ss-112'
-      - '@SiNAVM-ss-113'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
