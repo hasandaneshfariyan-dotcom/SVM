@@ -135,10 +135,10 @@ proxies:
   - {"name":"@SiNAVM-trojan-27","type":"trojan","server":"63.181.135.100","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-28","type":"trojan","server":"63.178.33.36","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-29","type":"trojan","server":"13.39.249.92","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-trojan-63","type":"trojan","server":"185.212.171.204","port":58670,"udp":false,"password":"fri4wn77p7urww5on3bt","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"github.com"}
-  - {"name":"@SiNAVM-trojan-152","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
-  - {"name":"@SiNAVM-trojan-153","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
-  - {"name":"@SiNAVM-trojan-154","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
+  - {"name":"@SiNAVM-trojan-61","type":"trojan","server":"185.212.171.204","port":58670,"udp":false,"password":"fri4wn77p7urww5on3bt","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"github.com"}
+  - {"name":"@SiNAVM-trojan-150","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
+  - {"name":"@SiNAVM-trojan-151","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
+  - {"name":"@SiNAVM-trojan-152","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -160,10 +160,10 @@ proxy-groups:
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-29'
-      - '@SiNAVM-trojan-63'
+      - '@SiNAVM-trojan-61'
+      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-151'
       - '@SiNAVM-trojan-152'
-      - '@SiNAVM-trojan-153'
-      - '@SiNAVM-trojan-154'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -185,10 +185,10 @@ proxy-groups:
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-29'
-      - '@SiNAVM-trojan-63'
+      - '@SiNAVM-trojan-61'
+      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-151'
       - '@SiNAVM-trojan-152'
-      - '@SiNAVM-trojan-153'
-      - '@SiNAVM-trojan-154'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -209,10 +209,10 @@ proxy-groups:
       - '@SiNAVM-trojan-27'
       - '@SiNAVM-trojan-28'
       - '@SiNAVM-trojan-29'
-      - '@SiNAVM-trojan-63'
+      - '@SiNAVM-trojan-61'
+      - '@SiNAVM-trojan-150'
+      - '@SiNAVM-trojan-151'
       - '@SiNAVM-trojan-152'
-      - '@SiNAVM-trojan-153'
-      - '@SiNAVM-trojan-154'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
