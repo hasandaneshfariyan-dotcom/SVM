@@ -11,11 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-vmess-182 = vmess, m.cnmjin.net, 16645, username = dc875b7c-c954-40e0-9007-73a4422e25c8, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"53bcf48886181e0dd5bd8dea7ab9d4a2.mobgslb.tbcache.com", skip-cert-verify = true, tfo = false
+@SiNAVM-vmess-178 = vmess, m.cnmjin.net, 16645, username = dc875b7c-c954-40e0-9007-73a4422e25c8, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"53bcf48886181e0dd5bd8dea7ab9d4a2.mobgslb.tbcache.com", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-182
-URL-TEST = url-test,@SiNAVM-vmess-182
-FALLBACK = fallback,@SiNAVM-vmess-182
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-vmess-178
+URL-TEST = url-test,@SiNAVM-vmess-178
+FALLBACK = fallback,@SiNAVM-vmess-178
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
