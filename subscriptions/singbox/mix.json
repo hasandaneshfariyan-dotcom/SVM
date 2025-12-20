@@ -459,7 +459,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.76.178.121",
+            "server": "35.181.17.177",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -481,7 +481,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.181.206.67",
+            "server": "3.76.178.121",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -503,7 +503,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.236.119.43",
+            "server": "63.181.206.67",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -525,7 +525,7 @@
         },
         {
             "type": "trojan",
-            "server": "15.188.211.210",
+            "server": "15.236.119.43",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -547,7 +547,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.73.148.183",
+            "server": "15.188.211.210",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -569,7 +569,7 @@
         },
         {
             "type": "trojan",
-            "server": "18.196.149.70",
+            "server": "3.73.148.183",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -591,7 +591,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.36.143.88",
+            "server": "18.196.149.70",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -613,7 +613,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.147.205",
+            "server": "13.36.143.88",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -635,7 +635,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.70.123.224",
+            "server": "51.44.147.205",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -657,7 +657,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.180.76.243",
+            "server": "3.70.123.224",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -679,7 +679,7 @@
         },
         {
             "type": "trojan",
-            "server": "51.44.123.219",
+            "server": "63.180.76.243",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -701,7 +701,7 @@
         },
         {
             "type": "trojan",
-            "server": "13.37.120.137",
+            "server": "51.44.123.219",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -723,7 +723,7 @@
         },
         {
             "type": "trojan",
-            "server": "63.181.140.175",
+            "server": "13.37.120.137",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -745,7 +745,7 @@
         },
         {
             "type": "trojan",
-            "server": "3.66.69.180",
+            "server": "63.181.140.175",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -767,7 +767,7 @@
         },
         {
             "type": "trojan",
-            "server": "35.181.129.195",
+            "server": "3.66.69.180",
             "server_port": 22223,
             "password": "telegram-id-directvpn",
             "domain_strategy": "prefer_ipv4",
@@ -1242,6 +1242,38 @@
             "tag": "@SiNAVM-43"
         },
         {
+            "type": "vless",
+            "server": "185.235.241.150",
+            "server_port": 443,
+            "uuid": "e615a5ba-fce3-4ffa-9c86-b0327a8a107a",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "m.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomvless:\/\/d3bceb00-9a45-4fb1-a417-d110721101f4@104.248.171.106:443\/?type=ws"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/nzcjowws",
+                "headers": {
+                    "Host": "m.vk.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-44"
+        },
+        {
             "type": "trojan",
             "server": "45.63.40.126",
             "server_port": 13345,
@@ -1261,7 +1293,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-44"
+            "tag": "@SiNAVM-45"
         },
         {
             "type": "vless",
@@ -1282,29 +1314,6 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chromevless:\/\/95b1344a-2b59-419f-ab7d-2ff7e5c6aa34@91.98.93.136:443\/?type=grpc"
-                }
-            },
-            "tag": "@SiNAVM-45"
-        },
-        {
-            "type": "vless",
-            "server": "146.19.80.218",
-            "server_port": 443,
-            "uuid": "309fa273-6579-4cb2-9143-7cad50401eba",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.vk.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
                 }
             },
             "tag": "@SiNAVM-46"

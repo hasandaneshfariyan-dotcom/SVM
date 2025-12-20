@@ -757,6 +757,38 @@
         },
         {
             "type": "vless",
+            "server": "185.235.241.150",
+            "server_port": 443,
+            "uuid": "e615a5ba-fce3-4ffa-9c86-b0327a8a107a",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "m.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "randomvless:\/\/d3bceb00-9a45-4fb1-a417-d110721101f4@104.248.171.106:443\/?type=ws"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/nzcjowws",
+                "headers": {
+                    "Host": "m.vk.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-23"
+        },
+        {
+            "type": "vless",
             "server": "146.19.80.220",
             "server_port": 443,
             "uuid": "309fa273-6579-4cb2-9143-7cad50401eba",
@@ -774,29 +806,6 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chromevless:\/\/95b1344a-2b59-419f-ab7d-2ff7e5c6aa34@91.98.93.136:443\/?type=grpc"
-                }
-            },
-            "tag": "@SiNAVM-23"
-        },
-        {
-            "type": "vless",
-            "server": "146.19.80.218",
-            "server_port": 443,
-            "uuid": "309fa273-6579-4cb2-9143-7cad50401eba",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.vk.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
                 }
             },
             "tag": "@SiNAVM-24"
