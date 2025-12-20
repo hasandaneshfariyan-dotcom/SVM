@@ -124,8 +124,8 @@ proxies:
   - {"name":"@SiNAVM-ss-9","type":"ss","server":"78.40.116.165","port":30604,"password":"MryXRyZ9MYr49y2OvEYVRq","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-11","type":"ss","server":"45.88.183.124","port":25578,"password":"bCZLsl80SLLqkljWS7yRk8","cipher":"chacha20-ietf-poly1305"}
   - {"name":"@SiNAVM-ss-12","type":"ss","server":"31.3.209.183","port":28212,"password":"Kmn7dHPw5wNfkqQMPcGWQA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-65","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-68","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-63","type":"ss","server":"185.237.185.89","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-66","type":"ss","server":"212.34.140.184","port":443,"password":"0NeN5ta7FLa5B9DLytU0um","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -136,8 +136,8 @@ proxy-groups:
       - '@SiNAVM-ss-9'
       - '@SiNAVM-ss-11'
       - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-65'
-      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-63'
+      - '@SiNAVM-ss-66'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -148,8 +148,8 @@ proxy-groups:
       - '@SiNAVM-ss-9'
       - '@SiNAVM-ss-11'
       - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-65'
-      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-63'
+      - '@SiNAVM-ss-66'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -159,8 +159,8 @@ proxy-groups:
       - '@SiNAVM-ss-9'
       - '@SiNAVM-ss-11'
       - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-65'
-      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-63'
+      - '@SiNAVM-ss-66'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
