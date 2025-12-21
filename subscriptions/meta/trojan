@@ -136,10 +136,10 @@ proxies:
   - {"name":"@SiNAVM-trojan-30","type":"trojan","server":"51.44.147.205","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-31","type":"trojan","server":"3.70.123.224","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
   - {"name":"@SiNAVM-trojan-32","type":"trojan","server":"63.180.76.243","port":22223,"udp":false,"password":"telegram-id-directvpn","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"trojan.burgerip.co.uk"}
-  - {"name":"@SiNAVM-trojan-141","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
-  - {"name":"@SiNAVM-trojan-142","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
-  - {"name":"@SiNAVM-trojan-143","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
-  - {"name":"@SiNAVM-trojan-157","type":"trojan","server":"160.16.132.158","port":1507,"udp":false,"password":"e2722c0fb503f8a592436c12bce0509a","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.nintendogames.net"}
+  - {"name":"@SiNAVM-trojan-142","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"rEdfRee8.redfREE8.IR"}
+  - {"name":"@SiNAVM-trojan-143","type":"trojan","server":"redfree8.redfree8.ir","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ReDFreE8.ReDfREe8.iR"}
+  - {"name":"@SiNAVM-trojan-144","type":"trojan","server":"172.67.134.185","port":443,"udp":false,"password":"POORIARED","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"reDfRee8.REDFree8.ir"}
+  - {"name":"@SiNAVM-trojan-158","type":"trojan","server":"160.16.132.158","port":1507,"udp":false,"password":"e2722c0fb503f8a592436c12bce0509a","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.nintendogames.net"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -162,10 +162,10 @@ proxy-groups:
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
       - '@SiNAVM-trojan-32'
-      - '@SiNAVM-trojan-141'
       - '@SiNAVM-trojan-142'
       - '@SiNAVM-trojan-143'
-      - '@SiNAVM-trojan-157'
+      - '@SiNAVM-trojan-144'
+      - '@SiNAVM-trojan-158'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -188,10 +188,10 @@ proxy-groups:
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
       - '@SiNAVM-trojan-32'
-      - '@SiNAVM-trojan-141'
       - '@SiNAVM-trojan-142'
       - '@SiNAVM-trojan-143'
-      - '@SiNAVM-trojan-157'
+      - '@SiNAVM-trojan-144'
+      - '@SiNAVM-trojan-158'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -213,10 +213,10 @@ proxy-groups:
       - '@SiNAVM-trojan-30'
       - '@SiNAVM-trojan-31'
       - '@SiNAVM-trojan-32'
-      - '@SiNAVM-trojan-141'
       - '@SiNAVM-trojan-142'
       - '@SiNAVM-trojan-143'
-      - '@SiNAVM-trojan-157'
+      - '@SiNAVM-trojan-144'
+      - '@SiNAVM-trojan-158'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
