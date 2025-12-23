@@ -118,27 +118,27 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"@SiNAVM-vmess-189","type":"vmess","server":"m.cnmjin.net","port":"16645","cipher":"auto","uuid":"dc875b7c-c954-40e0-9007-73a4422e25c8","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"53bcf48886181e0dd5bd8dea7ab9d4a2.mobgslb.tbcache.com"}}}
+  - {"name":"@SiNAVM-vmess-183","type":"vmess","server":"m.cnmjin.net","port":"16645","cipher":"auto","uuid":"dc875b7c-c954-40e0-9007-73a4422e25c8","alterId":"0","tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"53bcf48886181e0dd5bd8dea7ab9d4a2.mobgslb.tbcache.com"}}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - '@SiNAVM-vmess-189'
+      - '@SiNAVM-vmess-183'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - '@SiNAVM-vmess-189'
+      - '@SiNAVM-vmess-183'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - '@SiNAVM-vmess-189'
+      - '@SiNAVM-vmess-183'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
