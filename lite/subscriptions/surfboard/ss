@@ -14,10 +14,11 @@ DIRECT = direct
 @SiNAVM-ss-10 = ss, 78.40.116.165, 30604, encrypt-method = chacha20-ietf-poly1305, password = MryXRyZ9MYr49y2OvEYVRq
 @SiNAVM-ss-12 = ss, 45.88.183.124, 25578, encrypt-method = chacha20-ietf-poly1305, password = bCZLsl80SLLqkljWS7yRk8
 @SiNAVM-ss-13 = ss, 31.3.209.183, 28212, encrypt-method = chacha20-ietf-poly1305, password = Kmn7dHPw5wNfkqQMPcGWQA
+@SiNAVM-ss-55 = ss, 193.29.139.179, 8080, encrypt-method = chacha20-ietf-poly1305, password = 4a2rfixophdjffa8KVA4Aa
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13
-URL-TEST = url-test,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13
-FALLBACK = fallback,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13,@SiNAVM-ss-55
+URL-TEST = url-test,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13,@SiNAVM-ss-55
+FALLBACK = fallback,@SiNAVM-ss-10,@SiNAVM-ss-12,@SiNAVM-ss-13,@SiNAVM-ss-55
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
