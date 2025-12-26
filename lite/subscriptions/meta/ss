@@ -121,11 +121,9 @@ dns:
 
 proxies:
   - {"name":"@SiNAVM-ss-10","type":"ss","server":"78.40.116.165","port":30604,"password":"MryXRyZ9MYr49y2OvEYVRq","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-12","type":"ss","server":"45.88.183.124","port":25578,"password":"bCZLsl80SLLqkljWS7yRk8","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-13","type":"ss","server":"31.3.209.183","port":28212,"password":"Kmn7dHPw5wNfkqQMPcGWQA","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-60","type":"ss","server":"38.54.59.107","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-73","type":"ss","server":"154.223.20.79","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"@SiNAVM-ss-74","type":"ss","server":"38.244.136.233","port":443,"password":"dAHM1pm8ag7KdlrUylQi6t","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-55","type":"ss","server":"38.54.59.107","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-68","type":"ss","server":"154.223.20.79","port":990,"password":"ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"@SiNAVM-ss-69","type":"ss","server":"38.244.136.233","port":443,"password":"dAHM1pm8ag7KdlrUylQi6t","cipher":"chacha20-ietf-poly1305"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -133,11 +131,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - '@SiNAVM-ss-10'
-      - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-13'
-      - '@SiNAVM-ss-60'
-      - '@SiNAVM-ss-73'
-      - '@SiNAVM-ss-74'
+      - '@SiNAVM-ss-55'
+      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-69'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -145,22 +141,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - '@SiNAVM-ss-10'
-      - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-13'
-      - '@SiNAVM-ss-60'
-      - '@SiNAVM-ss-73'
-      - '@SiNAVM-ss-74'
+      - '@SiNAVM-ss-55'
+      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-69'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - '@SiNAVM-ss-10'
-      - '@SiNAVM-ss-12'
-      - '@SiNAVM-ss-13'
-      - '@SiNAVM-ss-60'
-      - '@SiNAVM-ss-73'
-      - '@SiNAVM-ss-74'
+      - '@SiNAVM-ss-55'
+      - '@SiNAVM-ss-68'
+      - '@SiNAVM-ss-69'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
