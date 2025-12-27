@@ -60,11 +60,7 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9"
+                "@SiNAVM-5"
             ]
         },
         {
@@ -75,11 +71,7 @@
                 "@SiNAVM-2",
                 "@SiNAVM-3",
                 "@SiNAVM-4",
-                "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9"
+                "@SiNAVM-5"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
@@ -87,84 +79,113 @@
         },
         {
             "type": "vless",
-            "server": "31.57.225.233",
+            "server": "217.16.19.114",
             "server_port": 443,
-            "uuid": "a0e804c3-55e2-4d51-82c7-33976d6748cb",
+            "uuid": "0f6c83bc-34ba-4ca1-96e6-08b3620cbce5",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "tag": "@SiNAVM-1"
         },
         {
             "type": "vless",
-            "server": "49.13.203.113",
-            "server_port": 2050,
-            "uuid": "44dd59b7-a153-44de-8b62-c2affe0fff02",
+            "server": "91.219.227.22",
+            "server_port": 443,
+            "uuid": "55556b1f-7b61-49ee-bfcc-10ed900f1b61",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "eh.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "tag": "@SiNAVM-2"
         },
         {
             "type": "vless",
-            "server": "fra.germany-14.com",
-            "server_port": 2087,
-            "uuid": "2b7ff221-0ea2-4474-ab4e-686e6a11dc65",
+            "server": "217.16.24.53",
+            "server_port": 443,
+            "uuid": "011fb39c-15ed-4700-a338-67497533f94e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "www.vk.com"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
             "tag": "@SiNAVM-3"
         },
         {
             "type": "vless",
-            "server": "152.53.228.15",
-            "server_port": 22231,
-            "uuid": "ae33a896-6374-41d3-88c5-b2941e0d038c",
+            "server": "62.60.246.188",
+            "server_port": 443,
+            "uuid": "405ec164-7923-4d76-8be5-7ae96e444f4e",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
             "tag": "@SiNAVM-4"
         },
         {
             "type": "vless",
-            "server": "144.31.213.7",
-            "server_port": 443,
-            "uuid": "70ad6ccb-45a3-4e98-818f-9631de43b7cc",
+            "server": "sandking.fonixapp.org",
+            "server_port": 54399,
+            "uuid": "81ea0b43-0362-4f7f-b75b-11b2dc5b504a",
             "packet_encoding": "xudp",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "vless",
-            "server": "188.92.28.204",
-            "server_port": 34045,
-            "uuid": "d8dd94fd-540e-461d-b5d4-acebef02c22a",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "vless",
-            "server": "45.84.222.208",
-            "server_port": 8443,
-            "uuid": "764b963e-0b82-4171-b52c-f37b311bcf4c",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "sky.phootokar.ir",
-            "server_port": 10460,
-            "uuid": "82f10d8c-c5fa-46da-bb66-516baf1e12d9",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vless",
-            "server": "31.222.238.127",
-            "server_port": 8043,
-            "uuid": "telegram-id-ArV2ray",
-            "packet_encoding": "xudp",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-9"
         },
         {
             "type": "direct",
