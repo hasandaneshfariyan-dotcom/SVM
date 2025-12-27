@@ -1,81 +1,77 @@
 <?php
-// Enable error reporting
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ERROR | E_PARSE);
 
-// Include the functions file
 require "functions.php";
 
-// Define the hash for each config type
-$configsHash = [
-    "vmess" => "ps",
-    "vless" => "hash",
-    "trojan" => "hash",
-    "tuic" => "hash",
-    "hy2" => "hash",
-    "ss" => "name",
-];
+/**
+ * Build a stable fingerprint for deduplication, ignoring the visible name.
+ */
+function fingerprint($raw) {
+    $type = detect_type($raw);
+    $p = configParse($raw);
+    if (!$type || $p === null) return null;
 
-// Read the config file and split it into an array by newline
-$configsArray = explode("\n", file_get_contents("config.txt"));
-
-// Initialize arrays to store deduplicated configs and their names
-$deduplicateArray = [];
-$namesArray = [];
-
-// Loop through each config in the configsArray
-foreach ($configsArray as $config) {
-    // Detect the type of the config
-    $configType = detect_type($config);
-    // Get the hash for the config type
-    $configHash = $configsHash[$configType];
-    // Parse the config
-    $decodedConfig = configParse($config);
-    // Store the hash temporarily
-    $tempHash = $decodedConfig[$configHash];
-    // Remove the hash from the config
-    unset($decodedConfig[$configHash]);
-    // Reparse the config without the hash
-    $encodedConfig = reparseConfig($decodedConfig, $configType);
-    // If the config is not already in the deduplicateArray, add it
-    if (!in_array($encodedConfig, $deduplicateArray)) {
-        $namesArray[] = $tempHash;
-        $deduplicateArray[] = $encodedConfig;
+    if ($type === 'vmess') {
+        $add = $p['add'] ?? '';
+        $port = $p['port'] ?? '';
+        $id = $p['id'] ?? ($p['uuid'] ?? '');
+        $tls = $p['tls'] ?? '';
+        $sni = $p['sni'] ?? ($p['host'] ?? '');
+        $net = $p['net'] ?? '';
+        $path = $p['path'] ?? '';
+        $host = $p['host'] ?? '';
+        return "vmess|$add|$port|$id|$tls|$sni|$net|$path|$host";
     }
+
+    if (in_array($type, ['vless','trojan','tuic','hy2'], true)) {
+        // Expect configParse returns array with server/port/uuid + params
+        $server = $p['server'] ?? ($p['host'] ?? '');
+        $port = $p['port'] ?? '';
+        $uuid = $p['uuid'] ?? ($p['id'] ?? '');
+        $sni = $p['sni'] ?? ($p['host_param'] ?? ($p['params']['sni'] ?? ($p['params']['host'] ?? '')));
+        $security = $p['security'] ?? ($p['params']['security'] ?? '');
+        $flow = $p['flow'] ?? ($p['params']['flow'] ?? '');
+        $pbk = $p['pbk'] ?? ($p['params']['pbk'] ?? '');
+        $sid = $p['sid'] ?? ($p['params']['sid'] ?? '');
+        return "$type|$server|$port|$uuid|$sni|$security|$pbk|$sid|$flow";
+    }
+
+    if ($type === 'ss') {
+        // remove fragment for ss
+        return "ss|" . explode('#', $raw, 2)[0];
+    }
+
+    return $type . "|" . $raw;
 }
 
-// Initialize an array to store the final output
-$finalOutput = [];
-
-// Loop through each deduplicated config
-foreach ($deduplicateArray as $key => $deduplicate) {
-    // Detect the type of the config
-    $configType = detect_type($deduplicate);
-    // Get the hash for the config type
-    $configHash = $configsHash[$configType];
-    // Parse the config
-    $decodedConfig = configParse($deduplicate);
-    // Replace the hash with the name
-    $decodedConfig[$configHash] = $namesArray[$key];
-    // Reparse the config with the name
-    $encodedConfig = reparseConfig($decodedConfig, $configType);
-    // Add the config to the final output
-    $finalOutput[] = $encodedConfig;
-
-    $sourceUsername = str_replace(["%20", "@"], ["", ""], explode("|", $namesArray[$key])[2]);
+$inputFile = "config.txt";
+if (!file_exists($inputFile)) {
+    exit("config.txt not found\n");
 }
 
-// Write the final output to the config file
-file_put_contents("config.txt", implode("\n", $finalOutput));
+$lines = file($inputFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-$tempConfig = hiddifyHeader("SiNAVM | MIX") . urldecode(implode("\n", $finalOutput));
-$base64TempConfig = base64_encode($tempConfig);
+$seen = [];
+$out = [];
+$stats = ["in" => 0, "out" => 0, "dupes" => 0];
 
-// Write the final output to the subscriptions/xray/normal/mix file
-file_put_contents("subscriptions/xray/normal/mix", $tempConfig);
-// Write the final output to the subscriptions/xray/base64/mix file, encoded in base64
-file_put_contents("subscriptions/xray/base64/mix", $base64TempConfig);
+foreach ($lines as $line) {
+    $stats["in"] += 1;
+    $fp = fingerprint($line);
+    if ($fp === null) continue;
 
-// Print "done!" to the console
-echo "Removing Duplicates Done!\n";
+    if (isset($seen[$fp])) {
+        $stats["dupes"] += 1;
+        continue;
+    }
+    $seen[$fp] = true;
+    $out[] = $line;
+}
+
+$stats["out"] = count($out);
+file_put_contents("reports/dedup_stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+file_put_contents($inputFile, implode("\n", $out));
+
+echo "Dedup done. In={$stats['in']} Out={$stats['out']} Dupes={$stats['dupes']}\n";
