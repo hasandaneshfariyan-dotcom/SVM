@@ -7,6 +7,32 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
+function configPriority($line) {
+    // Lower number = higher priority
+    $bad = ['IR', 'Iran', 'Tehran', 'MCI', 'Irancell', 'Hamrah', 'Rightel'];
+    $p = 0;
+    foreach ($bad as $kw) {
+        if (stripos($line, $kw) !== false) {
+            $p += 10;
+        }
+    }
+    // Prefer vless reality and hy2/tuic slightly
+    if (stripos($line, 'security=reality') !== false) $p -= 3;
+    if (stripos($line, 'hy2://') === 0) $p -= 1;
+    if (stripos($line, 'tuic://') === 0) $p -= 1;
+
+    return $p;
+}
+
+function sortByPriority(&$arr) {
+    usort($arr, function($a, $b) {
+        $pa = configPriority($a);
+        $pb = configPriority($b);
+        if ($pa === $pb) return strcmp($a, $b);
+        return $pa <=> $pb;
+    });
+}
+
 // Read the config.txt file and split it into an array by newline
 $configsArray = explode("\n", file_get_contents("config.txt"));
 
