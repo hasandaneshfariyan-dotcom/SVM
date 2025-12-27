@@ -224,7 +224,18 @@ function configParse($input)
         if (isset($parsedUrl["query"])) {
             $params = parseQuery($parsedUrl["query"]);
         }
-        // تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
+        
+        // Normalize Reality aliases (some sources use these)
+        // publicKey -> pbk , shortId -> sid
+        if (isset($params['publicKey']) && !isset($params['pbk'])) {
+            $params['pbk'] = $params['publicKey'];
+            unset($params['publicKey']);
+        }
+        if (isset($params['shortId']) && !isset($params['sid'])) {
+            $params['sid'] = $params['shortId'];
+            unset($params['shortId']);
+        }
+// تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
         foreach ($params as $key => $val) {
             $val = trim(strip_tags($val)); // حذف تگ‌های HTML
             switch ($key) {
@@ -233,8 +244,12 @@ function configParse($input)
                     $params[$key] = $m[0] ?? '';
                     break;
                 case 'pbk':
-                    preg_match('/^[A-Za-z0-9+\/=]+/', $val, $m);
-                    $params[$key] = $m[0] ?? '';
+                    // pbk can be base64 or base64url; some sources append junk like "//////channel"
+                    preg_match('/^[A-Za-z0-9+\/=_-]+/', $val, $m);
+                    $pbk = $m[0] ?? '';
+                    $pbk = str_replace(' ', '', $pbk);
+                    $pbk = rtrim($pbk, '/');
+                    $params[$key] = $pbk;
                     break;
                 case 'sni':
                 case 'host':
@@ -250,13 +265,27 @@ function configParse($input)
                     $params[$key] = $val;
             }
         }
+        $hash = isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName();
+
+        // For Reality configs, force a clean name to avoid channel/junk fragments like "//////channel"
+
+        if ($configType === "vless" && is_reality($input)) {
+
+            $hash = "SiNAVM-reality-" . getRandomName();
+
+        }
+
+        $hash = preg_replace('/[\r\n\t]+/', ' ', $hash);
+
+        $hash = preg_replace('/\s+/', ' ', trim($hash));
+
         $output = [
             "protocol" => $configType,
             "username" => $parsedUrl["user"] ?? "",
             "hostname" => $parsedUrl["host"] ?? "",
             "port" => $parsedUrl["port"] ?? "",
             "params" => $params,
-            "hash" => isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName(),
+            "hash" => $hash,
         ];
         if ($configType === "tuic") {
             $output["pass"] = $params["password"] ?? "";
