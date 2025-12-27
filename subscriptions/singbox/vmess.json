@@ -57,7 +57,8 @@
             "outbounds": [
                 "Best Latency",
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ]
         },
         {
@@ -65,30 +66,12 @@
             "tag": "Best Latency",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3"
             ],
             "url": "http:\/\/1.1.1.1\/",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "vmess",
-            "server": "hgtrojan.zabc.net",
-            "server_port": 2083,
-            "uuid": "e6395c20-4571-4b34-d6b1-55a5d36e49ea",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/e6395c20",
-                "headers": {
-                    "Host": ""
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "vmess",
@@ -121,7 +104,27 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vmess",
+            "server": "45.89.52.207",
+            "server_port": 39651,
+            "uuid": "ac4c12c5-45f2-4398-a718-9983941ede2b",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vmess",
+            "server": "157.180.120.194",
+            "server_port": 40100,
+            "uuid": "73feeed6-9a40-45b0-a26d-84770f5f05fd",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",
