@@ -7,71 +7,6 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
-// Cache + retry fetch helper (Telegram pages and sublinks)
-function fetch_with_cache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3)
-{
-    $cacheDir = dirname($cacheFile);
-    if (!is_dir($cacheDir)) {
-        mkdir($cacheDir, 0755, true);
-    }
-
-    // If cache is fresh, use it
-    if (file_exists($cacheFile) && (time() - filemtime($cacheFile) <= $ttlSeconds)) {
-        return file_get_contents($cacheFile);
-    }
-
-    $lastError = null;
-    for ($i = 0; $i < $retries; $i++) {
-        $options = [
-            "http" => [
-                "header" => "User-Agent: Mozilla/5.0\r\nAccept: text/html,application/xhtml+xml\r\n",
-                "timeout" => 20,
-                "ignore_errors" => true,
-            ],
-            "ssl" => [
-                "verify_peer" => true,
-                "verify_peer_name" => true,
-            ],
-        ];
-        $context = stream_context_create($options);
-        $data = @file_get_contents($url, false, $context);
-
-        // best-effort status code extraction
-        $status = null;
-        if (isset($http_response_header) && is_array($http_response_header)) {
-            foreach ($http_response_header as $h) {
-                if (preg_match('/^HTTP\/[0-9.]+\s+(\d+)/', $h, $m)) {
-                    $status = intval($m[1]);
-                    break;
-                }
-            }
-        }
-
-        // success criteria: non-empty and not rate-limited
-        if ($data !== false && strlen(trim($data)) > 200 && $status !== 429) {
-            file_put_contents($cacheFile, $data);
-            return $data;
-        }
-
-        $lastError = "status=" . ($status ?? "NA") . " len=" . (is_string($data) ? strlen($data) : 0);
-        // backoff (429 or bad HTML)
-        usleep((500000 * ($i + 1)));
-    }
-
-    // fallback to stale cache if exists
-    if (file_exists($cacheFile)) {
-        return file_get_contents($cacheFile);
-    }
-
-    throw new Exception("Fetch failed: $url ($lastError)");
-}
-
-// Ensure cache + reports dirs exist
-if (!is_dir("cache/telegram")) mkdir("cache/telegram", 0755, true);
-if (!is_dir("cache/sublinks")) mkdir("cache/sublinks", 0755, true);
-if (!is_dir("reports")) mkdir("reports", 0755, true);
-
-
 // تابع برای پردازش کانفیگ‌های vmess و تنظیم ps
 function processVmessConfig($config, $index) {
     if (strpos($config, 'vmess://') !== 0) {
@@ -105,7 +40,6 @@ function processVmessConfig($config, $index) {
 
 // Fetch the JSON data from channels.json and sublinks.json
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
-$stats["sources"]["telegram_channels"] = count($sourcesArray);
 $sublinksJson = file_get_contents("sublinks.json");
 
 // Replace placeholders with actual URLs from environment variables
@@ -132,20 +66,6 @@ $tempCounter = 1;
 
 // Initialize an empty array to store the configurations
 $configsList = [];
-
-// QA stats (no configs stored)
-$stats = [
-    "generated_at_utc" => gmdate("c"),
-    "fetched" => 0,
-    "valid" => 0,
-    "invalid" => 0,
-    "by_type" => [],
-    "invalid_by_reason" => [],
-    "sources" => [
-        "telegram_channels" => 0,
-        "sublinks" => 0,
-    ],
-];
 echo "Fetching Configs\n";
 
 // Loop through each source in the channels array (API)
@@ -161,10 +81,8 @@ foreach ($sourcesArray as $source => $types) {
     $tempCounter++;
 
     // Fetch the data from the Telegram API
-    $urlTg = "https://t.me/s/" . $source;
-    $cacheFile = "cache/telegram/" . preg_replace("/[^A-Za-z0-9_\-]/", "_", $source) . ".html";
-    $tempData = fetch_with_cache($urlTg, $cacheFile, 7200, 4);
-$type = implode("|", $types);
+    $tempData = file_get_contents("https://t.me/s/" . $source);
+    $type = implode("|", $types);
     $tempExtract = extractLinksByType($tempData, $type);
     if (!is_null($tempExtract)) {
         $configsList[$source] = $tempExtract;
@@ -186,10 +104,8 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $url = $sublink['url'];
     $protocols = implode("|", $sublink['protocols']);
     try {
-        $cacheKey = md5($url);
-        $cacheFile = "cache/sublinks/" . $cacheKey . ".txt";
-        $response = fetch_with_cache($url, $cacheFile, 3600, 4);
-$sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
+        $response = file_get_contents($url);
+        $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
             return preg_match("/^($protocols):\/\//", $config);
         });
         if (!empty($sublink_configs)) {
@@ -282,28 +198,12 @@ foreach ($configsList as $source => $configs) {
                 $config = reparseConfig($decodedConfig, $type);
             }
 
-            // Quick validation (no network)
-            [$ok, $reason] = validate_config_quick($config, $type);
-            $stats["fetched"]++;
-            if (!$ok) {
-                $stats["invalid"]++;
-                $stats["invalid_by_reason"][$reason] = ($stats["invalid_by_reason"][$reason] ?? 0) + 1;
-                continue;
-            }
-
-            // Determine country (best-effort)
+            // بررسی مکان (کشور) با استفاده از IP
             $decodedConfig = configParse($config);
             if (!$decodedConfig) {
-                $stats["invalid"]++;
-                $stats["invalid_by_reason"]["parse_failed"] = ($stats["invalid_by_reason"]["parse_failed"] ?? 0) + 1;
                 continue;
             }
             $configLocation = ip_info($decodedConfig[$configIp] ?? "")->country ?? "XX";
-
-            // Apply standard name format
-            $config = brand_config_string($config, $type, $configLocation);
-            $stats["valid"]++;
-            $stats["by_type"][$type] = ($stats["by_type"][$type] ?? 0) + 1;
 
             // اضافه کردن به لیست نهایی و دسته‌بندی‌ها
             if (substr($config, 0, 10) !== "ss://Og==@") {
@@ -323,13 +223,13 @@ foreach ($configsList as $source => $configs) {
     $tempSource++;
 }
 
-// حذف و بازسازی پوشه‌های خروجی
+
 deleteFolder("subscriptions/location/normal");
 deleteFolder("subscriptions/location/base64");
 mkdir("subscriptions/location/normal", 0755, true);
 mkdir("subscriptions/location/base64", 0755, true);
 
-// ذخیره کانفیگ‌های دسته‌بندی‌شده
+
 foreach ($allConfigs as $type => $configs) {
     if (!empty($configs)) {
         $tempConfig = implode("\n\n", array_map('trim', $configs)) . "\n\n";
@@ -339,7 +239,6 @@ foreach ($allConfigs as $type => $configs) {
     }
 }
 
-// ذخیره کانفیگ‌های location-based
 foreach ($locationBased as $location => $configs) {
     if (!empty($configs)) {
         $tempConfig = implode("\n\n", array_map('trim', $configs)) . "\n\n";
@@ -349,12 +248,10 @@ foreach ($locationBased as $location => $configs) {
     }
 }
 
-// ذخیره config.txt
+
 if (!empty($finalOutput)) {
     file_put_contents("config.txt", implode("\n\n", array_map('trim', $finalOutput)) . "\n\n");
 }
-
-file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
 echo "\nGetting Configs Done!\n";
 ?>
