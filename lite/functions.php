@@ -1,5 +1,107 @@
 <?php
 
+/**
+ * Basic validators + QA helpers
+ */
+function isValidUuid($uuid) {
+    return is_string($uuid) && preg_match('/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/', $uuid);
+}
+function isValidHostName($host) {
+    if (!is_string($host) || $host === '') return false;
+    // allow domain, wildcard-ish, and IP
+    if (filter_var($host, FILTER_VALIDATE_IP)) return true;
+    return (bool)preg_match('/^(?:\*\.)?[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/', $host);
+}
+function isValidPort($port) {
+    if (is_string($port) && ctype_digit($port)) $port = intval($port, 10);
+    return is_int($port) && $port >= 1 && $port <= 65535;
+}
+function isValidRealitySid($sid) {
+    return is_string($sid) && preg_match('/^[0-9a-fA-F]{2,64}$/', $sid);
+}
+function isValidRealityPbk($pbk) {
+    // base64/base64url-ish key; allow _- for urlsafe, = optional
+    return is_string($pbk) && preg_match('/^[A-Za-z0-9+\/_=-]{20,200}$/', $pbk);
+}
+function normalizeLabel($s) {
+    $s = (string)$s;
+    $s = html_entity_decode($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $s = preg_replace('/\s+/', ' ', $s);
+    // remove common junk sequences
+    $s = preg_replace('/(\/\/\/\/\/\/|\\+|\|\|\|\|\|\|)+/u', ' ', $s);
+    $s = preg_replace('/[\x00-\x1F\x7F]/u', '', $s);
+    $s = trim($s, " \t\n\r\0\x0B|");
+    return $s;
+}
+
+/**
+ * Validate + score a raw config line. Returns:
+ * ['ok'=>bool,'type'=>string|null,'score'=>int,'reason'=>string|null,'parsed'=>mixed]
+ */
+function validateConfig($raw) {
+    $raw = trim((string)$raw);
+    if ($raw === '') return ['ok'=>false,'type'=>null,'score'=>0,'reason'=>'empty','parsed'=>null];
+
+    $type = detect_type($raw);
+    if (!$type) return ['ok'=>false,'type'=>null,'score'=>0,'reason'=>'unknown_type','parsed'=>null];
+
+    $parsed = configParse($raw);
+    if ($parsed === null) return ['ok'=>false,'type'=>$type,'score'=>0,'reason'=>'parse_failed','parsed'=>null];
+
+    $score = 50; // base
+    $reason = null;
+
+    if ($type === 'vmess') {
+        $id = $parsed['id'] ?? ($parsed['uuid'] ?? null);
+        $add = $parsed['add'] ?? null;
+        $port = $parsed['port'] ?? null;
+        if (!isValidUuid($id)) { $reason = 'vmess_invalid_uuid'; }
+        elseif (!isValidHostName($add)) { $reason = 'vmess_invalid_host'; }
+        elseif (!isValidPort(is_numeric($port)?intval($port):$port)) { $reason = 'vmess_invalid_port'; }
+        else { $score += 40; }
+    } elseif (in_array($type, ['vless','trojan','tuic','hy2'], true)) {
+        // configParse for these returns array with components we can check
+        $uuid = $parsed['uuid'] ?? ($parsed['id'] ?? null);
+        $host = $parsed['server'] ?? ($parsed['host'] ?? null);
+        $port = $parsed['port'] ?? null;
+
+        if ($type === 'vless' && $uuid !== null && !isValidUuid($uuid)) $reason = 'vless_invalid_uuid';
+        if ($reason === null && $host !== null && !isValidHostName($host)) $reason = $type . '_invalid_host';
+        if ($reason === null && $port !== null && !isValidPort(is_numeric($port)?intval($port):$port)) $reason = $type . '_invalid_port';
+
+        // Reality checks
+        $sec = $parsed['security'] ?? ($parsed['params']['security'] ?? null);
+        if ($reason === null && $type === 'vless' && $sec === 'reality') {
+            $pbk = $parsed['pbk'] ?? ($parsed['params']['pbk'] ?? null);
+            $sid = $parsed['sid'] ?? ($parsed['params']['sid'] ?? null);
+            if (!isValidRealityPbk((string)$pbk) || !isValidRealitySid((string)$sid)) {
+                $reason = 'reality_missing_or_invalid_pbk_sid';
+            } else {
+                $score += 50;
+            }
+        } else {
+            if ($reason === null) $score += 25;
+        }
+    } elseif ($type === 'ss') {
+        // We accept ss if parse succeeded; can add stricter checks later
+        $score += 25;
+    } else {
+        $score += 10;
+    }
+
+    if ($reason !== null) return ['ok'=>false,'type'=>$type,'score'=>$score,'reason'=>$reason,'parsed'=>$parsed];
+    return ['ok'=>true,'type'=>$type,'score'=>$score,'reason'=>null,'parsed'=>$parsed];
+}
+
+/**
+ * Standardize name/fragment for branding
+ */
+function buildStandardName($type, $n) {
+    $type = strtoupper((string)$type);
+    return "SiNAVM | {$type} | #{$n}";
+}
+
+
 function is_ip($string)
 {
     $ip_pattern = '/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/';
@@ -198,6 +300,17 @@ function configParse($input)
         if (!$decoded_data) {
             return null;
         }
+        // تمیزسازی فیلدهای vmess
+        foreach ($decoded_data as $k => $v) {
+            if (in_array($k, ['host', 'sni'])) {
+                preg_match('/^[a-zA-Z0-9.-_*]+/', $v, $m);
+                $decoded_data[$k] = $m[0] ?? '';
+            } elseif ($k === 'path') {
+                $decoded_data[$k] = strip_tags($v);
+            } elseif ($k === 'ps') {
+                $decoded_data[$k] = strip_tags($v);
+            }
+        }
         return $decoded_data;
     } elseif (
         $configType === "vless" ||
@@ -224,38 +337,51 @@ function configParse($input)
             $params['sid'] = $params['shortId'];
             unset($params['shortId']);
         }
-
-        // Clean Reality params (pbk/sid) and strip any junk like "//////channel"
+// تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
         foreach ($params as $key => $val) {
-            $val = trim(strip_tags($val));
+            $val = trim(strip_tags($val)); // حذف تگ‌های HTML
             switch ($key) {
                 case 'sid':
-                    preg_match('/^[0-9a-fA-F]+/', $val, $mm);
-                    $params[$key] = $mm[0] ?? '';
+                    preg_match('/^[0-9a-fA-F]+/', $val, $m);
+                    $params[$key] = $m[0] ?? '';
                     break;
                 case 'pbk':
-                    preg_match('/^[A-Za-z0-9+\\/=_-]+/', $val, $mm);
-                    $pbk = $mm[0] ?? '';
+                    // pbk can be base64 or base64url; some sources append junk like "//////channel"
+                    preg_match('/^[A-Za-z0-9+\/=_-]+/', $val, $m);
+                    $pbk = $m[0] ?? '';
+                    $pbk = str_replace(' ', '', $pbk);
                     $pbk = rtrim($pbk, '/');
                     $params[$key] = $pbk;
                     break;
+                case 'sni':
+                case 'host':
+                case 'server_name':
+                    preg_match('/^[a-zA-Z0-9.-_*]+/', $val, $m);
+                    $params[$key] = $m[0] ?? '';
+                    break;
+                case 'path':
+                case 'serviceName':
+                    $params[$key] = preg_replace('/<[^>]*>/', '', $val); // حذف تگ‌های باقی‌مانده
+                    break;
+                default:
+                    $params[$key] = $val;
             }
         }
-$hash = isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName();
+        $hash = isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName();
 
-// For Reality configs, force a clean name to avoid channel/junk fragments like "//////channel"
+        // For Reality configs, force a clean name to avoid channel/junk fragments like "//////channel"
 
-if ($configType === "vless" && is_reality($input)) {
+        if ($configType === "vless" && is_reality($input)) {
 
-    $hash = "SiNAVM-reality-" . getRandomName();
+            $hash = "SiNAVM-reality-" . getRandomName();
 
-}
+        }
 
-$hash = preg_replace('/[\r\n\t]+/', ' ', $hash);
+        $hash = preg_replace('/[\r\n\t]+/', ' ', $hash);
 
-$hash = preg_replace('/\s+/', ' ', trim($hash));
+        $hash = preg_replace('/\s+/', ' ', trim($hash));
 
-$output = [
+        $output = [
             "protocol" => $configType,
             "username" => $parsedUrl["user"] ?? "",
             "hostname" => $parsedUrl["host"] ?? "",
@@ -288,7 +414,7 @@ $output = [
             "password" => $userParts[1],
             "server_address" => $url["host"] ?? "",
             "server_port" => $url["port"] ?? "",
-            "name" => isset($url["fragment"]) ? urldecode($url["fragment"]) : "SiNAVM" . getRandomName(),
+            "name" => isset($url["fragment"]) ? strip_tags(urldecode($url["fragment"])) : "SiNAVM" . getRandomName(),
         ];
         if (empty($output["server_address"]) || empty($output["password"])) {
             return null;
@@ -410,4 +536,45 @@ function hiddifyHeader($subscriptionName)
            "#subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531\n" .
            "#support-url: https://t.me/sinavm\n" .
            "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
+}
+
+
+/**
+ * Replace the displayed name/remark of a config (fragment / ps / #name).
+ */
+function setConfigName($raw, $newName) {
+    $raw = trim((string)$raw);
+    $newName = normalizeLabel($newName);
+
+    $type = detect_type($raw);
+    if ($type === 'vmess') {
+        $vmess_data = substr($raw, 8);
+        $decoded = json_decode(base64_decode($vmess_data), true);
+        if (!$decoded) return $raw;
+        $decoded['ps'] = $newName;
+        $encoded = base64_encode(json_encode($decoded, JSON_UNESCAPED_UNICODE));
+        return "vmess://" . $encoded;
+    }
+
+    if (in_array($type, ['vless','trojan','tuic','hy2'], true)) {
+        $p = parse_url($raw);
+        if (!$p) return $raw;
+        $scheme = $p['scheme'] ?? $type;
+        $user = $p['user'] ?? '';
+        $pass = isset($p['pass']) ? ':' . $p['pass'] : '';
+        $host = $p['host'] ?? '';
+        $port = isset($p['port']) ? ':' . $p['port'] : '';
+        $query = isset($p['query']) ? '?' . $p['query'] : '';
+        // overwrite fragment
+        $frag = '#' . rawurlencode($newName);
+        return $scheme . '://' . $user . $pass . '@' . $host . $port . $query . $frag;
+    }
+
+    if ($type === 'ss') {
+        // ss://...#name
+        $rawNoFrag = explode('#', $raw, 2)[0];
+        return $rawNoFrag . '#' . rawurlencode($newName);
+    }
+
+    return $raw;
 }
