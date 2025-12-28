@@ -7,64 +7,42 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
-function configPriority($line) {
-    // Lower number = higher priority
-    $bad = ['IR', 'Iran', 'Tehran', 'MCI', 'Irancell', 'Hamrah', 'Rightel'];
-    $p = 0;
-    foreach ($bad as $kw) {
-        if (stripos($line, $kw) !== false) {
-            $p += 10;
-        }
-    }
-    // Prefer vless reality and hy2/tuic slightly
-    if (stripos($line, 'security=reality') !== false) $p -= 3;
-    if (stripos($line, 'hy2://') === 0) $p -= 1;
-    if (stripos($line, 'tuic://') === 0) $p -= 1;
+$configsArray = array_filter(explode("\n", file_get_contents("config.txt")), function($x){
+    return trim($x) !== "";
+});
 
-    return $p;
-}
-
-function sortByPriority(&$arr) {
-    usort($arr, function($a, $b) {
-        $pa = configPriority($a);
-        $pb = configPriority($b);
-        if ($pa === $pb) return strcmp($a, $b);
-        return $pa <=> $pb;
-    });
-}
-
-// Read the config.txt file and split it into an array by newline
-$configsArray = explode("\n", file_get_contents("config.txt"));
-
-// Initialize an empty array to hold the sorted configurations
 $sortArray = [];
 
-// Loop through each configuration in the configsArray
+// Collect by type (and reality)
 foreach ($configsArray as $config) {
-    // Detect the type of the configuration
     $configType = detect_type($config);
-    // Add the configuration to the corresponding array in sortArray
-    $sortArray[$configType][] = urldecode($config);
-    // If the configuration is of type "vless" and is a reality, add it to the "reality" array
+    if (!$configType) continue;
+
+    $decoded = urldecode($config);
+    $sortArray[$configType][] = $decoded;
+
     if ($configType === "vless" && is_reality($config)) {
-        $sortArray["reality"][] = urldecode($config);
+        $sortArray["reality"][] = $decoded;
     }
 }
 
-// Loop through each type of configuration in sortArray
+// Normalize: unique + stable ordering (reduces CI diffs/conflicts)
+foreach ($sortArray as $type => $arr) {
+    $arr = array_values(array_unique($arr));
+    sort($arr, SORT_STRING);
+    $sortArray[$type] = $arr;
+}
+
+// Write each type subscription
 foreach ($sortArray as $type => $sort) {
-    // If the type is not empty
-    if ($type !== "") {
-        // Join the configurations into a string, encode it to base64, and write it to a file
+    if (!empty($sort)) {
         $tempConfigs = hiddifyHeader("SiNAVM | " . strtoupper($type)) . implode("\n", $sort);
         $base64TempConfigs = base64_encode($tempConfigs);
+
         file_put_contents("subscriptions/xray/normal/" . $type, $tempConfigs);
-        file_put_contents(
-            "subscriptions/xray/base64/" . $type,
-            $base64TempConfigs
-        );
+        file_put_contents("subscriptions/xray/base64/" . $type, $base64TempConfigs);
     }
 }
 
-// Print "done!" to the console
 echo "Sorting Done!";
+?>
