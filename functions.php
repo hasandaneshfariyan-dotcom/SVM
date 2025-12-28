@@ -224,7 +224,18 @@ function configParse($input)
         if (isset($parsedUrl["query"])) {
             $params = parseQuery($parsedUrl["query"]);
         }
-        // تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
+        
+        // Normalize Reality aliases (some sources use these)
+        // publicKey -> pbk , shortId -> sid
+        if (isset($params['publicKey']) && !isset($params['pbk'])) {
+            $params['pbk'] = $params['publicKey'];
+            unset($params['publicKey']);
+        }
+        if (isset($params['shortId']) && !isset($params['sid'])) {
+            $params['sid'] = $params['shortId'];
+            unset($params['shortId']);
+        }
+// تمیزسازی params برای جلوگیری از محتوای اضافی (HTML و غیره)
         foreach ($params as $key => $val) {
             $val = trim(strip_tags($val)); // حذف تگ‌های HTML
             switch ($key) {
@@ -233,8 +244,12 @@ function configParse($input)
                     $params[$key] = $m[0] ?? '';
                     break;
                 case 'pbk':
-                    preg_match('/^[A-Za-z0-9+\/=]+/', $val, $m);
-                    $params[$key] = $m[0] ?? '';
+                    // pbk can be base64 or base64url; some sources append junk like "//////channel"
+                    preg_match('/^[A-Za-z0-9+\/=_-]+/', $val, $m);
+                    $pbk = $m[0] ?? '';
+                    $pbk = str_replace(' ', '', $pbk);
+                    $pbk = rtrim($pbk, '/');
+                    $params[$key] = $pbk;
                     break;
                 case 'sni':
                 case 'host':
@@ -250,13 +265,27 @@ function configParse($input)
                     $params[$key] = $val;
             }
         }
+        $hash = isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName();
+
+        // For Reality configs, force a clean name to avoid channel/junk fragments like "//////channel"
+
+        if ($configType === "vless" && is_reality($input)) {
+
+            $hash = "SiNAVM-reality-" . getRandomName();
+
+        }
+
+        $hash = preg_replace('/[\r\n\t]+/', ' ', $hash);
+
+        $hash = preg_replace('/\s+/', ' ', trim($hash));
+
         $output = [
             "protocol" => $configType,
             "username" => $parsedUrl["user"] ?? "",
             "hostname" => $parsedUrl["host"] ?? "",
             "port" => $parsedUrl["port"] ?? "",
             "params" => $params,
-            "hash" => isset($parsedUrl["fragment"]) ? urldecode($parsedUrl["fragment"]) : "SiNAVM" . getRandomName(),
+            "hash" => $hash,
         ];
         if ($configType === "tuic") {
             $output["pass"] = $params["password"] ?? "";
@@ -406,161 +435,3 @@ function hiddifyHeader($subscriptionName)
            "#support-url: https://t.me/sinavm\n" .
            "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
 }
-
-
-
-/**
- * Normalize node name fragments: remove junk like ////, emojis, repeated spaces, channel tags.
- */
-function normalize_node_fragment($s)
-{
-    $s = urldecode($s ?? "");
-    $s = strip_tags($s);
-    // remove common junk
-    $s = preg_replace('/[\r\n\t]+/', ' ', $s);
-    $s = preg_replace('/(\/{2,})+/', '/', $s); // collapse slashes
-    $s = str_replace(['//////','/////','////','///','//'], '/', $s);
-    $s = preg_replace('/\s+/', ' ', $s);
-    $s = trim($s, " \t\n\r\0\x0B|#-/");
-    // remove non-printing / weird unicode separators
-    $s = preg_replace('/[\x00-\x1F\x7F]/u', '', $s);
-    return trim($s);
-}
-
-/**
- * Build standard SiNAVM node name.
- * Format: "SiNAVM | {TYPE} | {CC}"
- */
-function build_sinavm_name($type, $cc = "XX")
-{
-    $type = strtoupper($type ?? "MIX");
-    $cc = strtoupper($cc ?? "XX");
-    if (!preg_match('/^[A-Z]{2}$/', $cc)) {
-        $cc = "XX";
-    }
-    return "SiNAVM | {$type} | {$cc}";
-}
-
-/**
- * Apply SiNAVM naming to parsed config and return encoded config string.
- */
-function brand_config_string($configString, $type, $cc = "XX")
-{
-    $decoded = configParse($configString);
-    if (!$decoded) return $configString;
-    $name = build_sinavm_name($type, $cc);
-
-    // set the right "name" field per type
-    if ($type === "vmess") {
-        $decoded["ps"] = $name;
-    } elseif ($type === "ss") {
-        $decoded["name"] = $name;
-    } else {
-        // vless/trojan/tuic/hy2 ... keep hash-ish field via fragment
-        $decoded["hash"] = $name;
-    }
-    return reparseConfig($decoded, $type);
-}
-
-/**
- * Validate config quickly (no network).
- * Returns array: [bool $ok, string $reason]
- */
-function validate_config_quick($configString, $type)
-{
-    $decoded = configParse($configString);
-    if (!$decoded) return [false, "parse_failed"];
-
-    $uuid = $decoded["uuid"] ?? null;
-    $server = $decoded["server"] ?? ($decoded["add"] ?? null);
-    $port = $decoded["port"] ?? null;
-
-    // server
-    if (empty($server)) return [false, "missing_server"];
-    // port
-    if (!empty($port) && (!is_numeric($port) || intval($port) < 1 || intval($port) > 65535)) return [false, "bad_port"];
-
-    // uuid for vmess/vless
-    if (in_array($type, ["vmess","vless"], true)) {
-        if (empty($uuid) || !preg_match('/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/', $uuid)) {
-            return [false, "bad_uuid"];
-        }
-    }
-
-    // ss basic
-    if ($type === "ss") {
-        $cipher = $decoded["method"] ?? ($decoded["cipher"] ?? null);
-        $pass = $decoded["pass"] ?? ($decoded["password"] ?? null);
-        if (empty($cipher) || empty($pass)) return [false, "bad_ss"];
-    }
-
-    // Reality requirements (vless + security=reality)
-    if ($type === "vless") {
-        $params = $decoded["params"] ?? [];
-        $sec = $params["security"] ?? "";
-        if (strtolower($sec) === "reality") {
-            $pbk = $params["pbk"] ?? ($params["publicKey"] ?? "");
-            $sid = $params["sid"] ?? ($params["shortId"] ?? "");
-            // clean pbk like ////channel
-            $pbk = preg_replace('/[^A-Za-z0-9+\/_=\-]/', '', $pbk);
-            $pbk = rtrim($pbk, '/');
-            $sid = preg_replace('/[^0-9a-fA-F]/', '', $sid);
-
-            if (empty($pbk) || strlen($pbk) < 20) return [false, "bad_reality_pbk"];
-            if (empty($sid) || (strlen($sid) % 2 !== 0) || strlen($sid) < 2 || strlen($sid) > 32) return [false, "bad_reality_sid"];
-        }
-    }
-
-    return [true, "ok"];
-}
-
-/**
- * Build fingerprint for deduplication (ignores display name).
- */
-function fingerprint_config($configString, $type)
-{
-    $d = configParse($configString);
-    if (!$d) return null;
-
-    // remove name-like fields
-    if ($type === "vmess") unset($d["ps"]);
-    if ($type === "ss") unset($d["name"]);
-    if (in_array($type, ["vless","trojan","tuic","hy2"], true)) unset($d["hash"]);
-
-    $server = strtolower($d["server"] ?? ($d["add"] ?? ""));
-    $port = strval($d["port"] ?? "");
-    $uuid = strtolower($d["uuid"] ?? ($d["id"] ?? ""));
-    $params = $d["params"] ?? [];
-    $net = strtolower($params["type"] ?? ($d["net"] ?? ""));
-    $path = $params["path"] ?? ($d["path"] ?? "");
-    $host = strtolower($params["host"] ?? ($params["sni"] ?? ($d["host"] ?? "")));
-    $tls = strtolower($params["security"] ?? ($d["tls"] ?? ""));
-    $flow = strtolower($params["flow"] ?? "");
-
-    if (in_array($type, ["vless","trojan"], true)) {
-        $sec = strtolower($params["security"] ?? "");
-        $pbk = $params["pbk"] ?? ($params["publicKey"] ?? "");
-        $sid = $params["sid"] ?? ($params["shortId"] ?? "");
-        $pbk = preg_replace('/[^A-Za-z0-9+\/_=\-]/', '', $pbk);
-        $pbk = rtrim($pbk, '/');
-        $sid = preg_replace('/[^0-9a-fA-F]/', '', $sid);
-        $sni = strtolower($params["sni"] ?? "");
-        return hash("sha256", implode("|", [$type,$server,$port,$uuid,$sni,$sec,$pbk,$sid,$flow,$net,$path,$host]));
-    }
-
-    if ($type === "vmess") {
-        $sni = strtolower($params["sni"] ?? ($d["sni"] ?? ""));
-        $id = strtolower($d["uuid"] ?? ($d["id"] ?? ""));
-        return hash("sha256", implode("|", [$type,$server,$port,$id,$tls,$sni,$net,$path,$host]));
-    }
-
-    if ($type === "ss") {
-        $cipher = strtolower($d["method"] ?? ($d["cipher"] ?? ""));
-        $pass = $d["pass"] ?? ($d["password"] ?? "");
-        return hash("sha256", implode("|", [$type,$server,$port,$cipher,$pass]));
-    }
-
-    // fallback
-    return hash("sha256", $type . "|" . json_encode($d, JSON_UNESCAPED_SLASHES));
-}
-
