@@ -11,16 +11,15 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-@SiNAVM-trojan-12 = trojan, 13.37.158.14, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
-@SiNAVM-trojan-50 = trojan, 45.77.20.207, 10435, password = ace1qxDyr_-GmIUgK.1Tnjb6ikAN, udp-delay = true, skip-cert-verify = false, sni = binaryboots.algorithmblanket.clickvmess://eyJhZGQiOiJuMTc2MTIxNDkxNS5tdjd3aC50ZWNoIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJuMTc2MTIxNDkxNS5tdjd3aC50ZWNoIiwiaWQiOiIxZjJkYWY0My1mZjkwLTRkZjktOTI3Ni1kZmI4NDg2ZDcyYmMiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6IjQ0MyIsInBzIjoi8J, ws = false
-@SiNAVM-trojan-55 = trojan, 45.63.40.126, 13345, password = Szb=-Zguo53QhmivcJqEAWtpdPX6Y, udp-delay = true, skip-cert-verify = false, sni = aws.amazon.com, ws = false
-@SiNAVM-trojan-131 = trojan, www.speedtest.net, 443, password = POORIARED, udp-delay = true, skip-cert-verify = false, sni = rEdfRee8.redfREE8.IR, ws = false
-@SiNAVM-trojan-132 = trojan, redfree8.redfree8.ir, 443, password = POORIARED, udp-delay = true, skip-cert-verify = false, sni = ReDFreE8.ReDfREe8.iR, ws = false
 @SiNAVM-trojan-133 = trojan, 172.67.134.185, 443, password = POORIARED, udp-delay = true, skip-cert-verify = false, sni = reDfRee8.REDFree8.ir, ws = false
+@SiNAVM-trojan-131 = trojan, www.speedtest.net, 443, password = POORIARED, udp-delay = true, skip-cert-verify = false, sni = rEdfRee8.redfREE8.IR, ws = false
+@SiNAVM-trojan-55 = trojan, 45.63.40.126, 13345, password = Szb=-Zguo53QhmivcJqEAWtpdPX6Y, udp-delay = true, skip-cert-verify = false, sni = aws.amazon.com, ws = false
+@SiNAVM-trojan-50 = trojan, 45.77.20.207, 10435, password = ace1qxDyr_-GmIUgK.1Tnjb6ikAN, udp-delay = true, skip-cert-verify = false, sni = binaryboots.algorithmblanket.clickvmess://eyJhZGQiOiJuMTc2MTIxNDkxNS5tdjd3aC50ZWNoIiwiYWlkIjoiMCIsImFscG4iOiIiLCJmcCI6IiIsImhvc3QiOiJuMTc2MTIxNDkxNS5tdjd3aC50ZWNoIiwiaWQiOiIxZjJkYWY0My1mZjkwLTRkZjktOTI3Ni1kZmI4NDg2ZDcyYmMiLCJuZXQiOiJ3cyIsInBhdGgiOiIvIiwicG9ydCI6IjQ0MyIsInBzIjoi8J, ws = false
+@SiNAVM-trojan-12 = trojan, 13.37.158.14, 22223, password = telegram-id-directvpn, udp-delay = true, skip-cert-verify = false, sni = trojan.burgerip.co.uk, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-trojan-12,@SiNAVM-trojan-50,@SiNAVM-trojan-55,@SiNAVM-trojan-131,@SiNAVM-trojan-132,@SiNAVM-trojan-133
-URL-TEST = url-test,@SiNAVM-trojan-12,@SiNAVM-trojan-50,@SiNAVM-trojan-55,@SiNAVM-trojan-131,@SiNAVM-trojan-132,@SiNAVM-trojan-133
-FALLBACK = fallback,@SiNAVM-trojan-12,@SiNAVM-trojan-50,@SiNAVM-trojan-55,@SiNAVM-trojan-131,@SiNAVM-trojan-132,@SiNAVM-trojan-133
+MANUAL = select,URL-TEST,FALLBACK,@SiNAVM-trojan-133,@SiNAVM-trojan-131,@SiNAVM-trojan-55,@SiNAVM-trojan-50,@SiNAVM-trojan-12
+URL-TEST = url-test,@SiNAVM-trojan-133,@SiNAVM-trojan-131,@SiNAVM-trojan-55,@SiNAVM-trojan-50,@SiNAVM-trojan-12
+FALLBACK = fallback,@SiNAVM-trojan-133,@SiNAVM-trojan-131,@SiNAVM-trojan-55,@SiNAVM-trojan-50,@SiNAVM-trojan-12
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
