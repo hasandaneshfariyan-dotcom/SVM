@@ -41,4 +41,4 @@ foreach ($sortArray as $type => $sort) {
 }
 
 // Print "done!" to the console
-echo "Sorting Done!"
+echo "Sorting Done!";
