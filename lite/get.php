@@ -13,8 +13,35 @@ $sourcesArray = json_decode(
     true
 );
 
+// Load sublinks.json (optional)
+$sublinksArray = ["sublinks" => []];
+if (file_exists("sublinks.json")) {
+    $sublinksJson = file_get_contents("sublinks.json");
+
+    // Replace placeholders with actual URLs from environment variables (GitHub Actions secrets)
+    $sublinksJson = str_replace(
+        [
+            "__PRIVATE_LINK_SiNAVM_1__",
+            "__PRIVATE_LINK_SiNAVM_2__",
+            "__PRIVATE_LINK_SiNAVM_3__"
+        ],
+        [
+            getenv("PRIVATE_LINK_SiNAVM_1"),
+            getenv("PRIVATE_LINK_SiNAVM_2"),
+            getenv("PRIVATE_LINK_SiNAVM_3")
+        ],
+        $sublinksJson
+    );
+
+    $decoded = json_decode($sublinksJson, true);
+    if (is_array($decoded) && isset($decoded["sublinks"]) && is_array($decoded["sublinks"])) {
+        $sublinksArray = $decoded;
+    }
+}
+
+
 // Count the total number of sources
-$totalSources = count($sourcesArray);
+$totalSources = count($sourcesArray) + count($sublinksArray["sublinks"]);
 $tempCounter = 1;
 
 // Initialize an empty array to store the configurations
@@ -39,6 +66,44 @@ foreach ($sourcesArray as $source => $types) {
     $tempExtract = extractLinksByType($tempData, $type);
     if (!is_null($tempExtract)) {
         $configsList[$source] = $tempExtract;
+    }
+}
+
+// Loop through each sublink in sublinks.json (if any)
+foreach ($sublinksArray["sublinks"] as $sublink) {
+    // Calculate the percentage complete
+    $percentage = ($tempCounter / $totalSources) * 100;
+
+    // Print the progress bar
+    echo "\rProgress: [";
+    echo str_repeat("=", floor($percentage / (100 / $totalSources)));
+    echo str_repeat(" ", $totalSources - floor($percentage / (100 / $totalSources)));
+    echo "] " . number_format($percentage, 2) . "%";
+    $tempCounter++;
+
+    $url = $sublink["url"] ?? "";
+    $protocols = isset($sublink["protocols"]) ? implode("|", (array)$sublink["protocols"]) : "";
+
+    if (empty($url) || empty($protocols)) {
+        continue;
+    }
+
+    try {
+        $response = file_get_contents($url);
+        if ($response === false) {
+            continue;
+        }
+
+        $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
+            $config = trim($config);
+            return $config !== "" && preg_match("/^($protocols):\/\//", $config);
+        });
+
+        if (!empty($sublink_configs)) {
+            $configsList[$url] = $sublink_configs;
+        }
+    } catch (Exception $e) {
+        echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
     }
 }
 
