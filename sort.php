@@ -7,42 +7,38 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
-$configsArray = array_filter(explode("\n", file_get_contents("config.txt")), function($x){
-    return trim($x) !== "";
-});
+// Read the config.txt file and split it into an array by newline
+$configsArray = explode("\n", file_get_contents("config.txt"));
 
+// Initialize an empty array to hold the sorted configurations
 $sortArray = [];
 
-// Collect by type (and reality)
+// Loop through each configuration in the configsArray
 foreach ($configsArray as $config) {
+    // Detect the type of the configuration
     $configType = detect_type($config);
-    if (!$configType) continue;
-
-    $decoded = urldecode($config);
-    $sortArray[$configType][] = $decoded;
-
+    // Add the configuration to the corresponding array in sortArray
+    $sortArray[$configType][] = urldecode($config);
+    // If the configuration is of type "vless" and is a reality, add it to the "reality" array
     if ($configType === "vless" && is_reality($config)) {
-        $sortArray["reality"][] = $decoded;
+        $sortArray["reality"][] = urldecode($config);
     }
 }
 
-// Normalize: unique + stable ordering (reduces CI diffs/conflicts)
-foreach ($sortArray as $type => $arr) {
-    $arr = array_values(array_unique($arr));
-    sort($arr, SORT_STRING);
-    $sortArray[$type] = $arr;
-}
-
-// Write each type subscription
+// Loop through each type of configuration in sortArray
 foreach ($sortArray as $type => $sort) {
-    if (!empty($sort)) {
+    // If the type is not empty
+    if ($type !== "") {
+        // Join the configurations into a string, encode it to base64, and write it to a file
         $tempConfigs = hiddifyHeader("SiNAVM | " . strtoupper($type)) . implode("\n", $sort);
         $base64TempConfigs = base64_encode($tempConfigs);
-
         file_put_contents("subscriptions/xray/normal/" . $type, $tempConfigs);
-        file_put_contents("subscriptions/xray/base64/" . $type, $base64TempConfigs);
+        file_put_contents(
+            "subscriptions/xray/base64/" . $type,
+            $base64TempConfigs
+        );
     }
 }
 
-echo "Sorting Done!";
-?>
+// Print "done!" to the console
+echo "Sorting Done!"
