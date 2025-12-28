@@ -7,36 +7,70 @@ error_reporting(E_ERROR | E_PARSE);
 // Include the functions file
 require "functions.php";
 
-/**
- * Cache + retry fetcher for Telegram pages and any URL.
- * - Uses cache when fresh or when network fails.
- * - Retries on temporary failures.
- */
-function fetchWithCache(string $url, string $cacheFile, int $ttlSeconds = 3600, int $retries = 3, int $sleepSeconds = 2): ?string {
-    // fresh cache
-    if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $ttlSeconds) {
-        $cached = @file_get_contents($cacheFile);
-        if ($cached !== false && strlen($cached) > 0) return $cached;
+// Cache + retry fetch helper (Telegram pages and sublinks)
+function fetch_with_cache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3)
+{
+    $cacheDir = dirname($cacheFile);
+    if (!is_dir($cacheDir)) {
+        mkdir($cacheDir, 0755, true);
     }
 
-    $data = null;
+    // If cache is fresh, use it
+    if (file_exists($cacheFile) && (time() - filemtime($cacheFile) <= $ttlSeconds)) {
+        return file_get_contents($cacheFile);
+    }
+
+    $lastError = null;
     for ($i = 0; $i < $retries; $i++) {
-        $data = @file_get_contents($url);
-        // Telegram sometimes returns small/empty HTML on rate limit; keep a sanity threshold
-        if ($data !== false && strlen($data) > 800) {
-            @file_put_contents($cacheFile, $data);
+        $options = [
+            "http" => [
+                "header" => "User-Agent: Mozilla/5.0\r\nAccept: text/html,application/xhtml+xml\r\n",
+                "timeout" => 20,
+                "ignore_errors" => true,
+            ],
+            "ssl" => [
+                "verify_peer" => true,
+                "verify_peer_name" => true,
+            ],
+        ];
+        $context = stream_context_create($options);
+        $data = @file_get_contents($url, false, $context);
+
+        // best-effort status code extraction
+        $status = null;
+        if (isset($http_response_header) && is_array($http_response_header)) {
+            foreach ($http_response_header as $h) {
+                if (preg_match('/^HTTP\/[0-9.]+\s+(\d+)/', $h, $m)) {
+                    $status = intval($m[1]);
+                    break;
+                }
+            }
+        }
+
+        // success criteria: non-empty and not rate-limited
+        if ($data !== false && strlen(trim($data)) > 200 && $status !== 429) {
+            file_put_contents($cacheFile, $data);
             return $data;
         }
-        sleep($sleepSeconds);
+
+        $lastError = "status=" . ($status ?? "NA") . " len=" . (is_string($data) ? strlen($data) : 0);
+        // backoff (429 or bad HTML)
+        usleep((500000 * ($i + 1)));
     }
 
-    // fallback to any cache
-    if (is_file($cacheFile)) {
-        $cached = @file_get_contents($cacheFile);
-        if ($cached !== false && strlen($cached) > 0) return $cached;
+    // fallback to stale cache if exists
+    if (file_exists($cacheFile)) {
+        return file_get_contents($cacheFile);
     }
-    return null;
+
+    throw new Exception("Fetch failed: $url ($lastError)");
 }
+
+// Ensure cache + reports dirs exist
+if (!is_dir("cache/telegram")) mkdir("cache/telegram", 0755, true);
+if (!is_dir("cache/sublinks")) mkdir("cache/sublinks", 0755, true);
+if (!is_dir("reports")) mkdir("reports", 0755, true);
+
 
 // تابع برای پردازش کانفیگ‌های vmess و تنظیم ps
 function processVmessConfig($config, $index) {
@@ -69,15 +103,9 @@ function processVmessConfig($config, $index) {
     return "vmess://$encodedBase64";
 }
 
-// Cache directory (telegram + sublinks)
-$cacheDir = __DIR__ . "/cache";
-$tgCacheDir = $cacheDir . "/telegram";
-$subCacheDir = $cacheDir . "/sublinks";
-@mkdir($tgCacheDir, 0755, true);
-@mkdir($subCacheDir, 0755, true);
-
 // Fetch the JSON data from channels.json and sublinks.json
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
+$stats["sources"]["telegram_channels"] = count($sourcesArray);
 $sublinksJson = file_get_contents("sublinks.json");
 
 // Replace placeholders with actual URLs from environment variables
@@ -99,32 +127,44 @@ $sublinksJson = str_replace(
 $sublinksArray = json_decode($sublinksJson, true);
 
 // Count the total number of sources
-$totalSources = count($sourcesArray) + (isset($sublinksArray['sublinks']) ? count($sublinksArray['sublinks']) : 0);
+$totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
 $tempCounter = 1;
 
 // Initialize an empty array to store the configurations
 $configsList = [];
+
+// QA stats (no configs stored)
+$stats = [
+    "generated_at_utc" => gmdate("c"),
+    "fetched" => 0,
+    "valid" => 0,
+    "invalid" => 0,
+    "by_type" => [],
+    "invalid_by_reason" => [],
+    "sources" => [
+        "telegram_channels" => 0,
+        "sublinks" => 0,
+    ],
+];
 echo "Fetching Configs\n";
 
-// Loop through each source in the channels array (Telegram)
+// Loop through each source in the channels array (API)
 foreach ($sourcesArray as $source => $types) {
     // Calculate the percentage complete
-    $percentage = ($tempCounter / max(1, $totalSources)) * 100;
+    $percentage = ($tempCounter / $totalSources) * 100;
 
     // Print the progress bar
     echo "\rProgress: [";
-    echo str_repeat("=", floor($percentage / (100 / max(1, $totalSources))));
-    echo str_repeat(" ", max(1, $totalSources) - floor($percentage / (100 / max(1, $totalSources))));
+    echo str_repeat("=", floor($percentage / (100 / $totalSources)));
+    echo str_repeat(" ", $totalSources - floor($percentage / (100 / $totalSources)));
     echo "] " . number_format($percentage, 2) . "%";
     $tempCounter++;
 
-    // Fetch with cache+retry
-    $url = "https://t.me/s/" . $source;
-    $cacheFile = $tgCacheDir . "/" . md5($source) . ".html";
-    $tempData = fetchWithCache($url, $cacheFile, 3600, 3, 2);
-    if (!$tempData) continue;
-
-    $type = implode("|", $types);
+    // Fetch the data from the Telegram API
+    $urlTg = "https://t.me/s/" . $source;
+    $cacheFile = "cache/telegram/" . preg_replace("/[^A-Za-z0-9_\-]/", "_", $source) . ".html";
+    $tempData = fetch_with_cache($urlTg, $cacheFile, 7200, 4);
+$type = implode("|", $types);
     $tempExtract = extractLinksByType($tempData, $type);
     if (!is_null($tempExtract)) {
         $configsList[$source] = $tempExtract;
@@ -132,43 +172,31 @@ foreach ($sourcesArray as $source => $types) {
 }
 
 // Loop through each sublink in sublinks.json
-if (isset($sublinksArray['sublinks']) && is_array($sublinksArray['sublinks'])) {
-    foreach ($sublinksArray['sublinks'] as $sublink) {
-        // Calculate the percentage complete
-        $percentage = ($tempCounter / max(1, $totalSources)) * 100;
+foreach ($sublinksArray['sublinks'] as $sublink) {
+    // Calculate the percentage complete
+    $percentage = ($tempCounter / $totalSources) * 100;
 
-        // Print the progress bar
-        echo "\rProgress: [";
-        echo str_repeat("=", floor($percentage / (100 / max(1, $totalSources))));
-        echo str_repeat(" ", max(1, $totalSources) - floor($percentage / (100 / max(1, $totalSources))));
-        echo "] " . number_format($percentage, 2) . "%";
-        $tempCounter++;
+    // Print the progress bar
+    echo "\rProgress: [";
+    echo str_repeat("=", floor($percentage / (100 / $totalSources)));
+    echo str_repeat(" ", $totalSources - floor($percentage / (100 / $totalSources)));
+    echo "] " . number_format($percentage, 2) . "%";
+    $tempCounter++;
 
-        $url = $sublink['url'] ?? null;
-        if (!$url) continue;
-
-        $protocols = isset($sublink['protocols']) ? implode("|", $sublink['protocols']) : "vmess|vless|trojan|ss|tuic|hy2";
-        try {
-            $cacheFile = $subCacheDir . "/" . md5($url) . ".txt";
-            $response = fetchWithCache($url, $cacheFile, 900, 3, 2);
-            if (!$response) continue;
-
-            // If it's base64 subscription, decode
-            $decoded = base64_decode(trim($response), true);
-            if ($decoded !== false && strpos($decoded, "://") !== false) {
-                $response = $decoded;
-            }
-
-            $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
-                $config = trim($config);
-                return $config !== "" && preg_match("/^($protocols):\/\//", $config);
-            });
-            if (!empty($sublink_configs)) {
-                $configsList[$url] = $sublink_configs;
-            }
-        } catch (Exception $e) {
-            echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
+    $url = $sublink['url'];
+    $protocols = implode("|", $sublink['protocols']);
+    try {
+        $cacheKey = md5($url);
+        $cacheFile = "cache/sublinks/" . $cacheKey . ".txt";
+        $response = fetch_with_cache($url, $cacheFile, 3600, 4);
+$sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
+            return preg_match("/^($protocols):\/\//", $config);
+        });
+        if (!empty($sublink_configs)) {
+            $configsList[$url] = $sublink_configs;
         }
+    } catch (Exception $e) {
+        echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
     }
 }
 
@@ -221,20 +249,18 @@ foreach ($configsList as $source => $configs) {
     $limitKey = max(0, count($configs) - 40); // محدود به 40 کانفیگ آخر
     foreach (array_reverse($configs) as $key => $config) {
         // Calculate the percentage complete
-        $percentage = ($tempCounter / max(1, $totalConfigs)) * 100;
+        $percentage = ($tempCounter / $totalConfigs) * 100;
 
         // Print the progress bar
         echo "\rProgress: [";
-        echo str_repeat("=", floor($percentage / (100 / max(1, $totalConfigs))));
-        echo str_repeat(" ", max(1, $totalConfigs) - floor($percentage / (100 / max(1, $totalConfigs))));
+        echo str_repeat("=", floor($percentage / (100 / $totalConfigs)));
+        echo str_repeat(" ", $totalConfigs - floor($percentage / (100 / $totalConfigs)));
         echo "] " . number_format($percentage, 2) . "%";
         $tempCounter++;
 
         // If the config is valid and within the last 40
         if (is_valid($config) && $key >= $limitKey) {
             $type = detect_type($config);
-            if (!$type || !isset($configsHash[$type])) continue;
-
             $configHash = $configsHash[$type];
             $configIp = $configsIp[$type];
 
@@ -247,7 +273,7 @@ foreach ($configsList as $source => $configs) {
             } else {
                 // برای پروتکل‌های غیر vmess
                 $config = preg_replace("/#.*?(?=(<|$))/", "", $config);
-                $decodedConfig = configParse($config, $source);
+                $decodedConfig = configParse($config);
                 if (!$decodedConfig) {
                     echo "\nDebug: configParse failed for $type: " . substr($config, 0, 50) . "...\n";
                     continue;
@@ -256,12 +282,28 @@ foreach ($configsList as $source => $configs) {
                 $config = reparseConfig($decodedConfig, $type);
             }
 
-            // بررسی مکان (کشور) با استفاده از IP
-            $decodedConfig = configParse($config, $source);
+            // Quick validation (no network)
+            [$ok, $reason] = validate_config_quick($config, $type);
+            $stats["fetched"]++;
+            if (!$ok) {
+                $stats["invalid"]++;
+                $stats["invalid_by_reason"][$reason] = ($stats["invalid_by_reason"][$reason] ?? 0) + 1;
+                continue;
+            }
+
+            // Determine country (best-effort)
+            $decodedConfig = configParse($config);
             if (!$decodedConfig) {
+                $stats["invalid"]++;
+                $stats["invalid_by_reason"]["parse_failed"] = ($stats["invalid_by_reason"]["parse_failed"] ?? 0) + 1;
                 continue;
             }
             $configLocation = ip_info($decodedConfig[$configIp] ?? "")->country ?? "XX";
+
+            // Apply standard name format
+            $config = brand_config_string($config, $type, $configLocation);
+            $stats["valid"]++;
+            $stats["by_type"][$type] = ($stats["by_type"][$type] ?? 0) + 1;
 
             // اضافه کردن به لیست نهایی و دسته‌بندی‌ها
             if (substr($config, 0, 10) !== "ss://Og==@") {
@@ -311,6 +353,8 @@ foreach ($locationBased as $location => $configs) {
 if (!empty($finalOutput)) {
     file_put_contents("config.txt", implode("\n\n", array_map('trim', $finalOutput)) . "\n\n");
 }
+
+file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 
 echo "\nGetting Configs Done!\n";
 ?>
