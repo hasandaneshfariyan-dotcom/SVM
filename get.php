@@ -102,16 +102,56 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $tempCounter++;
 
     $url = $sublink['url'];
-    $protocols = implode("|", $sublink['protocols']);
-    try {
-        $response = file_get_contents($url);
-        $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
-            return preg_match("/^($protocols):\/\//", $config);
+
+// Remove trojan from sublink protocols completely
+$protoList = array_values(array_filter($sublink['protocols'], function($p){ return strtolower($p) !== "trojan"; }));
+if (empty($protoList)) { continue; }
+$protocols = implode("|", $protoList);
+
+try {
+    $response = file_get_contents($url);
+    if ($response === false) { throw new Exception("Empty response"); }
+
+    // 1) Plain text subscription (one config per line)
+    $lines = preg_split("/\r\n|\n|\r/", trim($response));
+    $sublink_configs = array_filter($lines, function($config) use ($protocols) {
+        $config = trim($config);
+        return $config !== "" && preg_match("/^($protocols):\/\//i", $config);
+    });
+
+    // 2) base64 subscription fallback
+    if (empty($sublink_configs)) {
+        $b64 = preg_replace("/\s+/", "", trim($response));
+        $decoded = base64_decode($b64, true);
+        if ($decoded !== false) {
+            $decodedLines = preg_split("/\r\n|\n|\r/", trim($decoded));
+            $sublink_configs = array_filter($decodedLines, function($config) use ($protocols) {
+                $config = trim($config);
+                return $config !== "" && preg_match("/^($protocols):\/\//i", $config);
+            });
+        }
+    }
+
+    // 3) Sometimes everything is in a single line separated by spaces
+    if (empty($sublink_configs) && strpos($response, "://") !== false) {
+        $chunks = preg_split('/\s+/', trim($response));
+        $sublink_configs = array_filter($chunks, function($config) use ($protocols) {
+            $config = trim($config);
+            return $config !== "" && preg_match("/^($protocols):\/\//i", $config);
         });
+    }
+
+    if (!empty($sublink_configs)) {
+        // Enforce "no trojan" even if a provider slips it in
+        $sublink_configs = array_values(array_filter($sublink_configs, function($c){
+            return stripos(trim($c), "trojan://") !== 0;
+        }));
+
         if (!empty($sublink_configs)) {
             $configsList[$url] = $sublink_configs;
         }
-    } catch (Exception $e) {
+    }
+} } catch (Exception $e) {
         echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
     }
 }
@@ -128,9 +168,7 @@ $allConfigs = [
     "reality" => [],
     "tuic" => [],
     "hy2" => [],
-    "ss" => [],
-    "trojan" => []
-];
+    "ss" => [],];
 
 // Define the hash and IP keys for each type of configuration
 $configsHash = [
@@ -211,7 +249,7 @@ foreach ($configsList as $source => $configs) {
                 $finalOutput[] = $cleanConfig;
                 $locationBased[$configLocation][] = $cleanConfig;
                 $allConfigs["mix"][] = $cleanConfig;
-                $allConfigs[$type][] = $cleanConfig;
+                if ($type !== "trojan") { $allConfigs[$type][] = $cleanConfig; }
                 if ($type === "vless" && !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
                     $allConfigs["reality"][] = $cleanConfig;
                 }
@@ -223,13 +261,13 @@ foreach ($configsList as $source => $configs) {
     $tempSource++;
 }
 
-
+// حذف و بازسازی پوشه‌های خروجی
 deleteFolder("subscriptions/location/normal");
 deleteFolder("subscriptions/location/base64");
 mkdir("subscriptions/location/normal", 0755, true);
 mkdir("subscriptions/location/base64", 0755, true);
 
-
+// ذخیره کانفیگ‌های دسته‌بندی‌شده
 foreach ($allConfigs as $type => $configs) {
     if (!empty($configs)) {
         $tempConfig = implode("\n\n", array_map('trim', $configs)) . "\n\n";
@@ -239,6 +277,7 @@ foreach ($allConfigs as $type => $configs) {
     }
 }
 
+// ذخیره کانفیگ‌های location-based
 foreach ($locationBased as $location => $configs) {
     if (!empty($configs)) {
         $tempConfig = implode("\n\n", array_map('trim', $configs)) . "\n\n";
@@ -248,7 +287,7 @@ foreach ($locationBased as $location => $configs) {
     }
 }
 
-
+// ذخیره config.txt
 if (!empty($finalOutput)) {
     file_put_contents("config.txt", implode("\n\n", array_map('trim', $finalOutput)) . "\n\n");
 }
