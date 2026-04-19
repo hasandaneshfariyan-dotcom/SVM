@@ -128,3 +128,5 @@ This project is released under the **GNU Affero General Public License v3.0**. F
 Telegram: 👉🏻 [t.me/sinavm](https://t.me/sinavm)
 
 </div>
+src="https://img.shields.io/github/languages/top/sinavm/SVM?color=1e90ff&style=flat-square" alt="Top Language">
+  <img
